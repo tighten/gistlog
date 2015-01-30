@@ -8,10 +8,12 @@
 				<div class="panel-heading">Create a Gistlog</div>
 
 				<div class="panel-body">
-					<form method="post" action="/posts/create">
-						Paste the URL to a Gist here to create a Gistlog:<br>
-						<input name="gistUrl">
-						<input type="submit">
+					<form method="post" action="/posts/create" class="form-inline">
+						<div class="form-group">
+							<label for="gistUrl">Paste the URL to a Gist here to create a Gistlog:</label><br>
+							<input class="form-control" id="gistUrl" placeholder="Enter Gist URL">
+							<button type="submit" class="btn btn-default">Submit</button>
+						</div>
 					</form>
 				</div>
 			</div>

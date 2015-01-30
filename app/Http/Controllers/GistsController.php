@@ -2,6 +2,7 @@
 
 use Carbon\Carbon;
 use Gistlog\Gists\FilePresenter;
+use Gistlog\Gists\GistCommentRepository;
 use Gistlog\Gists\GistRepository;
 use Gistlog\Http\Requests;
 use Gistlog\Http\Controllers\Controller;
@@ -29,13 +30,15 @@ class GistsController extends Controller
 		return Redirect::to("{$gist->userName}/{$gist->id}");
 	}
 
-	public function show($userName, $gistId, GistRepository $repository)
+	public function show($userName, $gistId, GistRepository $gistRepository, GistCommentRepository $commentRepository)
 	{
-		$gist = $repository->getByUserNameAndId($userName, $gistId);
+		$gist = $gistRepository->getByUserNameAndId($userName, $gistId);
+		$comments = $commentRepository->getForGist($gist);
 
 		$file = reset($gist->files);
 
 		return View::make('gistlogs.show')
+			->with('comments', $comments)
 			->with('secret', ! $gist->public)
 			->with('title', $gist->description)
 			->with('link', $gist->html_url)
