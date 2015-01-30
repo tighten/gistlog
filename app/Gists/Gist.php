@@ -10,7 +10,7 @@ class Gist
 
     }
 
-    public static function fromGithub($id, array $gist)
+    public static function fromGithub(array $gist)
     {
         // OMG THE BAD PRACTICES
         $self = new self;
@@ -19,7 +19,7 @@ class Gist
             $self->$key = $value;
         }
 
-        $self->id = $id;
+        $self->id = $gist['id'];
         $self->userName = $gist['user']['login'];
 
         return $self;

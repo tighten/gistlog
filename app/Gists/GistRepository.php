@@ -42,7 +42,7 @@ class GistRepository
 
         $gist = $this->github->gists()->show($id);
 
-        return Gist::fromGithub($id, $gist);
+        return Gist::fromGithub($gist);
     }
 
     /**
