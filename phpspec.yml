@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Gistlog
+        psr4_prefix: Gistlog
+        src_path: app
