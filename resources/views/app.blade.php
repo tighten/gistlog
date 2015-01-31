@@ -12,7 +12,7 @@
 	@endif
 
 	<!-- Fonts -->
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//brick.a.ssl.fastly.net/Roboto:300,400,700/Linux+Libertine:400,400i,700,700i">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,7 +48,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
-	@if (env('APP_ENV') == 'production') 
+	@if (env('APP_ENV') == 'production')
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
