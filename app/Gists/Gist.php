@@ -25,8 +25,8 @@ class Gist
         $gist->author = $githubGist['owner']['login'];
         $gist->avatarUrl = $githubGist['owner']['avatar_url'];
         $gist->link = $githubGist['html_url'];
-        $gist->createdAt = new Carbon($githubGist['created_at']);
-        $gist->updatedAt = new Carbon($githubGist['updated_at']);
+        $gist->createdAt = Carbon::parse($githubGist['created_at']);
+        $gist->updatedAt = Carbon::parse($githubGist['updated_at']);
 
         $gist->comments = array_map(function ($comment) {
             return Comment::fromGitHub($comment);

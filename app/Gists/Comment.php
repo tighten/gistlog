@@ -16,7 +16,7 @@ class Comment
         $comment->body = $githubComment['body'];
         $comment->user = $githubComment['user']['login'];
         $comment->avatarUrl = $githubComment['user']['avatar_url'];
-        $comment->updatedAt = new Carbon($githubComment['updated_at']);
+        $comment->updatedAt = Carbon::parse($githubComment['updated_at']);
 
         return $comment;
     }
