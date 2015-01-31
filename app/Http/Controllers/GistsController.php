@@ -15,12 +15,19 @@ use Illuminate\Support\Facades\View;
 
 class GistsController extends Controller
 {
-	public function storeAndRedirect(GistRepository $repository)
+	private $repository;
+
+	public function __construct(GistRepository $repository)
+	{
+		$this->repository = $repository;
+	}
+
+	public function storeAndRedirect()
 	{
 		$gistUrl = Input::get('gistUrl');
 
 		try {
-			$gist = $repository->getByURL($gistUrl);
+			$gist = $this->repository->findByUrl($gistUrl);
 		} catch (InvalidUrlException $e) {
 			dd('that url is bad yo');
 		} catch (GistNotFoundException $e) {
@@ -33,9 +40,9 @@ class GistsController extends Controller
 		]);
 	}
 
-	public function show($userName, $gistId, GistRepository $gistRepository, GistCommentRepository $commentRepository)
+	public function show($userName, $gistId)
 	{
-		$gist = $gistRepository->findById($gistId);
+		$gist = $this->repository->findById($gistId);
 
 		if ($userName !== $gist->author) {
 			dd('bad url dummy');
