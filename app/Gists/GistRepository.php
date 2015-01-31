@@ -1,64 +1,30 @@
 <?php  namespace Gistlog\Gists;
 
-use Github\Client;
-
 class GistRepository
 {
-    /**
-     * @var Client
-     */
-    private $github;
+    private $gistClient;
 
-    public function __construct(Client $github)
+    public function __construct(GistClient $gistClient)
     {
-        $this->github = $github;
+        $this->gistClient = $gistClient;
     }
 
-    /**
-     * @param $url
-     * @return Gist
-     */
-    public function getByUrl($url)
+    public function findById($id)
     {
-        $id = $this->extractIdFromUrl($url);
+        $gist = $this->gistClient->getGist($id);
+        $comments = $this->gistClient->getGistComments($id);
 
-        return $this->getById($id);
+        return Gist::fromGitHub($gist, $comments);
+    }
+
+    public function findByUrl($url)
+    {
+        return $this->findById($this->extractIdFromUrl($url));
     }
 
     private function extractIdFromUrl($url)
     {
-        $segments = explode('/', $url);
-
-        return last($segments);
-    }
-
-    /**
-     * @param $id
-     * @return Gist
-     */
-    public function getById($id)
-    {
-        // @todo Get from cache if exists
-
-        $gist = $this->github->gists()->show($id);
-
-        return Gist::fromGithub($gist);
-    }
-
-    /**
-     * @param string $userName
-     * @param string $gistId
-     * @return Gist
-     * @throws \Exception
-     */
-    public function getByUserNameAndId($userName, $gistId)
-    {
-        $gist = $this->getById($gistId);
-
-        if ($gist->userName != $userName) {
-            throw new \Exception('Wrong userName for this Gist');
-        }
-
-        return $gist;
+        $url = rtrim($url, '/');
+        return last(explode('/', $url));
     }
 }

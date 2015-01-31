@@ -1,8 +1,5 @@
 <?php namespace Gistlog\Http\Controllers;
 
-use Carbon\Carbon;
-use Gistlog\Gists\FilePresenter;
-use Gistlog\Gists\GistCommentRepository;
 use Gistlog\Gists\GistRepository;
 use Gistlog\Http\Requests;
 use Gistlog\Http\Controllers\Controller;
@@ -15,39 +12,39 @@ use Illuminate\Support\Facades\View;
 
 class GistsController extends Controller
 {
-	public function storeAndRedirect(GistRepository $repository)
+	private $repository;
+
+	public function __construct(GistRepository $repository)
+	{
+		$this->repository = $repository;
+	}
+
+	public function storeAndRedirect()
 	{
 		$gistUrl = Input::get('gistUrl');
 
 		try {
-			$gist = $repository->getByURL($gistUrl);
+			$gist = $this->repository->findByUrl($gistUrl);
 		} catch (InvalidUrlException $e) {
 			dd('that url is bad yo');
 		} catch (GistNotFoundException $e) {
 			dd('could not find that gist yo');
 		}
 
-		return Redirect::to("{$gist->userName}/{$gist->id}");
+		return Redirect::route('gists.show', [
+			'userName' => $gist->author,
+			'gistId' => $gist->id
+		]);
 	}
 
-	public function show($userName, $gistId, GistRepository $gistRepository, GistCommentRepository $commentRepository)
+	public function show($userName, $gistId)
 	{
-		$gist = $gistRepository->getByUserNameAndId($userName, $gistId);
-		$comments = $commentRepository->getForGist($gist);
+		$gist = $this->repository->findById($gistId);
 
-		$file = reset($gist->files);
+		if ($userName !== $gist->author) {
+			dd('bad url dummy');
+		}
 
-		return View::make('gistlogs.show')
-			->with('comments', $comments)
-			->with('secret', ! $gist->public)
-			->with('title', $gist->description)
-			->with('link', $gist->html_url)
-			->with('createdDate', new Carbon($gist->created_at))
-			->with('updatedDate', new Carbon($gist->updated_at))
-			->with('commentsCount', $gist->comments)
-			->with('commentsUrl', $gist->comments_url)
-			->with('userPhotoUrl', $gist->user['avatar_url'])
-			->with('userName', $gist->userName)
-			->with('content', FilePresenter::present($file));
+		return View::make('gistlogs.show')->with('gist', $gist);
 	}
 }
