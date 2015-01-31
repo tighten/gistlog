@@ -32,22 +32,12 @@ class GistsController extends Controller
 
 	public function show($userName, $gistId, GistRepository $gistRepository, GistCommentRepository $commentRepository)
 	{
-		$gist = $gistRepository->getByUserNameAndId($userName, $gistId);
-		$comments = $commentRepository->getForGist($gist);
+		$gist = $gistRepository->findById($gistId);
 
-		$file = reset($gist->files);
+		if ($userName !== $gist->author) {
+			dd('bad url dummy');
+		}
 
-		return View::make('gistlogs.show')
-			->with('comments', $comments)
-			->with('secret', ! $gist->public)
-			->with('title', $gist->description)
-			->with('link', $gist->html_url)
-			->with('createdDate', new Carbon($gist->created_at))
-			->with('updatedDate', new Carbon($gist->updated_at))
-			->with('commentsCount', $gist->comments)
-			->with('commentsUrl', $gist->comments_url)
-			->with('userPhotoUrl', $gist->user['avatar_url'])
-			->with('userName', $gist->userName)
-			->with('content', FilePresenter::present($file));
+		return View::make('gistlogs.show')->with('gist', $gist);
 	}
 }

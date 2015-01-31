@@ -11,7 +11,8 @@
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
-		"phpspec/phpspec": "~2.1"
+		"phpspec/phpspec": "~2.1",
+		"mockery/mockery": "0.9.*"
 	},
 	"autoload": {
 		"classmap": [
@@ -23,7 +24,8 @@
 	},
 	"autoload-dev": {
 		"classmap": [
-			"tests/TestCase.php"
+			"tests/TestCase.php",
+			"tests/GistFixtureHelpers.php"
 		]
 	},
 	"scripts": {
