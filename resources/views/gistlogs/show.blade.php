@@ -29,13 +29,13 @@
                     @foreach ($gist->comments as $comment)
                         <div class="row">
                             <div class="col-md-1">
-                                <img src="{{ $comment->user->avatar_url }}" style="max-width: 100%;">
+                                <img src="{{ $comment->avatarUrl }}" style="max-width: 100%;">
                             </div>
 
                             <div class="col-md-11">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <a href="https://github.com/{{ $comment->user->login }}">{{ $comment->user }}</a>
+                                        <a href="https://github.com/{{ $comment->user }}">{{ $comment->user }}</a>
                                         commented {{ $comment->updatedAt }}
                                     </div>
                                     <div class="panel-body">
