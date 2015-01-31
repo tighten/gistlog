@@ -1,0 +1,109 @@
+{
+  "url": "https://api.github.com/gists/002ed429c7c21ab89300",
+  "forks_url": "https://api.github.com/gists/002ed429c7c21ab89300/forks",
+  "commits_url": "https://api.github.com/gists/002ed429c7c21ab89300/commits",
+  "id": "002ed429c7c21ab89300",
+  "git_pull_url": "https://gist.github.com/002ed429c7c21ab89300.git",
+  "git_push_url": "https://gist.github.com/002ed429c7c21ab89300.git",
+  "html_url": "https://gist.github.com/002ed429c7c21ab89300",
+  "files": {
+    "sample-gistlog.markdown": {
+      "filename": "sample-gistlog.markdown",
+      "type": "text/plain",
+      "language": "Markdown",
+      "raw_url": "https://gist.githubusercontent.com/adamwathan/002ed429c7c21ab89300/raw/31a71aebbb3a0dc80b627f4429090814ec984515/sample-gistlog.markdown",
+      "size": 59,
+      "truncated": false,
+      "content": "## This is my first Gistlog entry\n\nCool service, *amirite?*"
+    }
+  },
+  "public": true,
+  "created_at": "2015-01-31T14:53:51Z",
+  "updated_at": "2015-01-31T14:54:28Z",
+  "description": "A Sample Gistlog",
+  "comments": 2,
+  "user": null,
+  "comments_url": "https://api.github.com/gists/002ed429c7c21ab89300/comments",
+  "owner": {
+    "login": "adamwathan",
+    "id": 4323180,
+    "avatar_url": "https://avatars.githubusercontent.com/u/4323180?v=3",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/adamwathan",
+    "html_url": "https://github.com/adamwathan",
+    "followers_url": "https://api.github.com/users/adamwathan/followers",
+    "following_url": "https://api.github.com/users/adamwathan/following{/other_user}",
+    "gists_url": "https://api.github.com/users/adamwathan/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/adamwathan/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/adamwathan/subscriptions",
+    "organizations_url": "https://api.github.com/users/adamwathan/orgs",
+    "repos_url": "https://api.github.com/users/adamwathan/repos",
+    "events_url": "https://api.github.com/users/adamwathan/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/adamwathan/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "forks": [
+
+  ],
+  "history": [
+    {
+      "user": {
+        "login": "adamwathan",
+        "id": 4323180,
+        "avatar_url": "https://avatars.githubusercontent.com/u/4323180?v=3",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/adamwathan",
+        "html_url": "https://github.com/adamwathan",
+        "followers_url": "https://api.github.com/users/adamwathan/followers",
+        "following_url": "https://api.github.com/users/adamwathan/following{/other_user}",
+        "gists_url": "https://api.github.com/users/adamwathan/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/adamwathan/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/adamwathan/subscriptions",
+        "organizations_url": "https://api.github.com/users/adamwathan/orgs",
+        "repos_url": "https://api.github.com/users/adamwathan/repos",
+        "events_url": "https://api.github.com/users/adamwathan/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/adamwathan/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "version": "8f195efd0ba5195f27e7bf5efdb7c060d1ac6b4e",
+      "committed_at": "2015-01-31T14:54:04Z",
+      "change_status": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "url": "https://api.github.com/gists/002ed429c7c21ab89300/8f195efd0ba5195f27e7bf5efdb7c060d1ac6b4e"
+    },
+    {
+      "user": {
+        "login": "adamwathan",
+        "id": 4323180,
+        "avatar_url": "https://avatars.githubusercontent.com/u/4323180?v=3",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/adamwathan",
+        "html_url": "https://github.com/adamwathan",
+        "followers_url": "https://api.github.com/users/adamwathan/followers",
+        "following_url": "https://api.github.com/users/adamwathan/following{/other_user}",
+        "gists_url": "https://api.github.com/users/adamwathan/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/adamwathan/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/adamwathan/subscriptions",
+        "organizations_url": "https://api.github.com/users/adamwathan/orgs",
+        "repos_url": "https://api.github.com/users/adamwathan/repos",
+        "events_url": "https://api.github.com/users/adamwathan/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/adamwathan/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "version": "71de14220858cf4fe723d0318e7ae13274a55773",
+      "committed_at": "2015-01-31T14:53:51Z",
+      "change_status": {
+        "total": 3,
+        "additions": 3,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/002ed429c7c21ab89300/71de14220858cf4fe723d0318e7ae13274a55773"
+    }
+  ]
+}

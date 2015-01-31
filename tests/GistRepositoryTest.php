@@ -2,10 +2,11 @@
 
 use Gistlog\Gists\GistRepository;
 use Gistlog\Gists\GistClient;
+use Gistlog\Gists\Gist;
 
 class GistRepositoryTest extends TestCase
 {
-    const FIXTURE_GIST_ID = '548944';
+    const FIXTURE_GIST_ID = '002ed429c7c21ab89300';
 
     /** @test */
     public function it_can_retrieve_a_gist_by_id()
@@ -27,8 +28,34 @@ class GistRepositoryTest extends TestCase
         $gist = $gistRepository->findById(self::FIXTURE_GIST_ID);
 
         $this->assertCount(2, $gist->comments);
-        $this->assertEquals("I like it! When will it be pushed?", $gist->comments[0]->body);
-        $this->assertEquals("Hope soon. I will give this a try this weekend.", $gist->comments[1]->body);
+        $this->assertEquals("Interesting post.", $gist->comments[0]->body);
+        $this->assertEquals("Here's another comment!", $gist->comments[1]->body);
+    }
+
+    /** @test */
+    public function it_can_retrieve_gists_by_url()
+    {
+        $url = 'https://gist.github.com/adamwathan/' . self::FIXTURE_GIST_ID;
+
+        $gistClient = new FixtureGistClient;
+        $gistRepository = new GistRepository($gistClient);
+
+        $gist = $gistRepository->findByUrl($url);
+
+        $this->assertEquals(self::FIXTURE_GIST_ID, $gist->id);
+    }
+
+    /** @test */
+    public function it_can_retrieve_gists_by_url_with_a_trailing_slash()
+    {
+        $url = 'https://gist.github.com/adamwathan/' . self::FIXTURE_GIST_ID .'/';
+
+        $gistClient = new FixtureGistClient;
+        $gistRepository = new GistRepository($gistClient);
+
+        $gist = $gistRepository->findByUrl($url);
+
+        $this->assertEquals(self::FIXTURE_GIST_ID, $gist->id);
     }
 }
 

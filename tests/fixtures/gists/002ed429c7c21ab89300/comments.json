@@ -1,0 +1,54 @@
+[
+  {
+    "url": "https://api.github.com/gists/002ed429c7c21ab89300/comments/1384192",
+    "id": 1384192,
+    "user": {
+      "login": "adamwathan",
+      "id": 4323180,
+      "avatar_url": "https://avatars.githubusercontent.com/u/4323180?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/adamwathan",
+      "html_url": "https://github.com/adamwathan",
+      "followers_url": "https://api.github.com/users/adamwathan/followers",
+      "following_url": "https://api.github.com/users/adamwathan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/adamwathan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/adamwathan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/adamwathan/subscriptions",
+      "organizations_url": "https://api.github.com/users/adamwathan/orgs",
+      "repos_url": "https://api.github.com/users/adamwathan/repos",
+      "events_url": "https://api.github.com/users/adamwathan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/adamwathan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "created_at": "2015-01-31T14:54:23Z",
+    "updated_at": "2015-01-31T14:54:23Z",
+    "body": "Interesting post."
+  },
+  {
+    "url": "https://api.github.com/gists/002ed429c7c21ab89300/comments/1384193",
+    "id": 1384193,
+    "user": {
+      "login": "adamwathan",
+      "id": 4323180,
+      "avatar_url": "https://avatars.githubusercontent.com/u/4323180?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/adamwathan",
+      "html_url": "https://github.com/adamwathan",
+      "followers_url": "https://api.github.com/users/adamwathan/followers",
+      "following_url": "https://api.github.com/users/adamwathan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/adamwathan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/adamwathan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/adamwathan/subscriptions",
+      "organizations_url": "https://api.github.com/users/adamwathan/orgs",
+      "repos_url": "https://api.github.com/users/adamwathan/repos",
+      "events_url": "https://api.github.com/users/adamwathan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/adamwathan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "created_at": "2015-01-31T14:54:28Z",
+    "updated_at": "2015-01-31T14:54:28Z",
+    "body": "Here's another comment!"
+  }
+]
