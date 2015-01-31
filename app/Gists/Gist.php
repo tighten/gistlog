@@ -28,9 +28,9 @@ class Gist
         $gist->createdAt = Carbon::parse($githubGist['created_at']);
         $gist->updatedAt = Carbon::parse($githubGist['updated_at']);
 
-        $gist->comments = array_map(function ($comment) {
+        $gist->comments = collect($githubComments)->map(function ($comment) {
             return Comment::fromGitHub($comment);
-        }, $githubComments);
+        });
 
         return $gist;
     }
