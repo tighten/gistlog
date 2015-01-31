@@ -27,7 +27,10 @@ class GistsController extends Controller
 			dd('could not find that gist yo');
 		}
 
-		return Redirect::to("{$gist->userName}/{$gist->id}");
+		return Redirect::route('gists.show', [
+			'userName' => $gist->author,
+			'gistId' => $gist->id
+		]);
 	}
 
 	public function show($userName, $gistId, GistRepository $gistRepository, GistCommentRepository $commentRepository)
