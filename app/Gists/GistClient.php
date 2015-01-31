@@ -1,6 +1,6 @@
 <?php  namespace Gistlog\Gists;
 
-use Guzzle\Http\Client;
+use GuzzleHttp\Client;
 
 class GistClient
 {
@@ -24,7 +24,6 @@ class GistClient
 
     private function get($url)
     {
-        $response = $this->guzzle->get($this->baseUrl . $url)->send();
-        return $response->json();
+        return $this->guzzle->get($this->baseUrl . $url)->json();
     }
 }
