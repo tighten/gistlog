@@ -1,8 +1,5 @@
 <?php namespace Gistlog\Http\Controllers;
 
-use Carbon\Carbon;
-use Gistlog\Gists\FilePresenter;
-use Gistlog\Gists\GistCommentRepository;
 use Gistlog\Gists\GistRepository;
 use Gistlog\Http\Requests;
 use Gistlog\Http\Controllers\Controller;
