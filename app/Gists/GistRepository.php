@@ -1,7 +1,5 @@
 <?php  namespace Gistlog\Gists;
 
-use Github\Client;
-
 class GistRepository
 {
     private $gistClient;
