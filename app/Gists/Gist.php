@@ -13,7 +13,7 @@ class Gist
     public $link;
     public $createdAt;
     public $updatedAt;
-    public $comments = [];
+    public $comments;
 
     public static function fromGitHub($githubGist, $githubComments = [])
     {
@@ -38,5 +38,10 @@ class Gist
     public function renderHtml()
     {
         return MarkdownExtra::defaultTransform($this->content);
+    }
+
+    public function hasComments()
+    {
+	return $this->comments->count() > 0;
     }
 }

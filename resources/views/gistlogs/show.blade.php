@@ -23,7 +23,7 @@
                         </div>
                     </div>
                 </div>
-                @if (count($gist->comments) > 0)
+		@if ($gist->hasComments())
                     <h3>Comments</h3>
 
                     @foreach ($gist->comments as $comment)
