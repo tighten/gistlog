@@ -9,13 +9,13 @@ class CommentTest extends TestCase
     /** @test */
     public function it_can_be_created_from_github_api_data()
     {
-        $githubComment = $this->loadFixture('548944/comments.json')[0];
+        $githubComment = $this->loadFixture('002ed429c7c21ab89300/comments.json')[0];
 
         $comment = Comment::fromGitHub($githubComment);
 
-        $this->assertEquals("I like it! When will it be pushed?", $comment->body);
-        $this->assertEquals("mattstauffer", $comment->user);
-        $this->assertEquals("https://avatars.githubusercontent.com/u/151829?v=3", $comment->avatarUrl);
-        $this->assertEquals(new DateTime('2010-08-25T15:29:38Z'), $comment->updatedAt);
+        $this->assertEquals("Interesting post.", $comment->body);
+        $this->assertEquals("adamwathan", $comment->user);
+        $this->assertEquals("https://avatars.githubusercontent.com/u/4323180?v=3", $comment->avatarUrl);
+        $this->assertEquals(new DateTime('2015-01-31T14:54:23Z'), $comment->updatedAt);
     }
 }
