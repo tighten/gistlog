@@ -6226,10 +6226,42 @@ button.close {
     display: none !important;
   }
 }
+.gistlog__title {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 0.75em;
+}
+.gistlog__content {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Linux Libertine";
+  font-size: 22px;
+  line-height: 1.5;
+}
+.gistlog__content h1,
+.gistlog__content h2,
+.gistlog__content h3,
+.gistlog__content h4,
+.gistlog__content h5,
+.gistlog__content h6 {
+  font-family: "Roboto";
+  font-weight: 700;
+}
+.gistlog__content h2 {
+  font-size: 32px;
+}
+.gistlog__content h3 {
+  font-size: 24px;
+}
+.gistlog__content p {
+  margin-bottom: 1.36363636em;
+}
 body,
 label,
 .checkbox label {
   font-weight: 300;
+}
+.container {
+  max-width: 700px;
 }
 .profile-pic {
   display: block;
@@ -6241,8 +6273,4 @@ label,
   border-radius: 5em;
   height: 10em;
   width: 10em;
-}
-.gistlog__title {
-  font-size: 1.5em;
-  font-weight: bold;
 }
