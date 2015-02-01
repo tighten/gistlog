@@ -6245,6 +6245,8 @@ button.close {
 .gistlog__content h6 {
   font-family: "Roboto";
   font-weight: 700;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
 }
 .gistlog__content h2 {
   font-size: 32px;
@@ -6263,10 +6265,13 @@ button.close {
   background: none;
   border: none;
   border-radius: 0;
+  font-size: 22px;
+  margin-bottom: 1.36363636em;
   padding: 0;
 }
 .gistlog__content pre > code {
   background-color: #f7f7f7;
+  font-size: 13px;
   line-height: 1.7;
   padding: 1.2em;
 }
@@ -6276,7 +6281,7 @@ label,
   font-weight: 300;
 }
 .container {
-  max-width: 700px;
+  max-width: 730px;
 }
 .profile-pic {
   display: block;
