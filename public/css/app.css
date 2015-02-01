@@ -6255,7 +6255,7 @@ button.close {
 .gistlog__content h3 {
   font-size: 24px;
 }
-.gistlog__content p {
+.gistlog__content > p {
   margin-bottom: 1.36363636em;
 }
 .gistlog__content p > code {

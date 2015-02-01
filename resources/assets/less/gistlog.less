@@ -23,12 +23,14 @@
   h2 { font-size: 32px; }
   h3 { font-size: 24px; }
 
-  p {
+  // Only real paragraphs, not paragraphs in lists, etc.
+  > p {
     margin-bottom: (30em/22em);
-    > code {
+  }
+
+  p > code {
       border-radius: 0;
       font-size: 70%;
-    }
   }
 
   pre {
