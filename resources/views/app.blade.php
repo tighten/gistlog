@@ -7,7 +7,7 @@
 	<title>{{ isset($pageTitle) ? $pageTitle . ' | ' : '' }}Gistlog</title>
 
 	<link href="/css/app.css" rel="stylesheet">
-	@if (isset($secret) && $secret)
+	@if (isset($gist) && $gist->isSecret())
 	<meta name="robots" content="noindex, nofollow">
 	@endif
 

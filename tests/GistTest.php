@@ -64,4 +64,48 @@ class GistTest extends TestCase
 
         $this->assertFalse($gist->hasComments());
     }
+
+    /** @test */
+    public function secret_gists_are_not_public()
+    {
+        $githubGist = $this->loadFixture('002ed429c7c21ab89300.json');
+        $githubGist['public'] = false;
+
+        $gist = Gist::fromGitHub($githubGist);
+
+        $this->assertFalse($gist->isPublic());
+    }
+
+    /** @test */
+    public function public_gists_are_public()
+    {
+        $githubGist = $this->loadFixture('002ed429c7c21ab89300.json');
+        $githubGist['public'] = true;
+
+        $gist = Gist::fromGitHub($githubGist);
+
+        $this->assertTrue($gist->isPublic());
+    }
+
+    /** @test */
+    public function secret_gists_are_secret()
+    {
+        $githubGist = $this->loadFixture('002ed429c7c21ab89300.json');
+        $githubGist['public'] = false;
+
+        $gist = Gist::fromGitHub($githubGist);
+
+        $this->assertTrue($gist->isSecret());
+    }
+
+    /** @test */
+    public function public_gists_are_not_secret()
+    {
+        $githubGist = $this->loadFixture('002ed429c7c21ab89300.json');
+        $githubGist['public'] = true;
+
+        $gist = Gist::fromGitHub($githubGist);
+
+        $this->assertFalse($gist->isSecret());
+    }
 }
