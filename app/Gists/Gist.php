@@ -11,6 +11,7 @@ class Gist
     public $author;
     public $avatarUrl;
     public $link;
+    private $public;
 
     /**
      * @var Carbon
@@ -42,6 +43,7 @@ class Gist
         $gist->author = $githubGist['owner']['login'];
         $gist->avatarUrl = $githubGist['owner']['avatar_url'];
         $gist->link = $githubGist['html_url'];
+        $gist->public = $githubGist['public'];
         $gist->createdAt = Carbon::parse($githubGist['created_at']);
         $gist->updatedAt = Carbon::parse($githubGist['updated_at']);
 
@@ -66,5 +68,21 @@ class Gist
     public function hasComments()
     {
         return $this->comments->count() > 0;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPublic()
+    {
+        return $this->public;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSecret()
+    {
+        return ! $this->isPublic();
     }
 }
