@@ -17,6 +17,18 @@ class GistClientServiceProvider extends ServiceProvider
                 ])
             );
 
+            // We're only making public API requests, so we don't *need* to
+            // authenticate, but doing so significantly increases the rate
+            // limit. So here we authenticate if credentials are provided,
+            // but if they aren't, no big deal.
+            if (config('services.github.client_id') && config('services.github.client_secret')) {
+                $githubClient->authenticate(
+                    config('services.github.client_id'),
+                    config('services.github.client_secret'),
+                    GitHubClient::AUTH_URL_CLIENT_ID
+                );
+            }
+
             return new GistClient($githubClient);
         });
     }
