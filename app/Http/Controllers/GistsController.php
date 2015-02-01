@@ -1,5 +1,6 @@
 <?php namespace Gistlog\Http\Controllers;
 
+use Gistlog\Exceptions\GistNotFoundException;
 use Gistlog\Gists\GistRepository;
 use Gistlog\Http\Requests;
 use Gistlog\Http\Controllers\Controller;

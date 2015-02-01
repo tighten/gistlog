@@ -1,6 +1,8 @@
 <?php  namespace Gistlog\Gists;
 
+use Gistlog\Exceptions\GistNotFoundException;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
 
 class GistClient
 {
@@ -19,10 +21,15 @@ class GistClient
     /**
      * @param $gistId
      * @return array
+     * @throws GistNotFoundException
      */
     public function getGist($gistId)
     {
-        return $this->get($gistId);
+        try {
+            return $this->get($gistId);
+        } catch (ClientException $e) {
+            throw new GistNotFoundException("Gist not found.");
+        }
     }
 
     /**
