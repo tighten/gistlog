@@ -46,6 +46,8 @@ class GistsController extends Controller
 			dd('bad url dummy');
 		}
 
-		return View::make('gistlogs.show')->with('gist', $gist);
+		return View::make('gistlogs.show')
+			->with('gist', $gist)
+			->with('pageTitle', $gist->title . ' | ' . $gist->author);
 	}
 }
