@@ -6229,7 +6229,8 @@ button.close {
 .gistlog__title {
   font-size: 60px;
   font-weight: 700;
-  margin-bottom: 0.75em;
+  margin-top: 0.75em;
+  margin-bottom: 1em;
 }
 .gistlog__content {
   -webkit-font-smoothing: antialiased;
