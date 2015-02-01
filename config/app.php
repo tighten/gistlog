@@ -145,6 +145,7 @@ return [
 		'Gistlog\Providers\EventServiceProvider',
 		'Gistlog\Providers\RouteServiceProvider',
 
+		'Gistlog\Providers\GistClientServiceProvider',
 	],
 
 	/*

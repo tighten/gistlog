@@ -1,21 +1,20 @@
 <?php  namespace Gistlog\Gists;
 
 use Gistlog\Exceptions\GistNotFoundException;
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
+
+use Github\Client as GitHubClient;
+use Github\HttpClient\Message\ResponseMediator;
 
 class GistClient
 {
-    private $baseUrl = 'https://api.github.com/gists/';
-
     /**
-     * @var Client
+     * @var GitHubClient
      */
-    private $guzzle;
+    private $github;
 
-    public function __construct(Client $guzzle)
+    public function __construct(GitHubClient $github)
     {
-        $this->guzzle = $guzzle;
+        $this->github = $github;
     }
 
     /**
@@ -25,11 +24,8 @@ class GistClient
      */
     public function getGist($gistId)
     {
-        try {
-            return $this->get($gistId);
-        } catch (ClientException $e) {
-            throw new GistNotFoundException("Gist not found.");
-        }
+        // @todo Exception handling, not sure what this library throws
+        return $this->github->api('gists')->show($gistId);
     }
 
     /**
@@ -38,7 +34,8 @@ class GistClient
      */
     public function getGistComments($gistId)
     {
-        return $this->get($gistId . '/comments');
+        $response = $this->github->getHttpClient()->get("gists/{$gistId}/comments");
+        return ResponseMediator::getContent($response);
     }
 
     /**
