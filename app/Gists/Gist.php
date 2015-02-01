@@ -1,4 +1,4 @@
-<?php  namespace Gistlog\Gists;
+<?php namespace Gistlog\Gists;
 
 use Carbon\Carbon;
 use Michelf\MarkdownExtra;
@@ -11,10 +11,27 @@ class Gist
     public $author;
     public $avatarUrl;
     public $link;
-    public $createdAt;
-    public $updatedAt;
-    public $comments = [];
 
+    /**
+     * @var Carbon
+     */
+    public $createdAt;
+
+    /**
+     * @var Carbon
+     */
+    public $updatedAt;
+
+    /**
+     * @var Collection
+     */
+    public $comments;
+
+    /**
+     * @param array|ArrayAccess $githubGist
+     * @param array|ArrayAccess $githubComments
+     * @return Gist
+     */
     public static function fromGitHub($githubGist, $githubComments = [])
     {
         $gist = new self;
@@ -35,8 +52,19 @@ class Gist
         return $gist;
     }
 
+    /**
+     * @return string
+     */
     public function renderHtml()
     {
         return MarkdownExtra::defaultTransform($this->content);
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasComments()
+    {
+        return $this->comments->count() > 0;
     }
 }

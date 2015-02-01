@@ -43,4 +43,25 @@ class GistTest extends TestCase
         $this->assertCount(2, $gist->comments);
         $this->assertContainsOnlyInstancesOf(Comment::class, $gist->comments);
     }
+
+    /** @test */
+    public function it_has_comments_when_there_are_one_or_more_comments()
+    {
+        $githubGist = $this->loadFixture('002ed429c7c21ab89300.json');
+        $githubComments = $this->loadFixture('002ed429c7c21ab89300/comments.json');
+
+        $gist = Gist::fromGitHub($githubGist, $githubComments);
+
+        $this->assertTrue($gist->hasComments());
+    }
+
+    /** @test */
+    public function it_has_no_comments_when_there_are_zero_comments()
+    {
+        $githubGist = $this->loadFixture('002ed429c7c21ab89300.json');
+
+        $gist = Gist::fromGitHub($githubGist);
+
+        $this->assertFalse($gist->hasComments());
+    }
 }
