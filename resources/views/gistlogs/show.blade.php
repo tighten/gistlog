@@ -45,3 +45,7 @@
         @endif
     </div>
 @endsection
+
+@section('scripts')
+    <script>hljs.initHighlightingOnLoad();</script>
+@endsection
