@@ -15,8 +15,8 @@
                     </div>
                     <div class="panel-footer">
                         <div class="gistlog__meta">
-                            Created {{ $gist->createdAt->format('Y-m-d') }} |
-                            Updated {{ $gist->updatedAt->format('Y-m-d') }}
+                            Created {{ $gist->createdAt->diffForHumans() }} |
+                            Updated {{ $gist->updatedAt->diffForHumans() }}
                         </div>
                         <div class="gistlog__links">
                             <a href="{{ $gist->link }}">View on Github</a>
@@ -36,7 +36,7 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <a href="https://github.com/{{ $comment->user }}">{{ $comment->user }}</a>
-                                        commented {{ $comment->updatedAt }}
+                                        commented {{ $comment->updatedAt->diffForHumans() }}
                                     </div>
                                     <div class="panel-body">
                                         {{ $comment->body }}
