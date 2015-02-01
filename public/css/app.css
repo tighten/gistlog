@@ -6255,6 +6255,9 @@ button.close {
 .gistlog__content p {
   margin-bottom: 1.36363636em;
 }
+.gistlog__content p > code {
+  font-size: 70%;
+}
 body,
 label,
 .checkbox label {
