@@ -48,7 +48,7 @@ class GistRepositoryTest extends TestCase
     /** @test */
     public function it_can_retrieve_gists_by_url_with_a_trailing_slash()
     {
-        $url = 'https://gist.github.com/adamwathan/' . self::FIXTURE_GIST_ID .'/';
+        $url = 'https://gist.github.com/adamwathan/' . self::FIXTURE_GIST_ID . '/';
 
         $gistClient = new FixtureGistClient;
         $gistRepository = new GistRepository($gistClient);
@@ -63,7 +63,9 @@ class FixtureGistClient extends GistClient
 {
     use GistFixtureHelpers;
 
-    public function __construct() {}
+    public function __construct()
+    {
+    }
 
     public function getGist($gistId)
     {
