@@ -1,10 +1,10 @@
 <?php
 
-use Gistlog\Gists\GistRepository;
+use Gistlog\Gists\GistlogRepository;
 use Gistlog\Gists\GistClient;
-use Gistlog\Gists\Gist;
+use Gistlog\Gists\Gistlog;
 
-class GistRepositoryTest extends TestCase
+class GistlogRepositoryTest extends TestCase
 {
     const FIXTURE_GIST_ID = '002ed429c7c21ab89300';
 
@@ -12,7 +12,7 @@ class GistRepositoryTest extends TestCase
     public function it_can_retrieve_a_gist_by_id()
     {
         $gistClient = new FixtureGistClient;
-        $gistRepository = new GistRepository($gistClient);
+        $gistRepository = new GistlogRepository($gistClient);
 
         $gist = $gistRepository->findById(self::FIXTURE_GIST_ID);
 
@@ -23,7 +23,7 @@ class GistRepositoryTest extends TestCase
     public function it_embeds_gist_comments()
     {
         $gistClient = new FixtureGistClient;
-        $gistRepository = new GistRepository($gistClient);
+        $gistRepository = new GistlogRepository($gistClient);
 
         $gist = $gistRepository->findById(self::FIXTURE_GIST_ID);
 
@@ -38,7 +38,7 @@ class GistRepositoryTest extends TestCase
         $url = 'https://gist.github.com/adamwathan/' . self::FIXTURE_GIST_ID;
 
         $gistClient = new FixtureGistClient;
-        $gistRepository = new GistRepository($gistClient);
+        $gistRepository = new GistlogRepository($gistClient);
 
         $gist = $gistRepository->findByUrl($url);
 
@@ -51,7 +51,7 @@ class GistRepositoryTest extends TestCase
         $url = 'https://gist.github.com/adamwathan/' . self::FIXTURE_GIST_ID . '/';
 
         $gistClient = new FixtureGistClient;
-        $gistRepository = new GistRepository($gistClient);
+        $gistRepository = new GistlogRepository($gistClient);
 
         $gist = $gistRepository->findByUrl($url);
 

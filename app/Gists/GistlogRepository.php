@@ -1,6 +1,6 @@
 <?php  namespace Gistlog\Gists;
 
-class GistRepository
+class GistlogRepository
 {
     /**
      * @var GistClient
@@ -14,19 +14,19 @@ class GistRepository
 
     /**
      * @param $id
-     * @return Gist
+     * @return Gistlog
      */
     public function findById($id)
     {
         $gist = $this->gistClient->getGist($id);
         $comments = $this->gistClient->getGistComments($id);
 
-        return Gist::fromGitHub($gist, $comments);
+        return Gistlog::fromGitHub($gist, $comments);
     }
 
     /**
      * @param string $url
-     * @return Gist
+     * @return Gistlog
      */
     public function findByUrl($url)
     {

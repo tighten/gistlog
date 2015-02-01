@@ -14,7 +14,7 @@ class CommentTest extends TestCase
         $comment = Comment::fromGitHub($githubComment);
 
         $this->assertEquals("Interesting post.", $comment->body);
-        $this->assertEquals("adamwathan", $comment->user);
+        $this->assertEquals("adamwathan", $comment->author);
         $this->assertEquals("https://avatars.githubusercontent.com/u/4323180?v=3", $comment->avatarUrl);
         $this->assertEquals(new DateTime('2015-01-31T14:54:23Z'), $comment->updatedAt);
     }
