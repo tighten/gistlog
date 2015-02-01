@@ -1,5 +1,7 @@
 <?php  namespace Gistlog\Gists;
 
+use Exception;
+
 use Gistlog\Exceptions\GistNotFoundException;
 
 use Github\Client as GitHubClient;
@@ -24,8 +26,11 @@ class GistClient
      */
     public function getGist($gistId)
     {
-        // @todo Exception handling, not sure what this library throws
-        return $this->github->api('gists')->show($gistId);
+        try {
+            return $this->github->api('gists')->show($gistId);
+        } catch (Exception $e) {
+            throw new GistNotFoundException($gistId, $e->getMessage());
+        }
     }
 
     /**
