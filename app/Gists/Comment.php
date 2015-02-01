@@ -7,8 +7,16 @@ class Comment
     public $body;
     public $user;
     public $avatarUrl;
+
+    /**
+     * @var Carbon
+     */
     public $updatedAt;
 
+    /**
+     * @param array|ArrayAccess $githubComment
+     * @return Comment
+     */
     public static function fromGitHub($githubComment)
     {
         $comment = new self;
