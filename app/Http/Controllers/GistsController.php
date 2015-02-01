@@ -1,7 +1,7 @@
 <?php namespace Gistlog\Http\Controllers;
 
 use Gistlog\Exceptions\GistNotFoundException;
-use Gistlog\Gists\GistRepository;
+use Gistlog\Gists\GistlogRepository;
 use Gistlog\Http\Requests;
 use Gistlog\Http\Controllers\Controller;
 
@@ -15,7 +15,7 @@ class GistsController extends Controller
 {
 	private $repository;
 
-	public function __construct(GistRepository $repository)
+	public function __construct(GistlogRepository $repository)
 	{
 		$this->repository = $repository;
 	}
@@ -25,7 +25,7 @@ class GistsController extends Controller
 		$gistUrl = Input::get('gistUrl');
 
 		try {
-			$gist = $this->repository->findByUrl($gistUrl);
+			$gistlog = $this->repository->findByUrl($gistUrl);
 		} catch (InvalidUrlException $e) {
 			dd('that url is bad yo');
 		} catch (GistNotFoundException $e) {
@@ -33,21 +33,21 @@ class GistsController extends Controller
 		}
 
 		return Redirect::route('gists.show', [
-			'userName' => $gist->author,
-			'gistId' => $gist->id
+			'userName' => $gistlog->author,
+			'gistId' => $gistlog->id
 		]);
 	}
 
 	public function show($userName, $gistId)
 	{
-		$gist = $this->repository->findById($gistId);
+		$gistlog = $this->repository->findById($gistId);
 
-		if ($userName !== $gist->author) {
+		if ($userName !== $gistlog->author) {
 			dd('bad url dummy');
 		}
 
 		return View::make('gistlogs.show')
-			->with('gist', $gist)
-			->with('pageTitle', $gist->title . ' | ' . $gist->author);
+			->with('gistlog', $gistlog)
+			->with('pageTitle', $gistlog->title . ' | ' . $gistlog->author);
 	}
 }

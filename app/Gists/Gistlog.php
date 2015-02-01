@@ -3,7 +3,7 @@
 use Carbon\Carbon;
 use Michelf\MarkdownExtra;
 
-class Gist
+class Gistlog
 {
     public $id;
     public $title;
@@ -31,27 +31,27 @@ class Gist
     /**
      * @param array|ArrayAccess $githubGist
      * @param array|ArrayAccess $githubComments
-     * @return Gist
+     * @return Gistlog
      */
     public static function fromGitHub($githubGist, $githubComments = [])
     {
-        $gist = new self;
+        $gistlog = new self;
 
-        $gist->id = $githubGist['id'];
-        $gist->title = $githubGist['description'];
-        $gist->content = array_values($githubGist['files'])[0]['content'];
-        $gist->author = $githubGist['owner']['login'];
-        $gist->avatarUrl = $githubGist['owner']['avatar_url'];
-        $gist->link = $githubGist['html_url'];
-        $gist->public = $githubGist['public'];
-        $gist->createdAt = Carbon::parse($githubGist['created_at']);
-        $gist->updatedAt = Carbon::parse($githubGist['updated_at']);
+        $gistlog->id = $githubGist['id'];
+        $gistlog->title = $githubGist['description'];
+        $gistlog->content = array_values($githubGist['files'])[0]['content'];
+        $gistlog->author = $githubGist['owner']['login'];
+        $gistlog->avatarUrl = $githubGist['owner']['avatar_url'];
+        $gistlog->link = $githubGist['html_url'];
+        $gistlog->public = $githubGist['public'];
+        $gistlog->createdAt = Carbon::parse($githubGist['created_at']);
+        $gistlog->updatedAt = Carbon::parse($githubGist['updated_at']);
 
-        $gist->comments = collect($githubComments)->map(function ($comment) {
+        $gistlog->comments = collect($githubComments)->map(function ($comment) {
             return Comment::fromGitHub($comment);
         });
 
-        return $gist;
+        return $gistlog;
     }
 
     /**

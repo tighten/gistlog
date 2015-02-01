@@ -5,7 +5,7 @@ use Carbon\Carbon;
 class Comment
 {
     public $body;
-    public $user;
+    public $author;
     public $avatarUrl;
 
     /**
@@ -22,7 +22,7 @@ class Comment
         $comment = new self;
 
         $comment->body = $githubComment['body'];
-        $comment->user = $githubComment['user']['login'];
+        $comment->author = $githubComment['user']['login'];
         $comment->avatarUrl = $githubComment['user']['avatar_url'];
         $comment->updatedAt = Carbon::parse($githubComment['updated_at']);
 
