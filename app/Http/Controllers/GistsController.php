@@ -27,9 +27,9 @@ class GistsController extends Controller
 		try {
 			$gistlog = $this->repository->findByUrl($gistUrl);
 		} catch (InvalidUrlException $e) {
-			dd('that url is bad yo');
+			abort(404);
 		} catch (GistNotFoundException $e) {
-			dd('could not find that gist yo');
+			abort(404);
 		}
 
 		return Redirect::route('gists.show', [
