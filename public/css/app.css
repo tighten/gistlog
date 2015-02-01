@@ -6256,7 +6256,19 @@ button.close {
   margin-bottom: 1.36363636em;
 }
 .gistlog__content p > code {
+  border-radius: 0;
   font-size: 70%;
+}
+.gistlog__content pre {
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+.gistlog__content pre > code {
+  background-color: #f7f7f7;
+  line-height: 1.7;
+  padding: 1.2em;
 }
 body,
 label,
