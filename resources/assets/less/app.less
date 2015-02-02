@@ -1,28 +1,49 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 @import "vendor/bootstrap/bootstrap";
-
 @import "utilities";
-
 @import "components/gistlog";
+@import "components/comment";
+@import "components/notice";
 
 @btn-font-weight: 300;
 @font-family-sans-serif: "Roboto", Helvetica, Arial, sans-serif;
 
+/**
+ * Bootstrap-esque
+ */
+
+/**
+ * Custom
+ */
+
 body, label, .checkbox label {
-	font-weight: 300;
+    font-weight: 300;
+}
+
+img {
+    max-width: 100%;
 }
 
 .container {
-  max-width: 730px;
+    max-width: 730px;
+    position: relative;
 }
 
 .profile-pic {
-  display: block;
-  margin: 0 auto 1.5em;
-  width: 10em;
-}
-  .profile-pic img {
-    border: 5px solid #eee;
-    border-radius: 5em;
-    height: 10em;
+    display: block;
+    margin: 0 auto 1.5em;
     width: 10em;
-  }
+
+    img {
+        border: 5px solid #eee;
+        border-radius: 5em;
+        height: 10em;
+        width: 10em;
+    }
+}

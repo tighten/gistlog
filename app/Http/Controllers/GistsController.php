@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 
 class GistsController extends Controller
@@ -27,9 +28,11 @@ class GistsController extends Controller
 		try {
 			$gistlog = $this->repository->findByUrl($gistUrl);
 		} catch (InvalidUrlException $e) {
-			abort(404);
+			Session::flash('error-message', 'Please enter a valid Gist URL.');
+			return Redirect::route('home');
 		} catch (GistNotFoundException $e) {
-			abort(404);
+			Session::flash('error-message', 'Please enter a valid Gist URL.');
+			return Redirect::route('home');
 		}
 
 		return Redirect::route('gists.show', [
