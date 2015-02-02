@@ -1,3 +1,11 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -3489,6 +3497,7 @@ a.list-group-item-danger.active:focus {
   font-family: "Linux Libertine";
   font-size: 22px;
   line-height: 1.5;
+  word-break: normal;
 }
 .gistlog__content h1,
 .gistlog__content h2,
@@ -3558,6 +3567,30 @@ a.list-group-item-danger.active:focus {
 }
 .comment__meta {
   background: #eee;
+  padding: 1em;
+}
+.comment__body {
+  border-bottom: 1px solid #ddd;
+  padding: 1em;
+}
+.notice {
+  border: 1px solid black;
+  margin: 0 1em;
+  padding: 0.5em;
+  position: absolute;
+  width: 80%;
+  z-index: 999;
+}
+.notice--info {
+  background: #eee;
+}
+.notice--error {
+  background: red;
+  border-color: transparent;
+  color: #fff;
+}
+.notice--success {
+  background: green;
 }
 /**
  * Bootstrap-esque
@@ -3575,6 +3608,7 @@ img {
 }
 .container {
   max-width: 730px;
+  position: relative;
 }
 .profile-pic {
   display: block;
@@ -3586,21 +3620,4 @@ img {
   border-radius: 5em;
   height: 10em;
   width: 10em;
-}
-.notice {
-  border: 1px solid black;
-  margin: 1em;
-  padding: 0.5em;
-  position: absolute;
-  width: 100%;
-  z-index: 999;
-}
-.notice--info {
-  background: #eee;
-}
-.notice--error {
-  background: red;
-}
-.notice--success {
-  background: green;
 }
