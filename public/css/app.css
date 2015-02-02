@@ -3772,6 +3772,18 @@ a.list-group-item-danger.active:focus {
   line-height: 1.7;
   padding: 1.2em;
 }
+.gistlog__content ul,
+.gistlog__content ol {
+  margin-bottom: 1.36363636em;
+}
+.gistlog__content ul > li,
+.gistlog__content ol > li {
+  margin-bottom: 0.5em;
+}
+.gistlog__content ul > li:last-child,
+.gistlog__content ol > li:last-child {
+  margin-bottom: 0;
+}
 body,
 label,
 .checkbox label {
