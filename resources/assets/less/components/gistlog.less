@@ -47,6 +47,25 @@
       padding: 1.2em;
     }
   }
+
+  ul, ol {
+
+    > li {
+      margin-bottom: 0.5em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      > ul {
+        margin-top: 0.5em;
+      }
+    }
+  }
+
+  > ul, > ol {
+    margin-bottom: (30em/22em);
+  }
 }
 
 .gistlog__meta {}
