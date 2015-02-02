@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/', 'HomeController@index');
+Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home']);
 
 Route::post('posts/create', 'GistsController@storeAndRedirect');
 

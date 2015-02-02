@@ -43,6 +43,8 @@
 		</div>
 	</nav>
 
+	@include ('partials.flash-messages')
+
 	@yield('content')
 
 	<!-- Scripts -->

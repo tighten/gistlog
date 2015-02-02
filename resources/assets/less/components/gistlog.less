@@ -1,72 +1,76 @@
-.gistlog {}
+.gistlog {
+}
 
 .gistlog__title {
-  font-size: 60px;
-  font-weight: 700;
-  margin-top: 0.75em;
-  margin-bottom: 1em;
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 1em;
+    margin-top: 0.75em;
 }
 
 .gistlog__content {
-  -webkit-font-smoothing: antialiased;
-  font-family: "Linux Libertine";
-  font-size: 22px;
-  line-height: 1.5;
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: "Roboto";
-    font-weight: 700;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-  }
-
-  h2 { font-size: 32px; }
-  h3 { font-size: 24px; }
-
-  // Only real paragraphs, not paragraphs in lists, etc.
-  > p {
-    margin-bottom: (30em/22em);
-  }
-
-  p > code {
-      border-radius: 0;
-      font-size: 70%;
-  }
-
-  pre {
-    background: none;
-    border: none;
-    border-radius: 0;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Linux Libertine";
     font-size: 22px;
-    margin-bottom: (30em/22em);
-    padding: 0;
-    > code {
-      background-color: rgb(247, 247, 247);
-      font-size: 13px;
-      line-height: 1.7;
-      padding: 1.2em;
+    line-height: 1.5;
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "Roboto";
+        font-weight: 700;
+        margin-bottom: 0.5em;
+        margin-top: 1.5em;
     }
-  }
 
-  ul, ol {
+    ul, ol {
 
-    > li {
-      margin-bottom: 0.5em;
+        > li {
+            margin-bottom: 0.5em;
 
-      &:last-child {
-        margin-bottom: 0;
-      }
+            &:last-child {
+                margin-bottom: 0;
+            }
 
-      > ul {
-        margin-top: 0.5em;
-      }
+            > ul {
+                margin-top: 0.5em;
+            }
+        }
     }
-  }
 
-  > ul, > ol {
-    margin-bottom: (30em/22em);
-  }
+    h2 {
+        font-size: 32px;
+    }
+    h3 {
+        font-size: 24px;
+    }
+
+    // Only real paragraphs, not paragraphs in lists, etc.
+    > p {
+        margin-bottom: (30em/22em);
+    }
+
+    p > code {
+        border-radius: 0;
+        font-size: 70%;
+    }
+
+    pre {
+        background: none;
+        border: none;
+        border-radius: 0;
+        font-size: 22px;
+        margin-bottom: (30em/22em);
+        padding: 0;
+        > code {
+            background-color: rgb(247, 247, 247);
+            font-size: 13px;
+            line-height: 1.7;
+            padding: 1.2em;
+        }
+    }
 }
 
-.gistlog__meta {}
-.gistlog__links {}
+.gistlog__meta {
+}
+
+.gistlog__links {
+}
