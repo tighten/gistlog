@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/mattstauffer/gistlog.png?label=ready&title=Ready)](https://waffle.io/mattstauffer/gistlog)
 ## Gistlog 
 
 [![Build Status](https://travis-ci.org/mattstauffer/gistlog.png?branch=master)](http://travis-ci.org/mattstauffer/gistlog)
