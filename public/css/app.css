@@ -3551,10 +3551,23 @@ a.list-group-item-danger.active:focus {
   border-left: 3em solid #f0f0f0;
   font-size: 13px;
   line-height: 1.5;
-  padding: 1.2em;
+  padding-left: 1.5em;
 }
 .gistlog__content pre > code * {
   font-weight: normal !important;
+}
+.gistlog__content pre {
+  position: relative;
+  overflow-y: hidden;
+}
+.gistlog__content .line-numbers {
+  color: #aaaaaa;
+  font-size: 13px;
+  line-height: 1.5;
+  position: absolute;
+  text-align: right;
+  top: 0.5em;
+  width: 2em;
 }
 .comment {
   clear: left;

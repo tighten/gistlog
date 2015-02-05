@@ -9,7 +9,7 @@
         <article class="gistlog">
             <h1 class="gistlog__title">{{ $gistlog->title }}</h1>
 
-            <div class="gistlog__content">
+            <div class="gistlog__content js-gistlog-content">
                 {!! $gistlog->renderHtml() !!}
             </div>
             <div class="gistlog__meta">
@@ -32,4 +32,21 @@
 
 @section('scripts')
     <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    $(function() {
+        var preElement = $('.js-gistlog-content pre').each(function (index) {
+            var lineNumbers = '<div class="line-numbers">';
+            var numberOfLines = $(this).find('code').html().split(/\n/).length - 1;
+
+            for (var i = 1; i <= numberOfLines; i++) {
+                lineNumbers = lineNumbers + i.toString() + "\n";
+            }
+
+            lineNumbers = lineNumbers + '</div>';
+
+            $(this).append(lineNumbers);
+        });
+    });
+
+    </script>
 @endsection
