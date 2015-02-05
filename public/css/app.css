@@ -3528,7 +3528,9 @@ a.list-group-item-danger.active:focus {
 .gistlog__content h3 {
   font-size: 24px;
 }
-.gistlog__content > p {
+.gistlog__content > p,
+.gistlog__content > ul,
+.gistlog__content > ol {
   margin-bottom: 1.36363636em;
 }
 .gistlog__content p > code {
