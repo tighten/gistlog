@@ -705,7 +705,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: Consolas, Menlo, Monaco, "Courier New", monospace;
 }
 code {
   padding: 2px 4px;
@@ -3539,17 +3539,35 @@ a.list-group-item-danger.active:focus {
 }
 .gistlog__content pre {
   background: none;
-  border: none;
-  border-radius: 0;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   font-size: 22px;
   margin-bottom: 1.36363636em;
   padding: 0;
 }
 .gistlog__content pre > code {
-  background-color: #f7f7f7;
+  background-color: #ffffff;
+  border-left: 3em solid #f0f0f0;
   font-size: 13px;
-  line-height: 1.7;
-  padding: 1.2em;
+  line-height: 1.5;
+  padding-left: 1.5em;
+}
+.gistlog__content pre > code * {
+  font-weight: normal !important;
+}
+.gistlog__content pre {
+  position: relative;
+  overflow-y: hidden;
+}
+.gistlog__content .line-numbers {
+  color: #aaaaaa;
+  font-size: 13px;
+  line-height: 1.5;
+  position: absolute;
+  text-align: right;
+  top: 0.5em;
+  width: 2em;
 }
 .comment {
   clear: left;
