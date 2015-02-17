@@ -1,11 +1,17 @@
 .gistlog {
+    margin-bottom: 2em;
 }
 
 .gistlog__title {
-    font-size: 60px;
+    font-size: 40px;
     font-weight: 700;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     margin-top: 0.75em;
+
+    @media (min-width: @screen-sm-min) {
+        font-size: 60px;
+        margin-bottom: 1em;
+    }
 }
 
 .gistlog__content {
