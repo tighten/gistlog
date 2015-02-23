@@ -108,4 +108,14 @@ class GistlogTest extends TestCase
 
         $this->assertFalse($gistlog->isSecret());
     }
+
+    /** @test */
+    public function code_only_posts_render_in_a_code_block()
+    {
+        $githubGist = $this->loadFixture('aac58f02ec1aaaad7f88.json');
+
+        $gistlog = Gistlog::fromGitHub($githubGist);
+
+        $this->assertEquals('<pre><code>' . $gistlog->content . '</code></pre>', $gistlog->renderHtml());
+    }
 }

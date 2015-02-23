@@ -1,0 +1,80 @@
+{
+  "url": "https://api.github.com/gists/aac58f02ec1aaaad7f88",
+  "forks_url": "https://api.github.com/gists/aac58f02ec1aaaad7f88/forks",
+  "commits_url": "https://api.github.com/gists/aac58f02ec1aaaad7f88/commits",
+  "id": "aac58f02ec1aaaad7f88",
+  "git_pull_url": "https://gist.github.com/aac58f02ec1aaaad7f88.git",
+  "git_push_url": "https://gist.github.com/aac58f02ec1aaaad7f88.git",
+  "html_url": "https://gist.github.com/aac58f02ec1aaaad7f88",
+  "files": {
+    "staticinterface.php": {
+      "filename": "staticinterface.php",
+      "type": "application/x-httpd-php",
+      "language": "PHP",
+      "raw_url": "https://gist.githubusercontent.com/adamwathan/aac58f02ec1aaaad7f88/raw/ca43ffa04c51af51a7c7f71a9ea9218ee92d0988/staticinterface.php",
+      "size": 455,
+      "truncated": false,
+      "content": "interface UserRepository\n{\n\tpublic function all();\n}\n\nclass User extends Eloquent implements UserRepository\n{\n\tpublic static function all(); // comes from Eloquent obviously, but yeah\n}\n\n$user = new User;\n\n // This works as an instance call, even though it's declared as static,\n // standard PHP behaviour, but PHP will complain that User isn't\n // implementing the interface, because the interface defines it as an\n // instance method. Grr!\n$user->all();"
+    }
+  },
+  "public": false,
+  "created_at": "2015-01-28T15:19:54Z",
+  "updated_at": "2015-01-28T15:19:55Z",
+  "description": "Static interface",
+  "comments": 0,
+  "user": null,
+  "comments_url": "https://api.github.com/gists/aac58f02ec1aaaad7f88/comments",
+  "owner": {
+    "login": "adamwathan",
+    "id": 4323180,
+    "avatar_url": "https://avatars.githubusercontent.com/u/4323180?v=3",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/adamwathan",
+    "html_url": "https://github.com/adamwathan",
+    "followers_url": "https://api.github.com/users/adamwathan/followers",
+    "following_url": "https://api.github.com/users/adamwathan/following{/other_user}",
+    "gists_url": "https://api.github.com/users/adamwathan/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/adamwathan/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/adamwathan/subscriptions",
+    "organizations_url": "https://api.github.com/users/adamwathan/orgs",
+    "repos_url": "https://api.github.com/users/adamwathan/repos",
+    "events_url": "https://api.github.com/users/adamwathan/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/adamwathan/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "forks": [
+
+  ],
+  "history": [
+    {
+      "user": {
+        "login": "adamwathan",
+        "id": 4323180,
+        "avatar_url": "https://avatars.githubusercontent.com/u/4323180?v=3",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/adamwathan",
+        "html_url": "https://github.com/adamwathan",
+        "followers_url": "https://api.github.com/users/adamwathan/followers",
+        "following_url": "https://api.github.com/users/adamwathan/following{/other_user}",
+        "gists_url": "https://api.github.com/users/adamwathan/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/adamwathan/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/adamwathan/subscriptions",
+        "organizations_url": "https://api.github.com/users/adamwathan/orgs",
+        "repos_url": "https://api.github.com/users/adamwathan/repos",
+        "events_url": "https://api.github.com/users/adamwathan/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/adamwathan/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "version": "7a773cc9932e6e7716905c29e53e4cc8985babf6",
+      "committed_at": "2015-01-28T15:19:54Z",
+      "change_status": {
+        "total": 17,
+        "additions": 17,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/aac58f02ec1aaaad7f88/7a773cc9932e6e7716905c29e53e4cc8985babf6"
+    }
+  ]
+}
