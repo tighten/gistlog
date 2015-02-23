@@ -1,10 +1,11 @@
 <?php namespace Gistlog\Gists;
 
 use Carbon\Carbon;
-use Michelf\MarkdownExtra;
 
 class Comment
 {
+    use MarkdownRenderable;
+
     public $body;
     public $author;
     public $avatarUrl;
@@ -35,6 +36,6 @@ class Comment
      */
     public function renderHtml()
     {
-        return MarkdownExtra::defaultTransform($this->body);
+       return $this->render($this->body);
     }
 }

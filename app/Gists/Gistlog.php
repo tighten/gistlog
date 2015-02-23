@@ -1,10 +1,11 @@
 <?php namespace Gistlog\Gists;
 
 use Carbon\Carbon;
-use Michelf\MarkdownExtra;
 
 class Gistlog
 {
+    use MarkdownRenderable;
+
     public $id;
     public $title;
     public $content;
@@ -62,7 +63,7 @@ class Gistlog
     public function renderHtml()
     {
         if ($this->language === 'Markdown') {
-            return MarkdownExtra::defaultTransform($this->content);
+            return $this->render($this->content);
         }
         return "<pre><code>" . $this->content . "\n</code></pre>";
     }
