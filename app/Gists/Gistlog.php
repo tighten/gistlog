@@ -64,7 +64,7 @@ class Gistlog
         if ($this->language === 'Markdown') {
             return MarkdownExtra::defaultTransform($this->content);
         }
-        return '<pre><code>' . $this->content . '</code></pre>';
+        return "<pre><code>" . $this->content . "\n</code></pre>";
     }
 
     /**
