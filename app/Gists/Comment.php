@@ -1,6 +1,7 @@
 <?php namespace Gistlog\Gists;
 
 use Carbon\Carbon;
+use Michelf\MarkdownExtra;
 
 class Comment
 {
@@ -27,5 +28,13 @@ class Comment
         $comment->updatedAt = Carbon::parse($githubComment['updated_at']);
 
         return $comment;
+    }
+
+    /**
+     * @return string
+     */
+    public function renderHtml()
+    {
+        return MarkdownExtra::defaultTransform($this->body);
     }
 }
