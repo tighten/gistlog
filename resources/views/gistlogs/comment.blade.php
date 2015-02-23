@@ -9,7 +9,7 @@
             commented {{ $comment->updatedAt->diffForHumans() }}
         </div>
         <div class="comment__body">
-            {{ $comment->body }}
+            {!! $comment->renderHtml() !!}
         </div>
     </div>
 </div>
