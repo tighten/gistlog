@@ -8,6 +8,7 @@ class Gistlog
     public $id;
     public $title;
     public $content;
+    public $language;
     public $author;
     public $avatarUrl;
     public $link;
@@ -40,6 +41,7 @@ class Gistlog
         $gistlog->id = $githubGist['id'];
         $gistlog->title = $githubGist['description'];
         $gistlog->content = array_values($githubGist['files'])[0]['content'];
+        $gistlog->language = array_values($githubGist['files'])[0]['language'];
         $gistlog->author = $githubGist['owner']['login'];
         $gistlog->avatarUrl = $githubGist['owner']['avatar_url'];
         $gistlog->link = $githubGist['html_url'];
@@ -59,7 +61,10 @@ class Gistlog
      */
     public function renderHtml()
     {
-        return MarkdownExtra::defaultTransform($this->content);
+        if ($this->language === 'Markdown') {
+            return MarkdownExtra::defaultTransform($this->content);
+        }
+        return "<pre><code>" . $this->content . "\n</code></pre>";
     }
 
     /**
