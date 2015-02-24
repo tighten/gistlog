@@ -1,11 +1,10 @@
 <?php namespace Gistlog\Gists;
 
 use Carbon\Carbon;
+use Gistlog\ContentParser\ContentParserFacade as ContentParser;
 
 class Gistlog
 {
-    use MarkdownRenderable;
-
     public $id;
     public $title;
     public $content;
@@ -63,7 +62,7 @@ class Gistlog
     public function renderHtml()
     {
         if ($this->language === 'Markdown') {
-            return $this->renderFromMarkdown($this->content);
+            return ContentParser::transform($this->content);
         }
         return "<pre><code>" . $this->content . "\n</code></pre>";
     }
