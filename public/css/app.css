@@ -3520,6 +3520,21 @@ tbody.collapse.in {
 @media (min-width: 768px) {
   .gistlog__title {
     font-size: 60px;
+  }
+}
+.gistlog__author {
+  font-size: 19px;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  margin-top: 0.75em;
+  color: #969696;
+}
+.gistlog__author a {
+  color: #4b4b4b;
+}
+@media (min-width: 768px) {
+  .gistlog__author {
+    font-size: 23px;
     margin-bottom: 1em;
   }
 }
