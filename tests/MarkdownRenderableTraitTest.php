@@ -91,6 +91,32 @@ class MarkdownRenderableTraitTest extends TestCase
             $obj->renderFromMarkdown('@adamwathan')
         );
     }
+
+    /** @test */
+    public function github_username_can_be_in_brackets()
+    {
+        $obj = new MarkdownRenderableStub;
+
+        $this->assertEquals(
+            '<p>Adam Wathan (<a href="http://github.com/adamwathan" target="_blank">@adamwathan</a>)</p>',
+            $obj->renderFromMarkdown('Adam Wathan (@adamwathan)')
+        );
+
+        $this->assertEquals(
+            '<p>Adam Wathan [<a href="http://github.com/adamwathan" target="_blank">@adamwathan</a>]</p>',
+            $obj->renderFromMarkdown('Adam Wathan [@adamwathan]')
+        );
+
+        $this->assertEquals(
+            '<p>Adam Wathan {<a href="http://github.com/adamwathan" target="_blank">@adamwathan</a>}</p>',
+            $obj->renderFromMarkdown('Adam Wathan {@adamwathan}')
+        );
+
+        $this->assertEquals(
+            '<p>Adam Wathan &lt;<a href="http://github.com/adamwathan" target="_blank">@adamwathan</a>></p>',
+            $obj->renderFromMarkdown('Adam Wathan <@adamwathan>')
+        );
+    }
 }
 
 class MarkdownRenderableStub
