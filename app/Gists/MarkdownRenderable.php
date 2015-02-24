@@ -4,14 +4,14 @@ use Michelf\MarkdownExtra;
 
 trait MarkdownRenderable {
 
-    public function render($html)
+    public function renderFromMarkdown($markdown)
     {
-        $md = MarkdownExtra::defaultTransform($html);
+        $html = MarkdownExtra::defaultTransform($markdown);
 
-        $link = function ($item) {
+        $createLinks = function ($item) {
             return '<a href="http://github.com/' . trim($item[0], '@') . '" target="_blank">' . $item[0] . '</a>';
         };
 
-        return preg_replace_callback('/(@\w+)/', $link, $md);
+        return trim(preg_replace_callback('/(?<=^|(?<=[^a-zA-Z0-9-_\.]))@([A-Za-z]+[A-Za-z0-9]+)/', $createLinks, $html));
     }
 }

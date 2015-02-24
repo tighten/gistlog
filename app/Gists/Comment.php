@@ -36,6 +36,6 @@ class Comment
      */
     public function renderHtml()
     {
-       return $this->render($this->body);
+       return $this->renderFromMarkdown($this->body);
     }
 }

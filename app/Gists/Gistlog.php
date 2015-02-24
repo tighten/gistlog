@@ -63,7 +63,7 @@ class Gistlog
     public function renderHtml()
     {
         if ($this->language === 'Markdown') {
-            return $this->render($this->content);
+            return $this->renderFromMarkdown($this->content);
         }
         return "<pre><code>" . $this->content . "\n</code></pre>";
     }
