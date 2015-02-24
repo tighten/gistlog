@@ -8,7 +8,7 @@
 
         <article class="gistlog">
             <h1 class="gistlog__title">{{ $gistlog->title }}</h1>
-            <h2 class="gistlog__author">by <a href="https://github.com/{{ $gistlog->author }}">{{ $gistlog->author }}</a></h2>
+            <span class="gistlog__author">By <a href="https://github.com/{{ $gistlog->author }}">{{ $gistlog->author }}</a></span>
 
             <div class="gistlog__content js-gistlog-content">
                 {!! $gistlog->renderHtml() !!}

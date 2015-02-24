@@ -3523,19 +3523,18 @@ tbody.collapse.in {
   }
 }
 .gistlog__author {
-  font-size: 19px;
-  font-weight: 400;
-  margin-bottom: 0.5em;
-  margin-top: 0.75em;
-  color: #969696;
-}
-.gistlog__author a {
   color: #4b4b4b;
+  display: block;
+  font-family: "Linux Libertine";
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 0.75em;
+  margin-top: -0.5em;
 }
 @media (min-width: 768px) {
   .gistlog__author {
-    font-size: 23px;
-    margin-bottom: 1em;
+    font-size: 26px;
+    margin-bottom: 1.25em;
   }
 }
 .gistlog__content {
