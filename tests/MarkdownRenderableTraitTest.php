@@ -47,6 +47,17 @@ class MarkdownRenderableTraitTest extends TestCase
             $obj->renderFromMarkdown('Hey @1foo')
         );
     }
+
+    /** @test */
+    public function it_recognizes_github_usernames_that_include_dashes()
+    {
+        $obj = new MarkdownRenderableStub;
+
+        $this->assertEquals(
+            '<p>Hey <a href="http://github.com/adam-wathan" target="_blank">@adam-wathan</a></p>',
+            $obj->renderFromMarkdown('Hey @adam-wathan')
+        );
+    }
 }
 
 class MarkdownRenderableStub
