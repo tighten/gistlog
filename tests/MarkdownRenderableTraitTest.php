@@ -69,6 +69,17 @@ class MarkdownRenderableTraitTest extends TestCase
             $obj->renderFromMarkdown('Hey @-adamwathan')
         );
     }
+
+    /** @test */
+    public function github_usernames_can_be_a_single_character()
+    {
+        $obj = new MarkdownRenderableStub;
+
+        $this->assertEquals(
+            '<p>Hey <a href="http://github.com/A" target="_blank">@A</a></p>',
+            $obj->renderFromMarkdown('Hey @A')
+        );
+    }
 }
 
 class MarkdownRenderableStub
