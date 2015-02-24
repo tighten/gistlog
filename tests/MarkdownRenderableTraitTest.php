@@ -80,6 +80,17 @@ class MarkdownRenderableTraitTest extends TestCase
             $obj->renderFromMarkdown('Hey @A')
         );
     }
+
+    /** @test */
+    public function github_username_can_be_the_first_string_in_the_content()
+    {
+        $obj = new MarkdownRenderableStub;
+
+        $this->assertEquals(
+            '<p><a href="http://github.com/adamwathan" target="_blank">@adamwathan</a></p>',
+            $obj->renderFromMarkdown('@adamwathan')
+        );
+    }
 }
 
 class MarkdownRenderableStub
