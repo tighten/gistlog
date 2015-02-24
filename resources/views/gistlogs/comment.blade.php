@@ -6,7 +6,7 @@
     <div class="comment__content">
         <div class="comment__meta">
             <a href="https://github.com/{{ $comment->author }}">{{ $comment->author }}</a>
-            commented {{ $comment->updatedAt->diffForHumans() }}
+            commented <a href="{{ $gistlog->link }}#comment-{{ $comment->id }}">{{ $comment->updatedAt->diffForHumans() }}</a>
         </div>
         <div class="comment__body">
             {!! $comment->renderHtml() !!}

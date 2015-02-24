@@ -8,6 +8,7 @@ class Comment
     public $body;
     public $author;
     public $avatarUrl;
+    public $id;
 
     /**
      * @var Carbon
@@ -26,7 +27,8 @@ class Comment
         $comment->author = $githubComment['user']['login'];
         $comment->avatarUrl = $githubComment['user']['avatar_url'];
         $comment->updatedAt = Carbon::parse($githubComment['updated_at']);
-
+        $comment->id = $githubComment['id'];
+        
         return $comment;
     }
 
