@@ -1,11 +1,10 @@
 <?php namespace Gistlog\Gists;
 
 use Carbon\Carbon;
+use Gistlog\ContentParser\ContentParserFacade as ContentParser;
 
 class Comment
 {
-    use MarkdownRenderable;
-
     public $body;
     public $author;
     public $avatarUrl;
@@ -36,6 +35,6 @@ class Comment
      */
     public function renderHtml()
     {
-       return $this->renderFromMarkdown($this->body);
+       return ContentParser::transform($this->body);
     }
 }
