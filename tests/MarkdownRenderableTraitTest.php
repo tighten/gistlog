@@ -36,6 +36,17 @@ class MarkdownRenderableTraitTest extends TestCase
             $obj->renderFromMarkdown('Hey @kayladnls!')
         );
     }
+
+    /** @test */
+    public function it_recognizes_github_usernames_that_begin_with_a_number()
+    {
+        $obj = new MarkdownRenderableStub;
+
+        $this->assertEquals(
+            '<p>Hey <a href="http://github.com/1foo" target="_blank">@1foo</a></p>',
+            $obj->renderFromMarkdown('Hey @1foo')
+        );
+    }
 }
 
 class MarkdownRenderableStub
