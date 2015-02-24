@@ -58,6 +58,17 @@ class MarkdownRenderableTraitTest extends TestCase
             $obj->renderFromMarkdown('Hey @adam-wathan')
         );
     }
+
+    /** @test */
+    public function github_usernames_cannot_begin_with_a_dash()
+    {
+        $obj = new MarkdownRenderableStub;
+
+        $this->assertEquals(
+            '<p>Hey @-adamwathan</p>',
+            $obj->renderFromMarkdown('Hey @-adamwathan')
+        );
+    }
 }
 
 class MarkdownRenderableStub
