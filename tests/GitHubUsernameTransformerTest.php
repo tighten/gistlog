@@ -117,4 +117,15 @@ class GitHubUsernameTransformerTest extends TestCase
             $transformer->transform('Adam Wathan <@adamwathan>')
         );
     }
+
+    /** @test */
+    public function it_doesnt_convert_usernames_in_links()
+    {
+        $transformer = new GitHubUsernameTransformer;
+
+        $this->assertEquals(
+            'I am <a href="http://twitter.com/stauffermatt">@stauffermatt</a> on Twitter',
+            $transformer->transform('I am <a href="http://twitter.com/stauffermatt">@stauffermatt</a> on Twitter')
+        );
+    }
 }
