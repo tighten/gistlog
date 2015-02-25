@@ -42,13 +42,4 @@ class GistClient
         $response = $this->github->getHttpClient()->get("gists/{$gistId}/comments");
         return ResponseMediator::getContent($response);
     }
-
-    /**
-     * @param string $url
-     * @return array
-     */
-    private function get($url)
-    {
-        return $this->guzzle->get($this->baseUrl . $url)->json();
-    }
 }
