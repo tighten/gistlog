@@ -5,6 +5,7 @@ use Exception;
 use Gistlog\Gists\GistClient;
 use Github\Client as GitHubClient;
 use Github\HttpClient\Message\ResponseMediator;
+use Symfony\Component\Yaml\Yaml;
 
 class AuthorClient
 {
@@ -66,10 +67,15 @@ class AuthorClient
         }, $gists));
     }
 
+    /**
+     * @param array $gist
+     * @return bool
+     */
     private function gistIsDraft($gist)
     {
-        $config = $gist['files']['gistlog.yml'];
-        dd($config['content']);
+        $config = Yaml::parse($gist['files']['gistlog.yml']['content']);
+
+        return ! array_get($config, 'published', true);
     }
 
     /**
@@ -78,16 +84,6 @@ class AuthorClient
      */
     private function gistIsGistlogPublished($gist)
     {
-        if (count($gist['files']) == 0) {
-            return false;
-        }
-
-        foreach ($gist['files'] as $file) {
-            if ($file['filename'] == 'gistlog.yml') {
-                return true;
-            }
-        }
-
-        return false;
+        return array_key_exists('gistlog.yml', $gist['files']);
     }
 }

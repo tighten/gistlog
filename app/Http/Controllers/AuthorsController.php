@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\View;
 
 class AuthorsController extends Controller
 {
+	/**
+	 * @var AuthorRepository
+	 */
 	private $repository;
 
 	public function __construct(AuthorRepository $repository)
@@ -16,8 +19,12 @@ class AuthorsController extends Controller
 	{
 		$author = $this->repository->findByUsername($username);
 
+		if ($author->gists->isEmpty()) {
+			abort(404);
+		}
+
 		return View::make('authors.show')
 			->with('author', $author)
-			->with('pageTitle', $author->name);
+			->with('pageTitle', "{$author->name} (@{$author->username})");
 	}
 }
