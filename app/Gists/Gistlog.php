@@ -49,8 +49,8 @@ class Gistlog
         $gistlog->createdAt = Carbon::parse($githubGist['created_at']);
         $gistlog->updatedAt = Carbon::parse($githubGist['updated_at']);
 
-        $gistlog->comments = collect($githubComments)->map(function ($comment) {
-            return Comment::fromGitHub($comment);
+        $gistlog->comments = collect($githubComments)->map(function ($comment) use ($githubGist) {
+            return Comment::fromGitHub($githubGist['id'], $comment);
         });
 
         return $gistlog;
