@@ -41,11 +41,11 @@ class GistsController extends Controller
 		]);
 	}
 
-	public function show($userName, $gistId)
+	public function show($username, $gistId)
 	{
 		$gistlog = $this->repository->findById($gistId);
 
-		if ($userName !== $gistlog->author) {
+		if ($username !== $gistlog->author) {
 			dd('bad url dummy');
 		}
 
