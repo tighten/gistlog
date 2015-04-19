@@ -12,7 +12,7 @@
 
             <ul>
                 @foreach ($author->gists as $gist)
-                    <li><a href="/{{ $author->username }}/{{ $gist->id }}">{{ $gist->title }}</a></li>
+                    <li>{{ $gist->createdAt->format('Y-m-d') }} - <a href="/{{ $author->username }}/{{ $gist->id }}">{{ $gist->title }}</a></li>
                 @endforeach
             </ul>
         </article>
