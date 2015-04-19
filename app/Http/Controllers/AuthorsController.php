@@ -20,7 +20,7 @@ class AuthorsController extends Controller
         $author = $this->repository->findByUsername($username);
 
         if ($author->gists->isEmpty()) {
-            abort(404);
+            return redirect("https://github.com/{$username}");
         }
 
         return View::make('authors.show')
