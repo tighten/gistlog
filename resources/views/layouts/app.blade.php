@@ -32,7 +32,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">Gistlog</a>
+				<a class="navbar-brand" href="/"><img src="/img/gistlog-logo.png" class="logo" alt="Gistlog"></a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="primary-nav-collapse">
