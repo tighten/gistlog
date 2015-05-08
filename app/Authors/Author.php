@@ -27,7 +27,7 @@ class Author
         $author->id = $gitHubUser['id'];
         $author->avatarUrl = $gitHubUser['avatar_url'];
         $author->link = $gitHubUser['html_url'];
-        $author->name = $gitHubUser['name'];
+        $author->name = isset($gitHubUser['name']) ? $gitHubUser['name'] : "";
         $author->username = $gitHubUser['login'];
 
         $author->gists = collect($gitHubGists)->map(function ($gist) {
