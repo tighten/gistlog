@@ -32,8 +32,10 @@
 @endsection
 
 @section('scripts')
-    <script>hljs.initHighlightingOnLoad();</script>
     <script>
+    hljs.configure({ languages: [] });
+    hljs.initHighlightingOnLoad();
+
     $(function() {
         var preElement = $('.js-gistlog-content pre').each(function (index) {
             var lineNumbers = '<div class="line-numbers">';
