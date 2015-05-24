@@ -3597,6 +3597,8 @@ tbody.collapse.in {
   font-size: 13px;
   line-height: 1.5;
   padding-left: 1.5em;
+  white-space: pre;
+  word-wrap: normal;
 }
 .gistlog__content pre > code * {
   font-weight: normal !important;
@@ -3693,3 +3695,5 @@ code {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
+
+/*# sourceMappingURL=app.css.map */
