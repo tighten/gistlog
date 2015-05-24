@@ -32,8 +32,10 @@
 @endsection
 
 @section('scripts')
-    <script>hljs.initHighlightingOnLoad();</script>
     <script>
+    hljs.configure({ languages: [] });
+    hljs.initHighlightingOnLoad();
+
     $(function() {
         $('.js-gistlog-content pre').each(function () {
             var numberOfLines = $(this).find('code').html().split(/\n/).length - 1;
