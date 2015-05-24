@@ -145,7 +145,7 @@ return [
 		'Gistlog\Providers\EventServiceProvider',
 		'Gistlog\Providers\RouteServiceProvider',
 
-		'Gistlog\Providers\GistClientServiceProvider',
+		'Gistlog\Providers\GitHubClientServiceProvider',
 		'Gistlog\Providers\ContentParserServiceProvider',
 	],
 

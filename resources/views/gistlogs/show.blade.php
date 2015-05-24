@@ -38,7 +38,8 @@
 
     $(function() {
         $('.js-gistlog-content pre').each(function () {
-            var numberOfLines = $(this).find('code').html().split(/\n/).length - 1;
+            // var numberOfLines = $(this).find('code').html().split(/\n/).length - 1;
+            var numberOfLines = $(this).find('> span').length;
             var lineNumbers = [];
 
             for (var i = 1; i <= numberOfLines; i++) {

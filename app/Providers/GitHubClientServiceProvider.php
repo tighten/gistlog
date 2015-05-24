@@ -5,11 +5,11 @@ use Github\Client as GitHubClient;
 use Github\HttpClient\CachedHttpClient as CachedGitHubClient;
 use Illuminate\Support\ServiceProvider;
 
-class GistClientServiceProvider extends ServiceProvider
+class GitHubClientServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->singleton(GistClient::class, function ($app) {
+        $this->app->singleton(GitHubClient::class, function ($app) {
 
             $githubClient = new GitHubClient(
                 new CachedGitHubClient([
@@ -29,7 +29,7 @@ class GistClientServiceProvider extends ServiceProvider
                 );
             }
 
-            return new GistClient($githubClient);
+            return $githubClient;
         });
     }
 }
