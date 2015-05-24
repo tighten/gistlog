@@ -35,19 +35,16 @@
     <script>hljs.initHighlightingOnLoad();</script>
     <script>
     $(function() {
-        var preElement = $('.js-gistlog-content pre').each(function (index) {
-            var lineNumbers = '<div class="line-numbers">';
+        $('.js-gistlog-content pre').each(function () {
             var numberOfLines = $(this).find('code').html().split(/\n/).length - 1;
+            var lineNumbers = [];
 
             for (var i = 1; i <= numberOfLines; i++) {
-                lineNumbers = lineNumbers + i.toString() + "\n";
+                lineNumbers.push(i);
             }
 
-            lineNumbers = lineNumbers + '</div>';
-
-            $(this).append(lineNumbers);
+            $(this).append('<div class="line-numbers">' + lineNumbers.join("\n") + '</div>');
         });
     });
-
     </script>
 @endsection
