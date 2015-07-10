@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{ isset($pageTitle) ? $pageTitle . ' | ' : '' }}Gistlog</title>
 
+	@yield ('meta')
+
 	<link href="/css/app.css" rel="stylesheet">
 	@if (isset($gistlog) && $gistlog->isSecret())
 	<meta name="robots" content="noindex, nofollow">
