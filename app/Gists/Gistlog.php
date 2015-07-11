@@ -91,4 +91,10 @@ class Gistlog
     {
         return ! $this->isPublic();
     }
+
+    public function getPreview()
+    {
+        $body = strip_tags($this->renderHtml());
+        return substr($body, 0, strpos($body, ' ', 200));
+    }
 }

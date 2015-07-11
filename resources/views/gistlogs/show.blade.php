@@ -50,3 +50,16 @@
     });
     </script>
 @endsection
+
+@section('meta')
+        <!-- Schema.org markup for Google+ -->
+        <meta itemprop="name" content="{{ $gistlog->title }}">
+        <meta itemprop="description" content="{{ $gistlog->getPreview() }}">
+
+        <!-- Open Graph data -->
+        <meta property="og:title" content="{{ $gistlog->title }}">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="{{ Request::url() }}">
+        <meta property="og:description" content="{{ $gistlog->getPreview() }}">
+        <meta property="og:site_name" content="Gistlog">
+@endsection
