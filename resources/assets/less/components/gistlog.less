@@ -2,11 +2,15 @@
     margin-bottom: 2em;
 }
 
+.gistlog-author-block {
+  text-align: center;
+}
+
 .gistlog__title {
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 0.5em;
-    margin-top: 0.75em;
+    margin-top: 0.5em;
 
     @media (min-width: @screen-sm-min) {
         font-size: 60px;
@@ -14,18 +18,50 @@
 }
 
 .gistlog__author {
-    color: rgb(75, 75, 75);
+    color: #bbb;
     display: block;
     font-family: "Linux Libertine";
     font-size: 22px;
     font-weight: 400;
     margin-bottom: 0.75em;
-    margin-top: -0.5em;
+    margin-top: -1em;
 
     @media (min-width: @screen-sm-min) {
         font-size: 26px;
         margin-bottom: 1.25em;
     }
+}
+
+.gistlog-article {
+    margin-bottom: 4em;
+}
+
+.gistlog-article__title {
+
+    display: block;
+    font-size: 1.75em;
+    font-weight: 500;
+    color: #333;
+    transition: 0.5s;
+    margin-bottom: 0.3em;
+
+  &:hover, &:active, &:focus{
+    color: #337ab7;
+    text-decoration: none;
+  }
+
+}
+
+.gistlog-article__timestamp {
+    font-weight: 700;
+    color: #bbb;
+    margin-bottom: 0.4em;
+    display: block;
+    text-transform: uppercase;
+}
+
+.gistlog-article__summary {
+    &:extend(.gistlog__content);
 }
 
 .gistlog__content {

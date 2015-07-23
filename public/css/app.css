@@ -1974,7 +1974,7 @@ select[multiple].form-group-lg .form-control {
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
@@ -3511,11 +3511,14 @@ tbody.collapse.in {
 .gistlog {
   margin-bottom: 2em;
 }
+.gistlog-author-block {
+  text-align: center;
+}
 .gistlog__title {
   font-size: 40px;
   font-weight: 700;
   margin-bottom: 0.5em;
-  margin-top: 0.75em;
+  margin-top: 0.5em;
 }
 @media (min-width: 768px) {
   .gistlog__title {
@@ -3523,13 +3526,13 @@ tbody.collapse.in {
   }
 }
 .gistlog__author {
-  color: #4b4b4b;
+  color: #bbb;
   display: block;
   font-family: "Linux Libertine";
   font-size: 22px;
   font-weight: 400;
   margin-bottom: 0.75em;
-  margin-top: -0.5em;
+  margin-top: -1em;
 }
 @media (min-width: 768px) {
   .gistlog__author {
@@ -3537,7 +3540,32 @@ tbody.collapse.in {
     margin-bottom: 1.25em;
   }
 }
-.gistlog__content {
+.gistlog-article {
+  margin-bottom: 4em;
+}
+.gistlog-article__title {
+  display: block;
+  font-size: 1.75em;
+  font-weight: 500;
+  color: #333;
+  transition: 0.5s;
+  margin-bottom: 0.3em;
+}
+.gistlog-article__title:hover,
+.gistlog-article__title:active,
+.gistlog-article__title:focus {
+  color: #337ab7;
+  text-decoration: none;
+}
+.gistlog-article__timestamp {
+  font-weight: 700;
+  color: #bbb;
+  margin-bottom: 0.4em;
+  display: block;
+  text-transform: uppercase;
+}
+.gistlog__content,
+.gistlog-article__summary {
   -webkit-font-smoothing: antialiased;
   font-family: "Linux Libertine";
   font-size: 22px;
