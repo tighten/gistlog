@@ -27,14 +27,14 @@ class AuthorClient
     /**
      * @param $authorSlug
      * @return array
-     * @throws GistNotFoundException
      */
     public function getAuthor($authorSlug)
     {
         try {
             return $this->github->api('users')->show($authorSlug);
         } catch (Exception $e) {
-            throw new GistNotFoundException($gistId, $e->getMessage());
+            // throw new GistNotFoundException($gistId, $e->getMessage());
+            throw new Exception($e->getMessage());
         }
     }
 
