@@ -19,7 +19,7 @@
                             Posted {{ $gist->createdAt->diffForHumans() }}
                         </span>
                         <p class="gistlog-article__summary">
-                            {{ $gist->getPreview() }}
+                            {{ $gist->getPreview() }}&hellip;
                         </p>
                     </li>
                 @endforeach
