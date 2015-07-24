@@ -24,11 +24,10 @@ class GistClient
      * @return array
      * @throws GistNotFoundException
      */
-    public function getGist($gistId)
-    {
+    public function GetGist($gistId) {
         try {
             return $this->github->api('gists')->show($gistId);
-        } catch (Exception $e) {
+        } catch (Exception $e){
             throw new GistNotFoundException($gistId, $e->getMessage());
         }
     }

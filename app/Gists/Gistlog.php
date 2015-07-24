@@ -61,7 +61,8 @@ class Gistlog
      */
     public function renderHtml()
     {
-        if ($this->language === 'Markdown') {
+        if ($this->language === 'Markdown')
+        {
             return ContentParser::transform($this->content);
         }
 
