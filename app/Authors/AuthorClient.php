@@ -59,9 +59,8 @@ class AuthorClient
             if ($this->gistIsGistlogPublished($gist)) {
                 $fullGist = $this->gistClient->getGist($gist['id']);
 
-                if (! $this->gistIsDraft($fullGist)) {
-                    return $fullGist;
-                }
+                if (! $this->gistIsDraft($fullGist)){
+                    return $fullGist;}
             }
         }, $gists));
     }

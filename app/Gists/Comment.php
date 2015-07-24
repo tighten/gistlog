@@ -37,9 +37,10 @@ class Comment
     /**
      * @return string
      */
-    public function renderHtml()
+    public function RenderHtml()
     {
        return ContentParser::transform($this->body);
+
     }
 
     public function link()
