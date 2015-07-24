@@ -23,9 +23,8 @@ class GistClientServiceProvider extends ServiceProvider
             // but if they aren't, no big deal.
             if (config('services.github.client_id') && config('services.github.client_secret')) {
                 $githubClient->authenticate(
-                    config('services.github.client_id'),
-                    config('services.github.client_secret'),
-                    GitHubClient::AUTH_URL_CLIENT_ID
+                    config('services.github.token'),
+                    GitHubClient::AUTH_HTTP_TOKEN
                 );
             }
 
