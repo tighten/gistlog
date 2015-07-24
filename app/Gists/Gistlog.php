@@ -95,6 +95,11 @@ class Gistlog
     public function getPreview()
     {
         $body = strip_tags($this->renderHtml());
+
+        if (strlen($body) < 200) {
+            return $body;
+        }
+
         return substr($body, 0, strpos($body, ' ', 200));
     }
 }
