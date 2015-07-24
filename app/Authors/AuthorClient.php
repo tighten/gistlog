@@ -44,8 +44,7 @@ class AuthorClient
      */
     public function getAuthorGists($username)
     {
-        $response = $this->github->getHttpClient()->get("users/{$username}/gists");
-        return ResponseMediator::getContent($response);
+        return $this->github->api('users')->gists($username);
     }
 
     /**
