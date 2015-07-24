@@ -1,19 +1,19 @@
 .u-sr-only { .sr-only; }
 
 .collapse {
-  display: none;
-  visibility: hidden;
+    display: none;
+    visibility: hidden;
 
-  &.in      { display: block; visibility: visible; }
-  tr&.in    { display: table-row; }
-  tbody&.in { display: table-row-group; }
+    &.in      { display: block; visibility: visible; }
+    tr&.in    { display: table-row; }
+    tbody&.in { display: table-row-group; }
 }
 
 .collapsing {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  .transition-property(~"height, visibility");
-  .transition-duration(.35s);
-  .transition-timing-function(ease);
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    .transition-property(~"height, visibility");
+    .transition-duration(.35s);
+    .transition-timing-function(ease);
 }

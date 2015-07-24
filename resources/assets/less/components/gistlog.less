@@ -3,7 +3,7 @@
 }
 
 .gistlog-author-block {
-  text-align: center;
+    text-align: center;
 }
 
 .gistlog__title {
@@ -34,41 +34,39 @@
 
 .gistlog-article {
     margin-bottom: 4em;
-}
 
-.gistlog-article__title {
+    &__title {
+        color: #333;
+        display: block;
+        font-size: 1.75em;
+        font-weight: 500;
+        margin-bottom: 0.3em;
+        transition: 0.5s;
 
-    display: block;
-    font-size: 1.75em;
-    font-weight: 500;
-    color: #333;
-    transition: 0.5s;
-    margin-bottom: 0.3em;
+        &:hover, &:active, &:focus{
+            color: #337ab7;
+            text-decoration: none;
+        }
+    }
 
-  &:hover, &:active, &:focus{
-    color: #337ab7;
-    text-decoration: none;
-  }
+    &__timestamp {
+        color: #bbb;
+        display: block;
+        font-weight: 700;
+        margin-bottom: 0.4em;
+        text-transform: uppercase;
+    }
 
-}
-
-.gistlog-article__timestamp {
-    font-weight: 700;
-    color: #bbb;
-    margin-bottom: 0.4em;
-    display: block;
-    text-transform: uppercase;
-}
-
-.gistlog-article__summary {
-    &:extend(.gistlog__content);
+    &__summary {
+        &:extend(.gistlog__content);
+    }
 }
 
 .gistlog__content {
-    -webkit-font-smoothing: antialiased;
     font-family: "Linux Libertine";
     font-size: 22px;
     line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
     word-break: normal;
 
     h1, h2, h3, h4, h5, h6 {
@@ -79,7 +77,6 @@
     }
 
     ul, ol {
-
         > li {
             margin-bottom: 0.5em;
 
@@ -96,6 +93,7 @@
     h2 {
         font-size: 32px;
     }
+
     h3 {
         font-size: 24px;
     }

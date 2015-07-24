@@ -6,3 +6,8 @@
 Turn your gists into easy, beautiful, responsive "Gistlogs". Just paste a Gist URL into Gistlog.co and you're up and running.
 
 An exercise in iterative development by [Matt Stauffer](http://mattstauffer.co/) and [Adam Wathan](http://adamwathan.me/) of [Tighten Co.](http://tighten.co/).
+
+### Contributing
+- Follow PSR-2
+- Four spaces for indentation
+- Alphabetize CSS property names

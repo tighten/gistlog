@@ -1974,7 +1974,7 @@ select[multiple].form-group-lg .form-control {
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
-  touch-action: manipulation;
+      touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
@@ -3544,12 +3544,12 @@ tbody.collapse.in {
   margin-bottom: 4em;
 }
 .gistlog-article__title {
+  color: #333;
   display: block;
   font-size: 1.75em;
   font-weight: 500;
-  color: #333;
-  transition: 0.5s;
   margin-bottom: 0.3em;
+  transition: 0.5s;
 }
 .gistlog-article__title:hover,
 .gistlog-article__title:active,
@@ -3558,18 +3558,18 @@ tbody.collapse.in {
   text-decoration: none;
 }
 .gistlog-article__timestamp {
-  font-weight: 700;
   color: #bbb;
-  margin-bottom: 0.4em;
   display: block;
+  font-weight: 700;
+  margin-bottom: 0.4em;
   text-transform: uppercase;
 }
 .gistlog__content,
 .gistlog-article__summary {
-  -webkit-font-smoothing: antialiased;
   font-family: "Linux Libertine";
   font-size: 22px;
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
   word-break: normal;
 }
 .gistlog__content h1,
@@ -3723,5 +3723,3 @@ code {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
-
-/*# sourceMappingURL=app.css.map */
