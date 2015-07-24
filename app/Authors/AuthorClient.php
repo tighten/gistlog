@@ -33,8 +33,8 @@ class AuthorClient
         try {
             return $this->github->api('users')->show($authorSlug);
         } catch (Exception $e) {
-            // throw new GistNotFoundException($gistId, $e->getMessage());
-            throw new Exception($e->getMessage());
+            // throw new Exception($e->getMessage());
+            dd("Sorry, but we are working on a fix for the authors page right now running into GitHub's API rate limits. Sorry for the downtime! - Matt");
         }
     }
 
