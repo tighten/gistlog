@@ -1,0 +1,87 @@
+{
+  "url": "https://api.github.com/gists/8f5ea4d44dbc5ccb77a3",
+  "forks_url": "https://api.github.com/gists/8f5ea4d44dbc5ccb77a3/forks",
+  "commits_url": "https://api.github.com/gists/8f5ea4d44dbc5ccb77a3/commits",
+  "id": "8f5ea4d44dbc5ccb77a3",
+  "git_pull_url": "https://gist.github.com/8f5ea4d44dbc5ccb77a3.git",
+  "git_push_url": "https://gist.github.com/8f5ea4d44dbc5ccb77a3.git",
+  "html_url": "https://gist.github.com/8f5ea4d44dbc5ccb77a3",
+  "files": {
+    "blog.MD": {
+      "filename": "blog.MD",
+      "type": "text/plain",
+      "language": "Markdown",
+      "raw_url": "https://gist.githubusercontent.com/JacobBennett/8f5ea4d44dbc5ccb77a3/raw/fb81c6b2666987c7e3556a67362ed20df76cf3a7/blog.MD",
+      "size": 963,
+      "truncated": false,
+      "content": "The end goal was to order a query by a list of specific values for a column, but then also order those by a created_at date in ascending order and then by id in ascending order\n\nThis proved to be more of a challenge than I originally thought. The solution I came up with is as follows.\n\n```SQL\nSELECT id, clientId, created_at \nFROM `claims` \nWHERE `clientId` IN ('FOO', 'BAR', 'BAZ', 'FIZZ') \nORDER BY clientId = 'FIZZ', clientId = 'BAZ', clientId = 'BAR', clientId = 'FOO', \ncreated_at ASC, id ASC\n```\n\nDirect your attention to line 4. Looking at this, you might assume that the returned order of the results would be `FIZZ, BAZ, BAR, FOO` but in fact, you would be wrong.\n\nWhile normally the order by statements seem to stack on top of the previous order statement, in appears that when using an `=` to define the order, the orders stack in reverse.\n\nThat is, the last order by statement containing the `=` was the first result returned. It's the little things."
+    },
+    "gistlog.yml": {
+      "filename": "gistlog.yml",
+      "type": "text/x-yaml",
+      "language": "YAML",
+      "raw_url": "https://gist.githubusercontent.com/JacobBennett/8f5ea4d44dbc5ccb77a3/raw/f5a9ef036c44acd7c8aba799cf290bdf0feb6e56/gistlog.yml",
+      "size": 73,
+      "truncated": false,
+      "content": "published_on: 05-15-2015"
+    }
+  },
+  "public": true,
+  "created_at": "2015-07-22T15:41:53Z",
+  "updated_at": "2015-07-26T05:01:32Z",
+  "description": "How SQL orders results when using equals",
+  "comments": 0,
+  "user": null,
+  "comments_url": "https://api.github.com/gists/8f5ea4d44dbc5ccb77a3/comments",
+  "owner": {
+    "login": "JacobBennett",
+    "id": 1517011,
+    "avatar_url": "https://avatars.githubusercontent.com/u/1517011?v=3",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/JacobBennett",
+    "html_url": "https://github.com/JacobBennett",
+    "followers_url": "https://api.github.com/users/JacobBennett/followers",
+    "following_url": "https://api.github.com/users/JacobBennett/following{/other_user}",
+    "gists_url": "https://api.github.com/users/JacobBennett/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/JacobBennett/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/JacobBennett/subscriptions",
+    "organizations_url": "https://api.github.com/users/JacobBennett/orgs",
+    "repos_url": "https://api.github.com/users/JacobBennett/repos",
+    "events_url": "https://api.github.com/users/JacobBennett/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/JacobBennett/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "forks": [],
+  "history": [
+    {
+      "user": {
+        "login": "JacobBennett",
+        "id": 1517011,
+        "avatar_url": "https://avatars.githubusercontent.com/u/1517011?v=3",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/JacobBennett",
+        "html_url": "https://github.com/JacobBennett",
+        "followers_url": "https://api.github.com/users/JacobBennett/followers",
+        "following_url": "https://api.github.com/users/JacobBennett/following{/other_user}",
+        "gists_url": "https://api.github.com/users/JacobBennett/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/JacobBennett/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/JacobBennett/subscriptions",
+        "organizations_url": "https://api.github.com/users/JacobBennett/orgs",
+        "repos_url": "https://api.github.com/users/JacobBennett/repos",
+        "events_url": "https://api.github.com/users/JacobBennett/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/JacobBennett/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "version": "5c63bf5ac93dfa4d0d62a9677ba015b34c6f9df5",
+      "committed_at": "2015-07-26T05:01:32Z",
+      "change_status": {
+        "total": 3,
+        "additions": 2,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/8f5ea4d44dbc5ccb77a3/5c63bf5ac93dfa4d0d62a9677ba015b34c6f9df5"
+    }
+  ]
+}
