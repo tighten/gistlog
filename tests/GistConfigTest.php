@@ -30,7 +30,7 @@ class GistConfigTest extends TestCase
         $this->assertFalse($config['published']);
     }
 
-//    /** @test */
+    /** @test */
     public function it_returns_default_values_when_gistlog_yml_does_not_provide_them()
     {
         $githubGist = $this->loadFixture('9e5ea4d44dbc5ccb77b4.json');
