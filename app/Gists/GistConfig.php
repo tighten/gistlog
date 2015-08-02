@@ -1,24 +1,24 @@
 <?php namespace Gistlog\Gists;
 
-use Illuminate\Support\Arr;
+use ArrayAccess;
 use Symfony\Component\Yaml\Yaml;
 
-class GistConfig implements \ArrayAccess
+class GistConfig implements ArrayAccess
 {
 
     /**
      * @var array
      */
-    private $default_settings = array(
+    private $defaultSettings = [
         'published'    => false,
         'published_on' => null,
         'preview'      => null
-    );
+    ];
 
     /**
      * @var array
      */
-    public $settings = array();
+    public $settings = [];
 
     /**
      * @param array|ArrayAccess $githubGist
@@ -27,19 +27,20 @@ class GistConfig implements \ArrayAccess
     public static function fromGitHub($githubGist)
     {
         $config = new self;
-        $config->settings = $config->default_settings;
+        $config->settings = $config->defaultSettings;
 
         if (! array_key_exists('gistlog.yml', $githubGist['files'])) {
             return $config;
         }
 
-        $user_settings = Yaml::parse($githubGist['files']['gistlog.yml']['content']);
-        if (! is_array($user_settings)) {
+        $userSettings = Yaml::parse($githubGist['files']['gistlog.yml']['content']);
+
+        if (! is_array($userSettings)) {
             return $config;
         }
 
-        foreach ($config->default_settings as $setting => $default_value) {
-            $config->settings[$setting] = Arr::get($user_settings, $setting, $default_value);
+        foreach ($config->defaultSettings as $setting => $defaultValue) {
+            $config->settings[$setting] = array_get($userSettings, $setting, $defaultValue);
         }
 
         return $config;
@@ -47,37 +48,37 @@ class GistConfig implements \ArrayAccess
 
 
     /**
-     * @param mixed $offset
+     * @param mixed $setting
      * @return bool
      */
-    public function offsetExists($offset)
+    public function offsetExists($setting)
     {
-        return isset($this->settings[$offset]);
+        return isset($this->settings[$setting]);
     }
 
     /**
-     * @param mixed $offset
+     * @param mixed $setting
      * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($setting)
     {
-        return $this->settings[$offset];
+        return $this->settings[$setting];
     }
 
     /**
-     * @param mixed $offset
+     * @param mixed $setting
      * @param mixed $value
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($setting, $value)
     {
-        Arr::set($this->settings, $offset, $value);
+        array_set($this->settings, $setting, $value);
     }
 
     /**
-     * @param mixed $offset
+     * @param mixed $setting
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($setting)
     {
-        Arr::set($this->settings, $offset, null);
+        array_set($this->settings, $setting, null);
     }
 }
