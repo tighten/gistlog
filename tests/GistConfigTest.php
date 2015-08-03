@@ -4,6 +4,7 @@ use Gistlog\Gists\GistConfig;
 
 class GistConfigTest extends TestCase
 {
+
     use GistFixtureHelpers;
 
     /** @test */
@@ -14,7 +15,7 @@ class GistConfigTest extends TestCase
         $config = GistConfig::fromGitHub($githubGist);
 
         $this->assertEquals("A test preview.", $config['preview']);
-        $this->assertEquals("05-15-2015", $config['published_on']);
+        $this->assertEquals("2015-05-15", $config['published_on']->format('Y-m-d'));
         $this->assertTrue($config['published']);
     }
 
@@ -39,6 +40,16 @@ class GistConfigTest extends TestCase
 
         $this->assertNull($config['preview']); // excluded
         $this->assertFalse($config['published']); // excluded
-        $this->assertEquals("05-15-2015", $config['published_on']); // provided
+        $this->assertEquals("2015-05-15", $config['published_on']->format('Y-m-d')); // provided
+    }
+
+    /** @test */
+    public function it_returns_a_null_value_when_a_date_value_is_invalid()
+    {
+        $githubGist = $this->loadFixture('bb5ea4d44dbc5ccb77s7.json');
+
+        $config = GistConfig::fromGitHub($githubGist);
+
+        $this->assertNull($config['published_on']);
     }
 }

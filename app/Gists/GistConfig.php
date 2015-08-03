@@ -1,6 +1,7 @@
 <?php namespace Gistlog\Gists;
 
 use ArrayAccess;
+use Carbon\Carbon;
 use Symfony\Component\Yaml\Yaml;
 
 class GistConfig implements ArrayAccess
@@ -19,6 +20,11 @@ class GistConfig implements ArrayAccess
      * @var array
      */
     public $settings = [];
+
+    /**
+     * @var array
+     */
+    private $dates = ['published_on'];
 
     /**
      * @param array|ArrayAccess $githubGist
@@ -41,6 +47,20 @@ class GistConfig implements ArrayAccess
 
         foreach ($config->defaultSettings as $setting => $defaultValue) {
             $config->settings[$setting] = array_get($userSettings, $setting, $defaultValue);
+        }
+
+        foreach ($config->dates as $setting) {
+
+            if (is_null($config->settings[$setting])) {
+                continue;
+            }
+
+            try {
+                $config->settings[$setting] = Carbon::createFromTimestamp($config->settings[$setting]);
+            } catch (\ErrorException $e) {
+                $config->settings[$setting] = null;
+            }
+
         }
 
         return $config;
