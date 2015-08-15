@@ -12,6 +12,7 @@ class Gistlog
     public $author;
     public $avatarUrl;
     public $link;
+    public $config;
     private $public;
 
     /**
@@ -52,6 +53,8 @@ class Gistlog
         $gistlog->comments = collect($githubComments)->map(function ($comment) use ($githubGist) {
             return Comment::fromGitHub($githubGist['id'], $comment);
         });
+
+        $gistlog->config = GistConfig::fromGitHub($githubGist);
 
         return $gistlog;
     }
@@ -94,6 +97,10 @@ class Gistlog
 
     public function getPreview()
     {
+        if (! is_null($this->config['preview'])) {
+            return $this->config['preview'];
+        }
+
         $body = strip_tags($this->renderHtml());
 
         if (strlen($body) < 200) {
