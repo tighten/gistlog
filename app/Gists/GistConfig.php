@@ -6,7 +6,6 @@ use Symfony\Component\Yaml\Yaml;
 
 class GistConfig implements ArrayAccess
 {
-
     /**
      * @var array
      */
@@ -50,7 +49,6 @@ class GistConfig implements ArrayAccess
         }
 
         foreach ($config->dates as $setting) {
-
             if (is_null($config->settings[$setting])) {
                 continue;
             }
@@ -60,7 +58,6 @@ class GistConfig implements ArrayAccess
             } catch (\ErrorException $e) {
                 $config->settings[$setting] = null;
             }
-
         }
 
         return $config;
