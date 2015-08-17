@@ -42,4 +42,16 @@ class GistClient
         $response = $this->github->getHttpClient()->get("gists/{$gistId}/comments");
         return ResponseMediator::getContent($response);
     }
+
+    /**
+     * @param $gistId
+     * @param $comment
+     * @return array
+     */
+    public function postGistComment($gistId, $comment)
+    {
+        $this->github->authenticate(/**replace this with a user token**/, GitHubClient::AUTH_HTTP_TOKEN);
+        $response = $this->github->getHttpClient()->post("gists/{$gistId}/comments", '{ "body": "Test comment" }');
+        return ResponseMediator::getContent($response);
+    }
 }

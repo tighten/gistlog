@@ -53,4 +53,9 @@ class GistsController extends Controller
 			->with('gistlog', $gistlog)
 			->with('pageTitle', $gistlog->title . ' | ' . $gistlog->author);
 	}
+
+    public function postComment($gistId){
+        $comment = "this is a test comment";
+        return $this->repository->postCommentToGistById($gistId, $comment);
+    }
 }

@@ -42,4 +42,8 @@ class GistlogRepository
         $url = rtrim($url, '/');
         return last(explode('/', $url));
     }
+
+    public function postCommentToGistById($id, $comment){
+        return $this->gistClient->postGistComment($id, $comment);
+    }
 }
