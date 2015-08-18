@@ -7,6 +7,7 @@ use Gistlog\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
@@ -54,8 +55,10 @@ class GistsController extends Controller
 			->with('pageTitle', $gistlog->title . ' | ' . $gistlog->author);
 	}
 
-    public function postComment($gistId){
-        $comment = "this is a test comment";
-        return $this->repository->postCommentToGistById($gistId, $comment);
+    public function postComment(Request $request, $gistId)
+    {
+        $this->validate($request, ['comment' => 'required']);
+
+        return $this->repository->postCommentToGistById($gistId, Input::get('comment'));
     }
 }

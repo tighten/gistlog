@@ -6,6 +6,7 @@ use Gistlog\Exceptions\GistNotFoundException;
 
 use Github\Client as GitHubClient;
 use Github\HttpClient\Message\ResponseMediator;
+use Illuminate\Support\Facades\Auth;
 
 class GistClient
 {
@@ -50,8 +51,8 @@ class GistClient
      */
     public function postGistComment($gistId, $comment)
     {
-        $this->github->authenticate(/**replace this with a user token**/, GitHubClient::AUTH_HTTP_TOKEN);
-        $response = $this->github->getHttpClient()->post("gists/{$gistId}/comments", '{ "body": "Test comment" }');
+        $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_HTTP_TOKEN);
+        $response = $this->github->getHttpClient()->post("gists/{$gistId}/comments", json_encode(['body' => $comment]));
         return ResponseMediator::getContent($response);
     }
 }
