@@ -33,7 +33,7 @@
 
 @section('scripts')
     <script>
-    hljs.configure({ languages: [] });
+    hljs.configure({ languages: ['{{ strtolower($gistlog->language) }}'] });
     hljs.initHighlightingOnLoad();
 
     $(function() {

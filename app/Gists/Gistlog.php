@@ -68,7 +68,7 @@ class Gistlog
             return ContentParser::transform($this->content);
         }
 
-        return "<pre><code>" . $this->content . "\n</code></pre>";
+        return "<pre><code>" . htmlspecialchars($this->content) . "\n</code></pre>";
     }
 
     /**
