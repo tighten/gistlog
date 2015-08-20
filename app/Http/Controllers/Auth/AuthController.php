@@ -6,6 +6,9 @@ use Exception;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
 use Laravel\Socialite\Facades\Socialite;
 use Validator;
 
@@ -30,6 +33,7 @@ class AuthController extends Controller
      */
     public function redirectToProvider()
     {
+        session()->put('redirect_to', URL::previous());
         return Socialite::driver('github')
             ->scopes(['gist', 'user:email'])
             ->redirect();
@@ -52,7 +56,8 @@ class AuthController extends Controller
 
         Auth::login($authUser, true);
 
-        return redirect('home');
+
+        return redirect($this->referringUrl());
     }
 
     private function findOrCreateUser($user)
@@ -75,6 +80,13 @@ class AuthController extends Controller
         Auth::logout();
 
         return redirect('/');
+    }
+
+    private function referringUrl()
+    {
+        $redirect_to = session()->get('redirect_to', 'home');
+        session()->forget('redirect_to');
+        return $redirect_to;
     }
 }
 

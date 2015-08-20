@@ -21,8 +21,20 @@
                 <a href="{{ $gistlog->link }}">View on GitHub</a> | <a href="{{ $gistlog->link }}#new_comment_field">Comment</a>
             </div>
         </article>
-        @if ($gistlog->hasComments())
             <h3>Comments</h3>
+            <form method="POST" action="{{route('comments.store', $gistlog->id)}}" id="comment-form" class="comment-form">
+                {!! csrf_field() !!}
+                {{--<input type="text" name="comment" placeholder="Join the discussion&hellip;"/>--}}
+                <textarea name="comment" cols="30" rows="1" placeholder="Join the discussion&hellip;" required></textarea>
+                <div class="text-right">
+                    @if(Auth::check())
+                        <input class="btn" type="submit" value="Comment"/>
+                    @else
+                        <a href="/auth/github">Sign In</a>
+                    @endif
+                </div>
+            </form>
+        @if ($gistlog->hasComments())
 
             @foreach ($gistlog->comments as $comment)
                 @include ('gistlogs.comment', ['gistlog' => $gistlog, 'comment' => $comment])
@@ -47,6 +59,8 @@
 
             $(this).append('<div class="line-numbers">' + lineNumbers.join("\n") + '</div>');
         });
+
+        autosize($('textarea'));
     });
     </script>
 @endsection

@@ -58,7 +58,7 @@ class GistsController extends Controller
     public function postComment(Request $request, $gistId)
     {
         $this->validate($request, ['comment' => 'required']);
-
-        return $this->repository->postCommentToGistById($gistId, Input::get('comment'));
+        $this->repository->postCommentToGistById($gistId, Input::get('comment'));
+        return redirect()->back();
     }
 }

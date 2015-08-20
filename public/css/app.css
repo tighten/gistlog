@@ -1974,7 +1974,7 @@ select[multiple].form-group-lg .form-control {
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
@@ -3644,6 +3644,27 @@ tbody.collapse.in {
   top: 0.5em;
   width: 2em;
 }
+.comment-form {
+  margin-bottom: 1em;
+}
+.comment-form textarea {
+  width: 100%;
+  padding: 0.75em 1em;
+  font-size: 1.25em;
+  border: 2px solid #ccc;
+  border-radius: 0.25em;
+  outline: none;
+  transition: margin 0.25s;
+}
+.comment-form textarea:focus {
+  margin-bottom: 0.25em;
+}
+.comment-form input {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  color: #fff;
+  background-color: #5B596B;
+  font-size: 1.25em;
+}
 .comment {
   clear: left;
   margin-bottom: 2em;
@@ -3723,3 +3744,5 @@ code {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
+
+/*# sourceMappingURL=app.css.map */

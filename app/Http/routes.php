@@ -8,7 +8,7 @@ Route::get('auth/github', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback');
 
 Route::post('posts/create', 'GistsController@storeAndRedirect');
-Route::post('{gistId}/comment', ['middleware' => 'auth', 'uses' => 'GistsController@postComment']);
+Route::post('comment/{gistId}', ['middleware' => ['auth', 'csrf'], 'uses' => 'GistsController@postComment', 'as' => 'comments.store']);
 
 Route::get('{username}/{gistId}', ['uses' => 'GistsController@show', 'as' => 'gists.show']);
 

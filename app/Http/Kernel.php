@@ -27,6 +27,7 @@ class Kernel extends HttpKernel {
 		'auth' => 'Gistlog\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'Gistlog\Http\Middleware\RedirectIfAuthenticated',
+        'csrf' => 'Gistlog\Http\Middleware\VerifyCsrfToken',
 	];
 
 }
