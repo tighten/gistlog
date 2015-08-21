@@ -127,5 +127,10 @@ class GitHubUsernameTransformerTest extends TestCase
             'I am <a href="http://twitter.com/stauffermatt">@stauffermatt</a> on Twitter',
             $transformer->transform('I am <a href="http://twitter.com/stauffermatt">@stauffermatt</a> on Twitter')
         );
+
+        $this->assertEquals(
+            'I am <a href="http://twitter.com/michaeldyrynda">little known @michaeldyrynda</a> on Twitter',
+            $transformer->transform('I am <a href="http://twitter.com/michaeldyrynda">little known @michaeldyrynda</a> on Twitter')
+        );
     }
 }
