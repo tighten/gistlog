@@ -3659,11 +3659,27 @@ tbody.collapse.in {
 .comment-form textarea:focus {
   margin-bottom: 0.25em;
 }
-.comment-form input {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+.comment-form input,
+.comment-form a {
+  background-color: #444;
   color: #fff;
-  background-color: #5B596B;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 1.25em;
+}
+.comment-form input:hover,
+.comment-form a:hover,
+.comment-form input:focus,
+.comment-form a:focus {
+  background-color: #2b2b2b;
+  color: #fff;
+}
+.comment-form .github-icon {
+  display: block;
+  fill: #fff;
+  float: left;
+  height: 1.125em;
+  margin: 0.1em 0.25em 0 0;
+  width: 1.125em;
 }
 .comment {
   clear: left;
@@ -3675,6 +3691,7 @@ tbody.collapse.in {
   width: 15%;
 }
 .comment__avatar img {
+  border-radius: 0.25em;
   width: 80%;
 }
 .comment__content {
@@ -3682,7 +3699,9 @@ tbody.collapse.in {
   width: 85%;
 }
 .comment__meta {
-  background: #eee;
+  background: #efefef;
+  border-radius: 0.25em;
+  font-size: 0.875em;
   padding: 1em;
 }
 .comment__body {

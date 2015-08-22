@@ -22,20 +22,10 @@
             </div>
         </article>
             <h3>Comments</h3>
-            <form method="POST" action="{{route('comments.store', $gistlog->id)}}" id="comment-form" class="comment-form">
-                {!! csrf_field() !!}
-                {{--<input type="text" name="comment" placeholder="Join the discussion&hellip;"/>--}}
-                <textarea name="comment" cols="30" rows="1" placeholder="Join the discussion&hellip;" required></textarea>
-                <div class="text-right">
-                    @if(Auth::check())
-                        <input class="btn" type="submit" value="Comment"/>
-                    @else
-                        <a href="/auth/github">Sign In</a>
-                    @endif
-                </div>
-            </form>
-        @if ($gistlog->hasComments())
 
+            @include('gistlogs.comment_form')
+
+        @if ($gistlog->hasComments())
             @foreach ($gistlog->comments as $comment)
                 @include ('gistlogs.comment', ['gistlog' => $gistlog, 'comment' => $comment])
             @endforeach
@@ -47,6 +37,41 @@
     <script>
     hljs.configure({ languages: [] });
     hljs.initHighlightingOnLoad();
+
+    var commentForm = (function(){
+
+    	var el = {
+    		$comment_input: $('#comment_input'),
+            $github_signin: $('#github_signin')
+    	};
+
+    	var bindUIElements = function() {
+    		el.$github_signin.on('click', handleSignin);
+    	};
+
+    	var init = function() {
+    		bindUIElements();
+            refillPreviousComment();
+    	};
+
+        var handleSignin = function (e) {
+            var comment = el.$comment_input.val();
+            localStorage.setItem('gist_comment', comment);
+        };
+
+        var refillPreviousComment = function () {
+            if(localStorage.hasOwnProperty('gist_comment') === false) return false;
+            el.$comment_input.val(localStorage.getItem('gist_comment'));
+            localStorage.removeItem('gist_comment');
+        };
+
+    	return {
+    		init: init
+    	}
+
+    })();
+
+    commentForm.init();
 
     $(function() {
         $('.js-gistlog-content pre').each(function () {
