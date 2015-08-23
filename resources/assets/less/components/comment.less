@@ -1,40 +1,49 @@
 .comment-form {
 
-  margin-bottom: 1em;
+    margin-bottom: 1em;
 
-  textarea {
-    width: 100%;
-    padding: 0.75em 1em;
-    font-size: 1.25em;
-    border: 2px solid #ccc;
-    border-radius: 0.25em;
-//    margin-bottom: 1em;
-    outline: none;
-    transition: margin 0.25s;
+    textarea {
+        width: 100%;
+        padding: 0.75em 1em;
+        position: relative;
+        font-size: 1.25em;
+        border: 2px solid #ccc;
+        border-radius: 0.25em;
+        outline: none;
+    }
 
-    &:focus { margin-bottom: 0.25em;}
-  }
+    &__button-container {
+        margin-bottom: 2em;
+        margin-top: -3.25em;
+        text-align: right;
+        transition: margin 0.25s;
 
-  input, a {
-    background-color: #444;
-    color: #fff;
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 1.25em;
-  }
+        &.active{
+            margin: 0;
+        }
 
-  input:hover, a:hover, input:focus, a:focus {
-    background-color: #2b2b2b;
-    color: #fff;
-  }
+        input, a {
+            background-color: #444;
+            color: #fff;
+            font-family: "Roboto", Helvetica, Arial, sans-serif;
+            font-size: 1.25em;
+        }
 
-  .github-icon {
-    display: block;
-    fill: #fff;
-    float: left;
-    height: 1.125em;
-    margin: 0.1em 0.25em 0 0;
-    width: 1.125em;
-  }
+        input:hover, a:hover, input:focus, a:focus {
+            background-color: #2b2b2b;
+            color: #fff;
+        }
+
+        .github-icon {
+            display: block;
+            fill: #fff;
+            float: left;
+            height: 1.125em;
+            margin: 0.1em 0.25em 0 0;
+            width: 1.125em;
+        }
+
+    }
 
 }
 

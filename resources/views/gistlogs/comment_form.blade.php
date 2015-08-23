@@ -1,7 +1,7 @@
 <form method="POST" action="{{route('comments.store', $gistlog->id)}}" id="comment-form" class="comment-form">
     {!! csrf_field() !!}
     <textarea name="comment" id="comment_input" cols="30" rows="1" placeholder="Join the discussion&hellip;" required></textarea>
-    <div class="text-right">
+    <div class="comment-form__button-container">
         @if(Auth::check())
             <input class="btn" type="submit" value="Comment"/>
         @else
