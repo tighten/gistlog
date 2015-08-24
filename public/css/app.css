@@ -3650,30 +3650,36 @@ tbody.collapse.in {
 .comment-form textarea {
   width: 100%;
   padding: 0.75em 1em;
+  position: relative;
   font-size: 1.25em;
   border: 2px solid #ccc;
   border-radius: 0.25em;
   outline: none;
+}
+.comment-form__button-container {
+  margin-bottom: 2em;
+  margin-top: -3.25em;
+  text-align: right;
   transition: margin 0.25s;
 }
-.comment-form textarea:focus {
-  margin-bottom: 0.25em;
+.comment-form__button-container.active {
+  margin: 0;
 }
-.comment-form input,
-.comment-form a {
+.comment-form__button-container input,
+.comment-form__button-container a {
   background-color: #444;
   color: #fff;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 1.25em;
 }
-.comment-form input:hover,
-.comment-form a:hover,
-.comment-form input:focus,
-.comment-form a:focus {
+.comment-form__button-container input:hover,
+.comment-form__button-container a:hover,
+.comment-form__button-container input:focus,
+.comment-form__button-container a:focus {
   background-color: #2b2b2b;
   color: #fff;
 }
-.comment-form .github-icon {
+.comment-form__button-container .github-icon {
   display: block;
   fill: #fff;
   float: left;
