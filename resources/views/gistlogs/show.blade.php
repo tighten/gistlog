@@ -18,7 +18,7 @@
                 Updated {{ $gistlog->updatedAt->diffForHumans() }}
             </div>
             <div class="gistlog__links">
-                <a href="{{ $gistlog->link }}">View on GitHub</a> | <a href="{{ $gistlog->link }}#new_comment_field">Comment</a>
+                <a href="{{ $gistlog->link }}">View on GitHub</a>
             </div>
         </article>
             <h3>Comments</h3>

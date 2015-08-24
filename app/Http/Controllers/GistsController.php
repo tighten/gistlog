@@ -1,6 +1,7 @@
 <?php namespace Gistlog\Http\Controllers;
 
 use Gistlog\Exceptions\GistNotFoundException;
+use Gistlog\Gists\GistClient;
 use Gistlog\Gists\GistlogRepository;
 use Gistlog\Http\Requests;
 use Gistlog\Http\Controllers\Controller;
@@ -55,10 +56,10 @@ class GistsController extends Controller
 			->with('pageTitle', $gistlog->title . ' | ' . $gistlog->author);
 	}
 
-    public function postComment(Request $request, $gistId)
+    public function postComment(Request $request, GistClient $client,  $gistId)
     {
         $this->validate($request, ['comment' => 'required']);
-        $this->repository->postCommentToGistById($gistId, Input::get('comment'));
+        $client->postGistComment($gistId, Input::get('comment'));
         return redirect()->back();
     }
 }
