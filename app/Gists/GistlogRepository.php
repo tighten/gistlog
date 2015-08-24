@@ -42,5 +42,4 @@ class GistlogRepository
         $url = rtrim($url, '/');
         return last(explode('/', $url));
     }
-
 }

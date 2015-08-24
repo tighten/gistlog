@@ -55,7 +55,6 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/autosize.js/3.0.8/autosize.min.js"></script>
 
-
 	@if (env('APP_ENV') == 'production')
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
