@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "efc0eb25689600ad421d82bb8f44fa1b",
+    "hash": "618015067608134d14099a0be3c301cd",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -310,177 +310,6 @@
                 "web service"
             ],
             "time": "2015-03-18 18:23:50"
-        },
-        {
-            "name": "guzzlehttp/guzzle",
-            "version": "6.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "a8dfeff00eb84616a17fea7a4d72af35e750410f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/a8dfeff00eb84616a17fea7a4d72af35e750410f",
-                "reference": "a8dfeff00eb84616a17fea7a4d72af35e750410f",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/promises": "~1.0",
-                "guzzlehttp/psr7": "~1.1",
-                "php": ">=5.5.0"
-            },
-            "require-dev": {
-                "ext-curl": "*",
-                "phpunit/phpunit": "~4.0",
-                "psr/log": "~1.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "6.0-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/functions_include.php"
-                ],
-                "psr-4": {
-                    "GuzzleHttp\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Dowling",
-                    "email": "mtdowling@gmail.com",
-                    "homepage": "https://github.com/mtdowling"
-                }
-            ],
-            "description": "Guzzle is a PHP HTTP client library",
-            "homepage": "http://guzzlephp.org/",
-            "keywords": [
-                "client",
-                "curl",
-                "framework",
-                "http",
-                "http client",
-                "rest",
-                "web service"
-            ],
-            "time": "2015-07-04 20:09:24"
-        },
-        {
-            "name": "guzzlehttp/promises",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/guzzle/promises.git",
-                "reference": "97fe7210def29451ec74923b27e552238defd75a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/97fe7210def29451ec74923b27e552238defd75a",
-                "reference": "97fe7210def29451ec74923b27e552238defd75a",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "GuzzleHttp\\Promise\\": "src/"
-                },
-                "files": [
-                    "src/functions_include.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Dowling",
-                    "email": "mtdowling@gmail.com",
-                    "homepage": "https://github.com/mtdowling"
-                }
-            ],
-            "description": "Guzzle promises library",
-            "keywords": [
-                "promise"
-            ],
-            "time": "2015-08-15 19:37:21"
-        },
-        {
-            "name": "guzzlehttp/psr7",
-            "version": "1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/guzzle/psr7.git",
-                "reference": "4ef919b0cf3b1989523138b60163bbcb7ba1ff7e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/4ef919b0cf3b1989523138b60163bbcb7ba1ff7e",
-                "reference": "4ef919b0cf3b1989523138b60163bbcb7ba1ff7e",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0",
-                "psr/http-message": "~1.0"
-            },
-            "provide": {
-                "psr/http-message-implementation": "1.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "GuzzleHttp\\Psr7\\": "src/"
-                },
-                "files": [
-                    "src/functions_include.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Dowling",
-                    "email": "mtdowling@gmail.com",
-                    "homepage": "https://github.com/mtdowling"
-                }
-            ],
-            "description": "PSR-7 message implementation",
-            "keywords": [
-                "http",
-                "message",
-                "stream",
-                "uri"
-            ],
-            "time": "2015-08-15 19:32:36"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -817,60 +646,6 @@
             "time": "2015-08-12 18:16:08"
         },
         {
-            "name": "laravel/socialite",
-            "version": "v2.0.11",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/socialite.git",
-                "reference": "8a9e4b61f5078ca1c10fb608d76e845825ca5a3b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/socialite/zipball/8a9e4b61f5078ca1c10fb608d76e845825ca5a3b",
-                "reference": "8a9e4b61f5078ca1c10fb608d76e845825ca5a3b",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "~5.0|~6.0",
-                "illuminate/contracts": "~5.0",
-                "illuminate/http": "~5.0",
-                "illuminate/support": "~5.0",
-                "league/oauth1-client": "~1.0",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Laravel\\Socialite\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com"
-                }
-            ],
-            "description": "Laravel wrapper around OAuth 1 & OAuth 2 libraries.",
-            "keywords": [
-                "laravel",
-                "oauth"
-            ],
-            "time": "2015-08-14 20:44:20"
-        },
-        {
             "name": "league/flysystem",
             "version": "1.0.11",
             "source": {
@@ -950,69 +725,6 @@
                 "storage"
             ],
             "time": "2015-07-28 20:41:58"
-        },
-        {
-            "name": "league/oauth1-client",
-            "version": "1.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/oauth1-client.git",
-                "reference": "815b2dbd2b866409f3de6e4046a76e66b5af608e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/815b2dbd2b866409f3de6e4046a76e66b5af608e",
-                "reference": "815b2dbd2b866409f3de6e4046a76e66b5af608e",
-                "shasum": ""
-            },
-            "require": {
-                "guzzle/guzzle": "3.*",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "0.7.2",
-                "phpunit/phpunit": "*",
-                "satooshi/php-coveralls": "dev-master"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "League\\OAuth1\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ben Corlett",
-                    "email": "bencorlett@me.com",
-                    "homepage": "http://www.webcomm.com.au",
-                    "role": "Developer"
-                }
-            ],
-            "description": "OAuth 1.0 Client Library",
-            "keywords": [
-                "Authentication",
-                "SSO",
-                "authorization",
-                "bitbucket",
-                "identity",
-                "idp",
-                "oauth",
-                "oauth1",
-                "single sign on",
-                "trello",
-                "tumblr",
-                "twitter"
-            ],
-            "time": "2015-05-18 00:04:43"
         },
         {
             "name": "michelf/php-markdown",
@@ -1276,55 +988,6 @@
                 "php"
             ],
             "time": "2015-07-14 17:31:05"
-        },
-        {
-            "name": "psr/http-message",
-            "version": "1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/http-message.git",
-                "reference": "85d63699f0dbedb190bbd4b0d2b9dc707ea4c298"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-message/zipball/85d63699f0dbedb190bbd4b0d2b9dc707ea4c298",
-                "reference": "85d63699f0dbedb190bbd4b0d2b9dc707ea4c298",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psr\\Http\\Message\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interface for HTTP messages",
-            "keywords": [
-                "http",
-                "http-message",
-                "psr",
-                "psr-7",
-                "request",
-                "response"
-            ],
-            "time": "2015-05-04 20:22:00"
         },
         {
             "name": "psr/log",
@@ -2806,16 +2469,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.4",
+            "version": "4.8.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "55bf1d6092b0e13a1f26bd5eaffeef3d8ad85ea7"
+                "reference": "2246830f4a1a551c67933e4171bf2126dc29d357"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/55bf1d6092b0e13a1f26bd5eaffeef3d8ad85ea7",
-                "reference": "55bf1d6092b0e13a1f26bd5eaffeef3d8ad85ea7",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2246830f4a1a551c67933e4171bf2126dc29d357",
+                "reference": "2246830f4a1a551c67933e4171bf2126dc29d357",
                 "shasum": ""
             },
             "require": {
@@ -2874,24 +2537,24 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-08-15 04:21:23"
+            "time": "2015-08-24 04:09:38"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "2.3.6",
+            "version": "2.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "18dfbcb81d05e2296c0bcddd4db96cade75e6f42"
+                "reference": "5e2645ad49d196e020b85598d7c97e482725786a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/18dfbcb81d05e2296c0bcddd4db96cade75e6f42",
-                "reference": "18dfbcb81d05e2296c0bcddd4db96cade75e6f42",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/5e2645ad49d196e020b85598d7c97e482725786a",
+                "reference": "5e2645ad49d196e020b85598d7c97e482725786a",
                 "shasum": ""
             },
             "require": {
-                "doctrine/instantiator": "~1.0,>=1.0.2",
+                "doctrine/instantiator": "^1.0.2",
                 "php": ">=5.3.3",
                 "phpunit/php-text-template": "~1.2",
                 "sebastian/exporter": "~1.2"
@@ -2930,7 +2593,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2015-07-10 06:54:24"
+            "time": "2015-08-19 09:14:08"
         },
         {
             "name": "sebastian/comparator",
