@@ -56,7 +56,7 @@ class GistsController extends Controller
 			->with('pageTitle', $gistlog->title . ' | ' . $gistlog->author);
 	}
 
-    public function postComment(Request $request, GistClient $client,  $gistId)
+    public function postComment(Request $request, GistClient $client, $gistId)
     {
         $this->validate($request, ['comment' => 'required']);
         $client->postGistComment($gistId, Input::get('comment'));
