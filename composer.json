@@ -8,7 +8,8 @@
 		"laravel/framework": "5.0.*@dev",
 		"michelf/php-markdown": "~1.4",
 		"knplabs/github-api": "~1.4",
-		"symfony/yaml": "~2.6"
+		"symfony/yaml": "~2.6",
+		"ircmaxell/stauros": "dev-master#aa765e7fabdfe2487e4c5860e55615b78a042231"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
