@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1fc219851d6ceb31836925bf895ab8f7",
+    "hash": "ab318325bbc7f1d981fd1e10e22a6b6f",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -355,6 +355,46 @@
                 "password"
             ],
             "time": "2014-11-20 16:49:30"
+        },
+        {
+            "name": "ircmaxell/stauros",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ircmaxell/Stauros.git",
+                "reference": "aa765e7fabdfe2487e4c5860e55615b78a042231"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ircmaxell/Stauros/zipball/b3daa234835a11897d530b0c4a66dd719ad10eef",
+                "reference": "aa765e7fabdfe2487e4c5860e55615b78a042231",
+                "shasum": ""
+            },
+            "require": {
+                "php-64bit": ">=5.5"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "1.*",
+                "phpunit/phpunit": "^4.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stauros\\": "lib/Stauros/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anthony Ferrara",
+                    "email": "ircmaxell@gmail.com"
+                }
+            ],
+            "description": "A fast XSS cleaner for PHP",
+            "time": "2015-09-02 02:52:50"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -2990,7 +3030,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "laravel/framework": 20
+        "laravel/framework": 20,
+        "ircmaxell/stauros": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

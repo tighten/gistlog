@@ -5,6 +5,7 @@ namespace Gistlog\Providers;
 use Gistlog\ContentParser\ContentParser;
 use Gistlog\ContentParser\GitHubUsernameTransformer;
 use Gistlog\ContentParser\MarkdownTransformer;
+use Gistlog\ContentParser\XssCleaner;
 use Illuminate\Support\ServiceProvider;
 
 class ContentParserServiceProvider extends ServiceProvider {
@@ -21,6 +22,7 @@ class ContentParserServiceProvider extends ServiceProvider {
 
             $parser->push(new MarkdownTransformer);
             $parser->push(new GitHubUsernameTransformer);
+            $parser->push(new XssCleaner);
 
             return $parser;
         });
