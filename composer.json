@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "5.0.*@dev",
+		"laravel/framework": "5.1.*",
 		"michelf/php-markdown": "~1.4",
 		"knplabs/github-api": "~1.4",
 		"symfony/yaml": "~2.6"
