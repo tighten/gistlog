@@ -27,11 +27,15 @@ var commentForm = (function(){
     };
 
     var hideCommentButton = function () {
-        if(el.$comment_input.val() === "") el.$comment_buttons_container.removeClass('active');
+        if (el.$comment_input.val() === "") {
+            el.$comment_buttons_container.removeClass('active');
+        }
     };
 
     var refillPreviousComment = function () {
-        if(localStorage.hasOwnProperty('gist_comment') === false) return false;
+        if (localStorage.hasOwnProperty('gist_comment') === false) {
+            return false;
+        }
         el.$comment_input.val(localStorage.getItem('gist_comment')).focus();
         localStorage.removeItem('gist_comment');
     };
