@@ -30,11 +30,16 @@ var commentForm = (function(){
         if(el.$comment_input.val() === "") el.$comment_buttons_container.removeClass('active');
     };
 
+    var updateUrlHash = function () {
+        window.location.hash = "gistlog-comments";
+    };
+
     var refillPreviousComment = function () {
         if(localStorage.hasOwnProperty('gist_comment') === false) return false;
         el.$comment_input.val(localStorage.getItem('gist_comment'));
         localStorage.removeItem('gist_comment');
         showCommentButton();
+        updateUrlHash();
     };
 
     return {
