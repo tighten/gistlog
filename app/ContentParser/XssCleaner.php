@@ -11,7 +11,6 @@ class XssCleaner implements Transformer
         $config->tagWhiteList = array_merge($config->tagWhiteList, [
             'code' => ['class' => true],
             'pre' => [],
-            'style' => [],
         ]);
         return (new Stauros($config))->scanHTML($content);
     }
