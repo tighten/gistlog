@@ -1,7 +1,8 @@
-<?php namespace Gistlog\Jobs;
+<?php
 
-abstract class Command {
+namespace Gistlog\Jobs;
 
-	//
-
+abstract class Command
+{
+    //
 }

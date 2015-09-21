@@ -1,4 +1,6 @@
-<?php namespace Gistlog\Http\Controllers;
+<?php
+
+namespace Gistlog\Http\Controllers;
 
 use Gistlog\Authors\AuthorRepository;
 use Illuminate\Support\Facades\View;

@@ -1,4 +1,6 @@
-<?php  namespace Gistlog\Gists;
+<?php
+
+namespace Gistlog\Gists;
 
 class GistlogRepository
 {
