@@ -1,4 +1,6 @@
-<?php namespace Gistlog\Gists;
+<?php
+
+namespace Gistlog\Gists;
 
 use Carbon\Carbon;
 use Gistlog\ContentParser\ContentParserFacade as ContentParser;

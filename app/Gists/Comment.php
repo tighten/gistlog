@@ -1,4 +1,6 @@
-<?php namespace Gistlog\Gists;
+<?php
+
+namespace Gistlog\Gists;
 
 use Carbon\Carbon;
 use Gistlog\ContentParser\ContentParserFacade as ContentParser;
@@ -39,7 +41,7 @@ class Comment
      */
     public function renderHtml()
     {
-       return ContentParser::transform($this->body);
+        return ContentParser::transform($this->body);
     }
 
     public function link()
