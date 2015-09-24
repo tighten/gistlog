@@ -149,6 +149,7 @@ return [
 		'Gistlog\Providers\AuthorClientServiceProvider',
 		'Gistlog\Providers\GistClientServiceProvider',
 		'Gistlog\Providers\ContentParserServiceProvider',
+		'Gistlog\Providers\GitHubClientServiceProvider',
 	],
 
 	/*
