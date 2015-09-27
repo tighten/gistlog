@@ -1974,7 +1974,7 @@ select[multiple].form-group-lg .form-control {
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
@@ -3644,6 +3644,49 @@ tbody.collapse.in {
   top: 0.5em;
   width: 2em;
 }
+.comment-form {
+  margin-bottom: 1em;
+}
+.comment-form textarea {
+  border: 2px solid #ccc;
+  border-radius: 0.25em;
+  font-size: 1.25em;
+  outline: none;
+  padding: 0.75em 1em;
+  position: relative;
+  width: 100%;
+}
+.comment-form__button-container {
+  margin-bottom: 2em;
+  margin-top: -3.25em;
+  text-align: right;
+  transition: margin 0.25s;
+}
+.comment-form__button-container.active {
+  margin: 0;
+}
+.comment-form__button-container input,
+.comment-form__button-container a {
+  background-color: #444;
+  color: #fff;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 1.25em;
+}
+.comment-form__button-container input:hover,
+.comment-form__button-container a:hover,
+.comment-form__button-container input:focus,
+.comment-form__button-container a:focus {
+  background-color: #2b2b2b;
+  color: #fff;
+}
+.comment-form__button-container .github-icon {
+  display: block;
+  fill: #fff;
+  float: left;
+  height: 1.125em;
+  margin: 0.1em 0.25em 0 0;
+  width: 1.125em;
+}
 .comment {
   clear: left;
   margin-bottom: 2em;
@@ -3654,6 +3697,7 @@ tbody.collapse.in {
   width: 15%;
 }
 .comment__avatar img {
+  border-radius: 0.25em;
   width: 80%;
 }
 .comment__content {
@@ -3661,7 +3705,9 @@ tbody.collapse.in {
   width: 85%;
 }
 .comment__meta {
-  background: #eee;
+  background: #efefef;
+  border-radius: 0.25em;
+  font-size: 0.875em;
   padding: 1em;
 }
 .comment__body {
@@ -3721,3 +3767,5 @@ code {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
+
+/*# sourceMappingURL=app.css.map */

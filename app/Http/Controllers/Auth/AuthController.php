@@ -1,38 +1,81 @@
 <?php namespace Gistlog\Http\Controllers\Auth;
 
+use Exception;
 use Gistlog\Http\Controllers\Controller;
-use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Contracts\Auth\Registrar;
+use Gistlog\User;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
+use Laravel\Socialite\Facades\Socialite;
 
-class AuthController extends Controller {
+class AuthController extends Controller
+{
+    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
-	/*
-	|--------------------------------------------------------------------------
-	| Registration & Login Controller
-	|--------------------------------------------------------------------------
-	|
-	| This controller handles the registration of new users, as well as the
-	| authentication of existing users. By default, this controller uses
-	| a simple trait to add these behaviors. Why don't you explore it?
-	|
-	*/
+    /**
+     * Create a new authentication controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('guest', ['except' => 'getLogout']);
+    }
 
-	use AuthenticatesAndRegistersUsers;
+    /**
+     * Redirect the user to the GitHub authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToProvider()
+    {
+        session()->flash('redirect_to', URL::previous());
+        return Socialite::driver('github')
+            ->scopes(['user:email','gist'])
+            ->redirect();
+    }
 
-	/**
-	 * Create a new authentication controller instance.
-	 *
-	 * @param  \Illuminate\Contracts\Auth\Guard  $auth
-	 * @param  \Illuminate\Contracts\Auth\Registrar  $registrar
-	 * @return void
-	 */
-	public function __construct(Guard $auth, Registrar $registrar)
-	{
-		$this->auth = $auth;
-		$this->registrar = $registrar;
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return Response
+     */
+    public function handleProviderCallback()
+    {
+        try {
+            $user = Socialite::driver('github')->user();
+        } catch (Exception $e) {
+            return Redirect::to('auth/github');
+        }
 
-		$this->middleware('guest', ['except' => 'getLogout']);
-	}
+        $authUser = $this->findOrCreateUser($user);
 
+        Auth::login($authUser, true);
+
+        return redirect(session()->get('redirect_to', '/'));
+    }
+
+    private function findOrCreateUser($user)
+    {
+        if ($authUser = User::where('github_id', $user->id)->first()) {
+            return $authUser;
+        }
+
+        return User::create([
+            'name' => $user->name,
+            'email' => $user->email,
+            'github_id' => $user->id,
+            'avatar' => $user->avatar,
+            'token' => $user->token
+        ]);
+    }
+
+    public function getLogout()
+    {
+        Auth::logout();
+
+        return redirect('/');
+    }
 }

@@ -149,6 +149,7 @@ return [
 		'Gistlog\Providers\AuthorClientServiceProvider',
 		'Gistlog\Providers\GistClientServiceProvider',
 		'Gistlog\Providers\ContentParserServiceProvider',
+		Laravel\Socialite\SocialiteServiceProvider::class
 	],
 
 	/*
@@ -196,6 +197,7 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+		'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 	],
 
 ];

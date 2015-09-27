@@ -18,12 +18,14 @@
                 Updated {{ $gistlog->updatedAt->diffForHumans() }}
             </div>
             <div class="gistlog__links">
-                <a href="{{ $gistlog->link }}">View on GitHub</a> | <a href="{{ $gistlog->link }}#new_comment_field">Comment</a>
+                <a href="{{ $gistlog->link }}">View on GitHub</a>
             </div>
         </article>
-        @if ($gistlog->hasComments())
             <h3>Comments</h3>
 
+            @include('gistlogs.comment_form')
+
+        @if ($gistlog->hasComments())
             @foreach ($gistlog->comments as $comment)
                 @include ('gistlogs.comment', ['gistlog' => $gistlog, 'comment' => $comment])
             @endforeach
@@ -32,11 +34,13 @@
 @endsection
 
 @section('scripts')
+    <script src="/js/commentForm.js"></script>
     <script>
     hljs.configure({ languages: [] });
     hljs.initHighlightingOnLoad();
 
     $(function() {
+        commentForm.init();
         $('.js-gistlog-content pre').each(function () {
             var numberOfLines = $(this).find('code').html().split(/\n/).length - 1;
             var lineNumbers = [];
@@ -47,6 +51,8 @@
 
             $(this).append('<div class="line-numbers">' + lineNumbers.join("\n") + '</div>');
         });
+
+        autosize($('textarea'));
     });
     </script>
 @endsection
