@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         \Gistlog\Console\Commands\Inspire::class,
+    ];
 
     /**
      * Define the application's command schedule.

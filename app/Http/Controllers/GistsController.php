@@ -56,7 +56,6 @@ class GistsController extends Controller
             ->with('gistlog', $gistlog)
             ->with('pageTitle', $gistlog->title . ' | ' . $gistlog->author);
     }
-<<<<<<< HEAD
 
     public function postComment(Request $request, GistClient $client, $gistId)
     {
@@ -64,6 +63,4 @@ class GistsController extends Controller
         $client->postGistComment($gistId, Input::get('comment'));
         return redirect()->back();
     }
-=======
->>>>>>> e4cab91... PSR-2 fixes
 }
