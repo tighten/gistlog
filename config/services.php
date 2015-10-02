@@ -18,5 +18,6 @@ return [
         'client_id' => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
         'token' => env('GITHUB_TOKEN'),
+        'redirect' => env('GITHUB_URL'),
     ],
 ];
