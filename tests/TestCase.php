@@ -19,16 +19,14 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
 
         $annotations = $this->getAnnotations();
 
-        foreach (['class', 'method'] as $depth) {
-            if (empty($annotations[$depth]['requires'])) {
-                continue;
+        collect($this->getAnnotations())->each(function ($location) {
+            if (! isset($location['requires'])) {
+                return;
             }
 
-            $requires = array_flip($annotations[$depth]['requires']);
-
-            if (isset($requires['!Travis']) && getenv('TRAVIS') == true) {
+            if (in_array('!Travis', $location['requires']) && getenv('TRAVIS') == true) {
                 $this->markTestSkipped('This test does not run on Travis.');
             }
-        }
+        });
     }
 }
