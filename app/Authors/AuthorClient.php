@@ -1,7 +1,8 @@
-<?php  namespace Gistlog\Authors;
+<?php
+
+namespace Gistlog\Authors;
 
 use Exception;
-
 use Gistlog\Gists\GistClient;
 use Github\Client as GitHubClient;
 use Github\HttpClient\Message\ResponseMediator;
@@ -64,7 +65,7 @@ class AuthorClient
     {
         $gists = $this->getAuthorGists($username);
 
-        return array_filter(array_map(function($gist) {
+        return array_filter(array_map(function ($gist) {
             if ($this->gistIsGistlogPublished($gist)) {
                 $fullGist = $this->gistClient->getGist($gist['id']);
 

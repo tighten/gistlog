@@ -1,4 +1,6 @@
-<?php namespace Gistlog\Gists;
+<?php
+
+namespace Gistlog\Gists;
 
 use ArrayAccess;
 use Carbon\Carbon;

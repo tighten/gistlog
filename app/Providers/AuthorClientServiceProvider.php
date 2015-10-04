@@ -1,4 +1,6 @@
-<?php namespace Gistlog\Providers;
+<?php
+
+namespace Gistlog\Providers;
 
 use Gistlog\Authors\AuthorClient;
 use Gistlog\Gists\GistClient;

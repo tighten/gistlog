@@ -1,7 +1,8 @@
-<?php namespace Gistlog\Events;
+<?php
 
-abstract class Event {
+namespace Gistlog\Events;
 
-	//
-
+abstract class Event
+{
+    //
 }

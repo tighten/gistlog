@@ -1,4 +1,6 @@
-<?php namespace Gistlog\Providers;
+<?php
+
+namespace Gistlog\Providers;
 
 use Gistlog\Gists\GistClient;
 use Github\Client as GitHubClient;

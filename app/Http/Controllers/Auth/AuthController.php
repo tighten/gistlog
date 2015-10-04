@@ -1,4 +1,6 @@
-<?php namespace Gistlog\Http\Controllers\Auth;
+<?php
+
+namespace Gistlog\Http\Controllers\Auth;
 
 use Exception;
 use Gistlog\Http\Controllers\Controller;
@@ -33,7 +35,7 @@ class AuthController extends Controller
     {
         session()->flash('redirect_to', URL::previous());
         return Socialite::driver('github')
-            ->scopes(['user:email','gist'])
+            ->scopes(['user:email', 'gist'])
             ->redirect();
     }
 
