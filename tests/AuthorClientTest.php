@@ -4,7 +4,10 @@ use Gistlog\Authors\AuthorClient;
 
 class AuthorClientTest extends TestCase
 {
-    /** @test */
+    /**
+     * @test
+     * @requires !Travis
+     */
     public function it_authenticates_with_github_and_returns_5000_rate_limit()
     {
         $github = App::make(AuthorClient::class);
