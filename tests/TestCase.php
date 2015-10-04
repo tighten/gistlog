@@ -19,7 +19,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
 
         $annotations = $this->getAnnotations();
 
-        foreach (array('class', 'method') as $depth) {
+        foreach (['class', 'method'] as $depth) {
             if (empty($annotations[$depth]['requires'])) {
                 continue;
             }
