@@ -26,7 +26,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
 
             $requires = array_flip($annotations[$depth]['requires']);
 
-            if (isset($requires['!Travis']) && getenv('TRAVIS') === '1') {
+            if (isset($requires['!Travis']) && getenv('TRAVIS') == true) {
                 $this->markTestSkipped('This test does not run on Travis.');
             }
         }
