@@ -24,6 +24,16 @@ class AuthorClient
         $this->gistClient = $gistClient;
     }
 
+    public function getGitHubClient()
+    {
+        return $this->github;
+    }
+
+    public function getGistClient()
+    {
+        return $this->gistClient;
+    }
+
     /**
      * @param $authorSlug
      * @return array
