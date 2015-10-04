@@ -20,6 +20,11 @@ class GistClient
         $this->github = $github;
     }
 
+    public function getGitHubClient()
+    {
+        return $this->github;
+    }
+
     /**
      * @param $gistId
      * @return array
