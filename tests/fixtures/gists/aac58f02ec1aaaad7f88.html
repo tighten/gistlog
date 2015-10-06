@@ -1,0 +1,17 @@
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">interface</span> <span class="pl-en">UserRepository</span></span>
+<span class="pl-s1">{</span>
+<span class="pl-s1">    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">all</span>();</span>
+<span class="pl-s1">}</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">User</span> <span class="pl-k">extends</span> <span class="pl-e">Eloquent</span> <span class="pl-k">implements</span> <span class="pl-e">UserRepository</span></span>
+<span class="pl-s1">{</span>
+<span class="pl-s1">    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">function</span> <span class="pl-en">all</span>(); <span class="pl-c">// comes from Eloquent obviously, but yeah</span></span>
+<span class="pl-s1">}</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$user</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">User</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"> <span class="pl-c">// This works as an instance call, even though it's declared as static,</span></span>
+<span class="pl-s1"> <span class="pl-c">// standard PHP behaviour, but PHP will complain that User isn't</span></span>
+<span class="pl-s1"> <span class="pl-c">// implementing the interface, because the interface defines it as an</span></span>
+<span class="pl-s1"> <span class="pl-c">// instance method. Grr!</span></span>
+<span class="pl-s1"><span class="pl-smi">$user</span><span class="pl-k">-&gt;</span>all();</span></pre></div>
