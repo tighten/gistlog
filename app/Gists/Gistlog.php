@@ -69,7 +69,9 @@ class Gistlog
             return $this->renderMarkdown();
         }
 
-        return "<pre><code>" . htmlspecialchars($this->content) . "\n</code></pre>";
+        // Hacky crap to force us to get GitHub rendering on non Markdown documents
+        return $this->renderMarkdown("```" . $this->language . "\n" . $this->content . "\n```");
+        // return "<pre><code>" . htmlspecialchars($this->content) . "\n</code></pre>";
     }
 
     /**
@@ -111,13 +113,17 @@ class Gistlog
         return substr($body, 0, strpos($body, ' ', 200));
     }
 
-    private function renderMarkdown()
+    private function renderMarkdown($content = null)
     {
         if ($this->updatedAt == Cache::get('markdown.updated_at.' . $this->id)) {
             return Cache::get('markdown.' . $this->id);
         }
 
-        $markdown = ContentParser::transform($this->content);
+        if ($content === null) {
+            $content = $this->content;
+        }
+
+        $markdown = ContentParser::transform($content);
 
         Cache::forever('markdown.' . $this->id, $markdown);
         Cache::forever('markdown.updated_at.' . $this->id, $this->updatedAt);
