@@ -4,7 +4,6 @@ use Gistlog\Gists\GistConfig;
 
 class GistConfigTest extends TestCase
 {
-
     use GistFixtureHelpers;
 
     /** @test */

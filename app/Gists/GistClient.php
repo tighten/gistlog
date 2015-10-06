@@ -1,9 +1,7 @@
 <?php  namespace Gistlog\Gists;
 
 use Exception;
-
 use Gistlog\Exceptions\GistNotFoundException;
-
 use Github\Client as GitHubClient;
 use Github\HttpClient\Message\ResponseMediator;
 use Illuminate\Support\Facades\Auth;
