@@ -3508,6 +3508,142 @@ tbody.collapse.in {
   transition-duration: 0.35s;
   transition-timing-function: ease;
 }
+/** @todo: Fix the inconcistencies with GitHub */
+.gistlog__content .highlight {
+  background: #fff;
+  color: #333;
+  margin-bottom: 16px;
+}
+.gistlog__content .highlight pre {
+  word-break: normal;
+}
+.gistlog__content .highlight pre,
+pre {
+  background-color: #fafafa;
+  border-left: 1em solid #e6e6e6;
+  border-radius: 3px;
+  font-size: 62%;
+  font-weight: normal;
+  line-height: 1.45;
+  margin-bottom: 0;
+  padding: 16px;
+  padding-left: 1.5em;
+  overflow: auto;
+}
+.gistlog__content .highlight pre a,
+pre a {
+  color: inherit;
+}
+pre {
+  word-wrap: normal;
+}
+pre code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  max-width: initial;
+  overflow: initial;
+  padding: 0;
+  word-wrap: normal;
+}
+.pl-c {
+  color: #969896;
+}
+.pl-c1,
+.pl-mdh,
+.pl-mm,
+.pl-mp,
+.pl-mr,
+.pl-s1 .pl-v,
+.pl-s3,
+.pl-sc,
+.pl-sv {
+  color: #0086b3;
+}
+.pl-e,
+.pl-en {
+  color: #795da3;
+}
+.pl-s1 .pl-s2,
+.pl-smi,
+.pl-smp,
+.pl-stj,
+.pl-vo,
+.pl-vpf {
+  color: #333;
+}
+.pl-ent {
+  color: #63a35c;
+}
+.pl-k,
+.pl-s,
+.pl-st {
+  color: #183691;
+}
+.pl-k {
+  color: #a71d5d;
+}
+.pl-pds,
+.pl-s1,
+.pl-s1 .pl-pse .pl-s2,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre,
+.pl-src {
+  color: #333333;
+}
+.pl-mo,
+.pl-v {
+  color: #1d3e81;
+}
+.pl-id {
+  color: #b52a1d;
+}
+.pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+.pl-ml {
+  color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+.pl-mq {
+  color: #008080;
+}
+.pl-mi {
+  color: #333;
+  font-style: italic;
+}
+.pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+.pl-md,
+.pl-mdhf {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+.pl-mdht,
+.pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+.pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
 .gistlog {
   margin-bottom: 2em;
 }
@@ -3611,29 +3747,9 @@ tbody.collapse.in {
   font-size: 70%;
 }
 .gistlog__content pre {
-  background: none;
-  border: 1px solid #dddddd;
   border-radius: 5px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-  font-size: 22px;
   margin-bottom: 1.36363636em;
-  padding: 0;
-}
-.gistlog__content pre > code {
-  background-color: #ffffff;
-  border-left: 3em solid #f0f0f0;
-  font-size: 13px;
-  line-height: 1.5;
-  padding-left: 1.5em;
-  white-space: pre;
-  word-wrap: normal;
-}
-.gistlog__content pre > code * {
-  font-weight: normal !important;
-}
-.gistlog__content pre {
-  position: relative;
-  overflow-y: hidden;
 }
 .gistlog__content .line-numbers {
   color: #aaaaaa;
