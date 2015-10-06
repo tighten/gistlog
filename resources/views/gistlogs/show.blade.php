@@ -36,7 +36,7 @@
 @section('scripts')
     <script src="/js/commentForm.js"></script>
     <script>
-    hljs.configure({ languages: [] });
+    hljs.configure({ languages: ['{{ strtolower($gistlog->language) }}'] });
     hljs.initHighlightingOnLoad();
 
     $(function() {

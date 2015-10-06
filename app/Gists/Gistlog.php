@@ -69,7 +69,7 @@ class Gistlog
             return $this->renderMarkdown();
         }
 
-        return "<pre><code>" . $this->content . "\n</code></pre>";
+        return "<pre><code>" . htmlspecialchars($this->content) . "\n</code></pre>";
     }
 
     /**
