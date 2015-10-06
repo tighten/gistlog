@@ -1,7 +1,7 @@
 @extends('layouts.error')
 
 @section('title')
-	Be right back.
+    Be right back.
 @endsection
 
 @section('content')

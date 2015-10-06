@@ -8,8 +8,8 @@ use Gistlog\ContentParser\GitHubUsernameTransformer;
 use Gistlog\ContentParser\GitHubMarkdownTransformer;
 use Illuminate\Support\ServiceProvider;
 
-class ContentParserServiceProvider extends ServiceProvider {
-
+class ContentParserServiceProvider extends ServiceProvider
+{
     /**
      * Register the application services.
      *
