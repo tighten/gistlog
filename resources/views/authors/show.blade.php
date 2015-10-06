@@ -29,7 +29,6 @@
 @endsection
 
 @section('scripts')
-
     <script>
     $(function() {
         commentForm.init();
@@ -45,3 +44,4 @@
         // autosize($('textarea'));
     });
     </script>
+@endsection
