@@ -4,7 +4,10 @@ use Github\Client as GitHubClient;
 
 class GitHubClientTest extends TestCase
 {
-    /** @test */
+    /**
+     * @test
+     * @requires !Travis
+     */
     public function it_authenticates_with_github_and_returns_5000_rate_limit_guzzle()
     {
         $github = App::make(GitHubClient::class);
