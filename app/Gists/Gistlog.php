@@ -1,6 +1,7 @@
 <?php namespace Gistlog\Gists;
 
 use Carbon\Carbon;
+use Cache;
 use Gistlog\ContentParser\ContentParserFacade as ContentParser;
 
 class Gistlog
@@ -65,7 +66,7 @@ class Gistlog
     public function renderHtml()
     {
         if ($this->language === 'Markdown') {
-            return ContentParser::transform($this->content);
+            return $this->renderMarkdown();
         }
 
         return "<pre><code>" . $this->content . "\n</code></pre>";
@@ -108,5 +109,19 @@ class Gistlog
         }
 
         return substr($body, 0, strpos($body, ' ', 200));
+    }
+
+    private function renderMarkdown()
+    {
+        if ($this->updatedAt == Cache::get('markdown.updated_at.' . $this->id)) {
+            return Cache::get('markdown.' . $this->id);
+        }
+
+        $markdown = ContentParser::transform($this->content);
+
+        Cache::forever('markdown.' . $this->id, $markdown);
+        Cache::forever('markdown.updated_at.' . $this->id, $this->updatedAt);
+
+        return $markdown;
     }
 }
