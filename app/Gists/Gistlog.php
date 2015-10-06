@@ -69,9 +69,8 @@ class Gistlog
             return $this->renderMarkdown();
         }
 
-        // Hacky crap to force us to get GitHub rendering on non Markdown documents
+        // Hack to get GitHub to treat this as code embedded in Markdown
         return $this->renderMarkdown("```" . $this->language . "\n" . $this->content . "\n```");
-        // return "<pre><code>" . htmlspecialchars($this->content) . "\n</code></pre>";
     }
 
     /**
