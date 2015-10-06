@@ -27,3 +27,21 @@
         </section>
     </div>
 @endsection
+
+@section('scripts')
+
+    <script>
+    $(function() {
+        commentForm.init();
+
+        // $('.js-gistlog-content pre').each(function () {
+        //     var numberOfLines = $(this).find('code').html().split(/\n/).length - 1;
+        //     var lineNumbers = [];
+        //     for (var i = 1; i <= numberOfLines; i++) {
+        //         lineNumbers.push(i);
+        //     }
+        //     $(this).append('<div class="line-numbers">' + lineNumbers.join("\n") + '</div>');
+        // });
+        // autosize($('textarea'));
+    });
+    </script>
