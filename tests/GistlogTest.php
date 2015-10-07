@@ -10,7 +10,7 @@ class GistlogTest extends TestCase
     /** @test */
     public function it_can_be_created_from_github_api_data()
     {
-        $githubGist = $this->loadFixture('002ed429c7c21ab89300.json');
+        $githubGist = $this->loadJsonFixture('002ed429c7c21ab89300.json');
 
         $gistlog = Gistlog::fromGitHub($githubGist);
 
@@ -27,8 +27,8 @@ class GistlogTest extends TestCase
     /** @test */
     public function it_can_be_created_with_comments()
     {
-        $githubGist = $this->loadFixture('002ed429c7c21ab89300.json');
-        $githubComments = $this->loadFixture('002ed429c7c21ab89300/comments.json');
+        $githubGist = $this->loadJsonFixture('002ed429c7c21ab89300.json');
+        $githubComments = $this->loadJsonFixture('002ed429c7c21ab89300/comments.json');
 
         $gistlog = Gistlog::fromGitHub($githubGist, $githubComments);
 
@@ -47,8 +47,8 @@ class GistlogTest extends TestCase
     /** @test */
     public function it_has_comments_when_there_are_one_or_more_comments()
     {
-        $githubGist = $this->loadFixture('002ed429c7c21ab89300.json');
-        $githubComments = $this->loadFixture('002ed429c7c21ab89300/comments.json');
+        $githubGist = $this->loadJsonFixture('002ed429c7c21ab89300.json');
+        $githubComments = $this->loadJsonFixture('002ed429c7c21ab89300/comments.json');
 
         $gistlog = Gistlog::fromGitHub($githubGist, $githubComments);
 
@@ -58,7 +58,7 @@ class GistlogTest extends TestCase
     /** @test */
     public function it_has_no_comments_when_there_are_zero_comments()
     {
-        $githubGist = $this->loadFixture('002ed429c7c21ab89300.json');
+        $githubGist = $this->loadJsonFixture('002ed429c7c21ab89300.json');
 
         $gistlog = Gistlog::fromGitHub($githubGist);
 
@@ -68,7 +68,7 @@ class GistlogTest extends TestCase
     /** @test */
     public function secret_gists_are_not_public()
     {
-        $githubGist = $this->loadFixture('002ed429c7c21ab89300.json');
+        $githubGist = $this->loadJsonFixture('002ed429c7c21ab89300.json');
         $githubGist['public'] = false;
 
         $gistlog = Gistlog::fromGitHub($githubGist);
@@ -79,7 +79,7 @@ class GistlogTest extends TestCase
     /** @test */
     public function public_gists_are_public()
     {
-        $githubGist = $this->loadFixture('002ed429c7c21ab89300.json');
+        $githubGist = $this->loadJsonFixture('002ed429c7c21ab89300.json');
         $githubGist['public'] = true;
 
         $gistlog = Gistlog::fromGitHub($githubGist);
@@ -90,7 +90,7 @@ class GistlogTest extends TestCase
     /** @test */
     public function secret_gists_are_secret()
     {
-        $githubGist = $this->loadFixture('002ed429c7c21ab89300.json');
+        $githubGist = $this->loadJsonFixture('002ed429c7c21ab89300.json');
         $githubGist['public'] = false;
 
         $gistlog = Gistlog::fromGitHub($githubGist);
@@ -101,7 +101,7 @@ class GistlogTest extends TestCase
     /** @test */
     public function public_gists_are_not_secret()
     {
-        $githubGist = $this->loadFixture('002ed429c7c21ab89300.json');
+        $githubGist = $this->loadJsonFixture('002ed429c7c21ab89300.json');
         $githubGist['public'] = true;
 
         $gistlog = Gistlog::fromGitHub($githubGist);
@@ -112,10 +112,10 @@ class GistlogTest extends TestCase
     /** @test */
     public function code_only_posts_render_in_a_code_block()
     {
-        $githubGist = $this->loadFixture('aac58f02ec1aaaad7f88.json');
+        $githubGist = $this->loadJsonFixture('aac58f02ec1aaaad7f88.json');
 
         $gistlog = Gistlog::fromGitHub($githubGist);
 
-        $this->assertEquals($this->loadNonJsonFixture('aac58f02ec1aaaad7f88.html'), $gistlog->renderHtml());
+        $this->assertEquals($this->loadFixture('aac58f02ec1aaaad7f88.html'), $gistlog->renderHtml());
     }
 }

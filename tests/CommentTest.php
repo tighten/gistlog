@@ -9,7 +9,7 @@ class CommentTest extends TestCase
     /** @test */
     public function it_can_be_created_from_github_api_data()
     {
-        $githubComment = $this->loadFixture('002ed429c7c21ab89300/comments.json')[0];
+        $githubComment = $this->loadJsonFixture('002ed429c7c21ab89300/comments.json')[0];
 
         $comment = Comment::fromGitHub('002ed429c7c21ab89300', $githubComment);
 
@@ -22,7 +22,7 @@ class CommentTest extends TestCase
     /** @test */
     public function can_get_absolute_url_to_gist_comment_on_github()
     {
-        $githubComment = $this->loadFixture('002ed429c7c21ab89300/comments.json')[0];
+        $githubComment = $this->loadJsonFixture('002ed429c7c21ab89300/comments.json')[0];
 
         $comment = Comment::fromGitHub('002ed429c7c21ab89300', $githubComment);
 
