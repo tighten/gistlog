@@ -133,4 +133,16 @@ class GitHubUsernameTransformerTest extends TestCase
             $transformer->transform('I am <a href="http://twitter.com/michaeldyrynda">little known @michaeldyrynda</a> on Twitter')
         );
     }
+
+
+    /** @test */
+    public function it_doesnt_match_an_at_symbol_on_its_own()
+    {
+        $transformer = new GitHubUsernameTransformer;
+
+        $this->assertEquals(
+            'Meet me @ the place',
+            $transformer->transform('Meet me @ the place')
+        );
+    }
 }

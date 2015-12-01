@@ -116,6 +116,6 @@ class GistlogTest extends TestCase
 
         $gistlog = Gistlog::fromGitHub($githubGist);
 
-        $this->assertEquals("<pre><code>" . $gistlog->content . "\n</code></pre>", $gistlog->renderHtml());
+        $this->assertEquals("<pre><code>" . htmlspecialchars($gistlog->content) . "\n</code></pre>", $gistlog->renderHtml());
     }
 }
