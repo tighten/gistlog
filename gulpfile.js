@@ -12,5 +12,12 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
+
+    // run: gulp && gulp watch | php artisan serve --host=0.0.0.0
+    mix.browserSync({
+        proxy:  'localhost:8000',
+        notify: false
+    });
+
     mix.less('app.less');
 });
