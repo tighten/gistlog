@@ -3826,6 +3826,9 @@ pre code {
   font-size: 0.875em;
   padding: 1em;
 }
+.comment__owner {
+  background: #ccccef;
+}
 .comment__body {
   border-bottom: 1px solid #ddd;
   padding: 1em;
