@@ -14,7 +14,7 @@ When making a pull request, please code your feature on a feature branch.
     feature/feature-name
 ```
 
-When you are ready, tag @stauffermatt for a review. Your code needs to be tested with PHPUnit prior to making the pull
+When you are ready, tag @mattstauffer for a review. Your code needs to be tested with PHPUnit prior to making the pull
 request. To run the PHPUnit suite on your tests run
 
 ```command-line
