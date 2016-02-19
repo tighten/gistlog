@@ -20,3 +20,7 @@ request. To run the PHPUnit suite on your tests run
 ```command-line
     ./vendor/bin/phpunit
 ```
+
+If you are looking for something to contribute, please look at our issues. There you can post ideas, pick up features others have requested, or help another developer in need of some guidance.
+
+Happy coding!
