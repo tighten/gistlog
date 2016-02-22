@@ -3760,6 +3760,13 @@ pre code {
   top: 0.5em;
   width: 2em;
 }
+.gistlog__files {
+  width: 100%;
+}
+.gistlog__files .file {
+  display: inline-block;
+  width: 150px;
+}
 .comment-form {
   margin-bottom: 1em;
 }

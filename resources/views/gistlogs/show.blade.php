@@ -13,6 +13,28 @@
             <div class="gistlog__content js-gistlog-content">
                 {!! $gistlog->renderHtml() !!}
             </div>
+
+            @if($gistlog->showFiles())
+                <hr/>
+                <h3>
+                    Attached Files ({{ $gistlog->files->count() }})
+                </h3>
+                <div class="gistlog__files">
+                    @if($gistlog->files->isEmpty())
+                        <p>
+                            <em>
+                                No files to display.
+                            </em>
+                        </p>
+                    @else
+                        @foreach($gistlog->files as $file)
+                            @include('gistlogs.file', ['file' => $file])
+                        @endforeach
+                    @endif
+                </div>
+                <hr/>
+            @endif
+
             <div class="gistlog__meta">
                 Created {{ $gistlog->createdAt->diffForHumans() }} |
                 Updated {{ $gistlog->updatedAt->diffForHumans() }}

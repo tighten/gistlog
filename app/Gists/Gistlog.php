@@ -14,6 +14,7 @@ class Gistlog
     public $avatarUrl;
     public $link;
     public $config;
+    public $files;
     private $public;
 
     /**
@@ -54,6 +55,8 @@ class Gistlog
         $gistlog->comments = collect($githubComments)->map(function ($comment) use ($githubGist) {
             return Comment::fromGitHub($githubGist['id'], $comment);
         });
+
+        $gistlog->files = File::multipleFromGitHub($githubGist['files']);
 
         $gistlog->config = GistConfig::fromGitHub($githubGist);
 
@@ -109,6 +112,11 @@ class Gistlog
         }
 
         return substr($body, 0, strpos($body, ' ', 200));
+    }
+
+    public function showFiles()
+    {
+        return $this->config['include_files'];
     }
 
     private function renderMarkdown()

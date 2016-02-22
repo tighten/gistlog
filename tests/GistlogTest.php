@@ -118,4 +118,17 @@ class GistlogTest extends TestCase
 
         $this->assertEquals("<pre><code>" . htmlspecialchars($gistlog->content) . "\n</code></pre>", $gistlog->renderHtml());
     }
+
+    /** @test */
+    public function it_loads_files()
+    {
+        $githubGist = $this->loadFixture('aac5edd61c183dd26392.json');
+
+        $gistlog = Gistlog::fromGitHub($githubGist);
+        $files = $gistlog->files;
+
+        $this->assertTrue($gistlog->showFiles());
+        $this->assertEquals(2, $files->count());
+        $this->assertEquals(['planets.md', 'ship.css'], array_pluck($files->toArray(), 'name'));
+    }
 }
