@@ -1,0 +1,138 @@
+
+{
+    "url": "https://api.github.com/gists/272f372732bf4d69bd0f",
+    "forks_url": "https://api.github.com/gists/272f372732bf4d69bd0f/forks",
+    "commits_url": "https://api.github.com/gists/272f372732bf4d69bd0f/commits",
+    "id": "272f372732bf4d69bd0f",
+    "git_pull_url": "https://gist.github.com/272f372732bf4d69bd0f.git",
+    "git_push_url": "https://gist.github.com/272f372732bf4d69bd0f.git",
+    "html_url": "https://gist.github.com/272f372732bf4d69bd0f",
+    "files": {
+        "a.php": {
+            "filename": "a.php",
+            "type": "application/x-httpd-php",
+            "language": "PHP",
+            "raw_url": "https://gist.githubusercontent.com/dannyweeks/272f372732bf4d69bd0f/raw/4e5e002f1487ae37ac017e7cc4376b9e87a75869/a.php",
+            "size": 23,
+            "truncated": false,
+            "content": "<?php\n\necho \"some php\";"
+        },
+        "a_fun_post.md": {
+            "filename": "a_fun_post.md",
+            "type": "text/plain",
+            "language": "Markdown",
+            "raw_url": "https://gist.githubusercontent.com/dannyweeks/272f372732bf4d69bd0f/raw/a51e2feea7fd0c933b30c33635ff43a165751b7f/a_fun_post.md",
+            "size": 15,
+            "truncated": false,
+            "content": "# My First Post"
+        },
+        "gistlog.yml": {
+            "filename": "gistlog.yml",
+            "type": "text/x-yaml",
+            "language": "YAML",
+            "raw_url": "https://gist.githubusercontent.com/dannyweeks/272f372732bf4d69bd0f/raw/5e2372c012a16c5cf6f2ddf3b7e5a1e242e35e0e/gistlog.yml",
+            "size": 15,
+            "truncated": false,
+            "content": "published: true"
+        },
+        "some_other.md": {
+            "filename": "some_other.md",
+            "type": "text/plain",
+            "language": "Markdown",
+            "raw_url": "https://gist.githubusercontent.com/dannyweeks/272f372732bf4d69bd0f/raw/2cb911b433ad93ef991408a16c5dc6ea67359e7e/some_other.md",
+            "size": 15,
+            "truncated": false,
+            "content": "Another md file"
+        }
+    },
+    "public": false,
+    "created_at": "2016-02-26T18:42:32Z",
+    "updated_at": "2016-02-26T18:43:49Z",
+    "description": "This has additional files but shouldn't show them",
+    "comments": 0,
+    "user": null,
+    "comments_url": "https://api.github.com/gists/272f372732bf4d69bd0f/comments",
+    "owner": {
+        "login": "dannyweeks",
+        "id": 4365775,
+        "avatar_url": "https://avatars.githubusercontent.com/u/4365775?v=3",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/dannyweeks",
+        "html_url": "https://github.com/dannyweeks",
+        "followers_url": "https://api.github.com/users/dannyweeks/followers",
+        "following_url": "https://api.github.com/users/dannyweeks/following{/other_user}",
+        "gists_url": "https://api.github.com/users/dannyweeks/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/dannyweeks/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/dannyweeks/subscriptions",
+        "organizations_url": "https://api.github.com/users/dannyweeks/orgs",
+        "repos_url": "https://api.github.com/users/dannyweeks/repos",
+        "events_url": "https://api.github.com/users/dannyweeks/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/dannyweeks/received_events",
+        "type": "User",
+        "site_admin": false
+    },
+    "forks": [
+
+    ],
+    "history": [
+        {
+            "user": {
+                "login": "dannyweeks",
+                "id": 4365775,
+                "avatar_url": "https://avatars.githubusercontent.com/u/4365775?v=3",
+                "gravatar_id": "",
+                "url": "https://api.github.com/users/dannyweeks",
+                "html_url": "https://github.com/dannyweeks",
+                "followers_url": "https://api.github.com/users/dannyweeks/followers",
+                "following_url": "https://api.github.com/users/dannyweeks/following{/other_user}",
+                "gists_url": "https://api.github.com/users/dannyweeks/gists{/gist_id}",
+                "starred_url": "https://api.github.com/users/dannyweeks/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/dannyweeks/subscriptions",
+                "organizations_url": "https://api.github.com/users/dannyweeks/orgs",
+                "repos_url": "https://api.github.com/users/dannyweeks/repos",
+                "events_url": "https://api.github.com/users/dannyweeks/events{/privacy}",
+                "received_events_url": "https://api.github.com/users/dannyweeks/received_events",
+                "type": "User",
+                "site_admin": false
+            },
+            "version": "a968234878e3f8893ca18629fe9ff66a979d1201",
+            "committed_at": "2016-02-26T18:43:49Z",
+            "change_status": {
+                "total": 1,
+                "additions": 1,
+                "deletions": 0
+            },
+            "url": "https://api.github.com/gists/272f372732bf4d69bd0f/a968234878e3f8893ca18629fe9ff66a979d1201"
+        },
+        {
+            "user": {
+                "login": "dannyweeks",
+                "id": 4365775,
+                "avatar_url": "https://avatars.githubusercontent.com/u/4365775?v=3",
+                "gravatar_id": "",
+                "url": "https://api.github.com/users/dannyweeks",
+                "html_url": "https://github.com/dannyweeks",
+                "followers_url": "https://api.github.com/users/dannyweeks/followers",
+                "following_url": "https://api.github.com/users/dannyweeks/following{/other_user}",
+                "gists_url": "https://api.github.com/users/dannyweeks/gists{/gist_id}",
+                "starred_url": "https://api.github.com/users/dannyweeks/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/dannyweeks/subscriptions",
+                "organizations_url": "https://api.github.com/users/dannyweeks/orgs",
+                "repos_url": "https://api.github.com/users/dannyweeks/repos",
+                "events_url": "https://api.github.com/users/dannyweeks/events{/privacy}",
+                "received_events_url": "https://api.github.com/users/dannyweeks/received_events",
+                "type": "User",
+                "site_admin": false
+            },
+            "version": "ecc019dc85aa569e55df1f7f4e109d649ee0dbaf",
+            "committed_at": "2016-02-26T18:42:32Z",
+            "change_status": {
+                "total": 5,
+                "additions": 5,
+                "deletions": 0
+            },
+            "url": "https://api.github.com/gists/272f372732bf4d69bd0f/ecc019dc85aa569e55df1f7f4e109d649ee0dbaf"
+        }
+    ],
+    "truncated": false
+}

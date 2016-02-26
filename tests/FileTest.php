@@ -23,13 +23,13 @@ class FileTest extends TestCase
     }
 
     /** @test */
-    public function it_loads_multiple_files_and_ignores_the_post_and_config_file()
+    public function it_loads_multiple_files()
     {
         $githubGist = $this->loadFixture('aac5edd61c183dd26392.json');
         $files = File::multipleFromGitHub($githubGist['files']);
 
-        $this->assertEquals(2, $files->count());
-        $this->assertEquals(['planets.md', 'ship.css'], array_pluck($files->toArray(), 'name'));
+        $this->assertEquals(4, $files->count());
+        $this->assertEquals(['blog.md', 'gistlog.yml','planets.md', 'ship.css'], $files->pluck('name')->toArray());
         $this->assertEquals(get_class($files->first()), File::class);
     }
 }

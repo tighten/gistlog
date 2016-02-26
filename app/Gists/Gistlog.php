@@ -41,10 +41,13 @@ class Gistlog
     {
         $gistlog = new self;
 
+        $files = File::multipleFromGitHub($githubGist['files']);
+        $postFile = $files->getPostFile();
+
         $gistlog->id = $githubGist['id'];
         $gistlog->title = $githubGist['description'];
-        $gistlog->content = array_values($githubGist['files'])[0]['content'];
-        $gistlog->language = array_values($githubGist['files'])[0]['language'];
+        $gistlog->content = $postFile->content;
+        $gistlog->language = $postFile->language;
         $gistlog->author = $githubGist['owner']['login'];
         $gistlog->avatarUrl = $githubGist['owner']['avatar_url'];
         $gistlog->link = $githubGist['html_url'];
@@ -56,9 +59,8 @@ class Gistlog
             return Comment::fromGitHub($githubGist['id'], $comment);
         });
 
-        $gistlog->files = File::multipleFromGitHub($githubGist['files']);
-
         $gistlog->config = GistConfig::fromGitHub($githubGist);
+        $gistlog->files = $gistlog->showFiles() ? $files->getAdditionalFiles() : new FileCollection([]);
 
         return $gistlog;
     }

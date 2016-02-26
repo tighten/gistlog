@@ -120,6 +120,16 @@ class GistlogTest extends TestCase
     }
 
     /** @test */
+    public function it_finds_the_first_markdown_file_and_uses_it_as_the_post()
+    {
+        $githubGist = $this->loadFixture('272f372732bf4d69bd0f.json');
+
+        $gistlog = Gistlog::fromGitHub($githubGist);
+
+        $this->assertContains('My First Post', $gistlog->content);
+    }
+
+    /** @test */
     public function it_loads_files()
     {
         $githubGist = $this->loadFixture('aac5edd61c183dd26392.json');
@@ -129,6 +139,16 @@ class GistlogTest extends TestCase
 
         $this->assertTrue($gistlog->showFiles());
         $this->assertEquals(2, $files->count());
-        $this->assertEquals(['planets.md', 'ship.css'], array_pluck($files->toArray(), 'name'));
+        $this->assertEquals(['planets.md', 'ship.css'], $files->pluck('name')->toArray());
+    }
+
+    /** @test */
+    public function it_has_additional_files_but_doesnt_show_them()
+    {
+        $githubGist = $this->loadFixture('272f372732bf4d69bd0f.json');
+
+        $gistlog = Gistlog::fromGitHub($githubGist);
+
+        $this->assertEquals(0, $gistlog->files->count());
     }
 }

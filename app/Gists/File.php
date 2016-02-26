@@ -31,18 +31,11 @@ class File implements Arrayable
 
     /**
      * @param array|ArrayAccess $rawFiles
-     * @return Collection
+     * @return FileCollection
      */
     public static function multipleFromGitHub($rawFiles)
     {
-        // Remove the blog post itself.
-        array_shift($rawFiles);
-
-        return collect($rawFiles)->map(function ($file) {
-            return static::fromGitHub($file);
-        })->filter(function ($file) {
-            return $file->name !== 'gistlog.yml';
-        });
+        return new FileCollection($rawFiles);
     }
 
     /**
