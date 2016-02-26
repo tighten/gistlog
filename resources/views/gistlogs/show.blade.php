@@ -21,7 +21,7 @@
                 <a href="{{ $gistlog->link }}">View on GitHub</a>
             </div>
         </article>
-            <h3>Comments</h3>
+            <h3>Comments {{ (count($gistlog->comments) > 0) ? '(' . count($gistlog->comments) . ')' : '' }}</h3>
 
             @include('gistlogs.comment_form')
 

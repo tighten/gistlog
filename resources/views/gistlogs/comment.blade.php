@@ -4,7 +4,7 @@
     </div>
 
     <div class="comment__content">
-        <div class="comment__meta">
+        <div class="comment__meta {{ ($comment->author == $gistlog->author) ? 'comment__owner' : '' }}">
             <a href="https://github.com/{{ $comment->author }}">{{ $comment->author }}</a>
             &bull; <a href="{{ $comment->link() }}">{{ $comment->updatedAt->diffForHumans() }}</a>
         </div>
