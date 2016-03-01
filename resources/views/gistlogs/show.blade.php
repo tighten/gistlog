@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        @if($gistlog->isAnonymous())
+        @if ($gistlog->isAnonymous())
             <span class="profile-pic">
                 <img src="{{ $gistlog->avatarUrl }}">
             </span>
@@ -14,7 +14,7 @@
 
         <article class="gistlog">
             <h1 class="gistlog__title">{{ $gistlog->title }}</h1>
-            @if($gistlog->isAnonymous())
+            @if ($gistlog->isAnonymous())
                 <span class="gistlog__author">By {{ $gistlog->author }}</span>
             @else
                 <span class="gistlog__author">By <a href="/{{ $gistlog->author }}">{{ $gistlog->author }}</a></span>

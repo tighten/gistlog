@@ -50,13 +50,12 @@ class Gistlog
         $gistlog->createdAt = Carbon::parse($githubGist['created_at']);
         $gistlog->updatedAt = Carbon::parse($githubGist['updated_at']);
 
-        if (!isset($githubGist['owner'])) {
-            $anonymousAuthor = Author::getAnonymous();
-            $gistlog->author = $anonymousAuthor->username;
-            $gistlog->avatarUrl = $anonymousAuthor->avatarUrl;
-        } else {
+        if (isset($githubGist['owner'])) {
             $gistlog->author = $githubGist['owner']['login'];
             $gistlog->avatarUrl = $githubGist['owner']['avatar_url'];
+        } else {
+            $gistlog->author = Author::ANONYMOUS_USERNAME; 
+            $gistlog->avatarUrl = Author::ANONYMOUS_AVATAR_URL;
         }
 
         $gistlog->comments = collect($githubComments)->map(function ($comment) use ($githubGist) {
@@ -109,7 +108,7 @@ class Gistlog
      */
     public function isAnonymous()
     {
-        return $this->author == 'anonymous';
+        return $this->author === Author::ANONYMOUS_USERNAME;
     }
 
     public function getPreview()

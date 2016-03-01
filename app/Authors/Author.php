@@ -4,6 +4,9 @@ use Gistlog\Gists\Gistlog;
 
 class Author
 {
+    const ANONYMOUS_USERNAME = 'invalid-email-address';
+    const ANONYMOUS_AVATAR_URL = 'https://avatars3.githubusercontent.com/u/148100?v=3&s=400';
+
     public $id;
     public $avatarUrl;
     public $link;
@@ -42,11 +45,11 @@ class Author
         $author = new self;
 
         $author->id = 0;
-        $author->avatarUrl = 'https://avatars3.githubusercontent.com/u/148100?v=3&s=400';
-        $author->link = 'https://github.com/anonymous';
+        $author->avatarUrl = self::ANONYMOUS_AVATAR_URL;
+        $author->link = 'https://github.com/' . self::ANONYMOUS_USERNAME;
         $author->name = 'anonymous';
-        $author->username = 'anonymous';
-        $author->gists = collect();
+        $author->username = self::ANONYMOUS_USERNAME;
+        $author->gists = collect([]);
 
         return $author;
     }
