@@ -120,6 +120,7 @@ class GistlogTest extends TestCase
     }
 
     /** @test */
+
     public function it_finds_the_first_markdown_file_and_uses_it_as_the_post()
     {
         $githubGist = $this->loadFixture('272f372732bf4d69bd0f.json');
@@ -150,5 +151,14 @@ class GistlogTest extends TestCase
         $gistlog = Gistlog::fromGitHub($githubGist);
 
         $this->assertEquals(0, $gistlog->files->count());
+    }
+
+    public function it_accepts_anonymous_gists()
+    {
+        $githubGist = $this->loadFixture('2c2769b21e512eabdd72.json');
+
+        $gistlog = Gistlog::fromGitHub($githubGist);
+
+        $this->assertEquals("anonymous", $gistlog->author);
     }
 }

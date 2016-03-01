@@ -2,13 +2,24 @@
 
 @section('content')
     <div class="container">
-        <a href="https://github.com/{{ $gistlog->author }}" class="profile-pic">
-            <img src="{{ $gistlog->avatarUrl }}">
-        </a>
+        @if ($gistlog->isAnonymous())
+            <span class="profile-pic">
+                <img src="{{ $gistlog->avatarUrl }}">
+            </span>
+        @else
+            <a href="https://github.com/{{ $gistlog->author }}" class="profile-pic">
+                <img src="{{ $gistlog->avatarUrl }}">
+            </a>
+        @endif
 
         <article class="gistlog">
             <h1 class="gistlog__title">{{ $gistlog->title }}</h1>
-            <span class="gistlog__author">By <a href="/{{ $gistlog->author }}">{{ $gistlog->author }}</a></span>
+            @if ($gistlog->isAnonymous())
+                <span class="gistlog__author">By {{ $gistlog->author }}</span>
+            @else
+                <span class="gistlog__author">By <a href="/{{ $gistlog->author }}">{{ $gistlog->author }}</a></span>
+            @endif
+
 
             <div class="gistlog__content js-gistlog-content">
                 {!! $gistlog->renderHtml() !!}
