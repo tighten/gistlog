@@ -50,9 +50,6 @@ class Gistlog
 
         $gistlog->content = $postFile->content;
         $gistlog->language = $postFile->language;
-        $gistlog->author = $githubGist['owner']['login'];
-        $gistlog->avatarUrl = $githubGist['owner']['avatar_url'];
-
         $gistlog->link = $githubGist['html_url'];
         $gistlog->public = $githubGist['public'];
         $gistlog->createdAt = Carbon::parse($githubGist['created_at']);
@@ -62,7 +59,7 @@ class Gistlog
             $gistlog->author = $githubGist['owner']['login'];
             $gistlog->avatarUrl = $githubGist['owner']['avatar_url'];
         } else {
-            $gistlog->author = Author::ANONYMOUS_USERNAME; 
+            $gistlog->author = Author::ANONYMOUS_USERNAME;
             $gistlog->avatarUrl = Author::ANONYMOUS_AVATAR_URL;
         }
 
