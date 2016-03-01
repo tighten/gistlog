@@ -37,6 +37,20 @@ class Author
         return $author;
     }
 
+    public static function getAnonymous()
+    {
+        $author = new self;
+
+        $author->id = 0;
+        $author->avatarUrl = 'https://avatars3.githubusercontent.com/u/148100?v=3&s=400';
+        $author->link = 'https://github.com/anonymous';
+        $author->name = 'anonymous';
+        $author->username = 'anonymous';
+        $author->gists = collect();
+
+        return $author;
+    }
+
     /**
      * @return bool
      */

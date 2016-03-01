@@ -2,6 +2,7 @@
 
 use Carbon\Carbon;
 use Cache;
+use Gistlog\Authors\Author;
 use Gistlog\ContentParser\ContentParserFacade as ContentParser;
 
 class Gistlog
@@ -44,12 +45,19 @@ class Gistlog
         $gistlog->title = $githubGist['description'];
         $gistlog->content = array_values($githubGist['files'])[0]['content'];
         $gistlog->language = array_values($githubGist['files'])[0]['language'];
-        $gistlog->author = $githubGist['owner']['login'];
-        $gistlog->avatarUrl = $githubGist['owner']['avatar_url'];
         $gistlog->link = $githubGist['html_url'];
         $gistlog->public = $githubGist['public'];
         $gistlog->createdAt = Carbon::parse($githubGist['created_at']);
         $gistlog->updatedAt = Carbon::parse($githubGist['updated_at']);
+
+        if (!isset($githubGist['owner'])) {
+            $anonymousAuthor = Author::getAnonymous();
+            $gistlog->author = $anonymousAuthor->username;
+            $gistlog->avatarUrl = $anonymousAuthor->avatarUrl;
+        } else {
+            $gistlog->author = $githubGist['owner']['login'];
+            $gistlog->avatarUrl = $githubGist['owner']['avatar_url'];
+        }
 
         $gistlog->comments = collect($githubComments)->map(function ($comment) use ($githubGist) {
             return Comment::fromGitHub($githubGist['id'], $comment);
@@ -94,6 +102,14 @@ class Gistlog
     public function isSecret()
     {
         return ! $this->isPublic();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAnonymous()
+    {
+        return $this->author == 'anonymous';
     }
 
     public function getPreview()
