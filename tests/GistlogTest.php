@@ -118,4 +118,14 @@ class GistlogTest extends TestCase
 
         $this->assertEquals("<pre><code>" . htmlspecialchars($gistlog->content) . "\n</code></pre>", $gistlog->renderHtml());
     }
+
+    /** @test */
+    public function it_accepts_anonymous_gists()
+    {
+        $githubGist = $this->loadFixture('2c2769b21e512eabdd72.json');
+
+        $gistlog = Gistlog::fromGitHub($githubGist);
+
+        $this->assertEquals("anonymous", $gistlog->author);
+    }
 }
