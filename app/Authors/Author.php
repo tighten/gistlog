@@ -4,7 +4,7 @@ use Gistlog\Gists\Gistlog;
 
 class Author
 {
-    const ANONYMOUS_USERNAME = 'invalid-email-address';
+    const ANONYMOUS_USERNAME = 'anonymous';
     const ANONYMOUS_AVATAR_URL = 'https://avatars3.githubusercontent.com/u/148100?v=3&s=400';
 
     public $id;
