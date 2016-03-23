@@ -15,6 +15,7 @@ class Gistlog
     public $avatarUrl;
     public $link;
     public $config;
+    public $files;
     private $public;
 
     /**
@@ -41,10 +42,14 @@ class Gistlog
     {
         $gistlog = new self;
 
+        $files = File::multipleFromGitHub($githubGist['files']);
+        $postFile = $files->getPostFile();
+
         $gistlog->id = $githubGist['id'];
         $gistlog->title = $githubGist['description'];
-        $gistlog->content = array_values($githubGist['files'])[0]['content'];
-        $gistlog->language = array_values($githubGist['files'])[0]['language'];
+
+        $gistlog->content = $postFile->content;
+        $gistlog->language = $postFile->language;
         $gistlog->link = $githubGist['html_url'];
         $gistlog->public = $githubGist['public'];
         $gistlog->createdAt = Carbon::parse($githubGist['created_at']);
@@ -54,7 +59,7 @@ class Gistlog
             $gistlog->author = $githubGist['owner']['login'];
             $gistlog->avatarUrl = $githubGist['owner']['avatar_url'];
         } else {
-            $gistlog->author = Author::ANONYMOUS_USERNAME; 
+            $gistlog->author = Author::ANONYMOUS_USERNAME;
             $gistlog->avatarUrl = Author::ANONYMOUS_AVATAR_URL;
         }
 
@@ -63,6 +68,7 @@ class Gistlog
         });
 
         $gistlog->config = GistConfig::fromGitHub($githubGist);
+        $gistlog->files = $gistlog->showFiles() ? $files->getAdditionalFiles() : new FileCollection([]);
 
         return $gistlog;
     }
@@ -124,6 +130,11 @@ class Gistlog
         }
 
         return substr($body, 0, strpos($body, ' ', 200));
+    }
+
+    public function showFiles()
+    {
+        return $this->config['include_files'];
     }
 
     private function renderMarkdown()

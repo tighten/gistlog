@@ -10,9 +10,10 @@ class GistConfig implements ArrayAccess
      * @var array
      */
     private $defaultSettings = [
-        'published'    => false,
+        'published' => false,
         'published_on' => null,
-        'preview'      => null
+        'preview' => null,
+        'include_files' => false
     ];
 
     /**
