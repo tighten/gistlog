@@ -11,7 +11,7 @@ An exercise in iterative development by [Matt Stauffer](http://mattstauffer.co/)
 
 ## Requirements
 
- * PHP <= 5.5.9
+ * PHP >= 5.5.9
  * PHP [mcrypt extension](http://php.net/manual/en/book.mcrypt.php)
  * Composer
 
