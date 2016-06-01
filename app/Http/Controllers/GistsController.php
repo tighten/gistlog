@@ -47,7 +47,7 @@ class GistsController extends Controller
         $gistlog = $this->repository->findById($gistId);
 
         if ($username !== $gistlog->author) {
-            dd('bad url dummy');
+            abort(404, "Author not found");
         }
 
         return View::make('gistlogs.show')
