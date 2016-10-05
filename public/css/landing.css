@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+}
+nav.navigation {
+  background: #648EC6;
+  padding: 30px 50px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+nav.navigation .logo img {
+  height: 2.5em;
+}
+nav.navigation ul.items {
+  list-style: none;
+}
+nav.navigation ul.items li {
+  padding: 0 15px;
+  display: inline;
+}
+nav.navigation ul.items li a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+section.intro {
+  padding: 50px 20% 0 20%;
+  background: #648EC6;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+section.intro .claim {
+  color: white;
+  padding: 25px;
+  -ms-flex: 4;
+  flex: 4;
+}
+section.intro .claim h1 {
+  font-size: 2em;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+section.intro .claim p {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+section.intro .claim a.cta {
+  width: 100%;
+  color: white;
+  background: black;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+}
+section.intro .screenshot {
+  padding: 25px 25px 0 25px;
+  -ms-flex: 6;
+  flex: 6;
+}
+section.intro .screenshot img {
+  width: 100%;
+  display: block;
+}
+section.instructions {
+  padding: 50px 20%;
+  display: -ms-flexbox;
+  display: flex;
+}
+section.instructions .step {
+  text-align: center;
+  -ms-flex: 4;
+  flex: 4;
+}
+section.instructions .step img {
+  width: 100%;
+}
+section.instructions .step p {
+  color: grey;
+}
+section.features {
+  padding: 50px 20%;
+  background: #E4E7EC;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+section.features .list {
+  text-align: right;
+  padding: 30px;
+  -ms-flex: 4;
+  flex: 4;
+}
+section.features .list.right {
+  text-align: left;
+}
+section.features .list .feature {
+  padding: 20px 0;
+}
+section.features .list .feature .icon {
+  color: grey;
+  margin-bottom: 5px;
+  font-size: 2em;
+}
+section.features .screenshot {
+  -ms-flex: 7;
+  flex: 7;
+}
+section.features .screenshot img {
+  width: 100%;
+  display: block;
+}
+footer.footer {
+  background: #648EC6;
+  text-align: center;
+  padding: 20px;
+}
+footer.footer a {
+  color: white;
+  text-decoration: none;
+  padding: 0 20px;
+}
+footer.footer a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=landing.css.map */

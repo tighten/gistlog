@@ -1,0 +1,27 @@
+nav.navigation {
+  background: @intro-bg;
+  padding: 30px @side-padding;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & .logo img {
+    height: 2.5em;
+  }
+
+  & ul.items {
+    list-style: none;
+
+    & li {
+      padding: 0 15px;
+      display: inline;
+
+      & a {
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

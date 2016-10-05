@@ -39,7 +39,7 @@
 
             <div class="collapse navbar-collapse" id="primary-nav-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/">Create a New Gistlog</a></li>
+                    <li><a href="/posts/create">Create a New Gistlog</a></li>
                 </ul>
             </div>
         </div>

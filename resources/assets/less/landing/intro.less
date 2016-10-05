@@ -1,0 +1,47 @@
+section.intro {
+  padding: 50px @intro-padding 0 @intro-padding;
+  background: @intro-bg;
+
+  display: flex;
+  align-items: center;
+
+  & .claim {
+    color: white;
+    padding: 25px;
+    flex: 4;
+
+    & h1 {
+      font-size: 2em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    & p {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+
+    & a.cta {
+      width: 100%;
+      color: white;
+      background: black;
+      border-radius: 5px;
+      padding: 5px;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      display: block;
+    }
+  }
+
+  & .screenshot {
+    padding: 25px 25px 0 25px;
+    flex: 6;
+
+    & img {
+      width: 100%;
+      display: block; // Avoid "the gap"
+    }
+  }
+}

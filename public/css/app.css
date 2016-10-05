@@ -3258,7 +3258,8 @@ pre code {
 .gistlog__content > ol {
   margin-bottom: 1.36363636em;
 }
-.gistlog__content p > code {
+.gistlog__content p > code,
+.gistlog__content li > code {
   border-radius: 0;
   font-size: 70%;
 }
@@ -3408,6 +3409,9 @@ img {
 code {
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+pre code {
+  white-space: pre;
 }
 
 /*# sourceMappingURL=app.css.map */

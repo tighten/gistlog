@@ -1,0 +1,37 @@
+section.features {
+  padding: 50px @intro-padding;
+  background: #E4E7EC;
+
+  display: flex;
+  align-items: center;
+
+  & .list {
+    text-align: right;
+    padding: 30px;
+
+    flex: 4;
+
+    &.right {
+      text-align: left;
+    }
+
+    & .feature {
+      padding: 20px 0;
+
+      & .icon {
+        color: grey;
+        margin-bottom: 5px;
+        font-size: 2em;
+      }
+    }
+  }
+
+  & .screenshot {
+    flex: 7;
+
+    & img {
+      width: 100%;
+      display: block;
+    }
+  }
+}
