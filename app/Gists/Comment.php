@@ -44,6 +44,6 @@ class Comment
 
     public function link()
     {
-        return "https://gist.github.com/{$this->gistId}#comment-{$this->id}";
+        return "https://gist.github.com/{$this->gistId}#gistcomment-{$this->id}";
     }
 }
