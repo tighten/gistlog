@@ -1,25 +1,25 @@
 section.intro {
-  padding: 50px @intro-padding 0 @intro-padding;
-  background: @intro-bg;
-  box-shadow: inset 0px -24px 20px -24px rgba(0,0,0,0.5);
+  padding: @intro-headroom @content-margin 0 @content-margin;
+  background: @highlight-background-color;
+  box-shadow: inset 0px -20px 20px -20px rgba(0,0,0,0.5);
 
   display: flex;
   align-items: center;
 
   & .claim {
     color: white;
-    padding: 25px;
+    padding: @intro-gutter/2;
     flex: 4;
 
     & h1 {
       font-size: 2em;
       text-transform: uppercase;
-      margin-bottom: 15px;
+      margin-bottom: @claim-spacing;
     }
 
     & p {
       font-size: 1.2em;
-      margin-bottom: 15px;
+      margin-bottom: @claim-spacing;
     }
 
     & a.cta {
@@ -37,7 +37,7 @@ section.intro {
   }
 
   & .screenshot {
-    padding: 25px 25px 0 25px;
+    padding: @intro-gutter/2 @intro-gutter/2 0 @intro-gutter/2;
     flex: 6;
 
     & img {

@@ -1,3 +1,6 @@
+/*
+GISTLOG LANDING PAGE CSS
+*/
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +12,7 @@ body {
 }
 nav.navigation {
   background: #648EC6;
-  padding: 30px 50px;
+  padding: 25px 50px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -35,7 +38,7 @@ nav.navigation ul.items li a {
 section.intro {
   padding: 50px 20% 0 20%;
   background: #648EC6;
-  box-shadow: inset 0px -24px 20px -24px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px -20px 20px -20px rgba(0, 0, 0, 0.5);
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -102,7 +105,7 @@ section.features {
 }
 section.features .list {
   text-align: right;
-  padding: 30px;
+  padding: 20px;
   -ms-flex: 4;
   flex: 4;
 }
