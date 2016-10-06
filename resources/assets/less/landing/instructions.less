@@ -2,6 +2,12 @@ section.instructions {
   padding: @section-spacing @content-margin;
   display: flex;
 
+  @media @mobile {
+    & {
+      flex-direction: column;
+    }
+  }
+
   & .step {
     text-align: center;
 

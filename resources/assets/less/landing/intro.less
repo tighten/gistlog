@@ -6,6 +6,17 @@ section.intro {
   display: flex;
   align-items: center;
 
+  @media @mobile {
+    & {
+      flex-direction: column;
+      padding: @intro-headroom/2 @content-margin/2 0 @content-margin/2;
+
+      & .claim {
+        text-align: center;
+      }
+    }
+  }
+
   & .claim {
     color: white;
     padding: @intro-gutter/2;
@@ -23,7 +34,6 @@ section.intro {
     }
 
     & a.cta {
-      width: 100%;
       color: white;
       background: black;
       border-radius: 5px;

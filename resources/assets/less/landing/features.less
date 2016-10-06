@@ -5,6 +5,34 @@ section.features {
   display: flex;
   align-items: center;
 
+  @media @tablet {
+    & {
+      flex-direction: column;
+      padding: @section-spacing @content-margin/6;
+
+      & .screenshot {
+        display: none;
+      }
+
+      & .list {
+        text-align: center !important;
+        padding: 0 !important;
+        display: flex;
+
+        & .feature {
+          margin: 5px;
+          border-radius: 5px;
+          background: white;
+          flex: 1;
+
+          & .icon {
+            padding-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+
   & .list {
     text-align: right;
     padding: @features-spacing;
