@@ -35,6 +35,7 @@ nav.navigation ul.items li a {
 section.intro {
   padding: 50px 20% 0 20%;
   background: #648EC6;
+  box-shadow: inset 0px -24px 20px -24px rgba(0, 0, 0, 0.5);
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
