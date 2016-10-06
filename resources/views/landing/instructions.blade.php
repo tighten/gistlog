@@ -1,3 +1,4 @@
+<a name="instructions"></a>
 <section class="instructions">
     <div class="step">
         <img src="{{ asset('img/step-1-create-gist.png') }}" alt="Step 1: Create Gist">

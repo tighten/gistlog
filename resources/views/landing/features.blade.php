@@ -1,3 +1,4 @@
+<a name="features"></a>
 <section class="features">
     <div class="list">
         <p class="feature">
