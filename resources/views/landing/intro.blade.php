@@ -1,14 +1,13 @@
 <section class="intro">
     <div class="claim">
         <h1>
-            Your Dev Blog<br>
-            Delivered
+            Your Dev Blog Delivered
         </h1>
         <p>
-            Publish your first post<br>
+            Publish your first post
             in 55 seconds
         </p>
-        <a href="/posts/create" class="cta">
+        <a href="/posts/create" class="cta-button">
             Get Started
         </a>
     </div>

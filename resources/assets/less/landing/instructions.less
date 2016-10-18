@@ -1,22 +1,21 @@
 section.instructions {
     display: flex;
+    flex-direction: column;
     padding: @section-spacing @content-margin;
 
-    @media @mobile {
-        & {
-            flex-direction: column;
-        }
+    @media @aboveMobile {
+        flex-direction: row;
     }
 
-    & .step {
+    .step {
         flex: 4;
         text-align: center;
 
-        & img {
+        img {
             width: 100%;
         }
 
-        & p {
+        p {
             color: grey;
         }
     }

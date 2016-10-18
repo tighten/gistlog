@@ -7,6 +7,16 @@ body {
   font-size: 20px;
   margin: 0;
 }
+.cta-button {
+  background: black;
+  border-radius: 5px;
+  color: white;
+  display: block;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
 nav.navigation {
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -23,23 +33,24 @@ nav.navigation {
 nav.navigation .logo img {
   height: 2.5em;
 }
-nav.navigation ul.items {
+nav.navigation .items {
   list-style: none;
 }
-nav.navigation ul.items li {
-  padding: 0 15px;
-  display: inline;
+nav.navigation .items li {
+  padding: 0;
+  display: block;
+  text-align: right;
 }
-nav.navigation ul.items li a {
+nav.navigation .items li a {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
 }
-@media only screen and (max-width: 720px) {
-  nav.navigation ul.items li {
-    padding: 0;
-    display: block;
-    text-align: right;
+@media only screen and (min-width: 720px) {
+  nav.navigation .items li {
+    display: inline;
+    padding: 0 15px;
+    text-align: left;
   }
 }
 section.intro {
@@ -51,17 +62,17 @@ section.intro {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 50px 20% 0 20%;
+  padding: 25px 10% 0 10%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (min-width: 720px) {
   section.intro {
-    padding: 25px 10% 0 10%;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-  section.intro .claim {
-    text-align: center;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 50px 20% 0 20%;
   }
 }
 section.intro .claim {
@@ -69,7 +80,13 @@ section.intro .claim {
   -webkit-flex: 4;
   -ms-flex: 4;
   flex: 4;
-  padding: 25px;
+  text-align: center;
+}
+@media only screen and (min-width: 720px) {
+  section.intro .claim {
+    padding: 25px;
+    text-align: left;
+  }
 }
 section.intro .claim h1 {
   font-size: 2em;
@@ -80,21 +97,16 @@ section.intro .claim p {
   font-size: 1.2em;
   margin-bottom: 15px;
 }
-section.intro .claim a.cta {
-  background: black;
-  border-radius: 5px;
-  color: white;
-  display: block;
-  padding: 5px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-}
 section.intro .screenshot {
   -webkit-flex: 6;
   -ms-flex: 6;
   flex: 6;
-  padding: 25px 25px 0 25px;
+  margin-top: 25px;
+}
+@media only screen and (min-width: 720px) {
+  section.intro .screenshot {
+    padding: 0 25px;
+  }
 }
 section.intro .screenshot img {
   display: block;
@@ -104,13 +116,16 @@ section.instructions {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding: 50px 20%;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (min-width: 720px) {
   section.instructions {
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
   }
 }
 section.instructions .step {
@@ -133,63 +148,94 @@ section.features {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 50px 20%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 50px 3.33333333%;
 }
-@media only screen and (max-width: 1100px) {
+@media only screen and (min-width: 1100px) {
   section.features {
-    padding: 50px 3.33333333%;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-  section.features .screenshot {
-    display: none;
-  }
-  section.features .list {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 0 !important;
-    text-align: center !important;
-  }
-  section.features .list .feature {
-    background: white;
-    border-radius: 5px;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    margin: 5px;
-  }
-  section.features .list .feature .icon {
-    padding-bottom: 10px;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 50px 20%;
   }
 }
 section.features .list {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-flex: 4;
   -ms-flex: 4;
   flex: 4;
-  padding: 20px;
-  text-align: right;
+  padding: 0;
+  text-align: center;
 }
-section.features .list.right {
-  text-align: left;
+@media only screen and (min-width: 1100px) {
+  section.features .list {
+    display: block;
+    padding: 20px;
+    text-align: right;
+  }
+  section.features .list.right {
+    text-align: left;
+  }
 }
 section.features .list .feature {
-  padding: 20px 0;
+  background: white;
+  border-radius: 5px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 0.8em;
+  margin: 5px;
+  padding: 20px 10px;
+}
+@media only screen and (min-width: 720px) {
+  section.features .list .feature {
+    font-size: 1em;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  section.features .list .feature {
+    background: none;
+    margin: 0;
+  }
 }
 section.features .list .feature .icon {
   color: grey;
-  margin-bottom: 5px;
   font-size: 2em;
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+}
+@media only screen and (min-width: 1100px) {
+  section.features .list .feature .icon {
+    margin-bottom: 0;
+  }
 }
 section.features .screenshot {
+  display: none;
   -webkit-flex: 7;
   -ms-flex: 7;
   flex: 7;
 }
+@media only screen and (min-width: 1100px) {
+  section.features .screenshot {
+    display: block;
+  }
+}
 section.features .screenshot img {
   width: 100%;
   display: block;
+}
+.bottom-cta {
+  background: #e4e7ec;
+  padding: 0 20% 50px;
+  text-align: center;
+}
+.bottom-cta .cta-button {
+  display: inline-block;
+  padding: 10px 3em;
 }
 footer.footer {
   background: #648ec6;

@@ -5,29 +5,28 @@ nav.navigation {
     justify-content: space-between;
     padding: @nav-margin/2 @nav-margin;
 
-    & .logo img {
+    .logo img {
         height: 2.5em;
     }
 
-    & ul.items {
+    .items {
         list-style: none;
 
-        & li {
-            padding: 0 @nav-links-spacing;
-            display: inline;
+        li {
+            padding: 0;
+            display: block;
+            text-align: right;
 
-            & a {
+            a {
                 color: white;
                 text-decoration: none;
                 text-transform: uppercase;
             }
 
-            @media @mobile {
-                & {
-                    padding: 0;
-                    display: block;
-                    text-align: right;
-                }
+            @media @aboveMobile {
+                display: inline;
+                padding: 0 @nav-links-spacing;
+                text-align: left;
             }
         }
     }

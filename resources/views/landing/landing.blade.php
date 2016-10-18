@@ -12,6 +12,7 @@
         @include('landing.intro')
         @include('landing.instructions')
         @include('landing.features')
+        @include('landing.bottom-cta')
         @include('landing.footer')
     </body>
 </html>

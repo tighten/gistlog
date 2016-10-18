@@ -1,52 +1,45 @@
 section.intro {
     align-items: center;
     background: @highlight-background-color;
-    box-shadow: inset 0px -20px 20px -20px rgba(0,0,0,0.5);
+    box-shadow: inset 0px -20px 20px -20px rgba(0, 0, 0, 0.5);
     display: flex;
-    padding: @intro-headroom @content-margin 0 @content-margin;
+    padding: @intro-headroom/2 @content-margin/2 0 @content-margin/2;
+    flex-direction: column;
 
-    @media @mobile {
-        & {
-            padding: @intro-headroom/2 @content-margin/2 0 @content-margin/2;
-            flex-direction: column;
-
-            & .claim {
-                text-align: center;
-            }
-        }
+    @media @aboveMobile {
+        flex-direction: row;
+        padding: @intro-headroom @content-margin 0 @content-margin;
     }
 
-    & .claim {
+    .claim {
         color: white;
         flex: 4;
-        padding: @intro-gutter/2;
+        text-align: center;
 
-        & h1 {
+        @media @aboveMobile {
+            padding: @intro-gutter/2;
+            text-align: left;
+        }
+
+        h1 {
             font-size: 2em;
             margin-bottom: @claim-spacing;
             text-transform: uppercase;
         }
 
-        & p {
+        p {
             font-size: 1.2em;
             margin-bottom: @claim-spacing;
         }
-
-        & a.cta {
-            background: black;
-            border-radius: 5px;
-            color: white;
-            display: block;
-            padding: 5px;
-            text-align: center;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
     }
 
-    & .screenshot {
+    .screenshot {
         flex: 6;
-        padding: @intro-gutter/2 @intro-gutter/2 0 @intro-gutter/2;
+        margin-top: @intro-gutter/2;
+
+        @media @aboveMobile {
+            padding: 0 @intro-gutter/2;
+        }
 
         & img {
             display: block; // Avoid "the gap"

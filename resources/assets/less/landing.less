@@ -1,5 +1,5 @@
-@mobile: ~"only screen and (max-width: 720px)";
-@tablet: ~"only screen and (max-width: 1100px)";
+@aboveMobile: ~"only screen and (min-width: 720px)";
+@aboveTablet: ~"only screen and (min-width: 1100px)";
 
 @highlight-background-color: #648ec6;
 @secondary-background-color: #e4e7ec;
@@ -27,8 +27,20 @@ body {
     margin: 0;
 }
 
+.cta-button {
+    background: black;
+    border-radius: 5px;
+    color: white;
+    display: block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
 @import "landing/nav";
 @import "landing/intro";
 @import "landing/instructions";
 @import "landing/features";
+@import "landing/bottom-cta";
 @import "landing/footer";

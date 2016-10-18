@@ -2,56 +2,66 @@ section.features {
     align-items: center;
     background: @secondary-background-color;
     display: flex;
-    padding: @section-spacing @content-margin;
+    flex-direction: column;
+    padding: @section-spacing @content-margin/6;
 
-    @media @tablet {
-        padding: @section-spacing @content-margin/6;
-        flex-direction: column;
+    @media @aboveTablet {
+        flex-direction: row;
+        padding: @section-spacing @content-margin;
+    }
 
-        .screenshot {
-            display: none;
+    .list {
+        display: flex;
+        flex: 4;
+        padding: 0;
+        text-align: center;
+
+        @media @aboveTablet {
+            display: block;
+            padding: @features-spacing;
+            text-align: right;
+            &.right {
+                text-align: left;
+            }
         }
 
-        .list {
-            display: flex;
-            padding: 0 !important;
-            text-align: center !important;
+        .feature {
+            background: white;
+            border-radius: 5px;
+            flex: 1;
+            font-size: 0.8em;
+            margin: 5px;
+            padding: @features-spacing @features-spacing/2;
 
-            .feature {
-                background: white;
-                border-radius: 5px;
-                flex: 1;
-                margin: 5px;
+            @media @aboveMobile {
+                font-size: 1em;
+            }
 
-                & .icon {
-                    padding-bottom: 10px;
+            @media @aboveTablet {
+                background: none;
+                margin: 0;
+            }
+
+            .icon {
+                color: grey;
+                font-size: 2em;
+                margin-bottom: 5px;
+                padding-bottom: 10px;
+
+                @media @aboveTablet {
+                    margin-bottom: 0;
                 }
             }
         }
     }
 
-    & .list {
-        flex: 4;
-        padding: @features-spacing;
-        text-align: right;
-
-        &.right {
-            text-align: left;
-        }
-
-        .feature {
-            padding: @features-spacing 0;
-
-            .icon {
-                color: grey;
-                margin-bottom: 5px;
-                font-size: 2em;
-            }
-        }
-    }
-
     .screenshot {
+        display: none;
         flex: 7;
+
+        @media @aboveTablet {
+            display: block;
+        }
 
         & img {
             width: 100%;
