@@ -5,7 +5,7 @@
             Delivered
         </h1>
         <p>
-            publish your first post<br>
+            Publish your first post<br>
             in 55 seconds
         </p>
         <a href="/posts/create" class="cta">
@@ -13,6 +13,6 @@
         </a>
     </div>
     <div class="screenshot">
-        <img src="{{asset('img/intro-screenshot.png')}}" alt="Screenshot of a GistLog blog post.">
+        <img src="{{ asset('img/intro-screenshot.png' )}}" alt="Abstracted illustration of a GistLog blog post.">
     </div>
 </section>

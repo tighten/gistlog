@@ -1,6 +1,6 @@
 <nav class="navigation">
     <div class="logo">
-        <img src="{{asset('img/gistlog-logo-white.png')}}" alt="GistLog Logo">
+        <img src="{{ asset('img/gistlog-logo-white.png') }}" alt="GistLog Logo">
     </div>
     <ul class="items">
         <li>

@@ -1,27 +1,24 @@
-/*
-GISTLOG LANDING PAGE CSS
-*/
 * {
   margin: 0;
   padding: 0;
 }
 body {
-  margin: 0;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
+  margin: 0;
 }
 nav.navigation {
-  background: #648EC6;
-  padding: 25px 50px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #648ec6;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding: 25px 50px;
 }
 nav.navigation .logo img {
   height: 2.5em;
@@ -46,22 +43,22 @@ nav.navigation ul.items li a {
   }
 }
 section.intro {
-  padding: 50px 20% 0 20%;
-  background: #648EC6;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #648ec6;
   box-shadow: inset 0px -20px 20px -20px rgba(0, 0, 0, 0.5);
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+  padding: 50px 20% 0 20%;
 }
 @media only screen and (max-width: 720px) {
   section.intro {
+    padding: 25px 10% 0 10%;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding: 25px 10% 0 10%;
   }
   section.intro .claim {
     text-align: center;
@@ -69,45 +66,45 @@ section.intro {
 }
 section.intro .claim {
   color: white;
-  padding: 25px;
   -webkit-flex: 4;
   -ms-flex: 4;
   flex: 4;
+  padding: 25px;
 }
 section.intro .claim h1 {
   font-size: 2em;
-  text-transform: uppercase;
   margin-bottom: 15px;
+  text-transform: uppercase;
 }
 section.intro .claim p {
   font-size: 1.2em;
   margin-bottom: 15px;
 }
 section.intro .claim a.cta {
-  color: white;
   background: black;
   border-radius: 5px;
+  color: white;
+  display: block;
   padding: 5px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  display: block;
 }
 section.intro .screenshot {
-  padding: 25px 25px 0 25px;
   -webkit-flex: 6;
   -ms-flex: 6;
   flex: 6;
+  padding: 25px 25px 0 25px;
 }
 section.intro .screenshot img {
-  width: 100%;
   display: block;
+  width: 100%;
 }
 section.instructions {
-  padding: 50px 20%;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  padding: 50px 20%;
 }
 @media only screen and (max-width: 720px) {
   section.instructions {
@@ -117,10 +114,10 @@ section.instructions {
   }
 }
 section.instructions .step {
-  text-align: center;
   -webkit-flex: 4;
   -ms-flex: 4;
   flex: 4;
+  text-align: center;
 }
 section.instructions .step img {
   width: 100%;
@@ -129,50 +126,50 @@ section.instructions .step p {
   color: grey;
 }
 section.features {
-  padding: 50px 20%;
-  background: #E4E7EC;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #e4e7ec;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 50px 20%;
 }
 @media only screen and (max-width: 1100px) {
   section.features {
+    padding: 50px 3.33333333%;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding: 50px 3.33333333%;
   }
   section.features .screenshot {
     display: none;
   }
   section.features .list {
-    text-align: center !important;
-    padding: 0 !important;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    padding: 0 !important;
+    text-align: center !important;
   }
   section.features .list .feature {
-    margin: 5px;
-    border-radius: 5px;
     background: white;
+    border-radius: 5px;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
+    margin: 5px;
   }
   section.features .list .feature .icon {
     padding-bottom: 10px;
   }
 }
 section.features .list {
-  text-align: right;
-  padding: 20px;
   -webkit-flex: 4;
   -ms-flex: 4;
   flex: 4;
+  padding: 20px;
+  text-align: right;
 }
 section.features .list.right {
   text-align: left;
@@ -195,14 +192,14 @@ section.features .screenshot img {
   display: block;
 }
 footer.footer {
-  background: #648EC6;
-  text-align: center;
+  background: #648ec6;
   padding: 20px;
+  text-align: center;
 }
 footer.footer a {
   color: white;
-  text-decoration: none;
   padding: 0 20px;
+  text-decoration: none;
 }
 footer.footer a:hover {
   text-decoration: underline;

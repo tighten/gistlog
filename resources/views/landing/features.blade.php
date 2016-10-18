@@ -16,13 +16,13 @@
     </div>
     <div class="screenshot">
         <a href="https://gistlog.co/mattstauffer/1c76d40371b295184845">
-            <img src="{{asset('img/features-screenshot.png')}}" alt="Screenshot of a typical Gistlog post">
+            <img src="{{ asset('img/features-screenshot.png' )}}" alt="Screenshot of a typical Gistlog post">
         </a>
     </div>
     <div class="list right">
         <p class="feature">
             <i class="icon fa fa-comments"></i><br>
-            Built-in comments + notifications
+            Built-in comments &amp; notifications
         </p>
         <p class="feature">
             <i class="icon fa fa-indent"></i><br>

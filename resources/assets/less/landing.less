@@ -1,34 +1,30 @@
-/*
-GISTLOG LANDING PAGE CSS
-*/
+@mobile: ~"only screen and (max-width: 720px)";
+@tablet: ~"only screen and (max-width: 1100px)";
 
-@mobile:    ~"only screen and (max-width: 720px)";
-@tablet:    ~"only screen and (max-width: 1100px)";
+@highlight-background-color: #648ec6;
+@secondary-background-color: #e4e7ec;
 
-@highlight-background-color:  #648EC6;
-@secondary-background-color:  #E4E7EC;
+@nav-margin:        50px; // Margin around nav area
+@content-margin:    20%;  // Horizontal margin around content
+@section-spacing:   50px; // Vertical padding around sections
+@font-size:         20px; // 1em font size
 
-@nav-margin:                  50px; // Margin around nav area
-@content-margin:              20%;  // Horizontal margin around content
-@section-spacing:             50px; // Vertical padding around sections
-@font-size:                   20px; // 1em font size
-
-@nav-links-spacing:           15px; // Horizontal spacing between nav links
-@intro-headroom:              50px; // Spacing between nav and intro content
-@intro-gutter:                50px; // Spacing between intro screenshot and claim
-@claim-spacing:               15px; // Spacing between claim items
-@features-spacing:            20px; // Vertical spacing between features
-@footer-spacing:              20px; // Padding around footer items
+@nav-links-spacing: 15px; // Horizontal spacing between nav links
+@intro-headroom:    50px; // Spacing between nav and intro content
+@intro-gutter:      50px; // Spacing between intro screenshot and claim
+@claim-spacing:     15px; // Spacing between claim items
+@features-spacing:  20px; // Vertical spacing between features
+@footer-spacing:    20px; // Padding around footer items
 
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  font-size: @font-size;
+    font-family: 'Roboto', sans-serif;
+    font-size: @font-size;
+    margin: 0;
 }
 
 @import "landing/nav";

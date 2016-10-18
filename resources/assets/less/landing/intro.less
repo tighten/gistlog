@@ -1,58 +1,56 @@
 section.intro {
-  padding: @intro-headroom @content-margin 0 @content-margin;
-  background: @highlight-background-color;
-  box-shadow: inset 0px -20px 20px -20px rgba(0,0,0,0.5);
+    align-items: center;
+    background: @highlight-background-color;
+    box-shadow: inset 0px -20px 20px -20px rgba(0,0,0,0.5);
+    display: flex;
+    padding: @intro-headroom @content-margin 0 @content-margin;
 
-  display: flex;
-  align-items: center;
+    @media @mobile {
+        & {
+            padding: @intro-headroom/2 @content-margin/2 0 @content-margin/2;
+            flex-direction: column;
 
-  @media @mobile {
-    & {
-      flex-direction: column;
-      padding: @intro-headroom/2 @content-margin/2 0 @content-margin/2;
-
-      & .claim {
-        text-align: center;
-      }
-    }
-  }
-
-  & .claim {
-    color: white;
-    padding: @intro-gutter/2;
-    flex: 4;
-
-    & h1 {
-      font-size: 2em;
-      text-transform: uppercase;
-      margin-bottom: @claim-spacing;
+            & .claim {
+                text-align: center;
+            }
+        }
     }
 
-    & p {
-      font-size: 1.2em;
-      margin-bottom: @claim-spacing;
+    & .claim {
+        color: white;
+        flex: 4;
+        padding: @intro-gutter/2;
+
+        & h1 {
+            font-size: 2em;
+            margin-bottom: @claim-spacing;
+            text-transform: uppercase;
+        }
+
+        & p {
+            font-size: 1.2em;
+            margin-bottom: @claim-spacing;
+        }
+
+        & a.cta {
+            background: black;
+            border-radius: 5px;
+            color: white;
+            display: block;
+            padding: 5px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
     }
 
-    & a.cta {
-      color: white;
-      background: black;
-      border-radius: 5px;
-      padding: 5px;
-      text-align: center;
-      text-decoration: none;
-      text-transform: uppercase;
+    & .screenshot {
+        flex: 6;
+        padding: @intro-gutter/2 @intro-gutter/2 0 @intro-gutter/2;
 
-      display: block;
+        & img {
+            display: block; // Avoid "the gap"
+            width: 100%;
+        }
     }
-  }
-
-  & .screenshot {
-    padding: @intro-gutter/2 @intro-gutter/2 0 @intro-gutter/2;
-    flex: 6;
-
-    & img {
-      width: 100%;
-      display: block; // Avoid "the gap"
-    }
-  }
 }
