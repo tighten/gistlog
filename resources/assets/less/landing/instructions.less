@@ -1,0 +1,24 @@
+section.instructions {
+  padding: @section-spacing @content-margin;
+  display: flex;
+
+  @media @mobile {
+    & {
+      flex-direction: column;
+    }
+  }
+
+  & .step {
+    text-align: center;
+
+    flex: 4;
+
+    & img {
+      width: 100%;
+    }
+
+    & p {
+      color: grey;
+    }
+  }
+}
