@@ -1,0 +1,58 @@
+section.intro {
+  padding: @intro-headroom @content-margin 0 @content-margin;
+  background: @highlight-background-color;
+  box-shadow: inset 0px -20px 20px -20px rgba(0,0,0,0.5);
+
+  display: flex;
+  align-items: center;
+
+  @media @mobile {
+    & {
+      flex-direction: column;
+      padding: @intro-headroom/2 @content-margin/2 0 @content-margin/2;
+
+      & .claim {
+        text-align: center;
+      }
+    }
+  }
+
+  & .claim {
+    color: white;
+    padding: @intro-gutter/2;
+    flex: 4;
+
+    & h1 {
+      font-size: 2em;
+      text-transform: uppercase;
+      margin-bottom: @claim-spacing;
+    }
+
+    & p {
+      font-size: 1.2em;
+      margin-bottom: @claim-spacing;
+    }
+
+    & a.cta {
+      color: white;
+      background: black;
+      border-radius: 5px;
+      padding: 5px;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      display: block;
+    }
+  }
+
+  & .screenshot {
+    padding: @intro-gutter/2 @intro-gutter/2 0 @intro-gutter/2;
+    flex: 6;
+
+    & img {
+      width: 100%;
+      display: block; // Avoid "the gap"
+    }
+  }
+}
