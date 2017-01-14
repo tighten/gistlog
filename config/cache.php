@@ -74,6 +74,6 @@ return [
     |
     */
 
-    'prefix' => 'gistlog',
+    'prefix' => 'laravel',
 
 ];
