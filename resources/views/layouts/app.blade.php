@@ -9,9 +9,6 @@
     @yield ('meta')
 
     <link href="/css/app.css" rel="stylesheet">
-    @if (isset($gistlog) && $gistlog->isSecret())
-    <meta name="robots" content="noindex, nofollow">
-    @endif
 
     <!-- Fonts -->
     <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Roboto:300,400,700/Linux+Libertine:400,400i,700,700i">
