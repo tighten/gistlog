@@ -96,4 +96,10 @@
         <meta property="og:url" content="{{ Request::url() }}">
         <meta property="og:description" content="{{ $gistlog->getPreview() }}">
         <meta property="og:site_name" content="Gistlog">
+        
+        <!-- Twitter Card data -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="tightenco">
+        <meta name="twitter:title" content="{{ $gistlog->title }}">
+        <meta name="twitter:image" content="{{ $gistlog->avatarUrl }}">
 @endsection
