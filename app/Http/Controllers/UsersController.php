@@ -19,7 +19,7 @@ class UsersController extends Controller
         $this->validate($request, [
             'homepage'             => 'max:100|url',
             'twitter_username'     => 'max:15',
-            'google_analaytics_id' => 'max:20',
+            'google_analytics_id' => 'max:20',
         ]);
 
         auth()->user()->update(request()->only(['homepage', 'twitter_username', 'google_analytics_id']));

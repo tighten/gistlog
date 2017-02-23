@@ -13,7 +13,7 @@ class AddUserSettingsColumnsToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('google_analaytics_id')->nullable()->after('token');
+            $table->string('google_analytics_id')->nullable()->after('token');
             $table->string('twitter_username')->nullable()->after('token');
             $table->string('homepage')->nullable()->after('token');
         });
@@ -27,7 +27,7 @@ class AddUserSettingsColumnsToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['twitter_username', 'homepage', 'google_analaytics_id']);
+            $table->dropColumn(['twitter_username', 'homepage', 'google_analytics_id']);
         });
     }
 }
