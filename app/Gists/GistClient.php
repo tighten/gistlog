@@ -28,7 +28,7 @@ class GistClient
      * @return array
      * @throws GistNotFoundException
      */
-    public function getGist($gistId)
+    public function getGist ($gistId)
     {
         try {
             return $this->github->api('gists')->show($gistId);
