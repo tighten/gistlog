@@ -144,6 +144,17 @@
         top: 0.5em;
         width: 2em;
     }
+
+    table {
+        tr:nth-child(even) {
+            background: @table-bg-accent;
+        }
+
+        td {
+            border: 1px solid @table-border-color;
+            padding: 0.375em 0.750em;
+        }
+    }
 }
 
 .gistlog__files {
