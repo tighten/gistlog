@@ -145,13 +145,15 @@
         width: 2em;
     }
 
-    table td {
-        padding: 6px 13px;
-        border: 1px solid #dfe2e5;
-    }
+    table {
+        tr:nth-child(even) {
+            background: @table-bg-accent;
+        }
 
-    table tr:nth-child(even) {
-        background: #f8f8f8;
+        td {
+            border: 1px solid @table-border-color;
+            padding: 0.375em 0.750em;
+        }
     }
 }
 
