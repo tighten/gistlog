@@ -30,6 +30,7 @@
             margin-bottom: 40px;
         }
     </style>
+    <title>@yield('title', 'Error')</title>
 </head>
 <body>
 <div class="container">
