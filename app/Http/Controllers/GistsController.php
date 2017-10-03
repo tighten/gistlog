@@ -54,7 +54,7 @@ class GistsController extends Controller
             return Redirect::route('gists.show', [
                 'username' => $gistlog->author,
                 'gistId'   => $gistlog->id,
-              ]);
+            ]);
         }
 
         return View::make('gistlogs.show')
