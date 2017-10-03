@@ -14,21 +14,22 @@
         text-align: center;
     }
     .button {
-        border: 1px solid #ddd;
+        border: 1px solid #555;
+        display: inline-block;
+        min-width: 150px;
         padding: 10px 20px;
         text-decoration: none;
-        min-width: 150px;
-        display:inline-block;
     }
     .button:hover {
         background: #eee;
     }
 </style>
+
     <h1>Unable to find your request</h1>
     <div class="button-container">
-        <a href="{{ route('home') }}" class="button">Go back Home</a>
+        <a href="{{ route('home') }}" class="button">Go back home</a>
         @if ($gistId && $username)
-            <a href="{{ route('authors.show', ['username' => $username]) }}" class="button">Go to Author</a>
+            <a href="{{ route('authors.show', ['username' => $username]) }}" class="button">Go to author page</a>
         @endif
     </div>
     <p><strong>Or enjoy this instead</strong></p>
