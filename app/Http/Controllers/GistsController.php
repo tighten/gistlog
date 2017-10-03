@@ -44,10 +44,17 @@ class GistsController extends Controller
 
     public function show($username, $gistId)
     {
-        $gistlog = $this->repository->findById($gistId);
+        try {
+          $gistlog = $this->repository->findById($gistId);
+        } catch (GistNotFoundException $e) {
+          abort(404, 'Gist not found');
+        }
 
         if ($username !== $gistlog->author) {
-            abort(404, "Author not found");
+          return Redirect::route('gists.show', [
+            'username' => $gistlog->author,
+            'gistId'   => $gistlog->id,
+          ]);
         }
 
         return View::make('gistlogs.show')
