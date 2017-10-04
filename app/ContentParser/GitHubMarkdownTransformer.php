@@ -13,6 +13,6 @@ class GitHubMarkdownTransformer implements Transformer
 
     public function transform($content)
     {
-        return $this->github->api('markdown')->render($content);
+        return $this->github->api('markdown')->render($content, 'gfm');
     }
 }

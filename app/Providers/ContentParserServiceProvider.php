@@ -21,7 +21,6 @@ class ContentParserServiceProvider extends ServiceProvider
             $parser = new ContentParser;
 
             $parser->push($app[GitHubMarkdownTransformer::class]);
-            $parser->push($app[GitHubUsernameTransformer::class]);
 
             return $parser;
         });
