@@ -47,7 +47,11 @@
             @endif
 
             <div class="gistlog__meta">
-                Created {{ $gistlog->createdAt->diffForHumans() }} |
+                @if ($gistlog->hasPublishedOnDate())
+                    Published {{ $gistlog->formattedPublishedOnDate() }} |
+                @else
+                    Created {{ $gistlog->createdAt->diffForHumans() }} |
+                @endif
                 Updated {{ $gistlog->updatedAt->diffForHumans() }}
             </div>
             <div class="gistlog__links">

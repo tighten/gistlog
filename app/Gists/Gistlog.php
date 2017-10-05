@@ -96,6 +96,14 @@ class Gistlog
     /**
      * @return bool
      */
+    public function hasPublishedOnDate()
+    {
+        return ! is_null($this->config['published_on']);
+    }
+
+    /**
+     * @return bool
+     */
     public function isPublic()
     {
         return $this->public;
@@ -115,6 +123,11 @@ class Gistlog
     public function isAnonymous()
     {
         return $this->author === Author::ANONYMOUS_USERNAME;
+    }
+
+    public function formattedPublishedOnDate()
+    {
+        return $this->config['published_on']->diffForHumans();
     }
 
     public function getPreview()
