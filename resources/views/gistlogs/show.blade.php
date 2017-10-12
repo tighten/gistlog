@@ -14,11 +14,16 @@
 
         <article class="gistlog">
             <h1 class="gistlog__title">{{ $gistlog->title }}</h1>
-            @if ($gistlog->isAnonymous())
-                <span class="gistlog__author">By {{ $gistlog->author }}</span>
-            @else
-                <span class="gistlog__author">By <a href="/{{ $gistlog->author }}">{{ $gistlog->author }}</a></span>
-            @endif
+            <span class="gistlog__author">
+                @if ($gistlog->isAnonymous())
+                    By {{ $gistlog->author }}
+                @else
+                    By <a href="/{{ $gistlog->author }}">{{ $gistlog->author }}</a>
+                @endif
+                @if ($gistlog->hasPublishedOnDate())
+                   | Published {{ $gistlog->formattedPublishedOnDate() }}
+                @endif
+            </span>
 
 
             <div class="gistlog__content js-gistlog-content">
