@@ -27,9 +27,6 @@ An exercise in iterative development by [Matt Stauffer](http://mattstauffer.co/)
 php -S localhost:8080 -t public
 ```
 
-7. Go to https://github.com/settings/developers and create a Oauth app 
-8. Create a token here https://github.com/settings/tokens that has access right to Gist
-
 ## Questions
 If you have any questions, please reach out to [@mattstauffer](https://github.com/mattstauffer). Find him here or on twitter at [@stauffermatt](https://twitter.com/stauffermatt).
 
