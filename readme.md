@@ -21,6 +21,8 @@ An exercise in iterative development by [Matt Stauffer](http://mattstauffer.co/)
 2. Install dependencies with `composer install`
 3. Copy `.env.example` to `.env` and modify its contents to reflect your local environment
 4. Configure a web server, such as the built-in PHP web server, to serve this site using the +public+ directory as its root
+5. Go to https://github.com/settings/developers and create a Oauth app 
+6. Create a token here https://github.com/settings/tokens that has access right to Gist
 
 ```bash
 php -S localhost:8080 -t public
