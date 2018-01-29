@@ -2,6 +2,8 @@
 
 return [
 
+    'name' => env('APP_NAME', 'Gitslog.co'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
