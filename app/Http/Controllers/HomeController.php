@@ -19,6 +19,6 @@ class HomeController extends Controller
      */
     public function createForm()
     {
-        return view('create');
+        return view('tailwind.create');
     }
 }

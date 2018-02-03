@@ -52,7 +52,7 @@ let colors = {
   'grey-dark': '#8795a1',
   'grey': '#7E8B95',
   'grey-light': '#dae1e7',
-  'grey-lighter': '#f1f5f8',
+  'grey-lighter': '#E4EAED',
   'grey-lightest': '#f3f4f5',
   'white': '#ffffff',
 

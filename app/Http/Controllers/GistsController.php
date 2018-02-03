@@ -25,7 +25,6 @@ class GistsController extends Controller
     public function storeAndRedirect()
     {
         $gistUrl = Input::get('gistUrl');
-
         try {
             $gistlog = $this->repository->findByUrl($gistUrl);
         } catch (InvalidUrlException $e) {
@@ -45,7 +44,9 @@ class GistsController extends Controller
     public function show($username, $gistId)
     {
         try {
-            $gistlog = $this->repository->findById($gistId);
+            $gistlog = \Cache::remember($gistId, 90, function () use ($gistId) {
+                return $this->repository->findById($gistId);
+            });
         } catch (GistNotFoundException $e) {
             abort(404, 'Gist not found');
         }
@@ -57,7 +58,7 @@ class GistsController extends Controller
             ]);
         }
 
-        return View::make('gistlogs.show')
+        return View::make('tailwind.gistlogs.show')
             ->with('gistlog', $gistlog)
             ->with('pageTitle', $gistlog->title . ' | ' . $gistlog->author);
     }

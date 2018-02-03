@@ -16,23 +16,10 @@ mix
     //.less('resources/assets/less/app.less', 'public/css/app.css')
     //.less('resources/assets/less/landing.less', 'public/css/landing.css')
     .less('resources/assets/less/base.less', './public/css')
+    .less('resources/assets/less/app.less', './public/css')
+    .js('resources/assets/js/app.js', './public/js')
     .options({
         postCss: [
             tailwindcss('tailwind.js'),
         ],
-    })
-    .browserSync({
-        host: '192.168.10.10',
-        proxy: 'http://gistlog.test',
-        notify: false,
-        open: false,
-        files: [
-            'app/**/*',
-            'public/**/*',
-            'resources/views/**/*'
-        ],
-        watchOptions: {
-            usePolling: true,
-            interval: 500
-        }
     });

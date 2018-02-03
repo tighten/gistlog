@@ -1,15 +1,29 @@
 @base-color: rgb(51, 51, 51);
 @strings-and-such: #183691;
 
+/** @todo: Fix the inconcistencies with GitHub */
+.gistlog__content {
+    .highlight {
+        background: #fff;
+        color: #333;
+        margin-bottom: 16px;
+
+        pre {
+            word-break: normal;
+        }
+    }
+}
+
 .gistlog__content .highlight pre, pre {
     background-color: #fafafa;
     border-left: 1em solid rgb(230, 230, 230);
-    border-radius: 2px;
-    font-size: 82%;
+    border-radius: 3px;
+    font-size: 62%;
     font-weight: normal;
     line-height: 1.45;
-    margin-bottom: 1.5em;
-    padding: 1.5em .5em;
+    margin-bottom: 0;
+    padding: 16px;
+    padding-left: 1.5em;
     overflow: auto;
 
     a {

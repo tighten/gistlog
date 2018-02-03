@@ -1,0 +1,1 @@
+const autosize = require('autosize');

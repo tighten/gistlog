@@ -23,7 +23,7 @@ class AuthorsController extends Controller
             return redirect("https://github.com/{$username}");
         }
 
-        return View::make('authors.show')
+        return View::make('tailwind.authors.show')
             ->with('author', $author)
             ->with('pageTitle', "{$author->name} (@{$author->username})");
     }

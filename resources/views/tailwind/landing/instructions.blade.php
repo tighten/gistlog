@@ -39,7 +39,7 @@
 
                     <form class="flex pr-1" method="POST" action="{{ route('post.create') }}">
                         {{ csrf_field() }}
-                        <input class="appearance-none border-solid border-t-2 border-b-2 flex-1 text-sm border-l-none py-2 px-3 text-grey" type="text" value="{{ old('gistUrl') }}" name="gistUrl" placeholder="https://gist.github.com/username/gist-key">
+                        <input class="appearance-none border-solid border-t-2 border-b-2 flex-1 text-sm border-l-none py-2 px-3 text-grey" type="text" value="{{ old('gistUrl') }}" name="gistUrl" placeholder="https://gist.github.com/username/gist-id">
                         <button class="bg-blue-darker w-32 py-3 hover:bg-blue-dark text-white font-bold text-sm py-2 px-4" type="submit">
                             Create
                         </button>
