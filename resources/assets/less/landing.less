@@ -1,46 +1,80 @@
-@aboveMobile: ~"only screen and (min-width: 720px)";
-@aboveTablet: ~"only screen and (min-width: 1100px)";
+@import "./tailwind";
 
-@highlight-background-color: #648ec6;
-@secondary-background-color: #e4e7ec;
-
-@nav-margin:        50px; // Margin around nav area
-@content-margin:    20%;  // Horizontal margin around content
-@section-spacing:   50px; // Vertical padding around sections
-@font-size:         20px; // 1em font size
-
-@nav-links-spacing: 15px; // Horizontal spacing between nav links
-@intro-headroom:    50px; // Spacing between nav and intro content
-@intro-gutter:      50px; // Spacing between intro screenshot and claim
-@claim-spacing:     15px; // Spacing between claim items
-@features-spacing:  20px; // Vertical spacing between features
-@footer-spacing:    20px; // Padding around footer items
-
-* {
-    margin: 0;
-    padding: 0;
+html {
+    @apply .font-sans;
 }
-
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: @font-size;
-    margin: 0;
+    @apply .mx-auto;
+    max-width: 1440px;
+}
+h2 {
+    @apply .font-hairline;
+    font-size: 2rem;
+}
+.title-underline {
+    @apply .w-10 .border-solid .border-b-2 .border-blue-darkest .mx-auto .my-4;
+}
+.container {
+    max-width: 990px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
 }
 
-.cta-button {
-    background: black;
-    border-radius: 5px;
-    color: white;
+.btn {
+    @apply .border-0 .my-3 .text-base .py-2 .px-8 .rounded .no-underline .table;
+    line-height: 1.75rem;
+}
+.btn-cta {
+    @apply .bg-blue .text-white .text-lg;
+}
+.blue-overlay:before {
+    position: absolute;
+    content:" ";
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
     display: block;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
+    z-index:0;
+    background-color: rgba(0, 59, 87, 0.8);
+}
+.h1-title {
+    @apply .text-4xl .font-hairline .mt-1 .text-blue-darkest;
+    font-size: 47px;
+    letter-spacing: 2px;
+}
+.headline {
+    @apply .text-2xl .pt-4 .pb-8 .text-grey .tracking-normal;
+    font-size: 25px;
+}
+.img-cover {
+    @apply .overflow-hidden .relative .invisible .h-px .bg-cover;
+}
+.min-h-6 {
+    min-height: 6rem;
+}
+.mx-5 {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+}
+.pb-5 {
+    padding-top: 1.25rem;
+}
+.pt-5 {
+    padding-top: 1.25rem;
+}
+.px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+.py-5 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
 }
 
-@import "landing/nav";
-@import "landing/intro";
-@import "landing/instructions";
-@import "landing/features";
-@import "landing/bottom-cta";
-@import "landing/footer";
+@screen md {
+    .img-cover {
+        @apply .visible;
+        height: 320px;
+    }
+}

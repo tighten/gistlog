@@ -29,10 +29,10 @@ class GistsController extends Controller
             $gistlog = $this->repository->findByUrl($gistUrl);
         } catch (InvalidUrlException $e) {
             Session::flash('error-message', 'Please enter a valid Gist URL.');
-            return Redirect::route('home');
+            return Redirect::back();
         } catch (GistNotFoundException $e) {
             Session::flash('error-message', 'Please enter a valid Gist URL.');
-            return Redirect::route('home');
+            return Redirect::back();
         }
 
         return Redirect::route('gists.show', [
@@ -44,9 +44,7 @@ class GistsController extends Controller
     public function show($username, $gistId)
     {
         try {
-            $gistlog = \Cache::remember($gistId, 90, function () use ($gistId) {
-                return $this->repository->findById($gistId);
-            });
+            $gistlog = $this->repository->findById($gistId);
         } catch (GistNotFoundException $e) {
             abort(404, 'Gist not found');
         }
@@ -58,7 +56,7 @@ class GistsController extends Controller
             ]);
         }
 
-        return View::make('tailwind.gistlogs.show')
+        return View::make('gistlogs.show')
             ->with('gistlog', $gistlog)
             ->with('pageTitle', $gistlog->title . ' | ' . $gistlog->author);
     }

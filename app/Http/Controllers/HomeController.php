@@ -9,7 +9,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('tailwind.landing.landing');
+        return view('landing.landing');
     }
 
     /**
@@ -19,6 +19,6 @@ class HomeController extends Controller
      */
     public function createForm()
     {
-        return view('tailwind.create');
+        return view('create');
     }
 }

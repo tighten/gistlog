@@ -1,19 +1,34 @@
 @if (Session::has('success-message') || Session::has('error-message') || Session::has('message'))
-<div class="container">
     @if (Session::has('success-message'))
-    <div class="notice notice--success" data-dismiss="timeout">
-        {{ Session::get('success-message') }}
-    </div>
+        @include('components.alert', ['color' => 'teal', 'message' => Session::get('success-message')])
     @endif
     @if (Session::has('error-message'))
-    <div class="notice notice--error" data-dismiss="timeout">
-        {{ Session::get('error-message') }}
-    </div>
+        @include('components.alert', ['color' => 'blue', 'message' => Session::get('error-message')])
     @endif
     @if (Session::has('message'))
-    <div class="notice notice--info" data-dismiss="timeout">
-        {{ Session::get('message') }}
-    </div>
+        @include('components.alert', ['color' => 'blue', 'message' => Session::get('message')])
     @endif
-</div>
 @endif
+
+@section('scripts')
+    @parent
+    <script>
+        (function () {
+            const alerts = document.querySelectorAll('.js-auto_dismiss');
+            if (typeof(alerts) !== undefined) {
+                alerts.forEach((el) => setTimeout(() => fadeOut(el), 4500));
+            }
+        })();
+
+        function fadeOut(el) {
+            el.style.opacity = 1;
+            (function fade() {
+                if ((el.style.opacity -= .1) < 0) {
+                    el.style.display = "none";
+                } else {
+                    requestAnimationFrame(fade);
+                }
+            })();
+        }
+    </script>
+@endsection

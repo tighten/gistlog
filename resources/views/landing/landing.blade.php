@@ -10,15 +10,15 @@
 
         <link rel="stylesheet" href="{{ asset('css/landing.css' )}}">
         <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Roboto:300,400,700">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
         <link rel="icon" type="image/png" href="/img/gistlog-fav120.png">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
         <meta name="author" content="Matt Stauffer">
         <meta name="description" content="Your dev blog - delivered! GistLog allows you to publish your blog posts via simple GitHub gists.">
-        <meta name="robots" content="index, follow">
-
+        @if(App::environment('production'))
+            <meta name="robots" content="index, follow">
+        @endif
         <!-- Schema.org markup for Google+ -->
         <meta itemprop="name" content="GistLog - Your dev blog delivered">
         <meta itemprop="description" content="Your dev blog - delivered! GistLog allows you to publish your blog posts via simple GitHub gists.">
@@ -32,11 +32,13 @@
         <meta property="og:site_name" content="GistLog">
     </head>
     <body>
+        @include('partials.flash-messages')
         @include('landing.nav')
         @include('landing.intro')
+        @include('landing.cover')
         @include('landing.instructions')
         @include('landing.features')
-        @include('landing.bottom-cta')
         @include('landing.footer')
+        @yield('scripts')
     </body>
 </html>

@@ -9,12 +9,12 @@
     @yield ('meta')
 
     <link href="/css/app.css" rel="stylesheet">
-    @if (isset($gistlog) && $gistlog->isSecret())
+    @if (isset($gistlog) && $gistlog->isSecret() || !\App::environment('production'))
     <meta name="robots" content="noindex, nofollow">
     @endif
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Roboto:300,400,700/Linux+Libertine:400,400i,700,700i">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -23,35 +23,15 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script src="{{ asset('/js/app.js') }}"></script>
 </head>
 <body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-nav-collapse">
-                    <span class="u-sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/"><img src="/img/gistlog-logo.png" class="logo" alt="Gistlog"></a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="primary-nav-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="/posts/create">Create a New Gistlog</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
     @include ('partials.flash-messages')
 
     @yield('content')
 
     <!-- Scripts -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/autosize.js/3.0.8/autosize.min.js"></script>
 
     @if (env('APP_ENV') == 'production')

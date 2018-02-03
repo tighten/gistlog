@@ -13,7 +13,3 @@ Route::post('comment/{gistId}', ['middleware' => ['auth', 'csrf'], 'uses' => 'Gi
 Route::get('{username}/{gistId}', ['uses' => 'GistsController@show', 'as' => 'gists.show']);
 
 Route::get('{username}', ['uses' => 'AuthorsController@show', 'as' => 'authors.show']);
-
-Route::get('/test/test/gist-view', function () {
-    return view('tailwind.gistlogs.show');
-});
