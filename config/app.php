@@ -2,6 +2,8 @@
 
 return [
 
+    'env' => env('APP_ENV', 'production'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
@@ -113,12 +115,10 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
-        Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
         Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
-        Illuminate\Routing\ControllerServiceProvider::class,
         Illuminate\Cookie\CookieServiceProvider::class,
         Illuminate\Database\DatabaseServiceProvider::class,
         Illuminate\Encryption\EncryptionServiceProvider::class,
@@ -141,7 +141,6 @@ return [
          * Application Service Providers...
          */
         Gistlog\Providers\AppServiceProvider::class,
-        Gistlog\Providers\BusServiceProvider::class,
         Gistlog\Providers\ConfigServiceProvider::class,
         Gistlog\Providers\EventServiceProvider::class,
         Gistlog\Providers\RouteServiceProvider::class,
