@@ -2,7 +2,7 @@
 
 return [
 
-    'name' => env('APP_NAME', 'Gitslog.co'),
+    'name' => env('APP_NAME', 'Gistlog.co'),
 
     /*
     |--------------------------------------------------------------------------
