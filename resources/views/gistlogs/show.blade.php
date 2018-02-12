@@ -26,7 +26,6 @@
 
                 <div class="gistlog__content">
                         {!! $gistlog->renderHtml() !!}
-                        {{-- @TODO: Haven't been tested --}}
                         @if($gistlog->showFiles())
                             <hr/>
                             <h3>
