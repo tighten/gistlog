@@ -5,63 +5,86 @@
 html {
     @apply .font-sans;
 }
+
 body {
     @apply .mx-auto .bg-grey-lightest;
     max-width: 1440px;
 }
+
 .avatar {
     @apply .rounded-full .overflow-hidden .relative .mx-auto;
     width: 5.5rem;
     height: 5.5rem;
 }
+
 .btn-github {
     @apply .flex .bg-grey-darkest .text-sm .px-3 .pt-1 .rounded .my-4;
     color: #fff !important;
 }
+
 .gistlog {
-    @apply .bg-white .shadow;
+    @apply .bg-white .shadow  .py-8;
     margin-top: -2.6rem;
 }
+
 .gistlog__container {
+    @apply .mx-auto .my-8;
     max-width: 935px;
 }
+
 .gistlog__content {
-    @apply .mx-auto .block .text-grey .w-full;
+    @apply .mx-auto .block .text-grey .w-full .mt-8 .pt-6;
     max-width: 34rem;
+
     a, li, ol, p {
-        line-height: 1.65;
+        @apply .leading-large;
     }
+
     a {
         @apply .no-underline .text-blue;
     }
+
     code {
         @apply .px-1;
     }
+
     code, pre {
         @apply .font-mono .bg-grey-lightest;
     }
+
     h2 {
         @apply .mt-8 .mb-8 .pt-2 .font-normal;
         font-size: 1.35rem
     }
+
     h3 {
         @apply .text-lg .text-grey .font-normal;
     }
+
     h1, h2, h3, h4, h5, h6 {
         @apply .text-black;
     }
+
     li {
-        margin-bottom: 1rem;
+        @apply .mb-4;
     }
+
     ol, ul {
-        padding-left: 1.75rem
+        @apply .pl-7;
     }
+
     p {
         @apply .font-normal;
         margin-bottom: 1rem;
     }
 }
+
 .gistlog__title {
-    @apply .font-light .text-center .text-3xl .py-2;
-    font-size: 2.125rem;
+    @apply .font-light .text-center .py-2 .text-4xl;
+}
+
+@screen sm {
+    .gistlog {
+        @apply .px-8;
+    }
 }

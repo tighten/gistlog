@@ -52,7 +52,7 @@ let colors = {
   'grey-dark': '#8795a1',
   'grey': '#7E8B95',
   'grey-light': '#dae1e7',
-  'grey-lighter': '#E4EAED',
+  'grey-lighter': '#e4eaed',
   'grey-lightest': '#f3f4f5',
   'white': '#ffffff',
 
@@ -97,7 +97,7 @@ let colors = {
   'teal-lightest': '#e8fffe',
 
   'blue-darkest': '#203950',
-  'blue-darker': '#28556E',
+  'blue-darker': '#28556e',
   'blue-dark': '#2779bd',
   'blue': '#229BE1',
   'blue-light': '#6cb2eb',
@@ -194,18 +194,18 @@ module.exports = {
 
   fonts: {
     'sans': [
-      // 'system-ui',
-      // 'BlinkMacSystemFont',
-      // '-apple-system',
-      // 'Segoe UI',
       'Roboto',
-      // 'Oxygen',
-      // 'Ubuntu',
-      // 'Cantarell',
-      // 'Fira Sans',
-      // 'Droid Sans',
-      // 'Helvetica Neue',
-      // 'sans-serif',
+      'system-ui',
+      'BlinkMacSystemFont',
+      '-apple-system',
+      'Segoe UI',
+      'Oxygen',
+      'Ubuntu',
+      'Cantarell',
+      'Fira Sans',
+      'Droid Sans',
+      'Helvetica Neue',
+      'sans-serif',
     ],
     'serif': [
       'Constantia',
@@ -253,12 +253,14 @@ module.exports = {
     'xs': '.75rem',     // 12px
     'sm': '.875rem',    // 14px
     'base': '1rem',     // 16px
+    'double': '2rem',    // 32px
     'lg': '1.125rem',   // 18px
     'xl': '1.25rem',    // 20px
     '2xl': '1.5rem',    // 24px
     '3xl': '1.875rem',  // 30px
-    '4xl': '2.25rem',   // 36px
-    '5xl': '3rem',      // 48px
+    '4xl': '2.125rem',   // 36px
+    '5xl': '2.25rem',   // 36px
+    '6xl': '3rem',      // 48px
   },
 
 
@@ -305,6 +307,7 @@ module.exports = {
     'none': 1,
     'tight': 1.25,
     'normal': 1.5,
+    'large': 1.65,
     'loose': 2,
   },
 
@@ -627,7 +630,9 @@ module.exports = {
     '2': '0.5rem',
     '3': '0.75rem',
     '4': '1rem',
+    '5': '1.25rem',
     '6': '1.5rem',
+    '7': '1.75rem',
     '8': '2rem',
   },
 
@@ -655,6 +660,7 @@ module.exports = {
     '2': '0.5rem',
     '3': '0.75rem',
     '4': '1rem',
+    '5': '1.25rem',
     '6': '1.5rem',
     '8': '2rem',
   },

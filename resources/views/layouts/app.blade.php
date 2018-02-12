@@ -9,12 +9,12 @@
     @yield ('meta')
 
     <link href="/css/app.css" rel="stylesheet">
-    @if (isset($gistlog) && $gistlog->isSecret() || !\App::environment('production'))
+    @if (isset($gistlog) && $gistlog->isSecret() || !App::environment('production'))
     <meta name="robots" content="noindex, nofollow">
     @endif
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Roboto:100,300,400,700">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -23,8 +23,6 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script src="{{ asset('/js/app.js') }}"></script>
 </head>
 <body>
     @include ('partials.flash-messages')

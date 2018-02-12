@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container mx-auto gistlog__container my-8">
-        {{-- Avatar --}}
+    <div class="gistlog__container container">
         @if ($gistlog->isAnonymous())
             <div class="avatar">
                 <img src="{{ $gistlog->avatarUrl }}" alt="{{ $gistlog->author }} - {{ config('app.name') }}">
@@ -25,7 +24,7 @@
                     @endif
                 </span>
 
-                <div class="mt-8 pt-6 gistlog__content">
+                <div class="gistlog__content">
                         {!! $gistlog->renderHtml() !!}
                         {{-- @TODO: Haven't been tested --}}
                         @if($gistlog->showFiles())
@@ -85,4 +84,17 @@
             autosize(document.querySelectorAll('textarea'));
         })();
     </script>
+@endsection
+
+@section('meta')
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="{{ $gistlog->title }}">
+    <meta itemprop="description" content="{{ $gistlog->getPreview() }}">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{{ $gistlog->title }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ Request::url() }}">
+    <meta property="og:description" content="{{ $gistlog->getPreview() }}">
+    <meta property="og:site_name" content="Gistlog">
 @endsection

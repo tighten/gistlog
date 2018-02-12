@@ -5,7 +5,7 @@
     <div class="text-center max-w-sm mx-auto">
         <div class="mx-auto px-4 py-4">
             <nav class="flex">
-                <img width="110px" class="mx-auto" src="{{ asset('/tailwind/img/logo.svg') }}">
+                <img width="110px" class="mx-auto" src="{{ asset('/img/logo.svg') }}">
             </nav>
         </div>
         <p class="text-blue-darkest text-base mt-8 mb-3">Paste the URL to a Gist here to create Gistlog</p>
