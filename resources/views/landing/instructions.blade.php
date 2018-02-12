@@ -33,7 +33,7 @@
             {{-- Form box --}}
             <div class="flex-1 pr-1 px-1 md:pl-6">
                 <div class="my-4 pt-8 pb-2 rounded shadow-lg bg-white border-blue-darker border-t-4">
-                    <img class="table py-6 mx-auto" width="110px" src="{{ asset('/img/logo.svg') }}">
+                    <img class="table py-6 mx-auto" width="110px" src="{{ asset('img/logo.svg') }}">
 
                     <p class="px-6 text-blue-darker pt-5 pb-4 text-sm">Paste the URL to a Gist here to create a Gistlog</p>
 

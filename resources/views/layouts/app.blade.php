@@ -9,7 +9,7 @@
     @yield ('meta')
 
     <link href="/css/app.css" rel="stylesheet">
-    @if (isset($gistlog) && $gistlog->isSecret() || !App::environment('production'))
+    @if (isset($gistlog) && $gistlog->isSecret())
     <meta name="robots" content="noindex, nofollow">
     @endif
 
@@ -25,7 +25,7 @@
     <![endif]-->
 </head>
 <body>
-    @include ('partials.flash-messages')
+    @include('partials.flash-messages')
 
     @yield('content')
 

@@ -26,13 +26,13 @@
 
                 <div class="gistlog__content">
                         {!! $gistlog->renderHtml() !!}
-                        @if($gistlog->showFiles())
+                        @if ($gistlog->showFiles())
                             <hr/>
                             <h3>
                                 Attached Files ({{ $gistlog->files->count() }})
                             </h3>
                             <div class="gistlog__files">
-                                @if($gistlog->files->isEmpty())
+                                @if ($gistlog->files->isEmpty())
                                     <p>
                                         <em>
                                             No files to display.
@@ -66,7 +66,7 @@
 
                         @if ($gistlog->hasComments())
                         @foreach ($gistlog->comments as $comment)
-                            @include ('gistlogs.comment', ['gistlog' => $gistlog, 'comment' => $comment])
+                            @include('gistlogs.comment', ['gistlog' => $gistlog, 'comment' => $comment])
                         @endforeach
                         @endif
                     </div>

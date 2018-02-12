@@ -16,9 +16,8 @@
 
         <meta name="author" content="Matt Stauffer">
         <meta name="description" content="Your dev blog - delivered! GistLog allows you to publish your blog posts via simple GitHub gists.">
-        @if(App::environment('production'))
-            <meta name="robots" content="index, follow">
-        @endif
+        <meta name="robots" content="index, follow">
+
         <!-- Schema.org markup for Google+ -->
         <meta itemprop="name" content="GistLog - Your dev blog delivered">
         <meta itemprop="description" content="Your dev blog - delivered! GistLog allows you to publish your blog posts via simple GitHub gists.">

@@ -15,19 +15,19 @@
     </div>
     <div class="flex-1 text-center  mb-8">
         <figure class="lg:px-4 sm:mx-8  min-h-6 w-32 sm:w-auto mx-auto">
-            <img src="{{ asset('img/icon-comments.svg') }}" alt="Responsive design - {{ config('app.name') }}">
+            <img src="{{ asset('img/icon-comments.svg') }}" alt="Built-in comments - {{ config('app.name') }}">
         </figure>
         <p class="text-sm text-blue-darkest text-lg sm:text-base">Built-in comments &amp; notifications</p>
     </div>
     <div class="flex-1 text-center  mb-8">
         <figure class="lg:px-4 sm:mx-8  min-h-6 w-32 sm:w-auto mx-auto">
-            <img src="{{ asset('img/icon-easy.svg') }}" alt="Responsive design - {{ config('app.name') }}">
+            <img src="{{ asset('img/icon-easy.svg') }}" alt="Easy &amp; Fast - {{ config('app.name') }}">
         </figure>
         <p class="text-sm text-blue-darkest text-lg sm:text-base">Easy &amp; Fast</p>
     </div>
     <div class="flex-1 text-center  mb-8">
         <figure class="lg:px-4 sm:mx-8  min-h-6 w-32 sm:w-auto mx-auto">
-            <img src="{{ asset('img/icon-markdown.svg') }}" alt="Responsive design - {{ config('app.name') }}">
+            <img src="{{ asset('img/icon-markdown.svg') }}" alt="Written with Markdown - {{ config('app.name') }}">
         </figure>
         <p class="text-sm text-blue-darkest text-lg sm:text-base">Written with Markdown</p>
     </div>
