@@ -8,7 +8,7 @@
             </div>
         @else
             <div class="avatar">
-                <a href="https://github.com/{{ $gistlog->author }}" target="_blank">
+                <a href="/{{ $gistlog->author }}" target="_blank">
                     <img src="{{ $gistlog->avatarUrl }}" alt="{{ $gistlog->author }} - {{ config('app.name') }}">
                 </a>
             </div>
