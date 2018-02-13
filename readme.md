@@ -1,11 +1,11 @@
-# Gistlog
+# GistLog
 
 [![Build Status](https://travis-ci.org/tightenco/gistlog.png?branch=master)](http://travis-ci.org/tightenco/gistlog)
 [![Stories in Ready](https://badge.waffle.io/tightenco/gistlog.png?label=ready&title=Ready)](https://waffle.io/tightenco/gistlog)
 
-Turn your gists into easy, beautiful, responsive blog posts--a "Gistlog". Just paste a Gist URL into [Gistlog.co](https://gistlog.co/) and you're up and running.
+Turn your gists into easy, beautiful, responsive blog posts--a "GistLog". Just paste a Gist URL into [GistLog.co](https://gistlog.co/) and you're up and running.
 
-You can also just replace `gist.github.com` in any URL with `gistlog.co`, and you instantly have a beautiful Gistlog.
+You can also just replace `gist.github.com` in any URL with `gistlog.co`, and you instantly have a beautiful GistLog.
 
 An exercise in iterative development by [Matt Stauffer](http://mattstauffer.co/) and [Adam Wathan](http://adamwathan.me/) of [Tighten Co.](http://tighten.co/).
 
