@@ -1,17 +1,5 @@
-<section class="intro">
-    <div class="claim">
-        <h1>
-            Your Dev Blog Delivered
-        </h1>
-        <p>
-            Publish your first post
-            in 55 seconds
-        </p>
-        <a href="/posts/create" class="cta-button">
-            Get Started
-        </a>
-    </div>
-    <div class="screenshot">
-        <img src="{{ asset('img/intro-screenshot.png' )}}" alt="Abstracted illustration of a GistLog blog post.">
-    </div>
-</section>
+<div class="container mx-auto py-6">
+    <h1 class="page-title">Your Dev Blog Delivered</h1>
+    <p class="headline">Publish your first post in 55 seconds</p>
+    <a href="posts/create" class="btn btn-cta">Get Started</a>
+</div>

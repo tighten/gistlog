@@ -1,64 +1,89 @@
+@import "./tailwind";
+
+@import "./github.less";
+
 html {
-    box-sizing: border-box;
-}
-*, *:before, *:after {
-    box-sizing: inherit;
+    @apply .font-sans;
 }
 
-@import "vendor/bootstrap/bootstrap";
-@import "utilities";
-@import "github";
-@import "components/gistlog";
-@import "components/comment";
-@import "components/notice";
-
-@btn-font-weight: 300;
-@font-family-sans-serif: "Roboto", Helvetica, Arial, sans-serif;
-@font-family-monospace: Consolas, Menlo, Monaco, "Courier New", monospace;
-
-/**
- * Bootstrap-esque
- */
-
-/**
- * Custom
- */
-
-body, label, .checkbox label {
-    font-weight: 300;
+body {
+    @apply .mx-auto .bg-grey-lightest;
+    max-width: 1440px;
 }
 
-img {
-    max-width: 100%;
+.avatar {
+    @apply .rounded-full .overflow-hidden .relative .mx-auto;
+    height: 5.5rem;
+    width: 5.5rem;
 }
 
-.logo {
-    height: 1.2em;
+.gistlog__content a.btn-github {
+    @apply .flex .bg-grey-darkest .text-sm .px-3 .pt-1 .rounded .my-4;
+    color: #fff;
 }
 
-.container {
-    max-width: 730px;
-    position: relative;
+.gistlog {
+    @apply .bg-white .shadow  .py-8;
+    margin-top: -2.6rem;
 }
 
-.profile-pic {
-    display: block;
-    margin: 0 auto 1.5em;
-    width: 10em;
+.gistlog__container {
+    @apply .mx-auto .my-8;
+    max-width: 935px;
+}
 
-    img {
-        border: 5px solid #eee;
-        border-radius: 5em;
-        height: 10em;
-        width: 10em;
+.gistlog__content {
+    @apply .mx-auto .block .text-grey .w-full .mt-8 .pt-6;
+    max-width: 612px;
+
+    a, li, ol, p {
+        @apply .leading-large;
+    }
+
+    a {
+        @apply .no-underline .text-blue;
+    }
+
+    code {
+        @apply .px-1;
+    }
+
+    code, pre {
+        @apply .font-mono .bg-grey-lightest;
+    }
+
+    h2 {
+        @apply .mt-8 .mb-8 .pt-2 .font-normal;
+        font-size: 1.35rem
+    }
+
+    h3 {
+        @apply .text-lg .text-grey .font-normal;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply .text-black;
+    }
+
+    li {
+        @apply .mb-4;
+    }
+
+    ol, ul {
+        @apply .pl-7;
+    }
+
+    p {
+        @apply .font-normal .mb-4;
     }
 }
 
-code {
-    white-space: pre-wrap;
-    word-wrap: break-word;
+.gistlog__title {
+    @apply .font-light .text-center .py-2 .text-4xl;
 }
 
-pre code {
-    white-space: pre;
+@screen sm {
+    .gistlog {
+        @apply .px-8;
+    }
 }

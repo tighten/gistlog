@@ -25,15 +25,14 @@ class GistsController extends Controller
     public function storeAndRedirect()
     {
         $gistUrl = Input::get('gistUrl');
-
         try {
             $gistlog = $this->repository->findByUrl($gistUrl);
         } catch (InvalidUrlException $e) {
             Session::flash('error-message', 'Please enter a valid Gist URL.');
-            return Redirect::route('home');
+            return Redirect::back();
         } catch (GistNotFoundException $e) {
             Session::flash('error-message', 'Please enter a valid Gist URL.');
-            return Redirect::route('home');
+            return Redirect::back();
         }
 
         return Redirect::route('gists.show', [

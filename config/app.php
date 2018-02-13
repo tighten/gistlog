@@ -2,6 +2,8 @@
 
 return [
 
+    'name' => env('APP_NAME', 'Gistlog.co'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode

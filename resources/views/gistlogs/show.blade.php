@@ -1,104 +1,99 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="gistlog__container container">
         @if ($gistlog->isAnonymous())
-            <span class="profile-pic">
-                <img src="{{ $gistlog->avatarUrl }}">
-            </span>
+            <div class="avatar">
+                <img src="{{ $gistlog->avatarUrl }}" alt="{{ $gistlog->author }} - {{ config('app.name') }}">
+            </div>
         @else
-            <a href="https://github.com/{{ $gistlog->author }}" class="profile-pic">
-                <img src="{{ $gistlog->avatarUrl }}">
-            </a>
-        @endif
-
-        <article class="gistlog">
-            <h1 class="gistlog__title">{{ $gistlog->title }}</h1>
-            <span class="gistlog__author">
-                @if ($gistlog->isAnonymous())
-                    By {{ $gistlog->author }}
-                @else
-                    By <a href="/{{ $gistlog->author }}">{{ $gistlog->author }}</a>
-                @endif
-                @if ($gistlog->hasPublishedOnDate())
-                   | Published {{ $gistlog->formattedPublishedOnDate() }}
-                @endif
-            </span>
-
-
-            <div class="gistlog__content js-gistlog-content">
-                {!! $gistlog->renderHtml() !!}
+            <div class="avatar">
+                <a href="https://github.com/{{ $gistlog->author }}" target="_blank">
+                    <img src="{{ $gistlog->avatarUrl }}" alt="{{ $gistlog->author }} - {{ config('app.name') }}">
+                </a>
             </div>
-
-            @if($gistlog->showFiles())
-                <hr/>
-                <h3>
-                    Attached Files ({{ $gistlog->files->count() }})
-                </h3>
-                <div class="gistlog__files">
-                    @if($gistlog->files->isEmpty())
-                        <p>
-                            <em>
-                                No files to display.
-                            </em>
-                        </p>
+        @endif
+        <div class="gistlog py-8 sm:px-8">
+            <article class="my-8 px-4 sm:px-8 my-8">
+                <h1 class="gistlog__title">{{ $gistlog->title }}</h1>
+                <span class="font-light mx-auto table">
+                    @if ($gistlog->isAnonymous())
+                        by <span class="font-bold text-blue no-underline">{{ $gistlog->author }}</span>
                     @else
-                        @foreach($gistlog->files as $file)
-                            @include('gistlogs.file', ['file' => $file])
-                        @endforeach
+                        by <a href="/{{ $gistlog->author }}" class="font-bold text-blue no-underline">{{ $gistlog->author }}</a>
                     @endif
+                </span>
+
+                <div class="gistlog__content">
+                        {!! $gistlog->renderHtml() !!}
+                        @if ($gistlog->showFiles())
+                            <hr/>
+                            <h3>
+                                Attached Files ({{ $gistlog->files->count() }})
+                            </h3>
+                            <div class="gistlog__files">
+                                @if ($gistlog->files->isEmpty())
+                                    <p>
+                                        <em>
+                                            No files to display.
+                                        </em>
+                                    </p>
+                                @else
+                                    @foreach($gistlog->files as $file)
+                                        <p>
+                                            <a href="{{ $file->url }}" target="_blank">{{ $file->name }}</a>
+                                        </p>
+                                    @endforeach
+                                @endif
+                            </div>
+                            <hr/>
+                        @endif
+
+                    {{-- Meta --}}
+                    <div class="text-xs text-grey mb-2">
+                        Created {{ $gistlog->createdAt->diffForHumans() }} |
+                        Updated {{ $gistlog->updatedAt->diffForHumans() }}
+                    </div>
+                    <div>
+                        <a  class="text-xs text-blue no-underline" href="{{ $gistlog->link }}" target="_blank">View on GitHub</a>
+                    </div>
+
+                    {{-- Comments --}}
+                    <div class="my-8 pt-4">
+                        <h3>Comments {{ (count($gistlog->comments) > 0) ? '(' . count($gistlog->comments) . ')' : '' }}</h3>
+
+                        @include('gistlogs.comment_form')
+
+                        @if ($gistlog->hasComments())
+                        @foreach ($gistlog->comments as $comment)
+                            @include('gistlogs.comment', ['gistlog' => $gistlog, 'comment' => $comment])
+                        @endforeach
+                        @endif
+                    </div>
                 </div>
-                <hr/>
-            @endif
-
-            <div class="gistlog__meta">
-                Created {{ $gistlog->createdAt->diffForHumans() }} |
-                Updated {{ $gistlog->updatedAt->diffForHumans() }}
-            </div>
-            <div class="gistlog__links">
-                <a href="{{ $gistlog->link }}">View on GitHub</a>
-            </div>
+            <article>
         </article>
-            <h3>Comments {{ (count($gistlog->comments) > 0) ? '(' . count($gistlog->comments) . ')' : '' }}</h3>
-
-            @include('gistlogs.comment_form')
-
-        @if ($gistlog->hasComments())
-            @foreach ($gistlog->comments as $comment)
-                @include ('gistlogs.comment', ['gistlog' => $gistlog, 'comment' => $comment])
-            @endforeach
-        @endif
     </div>
 @endsection
 
 @section('scripts')
-    <script src="/js/commentForm.js"></script>
+    @parent
     <script>
-    $(function() {
-        commentForm.init();
-
-        // $('.js-gistlog-content pre').each(function () {
-        //     var numberOfLines = $(this).find('code').html().split(/\n/).length - 1;
-        //     var lineNumbers = [];
-        //     for (var i = 1; i <= numberOfLines; i++) {
-        //         lineNumbers.push(i);
-        //     }
-        //     $(this).append('<div class="line-numbers">' + lineNumbers.join("\n") + '</div>');
-        // });
-        autosize($('textarea'));
-    });
+        (function() {
+            autosize(document.querySelectorAll('textarea'));
+        })();
     </script>
 @endsection
 
 @section('meta')
-        <!-- Schema.org markup for Google+ -->
-        <meta itemprop="name" content="{{ $gistlog->title }}">
-        <meta itemprop="description" content="{{ $gistlog->getPreview() }}">
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="{{ $gistlog->title }}">
+    <meta itemprop="description" content="{{ $gistlog->getPreview() }}">
 
-        <!-- Open Graph data -->
-        <meta property="og:title" content="{{ $gistlog->title }}">
-        <meta property="og:type" content="article">
-        <meta property="og:url" content="{{ Request::url() }}">
-        <meta property="og:description" content="{{ $gistlog->getPreview() }}">
-        <meta property="og:site_name" content="Gistlog">
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{{ $gistlog->title }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ Request::url() }}">
+    <meta property="og:description" content="{{ $gistlog->getPreview() }}">
+    <meta property="og:site_name" content="Gistlog">
 @endsection
