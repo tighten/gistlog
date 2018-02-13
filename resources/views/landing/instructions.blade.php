@@ -2,7 +2,7 @@
     <div class="container mx-auto text-center pt-3 pb-2">
         <h2 class="mt-6 text-blue-darkest">How it works</h2>
         <div class="title-underline"></div>
-        <p class="md:w-4/5 mx-auto text-grey leading-normal text-base md:px-8 my-6">In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam voutpat aliquam. Integer et elit eget elit facilisis tristique. Nam vel iaculis mauirs.</p>
+        <p class="md:w-4/5 mx-auto text-grey leading-normal text-base md:px-8 my-6">In just a few steps&mdash;and just a few seconds&mdash;you can be blogging using nothing but simple GitHub Gists and Markdown.</p>
     </div>
     <div class="container py-1 mx-auto mb-6">
         <div class="flex flex-col md:flex-row justify-between">
@@ -11,22 +11,22 @@
                 <div class="flex flex-1 bg-white rounded-lg shadow-md my-4 py-5 px-5">
                     <div class="rounded-full font-bold text-white w-8 h-8 bg-blue flex items-center justify-center text-sm">1</div>
                     <div class="text-left mx-5">
-                        <h4 class="text-blue font-bold text-sm">Create Gist</h4>
+                        <h4 class="text-blue font-bold text-sm">Create a Gist</h4>
                         <p class="text-grey py-1 text-sm">Create a GitHub Gist with Markdown</p>
                     </div>
                 </div>
                 <div class="flex flex-1 my-4 py-5 px-5">
                     <div class="rounded-full py-2 font-bold text-white w-8 h-8 bg-blue-darkest flex items-center justify-center text-sm">2</div>
                     <div class="text-left mx-5">
-                        <h4 class="text-blue-darker font-bold text-sm">Paster Link</h4>
+                        <h4 class="text-blue-darker font-bold text-sm">Paste the Link</h4>
                         <p class="text-grey py-1 text-sm">Paste your Gist's URL into GistLog</p>
                     </div>
                 </div>
                 <div class="flex flex-1 my-4 py-5 px-5">
                     <div class="rounded-full py-2 font-bold text-white w-8 h-8 bg-blue-darkest flex items-center justify-center text-sm">3</div>
                     <div class="text-left mx-5">
-                        <h4 class="text-blue-darker font-bold text-sm">Share Post</h4>
-                        <p class="text-grey py-1 text-sm">Share your Gistlog ink (and celebrate!)</p>
+                        <h4 class="text-blue-darker font-bold text-sm">Share Your Post</h4>
+                        <p class="text-grey py-1 text-sm">Share your Gistlog link (and celebrate!)</p>
                     </div>
                 </div>
             </div>
