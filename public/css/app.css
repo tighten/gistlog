@@ -4953,7 +4953,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  color: #7e8b95;
+  color: #3d4852;
   width: 100%;
   margin-top: 2rem;
   padding-top: 1.5rem;
@@ -4978,9 +4978,9 @@ body {
   padding-bottom: .5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  margin-left: 1.5rem;
+  margin-left: 1rem;
   margin-bottom: 1rem;
-  font-size: .875rem;
+  color: #7e8b95;
 }
 
 .gistlog__content blockquote p:last-child {
