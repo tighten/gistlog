@@ -4972,6 +4972,21 @@ body {
   color: #229be1;
 }
 
+.gistlog__content blockquote {
+  border-left-width: 4px;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: .875rem;
+}
+
+.gistlog__content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
 .gistlog__content code {
   padding-left: .25rem;
   padding-right: .25rem;
