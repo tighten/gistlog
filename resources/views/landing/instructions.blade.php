@@ -26,7 +26,7 @@
                     <div class="rounded-full py-2 font-bold text-white w-8 h-8 bg-blue-darkest flex items-center justify-center text-sm">3</div>
                     <div class="text-left mx-5">
                         <h4 class="text-blue-darker font-bold text-sm">Share Your Post</h4>
-                        <p class="text-grey py-1 text-sm">Share your Gistlog link (and celebrate!)</p>
+                        <p class="text-grey py-1 text-sm">Share your GistLog link (and celebrate!)</p>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                 <div class="my-4 pt-8 pb-2 rounded shadow-lg bg-white border-blue-darker border-t-4">
                     <img class="table py-6 mx-auto" width="110px" src="{{ asset('img/logo.svg') }}">
 
-                    <p class="px-6 text-blue-darker pt-5 pb-4 text-sm">Paste the URL to a Gist here to create a Gistlog</p>
+                    <p class="px-6 text-blue-darker pt-5 pb-4 text-sm">Paste the URL to a Gist here to create a GistLog</p>
 
                     <form class="flex pr-1" method="POST" action="{{ route('post.create') }}">
                         {{ csrf_field() }}

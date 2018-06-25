@@ -21,7 +21,7 @@
             <div class="bg-grey-lighter rounded mt-1 py-4 px-4">
                 <p class="text-sm text-blue-darkest">Just want to test drive?</p>
                 <p class="text-sm my-4 w-5/6 text-grey text-center w-full leading-normal">
-                    Try this gist (just copy the URL, paste it above) to see how GistLog works and also to learn a little bit more about what Gistlog is:
+                    Try this gist (just copy the URL, paste it above) to see how GistLog works and also to learn a little bit more about what GistLog is:
                 </p>
                 <input type="text" class="bg-white w-full py-3 text-grey text-sm px-4 rounded border border-solid border-grey-light" value="https://gist.github.com/mattstauffer/1c76d40371b295184845">
             </div>

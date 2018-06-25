@@ -95,5 +95,5 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="{{ Request::url() }}">
     <meta property="og:description" content="{{ $gistlog->getPreview() }}">
-    <meta property="og:site_name" content="Gistlog">
+    <meta property="og:site_name" content="GistLog">
 @endsection
