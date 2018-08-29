@@ -10,7 +10,7 @@
 
         <link rel="stylesheet" href="{{ asset('css/landing.css' )}}">
         <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Roboto:300,400,700">
-        <link rel="icon" type="image/png" href="/img/gistlog-fav120.png">
+        <link rel="icon" type="image/png" href="/img/favicon.png">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
