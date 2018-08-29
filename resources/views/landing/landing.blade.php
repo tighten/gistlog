@@ -31,13 +31,17 @@
         <meta property="og:site_name" content="GistLog">
     </head>
     <body>
-        @include('partials.flash-messages')
-        @include('landing.nav')
-        @include('landing.intro')
-        @include('landing.cover')
-        @include('landing.instructions')
-        @include('landing.features')
-        @include('landing.footer')
+        <div id="vue-app">
+            @include('partials.flash-messages')
+            @include('landing.nav')
+            @include('landing.intro')
+            @include('landing.cover')
+            @include('landing.instructions')
+            @include('landing.features')
+            @include('landing.footer')
+        </div>
+
         @yield('scripts')
+        <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
