@@ -1,11 +1,11 @@
 import Vue from 'vue';
-import {VueTabs, VTab} from 'vue-nav-tabs';
-import 'vue-nav-tabs/themes/vue-tabs.css';
+
+import VerticalTabs from './components/tabs-vertical.vue';
+import TabLabel from './components/tab-label.vue';
+import TabContent from './components/tab-content.vue';
 
 new Vue({
     el: '#vue-app',
-    components: {
-        VueTabs,
-        VTab,
-    }
+
+    components: { VerticalTabs, TabLabel, TabContent }
 });

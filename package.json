@@ -9,8 +9,7 @@
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
     "tailwindcss": "^0.4.1",
-    "vue": "^2.5.7",
-    "vue-nav-tabs": "^0.5.7"
+    "vue": "^2.5.7"
   },
   "private": true,
   "scripts": {
@@ -21,8 +20,5 @@
     "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run production",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
-  },
-  "dependencies": {
-    "babel-helper-vue-jsx-merge-props": "^2.0.3"
   }
 }

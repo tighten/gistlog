@@ -6,6 +6,16 @@
     </div>
     <div class="container py-1 mx-auto mb-6">
         <div class="flex flex-col md:flex-row justify-between">
+
+            <vertical-tabs>
+                <tab-label slot="tabs">
+                    <p>create a gist</p>
+                </tab-label>
+
+                <tab-content slot="tab-content"></tab-content>
+            </vertical-tabs>
+
+
             {{-- Steps list --}}
             <div class="flex-1 px-1 flex-col">
                 <div class="flex flex-1 bg-white rounded-lg shadow-md my-4 py-5 px-5">
