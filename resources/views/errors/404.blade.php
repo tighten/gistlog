@@ -28,7 +28,7 @@
     <h1>Unable to find your request</h1>
     <div class="button-container">
         <a href="{{ route('home') }}" class="button">Go back home</a>
-        @if ($gistId && $username)
+        @if (isset($gistId) && isset($username))
             <a href="{{ route('authors.show', ['username' => $username]) }}" class="button">Go to author page</a>
         @endif
     </div>
