@@ -11716,8 +11716,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
@@ -11730,11 +11728,16 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "flex" }, [
-    _c("div", { staticClass: "w-1/3 flex-col" }, [_vm._t("tabs")], 2),
-    _vm._v(" "),
-    _c("div", { staticClass: "w-2/3" }, [_vm._t("tab-content")], 2)
-  ])
+  return _c(
+    "div",
+    { staticClass: "flex" },
+    [
+      _c("div", { staticClass: "flex-col" }, [_vm._t("tabs")], 2),
+      _vm._v(" "),
+      _vm._t("tab-content")
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -11771,7 +11774,7 @@ if (false) {
 var disposed = false
 var normalizeComponent = __webpack_require__(8)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(26)
 /* template */
 var __vue_template__ = __webpack_require__(25)
 /* template functional */
@@ -11872,8 +11875,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        index: {
+            type: String
+        }
+    }
+});
 
 /***/ }),
 /* 24 */
@@ -11883,7 +11895,25 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "flex" }, [_vm._t("default")], 2)
+  return _c(
+    "div",
+    {
+      staticClass:
+        "flex bg-white rounded-lg shadow-md my-4 py-5 px-5 cursor-pointer"
+    },
+    [
+      _c(
+        "div",
+        {
+          staticClass:
+            "rounded-full font-bold text-white w-8 h-8 bg-blue flex items-center justify-center text-sm"
+        },
+        [_vm._v(_vm._s(_vm.index))]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "text-left mx-5" }, [_vm._t("default")], 2)
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -11903,7 +11933,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "flex" })
+  return _c("div", [_vm._t("default")], 2)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -11914,6 +11944,21 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-b4d1b50c", module.exports)
   }
 }
+
+/***/ }),
+/* 26 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ })
 /******/ ]);

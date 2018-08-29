@@ -1,12 +1,10 @@
 <template>
     <div class="flex">
-        <div class="w-1/3 flex-col">
+        <div class="flex-col">
             <slot name="tabs"></slot>
         </div>
 
-        <div class="w-2/3">
-            <slot name="tab-content"></slot>
-        </div>
+        <slot name="tab-content"></slot>
     </div>
 </template>
 
