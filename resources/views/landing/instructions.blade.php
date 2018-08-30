@@ -6,8 +6,8 @@
     </div>
 
     <div class="container py-1 mx-auto mb-6">
-        <div class="flex flex-col md:flex-row justify-around">
-            <div class="flex flex-col w-1/2">
+        <div class="flex flex-col-reverse md:flex-row justify-around">
+            <div class="flex flex-col w-full md:w-1/2">
                 <div :class="{'tab-label--active': isActive(1) }" class="tab-label" @click="changeTab(1)">
                     <span>1</span>
                     <div class="text-left mx-5">
@@ -33,7 +33,7 @@
                 </div>
             </div>
 
-            <div class="bg-white flex-col flex items-center p-2 rounded shadow-lg text-center w-2/5">
+            <div class="bg-white items-center rounded shadow-lg text-center w-full md:w-2/5">
                 <img v-if="currentTab == 1" src="{{ asset('img/step1.png') }}" alt="Step 1 - create Gist">
                 <img v-if="currentTab == 2" src="{{ asset('img/step2.png') }}" alt="Step 2 - paste Gist link">
                 <img v-if="currentTab == 3" src="{{ asset('img/step3.png') }}" alt="Step 3 - share your post">
