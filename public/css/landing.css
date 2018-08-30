@@ -4901,21 +4901,18 @@ html {
   font-size: .875rem;
 }
 
-.tab-label--active,
-.tab-label:hover {
+.tab-label--active {
   background-color: #fff;
   border-radius: .5rem;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .12), 0 2px 4px 0 rgba(0, 0, 0, .08);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .12), 0 2px 4px 0 rgba(0, 0, 0, .08);
 }
 
-.tab-label--active h4,
-.tab-label:hover h4 {
+.tab-label--active h4 {
   color: #229be1;
 }
 
-.tab-label--active span,
-.tab-label:hover span {
+.tab-label--active span {
   background-color: #229be1;
 }
 
