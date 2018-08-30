@@ -11,7 +11,18 @@
 <script>
 
 export default {
+    data() {
+        return {
+            currentTab: 1,
+        }
+    },
 
+    methods: {
+        onChangeTab: function (tab) {
+            alert('here');
+            this.currentTab = tab;
+        }
+    }
 }
 </script>
 

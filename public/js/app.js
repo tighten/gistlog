@@ -122,7 +122,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     el: '#vue-app',
 
-    components: { VerticalTabs: __WEBPACK_IMPORTED_MODULE_1__components_tabs_vertical_vue___default.a, TabLabel: __WEBPACK_IMPORTED_MODULE_2__components_tab_label_vue___default.a, TabContent: __WEBPACK_IMPORTED_MODULE_3__components_tab_content_vue___default.a }
+    data: function data() {
+        return {
+            currentTab: 1
+        };
+    },
+
+
+    methods: {
+        changeTab: function changeTab(tab) {
+            this.currentTab = tab;
+        },
+        isActive: function isActive(tab) {
+            return this.currentTab == tab;
+        }
+    }
 });
 
 /***/ }),
@@ -11718,7 +11732,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            currentTab: 1
+        };
+    },
+
+
+    methods: {
+        onChangeTab: function onChangeTab(tab) {
+            alert('here');
+            this.currentTab = tab;
+        }
+    }
+});
 
 /***/ }),
 /* 10 */
@@ -11899,7 +11927,12 @@ var render = function() {
     "div",
     {
       staticClass:
-        "flex bg-white rounded-lg shadow-md my-4 py-5 px-5 cursor-pointer"
+        "flex bg-white rounded-lg shadow-md my-4 py-5 px-5 cursor-pointer",
+      on: {
+        click: function($event) {
+          _vm.$emit("changeTab", _vm.index)
+        }
+      }
     },
     [
       _c(
