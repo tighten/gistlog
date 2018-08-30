@@ -34,9 +34,9 @@
             </div>
 
             <div class="bg-white flex-col flex items-center p-2 rounded shadow-lg text-center w-2/5">
-                <img v-if="currentTab == 1" src="{{ asset('img/step1.png') }}" alt="Step 1">
-                <img v-if="currentTab == 2" src="{{ asset('img/step2.png') }}" alt="Step 2">
-                <img v-if="currentTab == 3" src="{{ asset('img/step3.png') }}" alt="Step 3">
+                <img v-if="currentTab == 1" src="{{ asset('img/step1.png') }}" alt="Step 1 - create Gist">
+                <img v-if="currentTab == 2" src="{{ asset('img/step2.png') }}" alt="Step 2 - paste Gist link">
+                <img v-if="currentTab == 3" src="{{ asset('img/step3.png') }}" alt="Step 3 - share your post">
             </div>
         </div>
     </div>

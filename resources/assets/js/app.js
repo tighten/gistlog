@@ -1,9 +1,5 @@
 import Vue from 'vue';
 
-import VerticalTabs from './components/tabs-vertical.vue';
-import TabLabel from './components/tab-label.vue';
-import TabContent from './components/tab-content.vue';
-
 new Vue({
     el: '#vue-app',
 
@@ -19,7 +15,7 @@ new Vue({
         },
 
         isActive(tab) {
-            return this.currentTab == tab;
+            return this.currentTab === tab;
         }
     }
 });

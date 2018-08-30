@@ -3,12 +3,15 @@
 @section('content')
 <div class="container mx-auto mt-4">
     <div class="text-center max-w-sm mx-auto">
-        <div class="mx-auto px-4 py-4">
-            <nav class="flex">
-                <img width="110px" class="mx-auto" src="{{ asset('img/logo.svg') }}">
-            </nav>
-        </div>
+        <nav class="mx-auto w-2/5">
+            <a href="/" title="GistLog by Tighten" class="w-full flex items-center text-blue-darker no-underline">
+                <img width="50px" src="{{ asset('img/gistlog-logo.svg') }}" class="float-left mr-2">
+                <h2 class="font-thin"><span class="font-bold">Gist</span>Log</h2>
+            </a>
+        </nav>
+
         <p class="text-blue-darkest text-base mt-8 mb-3">Paste the URL to a Gist here to create a GistLog</p>
+
         <div class="flex px-4">
             <form method="POST" action="{{ route('post.create') }}" class="shadow flex flex-1 mb-8">
                 {{ csrf_field() }}
