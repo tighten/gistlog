@@ -1,14 +1,14 @@
+window.autosize = require('autosize');
 import Vue from 'vue';
 
-new Vue({
-    el: '#vue-app',
+Vue.config.productionTip = false;
 
+new Vue({
     data() {
         return {
             currentTab: 1,
         }
     },
-
     methods: {
         changeTab(tab) {
             this.currentTab = tab;
@@ -18,4 +18,4 @@ new Vue({
             return this.currentTab === tab;
         }
     }
-});
+}).$mount('#vue-app');

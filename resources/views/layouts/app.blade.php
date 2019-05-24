@@ -4,18 +4,21 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ isset($pageTitle) ? $pageTitle . ' | ' : '' }}GistLog</title>
+    <meta http-equiv="content-language" content="en-us">
+    <title>{{ isset($pageTitle) ? $pageTitle . ' | ' : '' }} GistLog - Your dev blog delivered</title>
 
     @yield ('meta')
 
-    <link href="/css/app.css" rel="stylesheet">
     @if (isset($gistlog) && $gistlog->isSecret())
     <meta name="robots" content="noindex, nofollow">
     @endif
 
-    <!-- Fonts -->
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Roboto:100,300,400,700">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+    <link href="/css/app.css" rel="stylesheet">
+
+    @yield('styles')
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,12 +28,23 @@
     <![endif]-->
 </head>
 <body>
-    @include('partials.flash-messages')
+    <div class="flex flex-col h-full">
+        <div id="vue-app" class="flex-auto">
+            @include('partials.flash-messages')
 
-    @yield('content')
+            @yield('content')
+        </div>
 
-    <!-- Scripts -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/autosize.js/3.0.8/autosize.min.js"></script>
+        <div class="flex bg-grey-darkest min-h-6 justify-center items-center text-white mt-6">
+            <p>
+                <a href="/" title="GistLog by Tighten" class="text-blue-light no-underline hover:text-white">GistLog</a>
+                &copy; {{ Carbon\Carbon::now()->format('Y') }} |
+                Brought to you by the lovely humans at
+                <a href="https://tighten.co" title="Tighten" class="text-blue-light no-underline hover:text-white">Tighten</a>
+            </p>
+        </div>
+    </div>
+
 
     @if (env('APP_ENV') == 'production')
     <script>
@@ -45,6 +59,7 @@
     </script>
     @endif
 
+    <script src="/js/app.js"></script>
     @yield('scripts')
 </body>
 </html>

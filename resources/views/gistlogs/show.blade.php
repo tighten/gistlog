@@ -32,54 +32,58 @@
             </span>
 
             <div class="gistlog__content">
-                    {!! $gistlog->renderHtml() !!}
-                    @if ($gistlog->showFiles())
-                        <hr/>
-                        <h3>
-                            Attached Files ({{ $gistlog->files->count() }})
-                        </h3>
-                        <div class="gistlog__files">
-                            @if ($gistlog->files->isEmpty())
+                {!! $gistlog->renderHtml() !!}
+                @if ($gistlog->showFiles())
+                    <hr/>
+                    <h3>
+                        Attached Files ({{ $gistlog->files->count() }})
+                    </h3>
+                    <div class="gistlog__files">
+                        @if ($gistlog->files->isEmpty())
+                            <p>
+                                <em>
+                                    No files to display.
+                                </em>
+                            </p>
+                        @else
+                            @foreach($gistlog->files as $file)
                                 <p>
-                                    <em>
-                                        No files to display.
-                                    </em>
+                                    <a href="{{ $file->url }}" target="_blank">{{ $file->name }}</a>
                                 </p>
-                            @else
-                                @foreach($gistlog->files as $file)
-                                    <p>
-                                        <a href="{{ $file->url }}" target="_blank">{{ $file->name }}</a>
-                                    </p>
-                                @endforeach
-                            @endif
-                        </div>
-                        <hr/>
-                    @endif
+                            @endforeach
+                        @endif
+                    </div>
+                    <hr/>
+                @endif
 
-                {{-- Meta --}}
                 <div class="text-xs text-grey mb-2">
                     Created {{ $gistlog->createdAt->diffForHumans() }} |
                     Updated {{ $gistlog->updatedAt->diffForHumans() }}
                 </div>
+
                 <div>
-                    <a  class="text-xs text-blue no-underline" href="{{ $gistlog->link }}" target="_blank">View on GitHub</a>
+                    <a
+                        class="text-xs text-blue no-underline"
+                        href="{{ $gistlog->link }}"
+                        target="_blank"
+                    >View on GitHub</a>
                 </div>
 
-                {{-- Comments --}}
                 <div class="my-8 pt-4">
                     <h3>Comments {{ (count($gistlog->comments) > 0) ? '(' . count($gistlog->comments) . ')' : '' }}</h3>
 
                     @include('gistlogs.comment_form')
 
                     @if ($gistlog->hasComments())
-                    @foreach ($gistlog->comments as $comment)
-                        @include('gistlogs.comment', ['gistlog' => $gistlog, 'comment' => $comment])
-                    @endforeach
+                        @foreach ($gistlog->comments as $comment)
+                            @include('gistlogs.comment', ['gistlog' => $gistlog, 'comment' => $comment])
+                        @endforeach
                     @endif
                 </div>
             </div>
-        <article>
-    </article>
+        </article>
+    </div>
+</div>
 </div>
 @endsection
 

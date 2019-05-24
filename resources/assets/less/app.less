@@ -3,95 +3,131 @@
 @import "./github.less";
 
 html {
-    @apply .font-sans;
+    @apply font-sans;
+    @apply h-full;
 }
 
 body {
-    @apply .mx-auto .bg-grey-lightest;
+    @apply bg-grey-lightest;
+    @apply h-full;
+    @apply mx-auto;
+
     max-width: 1440px;
 }
 
 .avatar {
-    @apply .rounded-full .overflow-hidden .relative .mx-auto;
+    @apply mx-auto;
+    @apply overflow-hidden;
+    @apply relative;
+    @apply rounded-full;
+
     height: 5.5rem;
     width: 5.5rem;
 }
 
 .gistlog__content a.btn-github {
-    @apply .flex .bg-grey-darkest .text-sm .px-3 .pt-1 .rounded .my-4;
+    @apply flex .bg-grey-darkest .text-sm .px-3 .pt-1 .rounded .my-4;
     color: #fff;
 }
 
 .gistlog {
-    @apply .bg-white .shadow  .py-8;
+    @apply bg-white
+    @apply py-8;
+    @apply shadow;
+
     margin-top: -2.6rem;
 }
 
 .gistlog__container {
-    @apply .mx-auto .my-8;
+    @apply mx-auto;
+    @apply my-8;
+
     max-width: 935px;
 }
 
 .gistlog__content {
-    @apply .mx-auto .block .text-grey-darkest .w-full .mt-8 .pt-6;
+    @apply block;
+    @apply mt-8;
+    @apply mx-auto;
+    @apply pt-6;
+    @apply text-grey-darkest;
+    @apply w-full;
+
     max-width: 612px;
 
     a, li, ol, p {
-        @apply .leading-large;
+        @apply leading-large;
     }
 
     a {
-        @apply .no-underline .text-blue;
+        @apply no-underline;
+        @apply text-blue;
     }
 
     blockquote {
-        @apply .border-l-4 .py-2 .px-6 .ml-4 .mb-4 .text-grey;
+        @apply border-l-4;
+        @apply py-2;
+        @apply px-6;
+        @apply ml-4;
+        @apply mb-4;
+        @apply text-grey;
 
         p:last-child {
-            @apply .mb-0;
+            @apply mb-0;
         }
     }
 
     code {
-        @apply .px-1;
+        @apply px-1;
     }
 
     code, pre {
-        @apply .font-mono .bg-grey-lightest;
+        @apply font-mono;
+        @apply bg-grey-lightest;
     }
 
     h2 {
-        @apply .mt-8 .mb-8 .pt-2 .font-normal;
+        @apply font-normal;
+        @apply mb-8;
+        @apply mt-8
+        @apply pt-2;
+
         font-size: 1.35rem
     }
 
     h3 {
-        @apply .text-lg .text-grey .font-normal;
+        @apply font-normal;
+        @apply text-grey;
+        @apply text-lg;
     }
 
     h1, h2, h3, h4, h5, h6 {
-        @apply .text-black;
+        @apply text-black;
     }
 
     li {
-        @apply .mb-4;
+        @apply mb-4;
     }
 
     ol, ul {
-        @apply .pl-7;
+        @apply pl-7;
     }
 
     p {
-        @apply .font-normal .mb-4;
+        @apply font-normal;
+        @apply mb-4;
     }
 }
 
 .gistlog__title {
-    @apply .font-light .text-center .py-2 .text-4xl;
+    @apply font-light;
+    @apply py-2;
+    @apply text-4xl;
+    @apply text-center;
 }
 
 @screen sm {
     .gistlog {
-        @apply .px-8;
+        @apply px-8;
     }
 }
