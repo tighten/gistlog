@@ -1,15 +1,15 @@
 {
   "devDependencies": {
-    "browser-sync": "^2.23.6",
-    "browser-sync-webpack-plugin": "^1.2.0",
-    "cross-env": "^3.2.3",
-    "laravel-mix": "^1.7.2",
-    "less": "^2.7.3",
-    "less-loader": "^4.0.5",
+    "browser-sync": "^2.26.5",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "cross-env": "^5.2.0",
+    "laravel-mix": "^4.0.15",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
-    "tailwindcss": "^0.4.1",
-    "vue": "^2.5.7"
+    "tailwindcss": "^1.0.1",
+    "vue": "^2.6.10"
   },
   "private": true,
   "scripts": {
