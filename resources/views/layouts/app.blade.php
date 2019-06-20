@@ -30,6 +30,13 @@
 <body>
     <div class="flex flex-col h-full">
         <div id="vue-app" class="flex-auto">
+            <nav class="container mx-auto mt-4">
+                <a href="/" title="GistLog by Tighten" class="w-full flex items-center text-blue-darker no-underline">
+                    <img width="50px" src="{{ asset('img/gistlog-logo.svg') }}" class="mr-2">
+                    <h2 class="text-2xl"><span class="font-bold">Gist</span>Log</h2>
+                </a>
+            </nav>
+
             @include('partials.flash-messages')
 
             @yield('content')
