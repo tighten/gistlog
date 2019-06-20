@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mx-auto mt-4">
+<div class="container mx-auto mt-8 pt-8">
     <div class="text-center max-w-sm mx-auto">
         <nav class="mx-auto w-2/5">
             <a href="/" title="GistLog by Tighten" class="w-full flex items-center text-blue-darker no-underline">

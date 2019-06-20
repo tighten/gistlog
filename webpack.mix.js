@@ -1,5 +1,6 @@
-const { mix } = require('laravel-mix');
-var tailwindcss = require('tailwindcss');
+let mix = require('laravel-mix');
+let tailwindcss = require('tailwindcss');
+let postCssImport = require('postcss-import');
 
 /*
  |--------------------------------------------------------------------------
@@ -18,6 +19,7 @@ mix
     .js('resources/assets/js/app.js', './public/js')
     .options({
         postCss: [
-            tailwindcss('tailwind.js'),
+            postCssImport(),
+            tailwindcss('./tailwind.config.js'),
         ]
-    });
+    }).disableNotifications();
