@@ -10,7 +10,7 @@
     @yield ('meta')
 
     @if (isset($gistlog) && $gistlog->isSecret())
-    <meta name="robots" content="noindex, nofollow">
+        <meta name="robots" content="noindex, nofollow">
     @endif
 
     <link rel="icon" type="image/png" href="/img/favicon.png">
@@ -42,28 +42,25 @@
             @yield('content')
         </div>
 
-        <div class="flex bg-grey-darkest min-h-6 justify-center items-center text-white mt-6">
-            <p>
-                <a href="/" title="GistLog by Tighten" class="text-blue-light no-underline hover:text-white">GistLog</a>
-                &copy; {{ Carbon\Carbon::now()->format('Y') }} |
-                Brought to you by the lovely humans at
-                <a href="https://tighten.co" title="Tighten" class="text-blue-light no-underline hover:text-white">Tighten</a>
-            </p>
+        <div class="flex bg-grey-darkest justify-center items-center text-lg text-white mt-4 py-4">
+            <a href="/" class="text-blue-light no-underline hover:text-white mr-1">GistLog</a>
+            &copy; {{ Carbon\Carbon::now()->format('Y') }} |
+            Brought to you by the lovely humans at
+            <a href="https://tighten.co" class="text-blue-light no-underline hover:text-white ml-1">Tighten</a>
         </div>
     </div>
 
 
     @if (env('APP_ENV') == 'production')
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-40114814-7', 'auto');
-        ga('send', 'pageview');
-
-    </script>
+            ga('create', 'UA-40114814-7', 'auto');
+            ga('send', 'pageview');
+        </script>
     @endif
 
     <script src="/js/app.js"></script>
