@@ -54,11 +54,16 @@
             @yield('content')
         </div>
 
-        <div class="flex bg-grey-darkest justify-center items-center text-lg text-white mt-4 py-4">
-            <a href="/" class="text-blue-light no-underline hover:text-white mr-1">GistLog</a>
-            &copy; {{ Carbon\Carbon::now()->format('Y') }} |
-            Brought to you by the lovely humans at
-            <a href="https://tighten.co" class="text-blue-light no-underline hover:text-white ml-1">Tighten</a>
+        <div class="flex flex-col lg:flex-row bg-grey-darkest justify-center items-center text-xs md:text-sm text-white mt-4 py-4">
+            <div>
+                <a href="/" class="text-blue-light no-underline hover:text-white">GistLog</a>
+                &copy; {{ Carbon\Carbon::now()->format('Y') }}
+                <span class="hidden lg:inline-block">|&nbsp;</span>
+            </div>
+            <div>
+                Brought to you by the lovely humans at
+                <a href="https://tighten.co" class="text-blue-light no-underline hover:text-white">Tighten</a>
+            </div>
         </div>
     </div>
 

@@ -6991,9 +6991,9 @@ html {
 .img-cover {
   overflow: hidden;
   position: relative;
-  visibility: hidden;
   height: 1px;
   background-size: cover;
+  height: 120px;
 }
 
 .title-underline {
@@ -7054,7 +7054,6 @@ html {
 
 @media (min-width: 768px) {
   .img-cover {
-    visibility: visible;
     height: 320px;
   }
 }

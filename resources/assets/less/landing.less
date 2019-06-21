@@ -52,7 +52,9 @@ html {
 }
 
 .img-cover {
-    @apply .overflow-hidden .relative .invisible .h-px .bg-cover;
+    @apply .overflow-hidden .relative .h-px .bg-cover;
+
+    height: 120px;
 }
 
 .title-underline {
@@ -85,8 +87,6 @@ html {
 
 @screen md {
     .img-cover {
-        @apply .visible;
-
         height: 320px;
     }
 }

@@ -24,14 +24,12 @@
 
 @section('content')
 <div class="container mx-auto py-6">
-    <h1 class="text-5xl font-hairline text-blue-darkest mb-2">Your Dev Blog Delivered</h1>
-    <h2 class="text-2xl text-grey tracking-normal mb-10">Publish your first post in 55 seconds</h2>
+    <h1 class="text-3xl md:text-5xl font-light md:font-hairline text-blue-darkest mb-2">Your Dev Blog Delivered</h1>
+    <h2 class="text-base md:text-2xl text-grey tracking-normal mb-6 md:mb-10">Publish your first post in 55 seconds</h2>
     <a href="/posts/create" class="btn btn-cta">Get Started</a>
 </div>
 
-<div class="z-0 mt-4">
-    <div class="img-cover blue-overlay" style="background-image: url('/img/main-bg.jpg')" title="Dev Blog - {{ config('app.name') }}"></div>
-</div>
+<div class="img-cover blue-overlay" style="background-image: url('/img/main-bg.jpg')" title="Dev Blog - {{ config('app.name') }}"></div>
 
     @include('landing.instructions')
     @include('landing.features')
