@@ -44,8 +44,8 @@
         <div id="vue-app" class="flex-auto">
             <nav class="container mx-auto mt-4">
                 <a href="/" title="GistLog by Tighten" class="w-full flex items-center text-blue-darker no-underline">
-                    <img width="50px" src="{{ asset('img/gistlog-logo.svg') }}" class="mr-2">
-                    <h2 class="text-2xl"><span class="font-bold">Gist</span>Log</h2>
+                    <img width="50px" src="{{ asset('img/gistlog-logo.svg') }}" alt-="GistLog logo." class="mr-2">
+                    <h1 class="text-2xl"><span class="font-bold">Gist</span>Log</h1>
                 </a>
             </nav>
 

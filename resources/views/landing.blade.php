@@ -25,8 +25,12 @@
 @section('content')
 <div class="container mx-auto py-6">
     <h1 class="text-3xl md:text-5xl font-light md:font-hairline text-blue-darkest mb-2">Your Dev Blog Delivered</h1>
-    <h2 class="text-base md:text-2xl text-grey tracking-normal mb-6 md:mb-10">Publish your first post in 55 seconds</h2>
-    <a href="/posts/create" class="btn btn-cta">Get Started</a>
+    <h2 class="text-base md:text-2xl text-grey tracking-normal mb-6 md:mb-8">Publish your first post in 55 seconds</h2>
+
+    <button
+        onclick="window.location.href = '/posts/create'"
+        class="inline-block bg-blue-darker text-white md:text-lg rounded focus:outline-none my-2 py-2 px-6"
+    >Get Started</button>
 </div>
 
 <div class="img-cover blue-overlay" style="background-image: url('/img/main-bg.jpg')" title="Dev Blog - {{ config('app.name') }}"></div>
