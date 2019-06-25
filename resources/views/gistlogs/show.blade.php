@@ -1,13 +1,19 @@
 @extends('layouts.app')
 
-@section('content')
-<nav class="mx-auto w-2/5">
-    <a href="/" title="GistLog by Tighten" class="w-full flex items-center text-blue-darker no-underline">
-        <img width="50px" src="{{ asset('img/gistlog-logo.svg') }}" class="float-left mr-2">
-        <h2 class="font-thin"><span class="font-bold">Gist</span>Log</h2>
-    </a>
-</nav>
+@section('meta')
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="{{ $gistlog->title }}">
+    <meta itemprop="description" content="{{ $gistlog->getPreview() }}">
 
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{{ $gistlog->title }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ Request::url() }}">
+    <meta property="og:description" content="{{ $gistlog->getPreview() }}">
+    <meta property="og:site_name" content="GistLog">
+@endsection
+
+@section('content')
 <div class="gistlog__container container">
     @if ($gistlog->isAnonymous())
         <div class="avatar">
@@ -25,9 +31,9 @@
             <h1 class="gistlog__title">{{ $gistlog->title }}</h1>
             <span class="font-light mx-auto table">
                 @if ($gistlog->isAnonymous())
-                    by <span class="font-bold text-blue no-underline">{{ $gistlog->author }}</span>
+                    by <span class="font-bold text-blue-dark no-underline">{{ $gistlog->author }}</span>
                 @else
-                    by <a href="/{{ $gistlog->author }}" class="font-bold text-blue no-underline">{{ $gistlog->author }}</a>
+                    by <a href="/{{ $gistlog->author }}" class="font-bold text-blue-dark no-underline">{{ $gistlog->author }}</a>
                 @endif
             </span>
 
@@ -56,7 +62,7 @@
                     <hr/>
                 @endif
 
-                <div class="text-xs text-grey mb-2">
+                <div class="text-xs text-grey-darker mb-2">
                     Created {{ $gistlog->createdAt->diffForHumans() }} |
                     Updated {{ $gistlog->updatedAt->diffForHumans() }}
                 </div>
@@ -84,7 +90,6 @@
         </article>
     </div>
 </div>
-</div>
 @endsection
 
 @section('scripts')
@@ -94,17 +99,4 @@
             autosize(document.querySelectorAll('textarea'));
         })();
     </script>
-@endsection
-
-@section('meta')
-    <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="{{ $gistlog->title }}">
-    <meta itemprop="description" content="{{ $gistlog->getPreview() }}">
-
-    <!-- Open Graph data -->
-    <meta property="og:title" content="{{ $gistlog->title }}">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="{{ Request::url() }}">
-    <meta property="og:description" content="{{ $gistlog->getPreview() }}">
-    <meta property="og:site_name" content="GistLog">
 @endsection

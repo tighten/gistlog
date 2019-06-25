@@ -40,7 +40,7 @@
     <![endif]-->
 </head>
 <body class="font-sans">
-    <div class="flex flex-col h-full">
+    <div class="flex flex-col h-screen">
         <div id="vue-app" class="flex-auto">
             <nav class="container mx-auto mt-4">
                 <a href="/" title="GistLog by Tighten" class="w-full flex items-center text-blue-darker no-underline">

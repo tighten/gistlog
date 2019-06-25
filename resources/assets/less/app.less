@@ -2,13 +2,14 @@
 
 @import "./github.less";
 
-html {
-    @apply .h-full .font-sans;
+body {
+    @apply .bg-grey-lightest;
 }
 
-body {
-    @apply .mx-auto .h-full .bg-grey-lightest;
-    max-width: 1440px;
+.container {
+    @apply .px-5;
+
+    max-width: 990px;
 }
 
 .avatar {
@@ -37,7 +38,7 @@ body {
     max-width: 612px;
 
     a {
-        @apply .no-underline .text-blue;
+        @apply .no-underline .text-blue-dark;
     }
 
     blockquote {
@@ -73,8 +74,14 @@ body {
         @apply .mb-4;
     }
 
-    ol, ul {
-        @apply .pl-6;
+    ol {
+        @apply pl-6;
+        list-style-type: decimal;
+    }
+
+    ul {
+        @apply pl-6;
+        list-style-type: disc;
     }
 
     p {

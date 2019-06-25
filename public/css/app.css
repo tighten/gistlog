@@ -7069,17 +7069,14 @@ pre code {
   font-weight: bold;
 }
 
-html {
-  height: 100%;
-  font-family: Roboto, system-ui, BlinkMacSystemFont, -apple-system, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+body {
+  background-color: #f7f7f7;
 }
 
-body {
-  margin-left: auto;
-  margin-right: auto;
-  height: 100%;
-  background-color: #f7f7f7;
-  max-width: 1440px;
+.container {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  max-width: 990px;
 }
 
 .avatar {
@@ -7135,7 +7132,7 @@ body {
 
 .gistlog__content a {
   text-decoration: none;
-  color: #229be1;
+  color: #2779bd;
 }
 
 .gistlog__content blockquote {
@@ -7191,9 +7188,14 @@ body {
   margin-bottom: 1rem;
 }
 
-.gistlog__content ol,
+.gistlog__content ol {
+  padding-left: 1.5rem;
+  list-style-type: decimal;
+}
+
 .gistlog__content ul {
   padding-left: 1.5rem;
+  list-style-type: disc;
 }
 
 .gistlog__content p {
