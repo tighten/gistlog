@@ -7131,8 +7131,8 @@ body {
 }
 
 .gistlog__content a {
+  word-break: break-all;
   text-decoration: none;
-  color: #2779bd;
 }
 
 .gistlog__content blockquote {
