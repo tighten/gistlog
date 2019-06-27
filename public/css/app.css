@@ -7133,6 +7133,7 @@ body {
 .gistlog__content a {
   word-break: break-all;
   text-decoration: none;
+  color: #037cc2;
 }
 
 .gistlog__content blockquote {
