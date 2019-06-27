@@ -1,4 +1,4 @@
-<form method="POST" class="flex flex-end flex-col mt-6 mb-2" action="{{route('comments.store', $gistlog->id)}}">
+<form method="POST" class="flex flex-end flex-col -mt-6 mb-2" action="{{route('comments.store', $gistlog->id)}}">
     {!! csrf_field() !!}
     <label for="comment" class="hidden">Comment</label>
     <textarea

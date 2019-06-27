@@ -39,7 +39,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="font-sans">
+<body class="font-sans border-t-8 border-blue-darker">
     <div class="flex flex-col h-screen">
         <div id="vue-app" class="flex-auto">
             <nav class="container mx-auto mt-4">

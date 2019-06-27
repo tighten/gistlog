@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="my-8 pt-4">
-                    <h3>Comments {{ (count($gistlog->comments) > 0) ? '(' . count($gistlog->comments) . ')' : '' }}</h3>
+                    <h2 class="text-2xl mb-2">Comments {{ (count($gistlog->comments) > 0) ? '(' . count($gistlog->comments) . ')' : '' }}</h2>
 
                     @include('gistlogs.comment_form')
 
