@@ -8,7 +8,7 @@
             &bull; <a href="{{ $comment->link() }}" class="no-underline"
                 >{{ $comment->updatedAt->diffForHumans() }}</a>
         </span>
-        <span class="font-normal text-sm leading-normal text-justify">
+        <span class="font-normal text-sm leading-normal text-justify" v-pre>
                 {!! $comment->renderHtml() !!}
         </span>
     </div>

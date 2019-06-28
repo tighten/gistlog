@@ -26,7 +26,7 @@
             </a>
         </div>
     @endif
-    <div class="gistlog py-8 sm:px-8">
+    <div class="gistlog py-8 sm:px-8" v-pre>
         <article class="my-8 px-4 sm:px-8 my-8">
             <h1 class="gistlog__title">{{ $gistlog->title }}</h1>
             <span class="font-light mx-auto table">
