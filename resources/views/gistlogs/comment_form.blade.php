@@ -1,6 +1,13 @@
-<form method="POST" class="flex flex-end flex-col mt-6 mb-2" action="{{route('comments.store', $gistlog->id)}}">
+<form method="POST" class="flex flex-end flex-col -mt-6 mb-2" action="{{route('comments.store', $gistlog->id)}}">
     {!! csrf_field() !!}
-    <textarea name="comment" class="pt-4 px-2 w-full text-grey text-base border-solid border border-grey" placeholder="Join the discussion&hellip;" required></textarea>
+    <label for="comment" class="hidden">Comment</label>
+    <textarea
+        id="comment"
+        name="comment"
+        class="pt-4 px-2 w-full text-grey text-base border-solid border border-grey"
+        placeholder="Join the discussion&hellip;"
+        required
+    ></textarea>
     <div class="flex-1 flex justify-end">
         @if (Auth::check())
             <button type="submit" class="bg-blue text-sm text-white w-32 py-2 px-6 rounded my-4">Comment</button>

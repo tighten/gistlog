@@ -1,8 +1,8 @@
-@import "./tailwind";
+@import './tailwind';
 
 .blue-overlay:before {
     background-color: rgba(0, 59, 87, 0.8);
-    content: " ";
+    content: ' ';
     display: block;
     height: 100%;
     left: 0;
@@ -12,53 +12,44 @@
     z-index: 0;
 }
 
-body {
-    @apply .mx-auto;
-    max-width: 1440px;
-}
-
-.btn {
-    @apply .border-0 .my-3 .text-base .py-2 .px-8 .rounded .no-underline .table .leading-large;
-}
-
-.btn-cta {
-    @apply .bg-blue .text-white .text-lg;
-}
-
 .container {
-    @apply .pl-5 .pr-5;
+    @apply .px-5;
+
     max-width: 990px;
 }
 
-.page-title {
-    @apply .text-5xl .font-hairline .mt-1 .text-blue-darkest;
-    font-size: 2.6rem;
-    letter-spacing: 2px;
-}
-
-h2 {
-    @apply .font-hairline .text-double;
-}
-
-.headline {
-    @apply .text-2xl .pt-4 .pb-8 .text-grey .tracking-normal;
-}
-
-html {
-    @apply .font-sans;
-}
-
 .img-cover {
-    @apply .overflow-hidden .relative .invisible .h-px .bg-cover;
+    @apply .overflow-hidden .relative .h-px .bg-cover;
+
+    height: 120px;
 }
 
-.title-underline {
-    @apply .w-10 .border-solid .border-b-2 .border-blue-darkest .mx-auto .my-4;
+.tab-label {
+    @apply .cursor-pointer .flex .my-4 .p-5;
+
+    span {
+        @apply .bg-black .flex .font-bold .h-8 .items-center .justify-center .rounded-full .text-sm .text-white .w-8;
+    }
+
+    h4 {
+        @apply .text-blue-darker .font-bold .text-base;
+    }
+
+    &--active {
+        @apply .bg-white .rounded-lg .shadow-md;
+
+        h4 {
+            @apply .text-blue-darker;
+        }
+
+        span {
+            @apply .bg-blue-darker;
+        }
+    }
 }
 
 @screen md {
     .img-cover {
-        @apply .visible;
         height: 320px;
     }
 }

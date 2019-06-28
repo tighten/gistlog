@@ -1,14 +1,11 @@
 @import "./tailwind";
 
-@import "./github.less";
+@import "./github";
 
-html {
-    @apply .font-sans;
-}
+.container {
+    @apply .px-5;
 
-body {
-    @apply .mx-auto .bg-grey-lightest;
-    max-width: 1440px;
+    max-width: 990px;
 }
 
 .avatar {
@@ -36,12 +33,10 @@ body {
     @apply .mx-auto .block .text-grey-darkest .w-full .mt-8 .pt-6;
     max-width: 612px;
 
-    a, li, ol, p {
-        @apply .leading-large;
-    }
-
     a {
-        @apply .no-underline .text-blue;
+        @apply break-all .no-underline;
+
+        color: #037cc2;
     }
 
     blockquote {
@@ -77,8 +72,14 @@ body {
         @apply .mb-4;
     }
 
-    ol, ul {
-        @apply .pl-7;
+    ol {
+        @apply pl-6;
+        list-style-type: decimal;
+    }
+
+    ul {
+        @apply pl-6;
+        list-style-type: disc;
     }
 
     p {

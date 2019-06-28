@@ -3,7 +3,7 @@
         <img src="{{ $comment->avatarUrl }}" alt="{{ $comment->author }} - {{ config('app.name') }}">
     </div>
     <div class="flex-1 flex flex-col px-2 sm:pl-4 sm:p-0">
-        <span class="text-blue text-sm font-normal">
+        <span class="text-blue-darker text-sm font-normal">
             <a href="https://github.com/{{ $comment->author }}" target="_blank" class="no-underline">{{ $comment->author }}</a>
             &bull; <a href="{{ $comment->link() }}" class="no-underline"
                 >{{ $comment->updatedAt->diffForHumans() }}</a>
