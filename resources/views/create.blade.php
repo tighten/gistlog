@@ -31,9 +31,18 @@
             name="gist-example"
             id="example-snippet"
             class="bg-white w-full py-3 text-grey text-sm px-4 rounded border border-grey-light focus:border-grey focus:outline-none" value="https://gist.github.com/mattstauffer/1c76d40371b295184845"
-            onclick="copyToClipboard()">
+        >
+        <div class="flex justify-between my-1">
+            <small
+                class="inline-block text-left text-blue-darker font-bold"
+                onclick="copyToClipboard()"
+            >Copy</small>
 
-        <small id="copy-successful" class="block invisible text-grey-darker text-right my-1">Copied to clipboard</small>
+            <small
+                id="copy-successful"
+                class="inline-block invisible text-grey-darker text-right"
+            >Copied to clipboard</small>
+        </div>
     </div>
 </div>
 @endsection
