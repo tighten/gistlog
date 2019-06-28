@@ -22,4 +22,4 @@ mix
             postCssImport(),
             tailwindcss('./tailwind.config.js'),
         ]
-    }).disableNotifications();
+    });
