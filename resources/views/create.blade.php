@@ -39,7 +39,7 @@
         >
         <div class="flex justify-between my-1">
             <small
-                class="inline-block text-left text-blue-darker font-bold"
+                class="inline-block text-left text-blue-darker font-bold cursor-pointer"
                 onclick="copyToClipboard()"
             >Copy</small>
 
