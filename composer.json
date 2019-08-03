@@ -12,7 +12,7 @@
         "laravel/socialite": "^3.0",
         "michelf/php-markdown": "~1.4",
         "knplabs/github-api": "~1.4",
-        "symfony/yaml": "~2.6",
+        "symfony/yaml": "~3.0",
         "php": ">=7.0.0",
         "laravel/tinker": "~1.0",
         "fideloper/proxy": "~3.3"
