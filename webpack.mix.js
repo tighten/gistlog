@@ -14,9 +14,9 @@ let postCssImport = require('postcss-import');
  */
 
 mix
-    .less('resources/assets/less/landing.less', './public/css')
-    .less('resources/assets/less/app.less', './public/css')
-    .js('resources/assets/js/app.js', './public/js')
+    .less('resources/less/landing.less', './public/css')
+    .less('resources/less/app.less', './public/css')
+    .js('resources/js/app.js', './public/js')
     .options({
         postCss: [
             postCssImport(),
