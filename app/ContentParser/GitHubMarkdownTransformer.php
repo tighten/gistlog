@@ -1,4 +1,6 @@
-<?php namespace Gistlog\ContentParser;
+<?php
+
+namespace App\ContentParser;
 
 use Github\Client as GitHubClient;
 

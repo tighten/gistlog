@@ -1,8 +1,8 @@
 <?php
 
-use Gistlog\Gists\GistlogRepository;
-use Gistlog\Gists\GistClient;
-use Gistlog\Gists\Gistlog;
+use App\Gists\Gistlog;
+use App\Gists\GistClient;
+use App\Gists\GistlogRepository;
 
 class GistlogRepositoryTest extends TestCase
 {
@@ -28,14 +28,14 @@ class GistlogRepositoryTest extends TestCase
         $gist = $gistRepository->findById(self::FIXTURE_GIST_ID);
 
         $this->assertCount(2, $gist->comments);
-        $this->assertEquals("Interesting post.", $gist->comments[0]->body);
+        $this->assertEquals('Interesting post.', $gist->comments[0]->body);
         $this->assertEquals("Here's another comment!", $gist->comments[1]->body);
     }
 
     /** @test */
     public function it_can_retrieve_gists_by_url()
     {
-        $url = 'https://gist.github.com/adamwathan/' . self::FIXTURE_GIST_ID;
+        $url = 'https://gist.github.com/adamwathan/'.self::FIXTURE_GIST_ID;
 
         $gistClient = new FixtureGistClient;
         $gistRepository = new GistlogRepository($gistClient);
@@ -48,7 +48,7 @@ class GistlogRepositoryTest extends TestCase
     /** @test */
     public function it_can_retrieve_gists_by_url_with_a_trailing_slash()
     {
-        $url = 'https://gist.github.com/adamwathan/' . self::FIXTURE_GIST_ID . '/';
+        $url = 'https://gist.github.com/adamwathan/'.self::FIXTURE_GIST_ID.'/';
 
         $gistClient = new FixtureGistClient;
         $gistRepository = new GistlogRepository($gistClient);
@@ -69,11 +69,11 @@ class FixtureGistClient extends GistClient
 
     public function getGist($gistId)
     {
-        return $this->loadFixture($gistId . '.json');
+        return $this->loadFixture($gistId.'.json');
     }
 
     public function getGistComments($gistId)
     {
-        return $this->loadFixture($gistId . '/comments.json');
+        return $this->loadFixture($gistId.'/comments.json');
     }
 }

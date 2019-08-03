@@ -1,14 +1,16 @@
-<?php namespace Gistlog\Http\Controllers\Auth;
+<?php
+
+namespace App\Http\Controllers\Auth;
 
 use Exception;
-use Gistlog\Http\Controllers\Controller;
-use Gistlog\User;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
+use App\User;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
 use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
 {
@@ -32,6 +34,7 @@ class AuthController extends Controller
     public function redirectToProvider()
     {
         session()->flash('redirect_to', URL::previous());
+
         return Socialite::driver('github')
             ->scopes(['user:email', 'gist'])
             ->redirect();
@@ -68,7 +71,7 @@ class AuthController extends Controller
             'email' => $user->email,
             'github_id' => $user->id,
             'avatar' => $user->avatar,
-            'token' => $user->token
+            'token' => $user->token,
         ]);
     }
 

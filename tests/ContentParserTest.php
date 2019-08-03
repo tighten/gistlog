@@ -1,7 +1,7 @@
 <?php
 
-use Gistlog\ContentParser\ContentParser;
-use Gistlog\ContentParser\Transformer;
+use App\ContentParser\Transformer;
+use App\ContentParser\ContentParser;
 
 class ContentParserTest extends TestCase
 {
@@ -13,14 +13,14 @@ class ContentParserTest extends TestCase
         $parser->push(new TrimTransformer);
         $parser->push(new SpacePadTransformer);
 
-        $this->assertEquals(" padded ", $parser->transform('padded'));
+        $this->assertEquals(' padded ', $parser->transform('padded'));
 
         $parser = new ContentParser;
 
         $parser->push(new SpacePadTransformer);
         $parser->push(new TrimTransformer);
 
-        $this->assertEquals("trimmed", $parser->transform('trimmed'));
+        $this->assertEquals('trimmed', $parser->transform('trimmed'));
     }
 }
 

@@ -1,6 +1,10 @@
-<?php namespace Gistlog\Exceptions;
+<?php
+
+namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -11,7 +15,9 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontReport = [
-        'Symfony\Component\HttpKernel\Exception\HttpException'
+        AuthorizationException::class,
+        ValidationException::class,
+        'Symfony\Component\HttpKernel\Exception\HttpException',
     ];
 
     /**
@@ -24,7 +30,7 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $e)
     {
-        return parent::report($e);
+        parent::report($e);
     }
 
     /**
@@ -41,7 +47,7 @@ class Handler extends ExceptionHandler
         } elseif ($this->isGistNotFoundException($e)) {
             return response()->view('errors.404', [
                 'username' => request()->route()->getParameter('username'),
-                'gistId' => request()->route()->getParameter('gistId')
+                'gistId' => request()->route()->getParameter('gistId'),
             ], 404);
         } else {
             return parent::render($request, $e);

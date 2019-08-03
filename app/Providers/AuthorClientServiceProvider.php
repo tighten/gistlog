@@ -1,10 +1,12 @@
-<?php namespace Gistlog\Providers;
+<?php
 
-use Gistlog\Authors\AuthorClient;
-use Gistlog\Gists\GistClient;
+namespace App\Providers;
+
+use App\Gists\GistClient;
+use App\Authors\AuthorClient;
 use Github\Client as GitHubClient;
-use Github\HttpClient\CachedHttpClient as CachedGitHubClient;
 use Illuminate\Support\ServiceProvider;
+use Github\HttpClient\CachedHttpClient as CachedGitHubClient;
 
 class AuthorClientServiceProvider extends ServiceProvider
 {

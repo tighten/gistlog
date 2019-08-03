@@ -1,6 +1,6 @@
 <?php
 
-use Gistlog\Authors\AuthorClient;
+use App\Authors\AuthorClient;
 
 class AuthorClientTest extends TestCase
 {

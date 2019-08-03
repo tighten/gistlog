@@ -1,17 +1,18 @@
-<?php namespace Gistlog\Http\Controllers;
+<?php
 
-use Gistlog\Exceptions\GistNotFoundException;
-use Gistlog\Gists\GistClient;
-use Gistlog\Gists\GistlogRepository;
-use Gistlog\Http\Requests;
-use Gistlog\Http\Controllers\Controller;
+namespace App\Http\Controllers;
+
+use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Gists\GistClient;
 use Illuminate\Support\Facades\App;
+use App\Gists\GistlogRepository;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
+use App\Exceptions\GistNotFoundException;
 
 class GistsController extends Controller
 {
@@ -22,22 +23,25 @@ class GistsController extends Controller
         $this->repository = $repository;
     }
 
-    public function storeAndRedirect()
+    public function storeAndRedirect(Request $request)
     {
-        $gistUrl = Input::get('gistUrl');
+        $gistUrl = $request->get('gistUrl');
+
         try {
             $gistlog = $this->repository->findByUrl($gistUrl);
         } catch (InvalidUrlException $e) {
             Session::flash('error-message', 'Please enter a valid Gist URL.');
+
             return Redirect::back();
         } catch (GistNotFoundException $e) {
             Session::flash('error-message', 'Please enter a valid Gist URL.');
+
             return Redirect::back();
         }
 
         return Redirect::route('gists.show', [
             'userName' => $gistlog->author,
-            'gistId' => $gistlog->id
+            'gistId' => $gistlog->id,
         ]);
     }
 
@@ -58,13 +62,14 @@ class GistsController extends Controller
 
         return View::make('gistlogs.show')
             ->with('gistlog', $gistlog)
-            ->with('pageTitle', $gistlog->title . ' | ' . $gistlog->author);
+            ->with('pageTitle', $gistlog->title.' | '.$gistlog->author);
     }
 
     public function postComment(Request $request, GistClient $client, $gistId)
     {
         $this->validate($request, ['comment' => 'required']);
-        $client->postGistComment($gistId, Input::get('comment'));
+        $client->postGistComment($gistId, $request->get('comment'));
+
         return redirect()->back();
     }
 }

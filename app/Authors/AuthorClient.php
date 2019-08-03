@@ -1,12 +1,14 @@
-<?php  namespace Gistlog\Authors;
+<?php
+
+namespace App\Authors;
 
 use Exception;
-use Gistlog\CachesGitHubResponses;
-use Gistlog\Gists\GistClient;
-use Github\Client as GitHubClient;
-use Github\HttpClient\Message\ResponseMediator;
-use Illuminate\Support\Facades\Cache;
+use App\Gists\GistClient;
 use Symfony\Component\Yaml\Yaml;
+use App\CachesGitHubResponses;
+use Github\Client as GitHubClient;
+use Illuminate\Support\Facades\Cache;
+use Github\HttpClient\Message\ResponseMediator;
 
 class AuthorClient
 {
@@ -16,6 +18,7 @@ class AuthorClient
      * @var GitHubClient
      */
     private $github;
+
     /**
      * @var GistClient
      */

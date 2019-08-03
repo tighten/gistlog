@@ -2,6 +2,8 @@
 
 return [
 
+    'env' => env('APP_ENV', 'production'),
+
     'name' => env('APP_NAME', 'Gistlog.co'),
 
     /*
@@ -99,6 +101,8 @@ return [
 
     'log' => 'daily',
 
+        'log_level' => env('APP_LOG_LEVEL', 'debug'),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -115,12 +119,10 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
-        Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
         Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
-        Illuminate\Routing\ControllerServiceProvider::class,
         Illuminate\Cookie\CookieServiceProvider::class,
         Illuminate\Database\DatabaseServiceProvider::class,
         Illuminate\Encryption\EncryptionServiceProvider::class,
@@ -142,17 +144,16 @@ return [
         /*
          * Application Service Providers...
          */
-        Gistlog\Providers\AppServiceProvider::class,
-        Gistlog\Providers\BusServiceProvider::class,
-        Gistlog\Providers\ConfigServiceProvider::class,
-        Gistlog\Providers\EventServiceProvider::class,
-        Gistlog\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\ConfigServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
-        Gistlog\Providers\AuthorClientServiceProvider::class,
-        Gistlog\Providers\GistClientServiceProvider::class,
-        Gistlog\Providers\ContentParserServiceProvider::class,
-        Gistlog\Providers\GitHubClientServiceProvider::class,
-        Laravel\Socialite\SocialiteServiceProvider::class
+        App\Providers\AuthorClientServiceProvider::class,
+        App\Providers\GistClientServiceProvider::class,
+        App\Providers\ContentParserServiceProvider::class,
+        App\Providers\GitHubClientServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
     ],
 
     /*
@@ -172,7 +173,6 @@ return [
         'Artisan'   => Illuminate\Support\Facades\Artisan::class,
         'Auth'      => Illuminate\Support\Facades\Auth::class,
         'Blade'     => Illuminate\Support\Facades\Blade::class,
-        'Bus'       => Illuminate\Support\Facades\Bus::class,
         'Cache'     => Illuminate\Support\Facades\Cache::class,
         'Config'    => Illuminate\Support\Facades\Config::class,
         'Cookie'    => Illuminate\Support\Facades\Cookie::class,
@@ -182,7 +182,6 @@ return [
         'Event'     => Illuminate\Support\Facades\Event::class,
         'File'      => Illuminate\Support\Facades\File::class,
         'Hash'      => Illuminate\Support\Facades\Hash::class,
-        'Input'     => Illuminate\Support\Facades\Input::class,
         'Inspiring' => Illuminate\Foundation\Inspiring::class,
         'Lang'      => Illuminate\Support\Facades\Lang::class,
         'Log'       => Illuminate\Support\Facades\Log::class,

@@ -1,12 +1,14 @@
-<?php  namespace Gistlog\Gists;
+<?php
+
+namespace App\Gists;
 
 use Exception;
-use Gistlog\CachesGitHubResponses;
-use Gistlog\Exceptions\GistNotFoundException;
+use App\CachesGitHubResponses;
 use Github\Client as GitHubClient;
-use Github\HttpClient\Message\ResponseMediator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+use App\Exceptions\GistNotFoundException;
+use Github\HttpClient\Message\ResponseMediator;
 
 class GistClient
 {
@@ -65,6 +67,7 @@ class GistClient
     {
         $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_HTTP_TOKEN);
         $response = $this->github->getHttpClient()->post("gists/{$gistId}/comments", json_encode(['body' => $comment]));
+
         return ResponseMediator::getContent($response);
     }
 }

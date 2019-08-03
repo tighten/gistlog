@@ -1,6 +1,6 @@
 <?php
 
-use Gistlog\Gists\GistConfig;
+use App\Gists\GistConfig;
 
 class GistConfigTest extends TestCase
 {
@@ -13,8 +13,8 @@ class GistConfigTest extends TestCase
 
         $config = GistConfig::fromGitHub($githubGist);
 
-        $this->assertEquals("A test preview.", $config['preview']);
-        $this->assertEquals("2015-05-15", $config['published_on']->format('Y-m-d'));
+        $this->assertEquals('A test preview.', $config['preview']);
+        $this->assertEquals('2015-05-15', $config['published_on']->format('Y-m-d'));
         $this->assertTrue($config['published']);
         $this->assertTrue($config['include_files']);
     }
@@ -29,7 +29,7 @@ class GistConfigTest extends TestCase
         $this->assertNull($config['preview']);
         $this->assertNull($config['published_on']);
         $this->assertFalse($config['published']);
-        $this->assertFalse($config['include_files']); 
+        $this->assertFalse($config['include_files']);
     }
 
     /** @test */
@@ -42,7 +42,7 @@ class GistConfigTest extends TestCase
         $this->assertNull($config['preview']); // excluded
         $this->assertFalse($config['published']); // excluded
         $this->assertFalse($config['include_files']); // excluded
-        $this->assertEquals("2015-05-15", $config['published_on']->format('Y-m-d')); // provided
+        $this->assertEquals('2015-05-15', $config['published_on']->format('Y-m-d')); // provided
     }
 
     /** @test */

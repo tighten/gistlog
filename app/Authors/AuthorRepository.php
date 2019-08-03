@@ -1,4 +1,6 @@
-<?php  namespace Gistlog\Authors;
+<?php
+
+namespace App\Authors;
 
 class AuthorRepository
 {

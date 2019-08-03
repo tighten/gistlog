@@ -1,7 +1,9 @@
-<?php namespace Gistlog\Http\Controllers\Auth;
+<?php
 
-use Gistlog\Http\Controllers\Controller;
+namespace App\Http\Controllers\Auth;
+
 use Illuminate\Contracts\Auth\Guard;
+use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\PasswordBroker;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 

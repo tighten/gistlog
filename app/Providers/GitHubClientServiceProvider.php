@@ -1,6 +1,6 @@
 <?php
 
-namespace Gistlog\Providers;
+namespace App\Providers;
 
 use Github\Client;
 use Illuminate\Support\ServiceProvider;
