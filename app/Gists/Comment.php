@@ -46,7 +46,7 @@ class Comment
      */
     public function renderHtml()
     {
-        return Cache::remember($this->cacheKey(), 60, function () {
+        return Cache::remember($this->cacheKey(), 3600, function () {
             return ContentParser::transform($this->body);
         });
     }
