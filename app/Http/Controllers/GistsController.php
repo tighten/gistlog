@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use Illuminate\Http\Request;
 use App\Gists\GistClient;
-use Illuminate\Support\Facades\App;
+use Illuminate\Http\Request;
 use App\Gists\GistlogRepository;
+use Illuminate\Support\Facades\App;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Session;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use App\Exceptions\GistNotFoundException;
 
