@@ -1,8 +1,8 @@
 <?php
 
-namespace Gistlog\Authors;
+namespace App\Authors;
 
-use Gistlog\Gists\Gistlog;
+use App\Gists\Gistlog;
 
 class Author
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Gistlog\Console;
+namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        'Gistlog\Console\Commands\Inspire',
+        \App\Console\Commands\Inspire::class,
     ];
 
     /**

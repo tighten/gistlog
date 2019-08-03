@@ -1,9 +1,9 @@
 <?php
 
-namespace Gistlog\Providers;
+namespace App\Providers;
 
-use Gistlog\Gists\GistClient;
-use Gistlog\Authors\AuthorClient;
+use App\Gists\GistClient;
+use App\Authors\AuthorClient;
 use Github\Client as GitHubClient;
 use Illuminate\Support\ServiceProvider;
 use Github\HttpClient\CachedHttpClient as CachedGitHubClient;

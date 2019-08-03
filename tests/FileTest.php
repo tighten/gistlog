@@ -1,7 +1,7 @@
 <?php
 
-use Gistlog\Gists\File;
-use Gistlog\Gists\Gistlog;
+use App\Gists\File;
+use App\Gists\Gistlog;
 
 class FileTest extends TestCase
 {

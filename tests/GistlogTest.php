@@ -1,7 +1,7 @@
 <?php
 
-use Gistlog\Gists\Comment;
-use Gistlog\Gists\Gistlog;
+use App\Gists\Comment;
+use App\Gists\Gistlog;
 
 class GistlogTest extends TestCase
 {

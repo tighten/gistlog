@@ -12904,9 +12904,9 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/ant/Sites/tighten/gistlog/resources/assets/js/app.js */"./resources/assets/js/app.js");
-__webpack_require__(/*! /Users/ant/Sites/tighten/gistlog/resources/assets/less/landing.less */"./resources/assets/less/landing.less");
-module.exports = __webpack_require__(/*! /Users/ant/Sites/tighten/gistlog/resources/assets/less/app.less */"./resources/assets/less/app.less");
+__webpack_require__(/*! /Users/mattstauffer/Sites/gistlog/resources/assets/js/app.js */"./resources/assets/js/app.js");
+__webpack_require__(/*! /Users/mattstauffer/Sites/gistlog/resources/assets/less/landing.less */"./resources/assets/less/landing.less");
+module.exports = __webpack_require__(/*! /Users/mattstauffer/Sites/gistlog/resources/assets/less/app.less */"./resources/assets/less/app.less");
 
 
 /***/ })

@@ -1,8 +1,8 @@
 <?php
 
-use Gistlog\Gists\Gistlog;
-use Gistlog\Gists\GistClient;
-use Gistlog\Gists\GistlogRepository;
+use App\Gists\Gistlog;
+use App\Gists\GistClient;
+use App\Gists\GistlogRepository;
 
 class GistlogRepositoryTest extends TestCase
 {

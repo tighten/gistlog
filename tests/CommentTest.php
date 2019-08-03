@@ -1,6 +1,6 @@
 <?php
 
-use Gistlog\Gists\Comment;
+use App\Gists\Comment;
 
 class CommentTest extends TestCase
 {

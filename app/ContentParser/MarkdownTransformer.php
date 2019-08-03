@@ -1,6 +1,6 @@
 <?php
 
-namespace Gistlog\ContentParser;
+namespace App\ContentParser;
 
 use Michelf\MarkdownExtra;
 

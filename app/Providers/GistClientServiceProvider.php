@@ -1,8 +1,8 @@
 <?php
 
-namespace Gistlog\Providers;
+namespace App\Providers;
 
-use Gistlog\Gists\GistClient;
+use App\Gists\GistClient;
 use Github\Client as GitHubClient;
 use Illuminate\Support\ServiceProvider;
 use Github\HttpClient\CachedHttpClient as CachedGitHubClient;

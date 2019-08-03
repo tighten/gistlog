@@ -1,6 +1,6 @@
 <?php
 
-use Gistlog\Gists\GistClient;
+use App\Gists\GistClient;
 
 class GistClientTest extends TestCase
 {

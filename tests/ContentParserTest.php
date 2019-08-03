@@ -1,7 +1,7 @@
 <?php
 
-use Gistlog\ContentParser\Transformer;
-use Gistlog\ContentParser\ContentParser;
+use App\ContentParser\Transformer;
+use App\ContentParser\ContentParser;
 
 class ContentParserTest extends TestCase
 {

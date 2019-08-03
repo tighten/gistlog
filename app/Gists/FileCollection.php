@@ -1,6 +1,6 @@
 <?php
 
-namespace Gistlog\Gists;
+namespace App\Gists;
 
 use Illuminate\Support\Collection;
 

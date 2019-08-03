@@ -1,11 +1,11 @@
 <?php
 
-namespace Gistlog\Gists;
+namespace App\Gists;
 
 use Cache;
 use Carbon\Carbon;
-use Gistlog\Authors\Author;
-use Gistlog\ContentParser\ContentParserFacade as ContentParser;
+use App\Authors\Author;
+use App\ContentParser\ContentParserFacade as ContentParser;
 
 class Gistlog
 {

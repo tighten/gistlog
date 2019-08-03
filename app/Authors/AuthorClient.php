@@ -1,11 +1,11 @@
 <?php
 
-namespace Gistlog\Authors;
+namespace App\Authors;
 
 use Exception;
-use Gistlog\Gists\GistClient;
+use App\Gists\GistClient;
 use Symfony\Component\Yaml\Yaml;
-use Gistlog\CachesGitHubResponses;
+use App\CachesGitHubResponses;
 use Github\Client as GitHubClient;
 use Illuminate\Support\Facades\Cache;
 use Github\HttpClient\Message\ResponseMediator;

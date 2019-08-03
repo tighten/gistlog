@@ -1,12 +1,12 @@
 <?php
 
-namespace Gistlog\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth;
 
 use Exception;
-use Gistlog\User;
+use App\User;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Auth;
-use Gistlog\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Foundation\Auth\ThrottlesLogins;

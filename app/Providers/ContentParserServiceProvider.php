@@ -1,11 +1,11 @@
 <?php
 
-namespace Gistlog\Providers;
+namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Gistlog\ContentParser\ContentParser;
-use Gistlog\ContentParser\GitHubMarkdownTransformer;
-use Gistlog\ContentParser\GitHubUsernameTransformer;
+use App\ContentParser\ContentParser;
+use App\ContentParser\GitHubMarkdownTransformer;
+use App\ContentParser\GitHubUsernameTransformer;
 
 class ContentParserServiceProvider extends ServiceProvider
 {

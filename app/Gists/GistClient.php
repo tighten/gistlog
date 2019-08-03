@@ -1,13 +1,13 @@
 <?php
 
-namespace Gistlog\Gists;
+namespace App\Gists;
 
 use Exception;
-use Gistlog\CachesGitHubResponses;
+use App\CachesGitHubResponses;
 use Github\Client as GitHubClient;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
-use Gistlog\Exceptions\GistNotFoundException;
+use App\Exceptions\GistNotFoundException;
 use Github\HttpClient\Message\ResponseMediator;
 
 class GistClient

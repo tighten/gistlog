@@ -1,19 +1,18 @@
 <?php
 
-namespace Gistlog\Http\Controllers;
+namespace App\Http\Controllers;
 
-use Gistlog\Http\Requests;
+use App\Http\Requests;
 use Illuminate\Http\Request;
-use Gistlog\Gists\GistClient;
+use App\Gists\GistClient;
 use Illuminate\Support\Facades\App;
-use Gistlog\Gists\GistlogRepository;
+use App\Gists\GistlogRepository;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
-use Gistlog\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
-use Gistlog\Exceptions\GistNotFoundException;
+use App\Exceptions\GistNotFoundException;
 
 class GistsController extends Controller
 {
@@ -24,9 +23,9 @@ class GistsController extends Controller
         $this->repository = $repository;
     }
 
-    public function storeAndRedirect()
+    public function storeAndRedirect(Request $request)
     {
-        $gistUrl = Request::get('gistUrl');
+        $gistUrl = $request->get('gistUrl');
 
         try {
             $gistlog = $this->repository->findByUrl($gistUrl);
@@ -69,7 +68,7 @@ class GistsController extends Controller
     public function postComment(Request $request, GistClient $client, $gistId)
     {
         $this->validate($request, ['comment' => 'required']);
-        $client->postGistComment($gistId, Request::get('comment'));
+        $client->postGistComment($gistId, $request->get('comment'));
 
         return redirect()->back();
     }

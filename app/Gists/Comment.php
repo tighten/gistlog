@@ -1,9 +1,9 @@
 <?php
 
-namespace Gistlog\Gists;
+namespace App\Gists;
 
 use Carbon\Carbon;
-use Gistlog\ContentParser\ContentParserFacade as ContentParser;
+use App\ContentParser\ContentParserFacade as ContentParser;
 
 class Comment
 {

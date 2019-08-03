@@ -144,16 +144,15 @@ return [
         /*
          * Application Service Providers...
          */
-        Gistlog\Providers\AppServiceProvider::class,
-        Gistlog\Providers\BusServiceProvider::class,
-        Gistlog\Providers\ConfigServiceProvider::class,
-        Gistlog\Providers\EventServiceProvider::class,
-        Gistlog\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\ConfigServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
-        Gistlog\Providers\AuthorClientServiceProvider::class,
-        Gistlog\Providers\GistClientServiceProvider::class,
-        Gistlog\Providers\ContentParserServiceProvider::class,
-        Gistlog\Providers\GitHubClientServiceProvider::class,
+        App\Providers\AuthorClientServiceProvider::class,
+        App\Providers\GistClientServiceProvider::class,
+        App\Providers\ContentParserServiceProvider::class,
+        App\Providers\GitHubClientServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
     ],
 
