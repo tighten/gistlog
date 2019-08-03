@@ -2,8 +2,8 @@
 
 namespace App\Authors;
 
-use Illuminate\Support\Arr;
 use App\Gists\Gistlog;
+use Illuminate\Support\Arr;
 
 class Author
 {

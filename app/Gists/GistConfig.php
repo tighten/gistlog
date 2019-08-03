@@ -2,9 +2,9 @@
 
 namespace App\Gists;
 
-use Illuminate\Support\Arr;
 use ArrayAccess;
 use Carbon\Carbon;
+use Illuminate\Support\Arr;
 use Symfony\Component\Yaml\Yaml;
 
 class GistConfig implements ArrayAccess

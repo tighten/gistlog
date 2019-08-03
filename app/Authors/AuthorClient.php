@@ -2,9 +2,9 @@
 
 namespace App\Authors;
 
-use Illuminate\Support\Arr;
 use Exception;
 use App\Gists\GistClient;
+use Illuminate\Support\Arr;
 use App\CachesGitHubResponses;
 use Symfony\Component\Yaml\Yaml;
 use Github\Client as GitHubClient;
