@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
         // @todo is this necessary anymore? Feels like no?
         $this->app->bind(
             'Illuminate\Contracts\Auth\Registrar',
-            'App\Services\Registrar'
+            \App\Services\Registrar::class
         );
     }
 }
