@@ -1,4 +1,6 @@
-<?php namespace Gistlog\Gists;
+<?php
+
+namespace Gistlog\Gists;
 
 use Carbon\Carbon;
 use Gistlog\ContentParser\ContentParserFacade as ContentParser;
@@ -6,9 +8,13 @@ use Gistlog\ContentParser\ContentParserFacade as ContentParser;
 class Comment
 {
     public $gistId;
+
     public $body;
+
     public $author;
+
     public $avatarUrl;
+
     public $id;
 
     /**

@@ -1,16 +1,23 @@
-<?php namespace Gistlog\Authors;
+<?php
+
+namespace Gistlog\Authors;
 
 use Gistlog\Gists\Gistlog;
 
 class Author
 {
     const ANONYMOUS_USERNAME = 'anonymous';
+
     const ANONYMOUS_AVATAR_URL = 'https://avatars3.githubusercontent.com/u/148100?v=3&s=400';
 
     public $id;
+
     public $avatarUrl;
+
     public $link;
+
     public $name;
+
     public $username;
 
     /**
@@ -46,7 +53,7 @@ class Author
 
         $author->id = 0;
         $author->avatarUrl = self::ANONYMOUS_AVATAR_URL;
-        $author->link = 'https://github.com/' . self::ANONYMOUS_USERNAME;
+        $author->link = 'https://github.com/'.self::ANONYMOUS_USERNAME;
         $author->name = 'anonymous';
         $author->username = self::ANONYMOUS_USERNAME;
         $author->gists = collect([]);

@@ -2,10 +2,10 @@
 
 namespace Gistlog\Providers;
 
-use Gistlog\ContentParser\ContentParser;
-use Gistlog\ContentParser\GitHubUsernameTransformer;
-use Gistlog\ContentParser\GitHubMarkdownTransformer;
 use Illuminate\Support\ServiceProvider;
+use Gistlog\ContentParser\ContentParser;
+use Gistlog\ContentParser\GitHubMarkdownTransformer;
+use Gistlog\ContentParser\GitHubUsernameTransformer;
 
 class ContentParserServiceProvider extends ServiceProvider
 {

@@ -152,7 +152,7 @@ return [
         Gistlog\Providers\GistClientServiceProvider::class,
         Gistlog\Providers\ContentParserServiceProvider::class,
         Gistlog\Providers\GitHubClientServiceProvider::class,
-        Laravel\Socialite\SocialiteServiceProvider::class
+        Laravel\Socialite\SocialiteServiceProvider::class,
     ],
 
     /*

@@ -1,4 +1,6 @@
-<?php namespace Gistlog\Jobs;
+<?php
+
+namespace Gistlog\Jobs;
 
 abstract class Command
 {

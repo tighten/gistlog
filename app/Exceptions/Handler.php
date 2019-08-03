@@ -1,4 +1,6 @@
-<?php namespace Gistlog\Exceptions;
+<?php
+
+namespace Gistlog\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
@@ -11,7 +13,7 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontReport = [
-        'Symfony\Component\HttpKernel\Exception\HttpException'
+        'Symfony\Component\HttpKernel\Exception\HttpException',
     ];
 
     /**
@@ -41,7 +43,7 @@ class Handler extends ExceptionHandler
         } elseif ($this->isGistNotFoundException($e)) {
             return response()->view('errors.404', [
                 'username' => request()->route()->getParameter('username'),
-                'gistId' => request()->route()->getParameter('gistId')
+                'gistId' => request()->route()->getParameter('gistId'),
             ], 404);
         } else {
             return parent::render($request, $e);

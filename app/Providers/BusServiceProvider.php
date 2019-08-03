@@ -1,4 +1,6 @@
-<?php namespace Gistlog\Providers;
+<?php
+
+namespace Gistlog\Providers;
 
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\ServiceProvider;

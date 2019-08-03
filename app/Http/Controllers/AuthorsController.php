@@ -1,7 +1,9 @@
-<?php namespace Gistlog\Http\Controllers;
+<?php
 
-use Gistlog\Authors\AuthorRepository;
+namespace Gistlog\Http\Controllers;
+
 use Illuminate\Support\Facades\View;
+use Gistlog\Authors\AuthorRepository;
 
 class AuthorsController extends Controller
 {

@@ -1,14 +1,21 @@
-<?php namespace Gistlog\Gists;
+<?php
+
+namespace Gistlog\Gists;
 
 use Illuminate\Contracts\Support\Arrayable;
 
 class File implements Arrayable
 {
     public $name;
+
     public $type;
+
     public $language;
+
     public $url;
+
     public $size;
+
     public $content;
 
     /**

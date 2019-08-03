@@ -1,7 +1,7 @@
 <?php
 
-use Gistlog\Gists\Gistlog;
 use Gistlog\Gists\Comment;
+use Gistlog\Gists\Gistlog;
 
 class GistlogTest extends TestCase
 {
@@ -14,9 +14,9 @@ class GistlogTest extends TestCase
 
         $gistlog = Gistlog::fromGitHub($githubGist);
 
-        $this->assertEquals("002ed429c7c21ab89300", $gistlog->id);
-        $this->assertEquals("A Sample Gistlog", $gistlog->title);
-        $this->assertEquals("https://gist.github.com/002ed429c7c21ab89300", $gistlog->link);
+        $this->assertEquals('002ed429c7c21ab89300', $gistlog->id);
+        $this->assertEquals('A Sample Gistlog', $gistlog->title);
+        $this->assertEquals('https://gist.github.com/002ed429c7c21ab89300', $gistlog->link);
         $this->assertEquals(new DateTime('2015-01-31T14:53:51Z'), $gistlog->createdAt);
         $this->assertEquals(new DateTime('2015-01-31T14:54:28Z'), $gistlog->updatedAt);
         $this->assertEquals('adamwathan', $gistlog->author);
@@ -32,8 +32,8 @@ class GistlogTest extends TestCase
 
         $gistlog = Gistlog::fromGitHub($githubGist, $githubComments);
 
-        $this->assertEquals("A Sample Gistlog", $gistlog->title);
-        $this->assertEquals("https://gist.github.com/002ed429c7c21ab89300", $gistlog->link);
+        $this->assertEquals('A Sample Gistlog', $gistlog->title);
+        $this->assertEquals('https://gist.github.com/002ed429c7c21ab89300', $gistlog->link);
         $this->assertEquals(new DateTime('2015-01-31T14:53:51Z'), $gistlog->createdAt);
         $this->assertEquals(new DateTime('2015-01-31T14:54:28Z'), $gistlog->updatedAt);
         $this->assertEquals('adamwathan', $gistlog->author);
@@ -116,11 +116,10 @@ class GistlogTest extends TestCase
 
         $gistlog = Gistlog::fromGitHub($githubGist);
 
-        $this->assertEquals("<pre><code>" . htmlspecialchars($gistlog->content) . "\n</code></pre>", $gistlog->renderHtml());
+        $this->assertEquals('<pre><code>'.htmlspecialchars($gistlog->content)."\n</code></pre>", $gistlog->renderHtml());
     }
 
     /** @test */
-
     public function it_finds_the_first_markdown_file_and_uses_it_as_the_post()
     {
         $githubGist = $this->loadFixture('272f372732bf4d69bd0f.json');
@@ -159,6 +158,6 @@ class GistlogTest extends TestCase
 
         $gistlog = Gistlog::fromGitHub($githubGist);
 
-        $this->assertEquals("anonymous", $gistlog->author);
+        $this->assertEquals('anonymous', $gistlog->author);
     }
 }

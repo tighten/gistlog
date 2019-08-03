@@ -1,7 +1,9 @@
-<?php namespace Gistlog\Services;
+<?php
 
-use Gistlog\User;
+namespace Gistlog\Services;
+
 use Validator;
+use Gistlog\User;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
 class Registrar implements RegistrarContract

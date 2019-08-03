@@ -1,4 +1,6 @@
-<?php namespace Gistlog\Events;
+<?php
+
+namespace Gistlog\Events;
 
 abstract class Event
 {

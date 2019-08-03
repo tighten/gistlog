@@ -1,4 +1,6 @@
-<?php  namespace Gistlog\Gists;
+<?php
+
+namespace Gistlog\Gists;
 
 class GistlogRepository
 {
@@ -40,6 +42,7 @@ class GistlogRepository
     private function extractIdFromUrl($url)
     {
         $url = rtrim($url, '/');
+
         return last(explode('/', $url));
     }
 }

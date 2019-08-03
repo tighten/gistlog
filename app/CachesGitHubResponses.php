@@ -1,4 +1,6 @@
-<?php namespace Gistlog;
+<?php
+
+namespace Gistlog;
 
 trait CachesGitHubResponses
 {

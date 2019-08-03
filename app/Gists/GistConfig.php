@@ -1,4 +1,6 @@
-<?php namespace Gistlog\Gists;
+<?php
+
+namespace Gistlog\Gists;
 
 use ArrayAccess;
 use Carbon\Carbon;
@@ -13,7 +15,7 @@ class GistConfig implements ArrayAccess
         'published' => false,
         'published_on' => null,
         'preview' => null,
-        'include_files' => false
+        'include_files' => false,
     ];
 
     /**
@@ -63,7 +65,6 @@ class GistConfig implements ArrayAccess
 
         return $config;
     }
-
 
     /**
      * @param mixed $setting

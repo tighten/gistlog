@@ -1,4 +1,6 @@
-<?php namespace Gistlog\Console;
+<?php
+
+namespace Gistlog\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;

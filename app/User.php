@@ -1,4 +1,6 @@
-<?php namespace Gistlog;
+<?php
+
+namespace Gistlog;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;

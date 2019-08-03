@@ -1,4 +1,6 @@
-<?php namespace Gistlog\Http;
+<?php
+
+namespace Gistlog\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 

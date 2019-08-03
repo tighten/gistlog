@@ -29,7 +29,7 @@ class FileTest extends TestCase
         $files = File::multipleFromGitHub($githubGist['files']);
 
         $this->assertEquals(4, $files->count());
-        $this->assertEquals(['blog.md', 'gistlog.yml','planets.md', 'ship.css'], $files->pluck('name')->toArray());
+        $this->assertEquals(['blog.md', 'gistlog.yml', 'planets.md', 'ship.css'], $files->pluck('name')->toArray());
         $this->assertEquals(get_class($files->first()), File::class);
     }
 }
