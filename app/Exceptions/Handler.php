@@ -2,8 +2,8 @@
 
 namespace App\Exceptions;
 
-use Illuminate\Auth\AuthenticationException;
 use Exception;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -58,6 +58,7 @@ class Handler extends ExceptionHandler
     {
         return $e instanceof GistNotFoundException;
     }
+
     /**
      * Convert an authentication exception into an unauthenticated response.
      *
