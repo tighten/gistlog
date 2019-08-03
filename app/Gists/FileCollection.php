@@ -24,7 +24,7 @@ class FileCollection extends Collection
      */
     public function getPostFile()
     {
-        $post = $this->first(function ($key, $file) {
+        $post = $this->first(function ($file, $key) {
             return $file->language == 'Markdown';
         });
 
