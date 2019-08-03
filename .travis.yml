@@ -9,7 +9,6 @@ env:
 
 before_script:
   - phpenv config-add travis.php.ini
-  - curl -s http://getcomposer.org/installer | php
-  - php composer.phar install --prefer-source --no-interaction --dev
+  - composer install --prefer-source --no-interaction
 
-script: phpunit
+script: ./vendor/bin/phpunit
