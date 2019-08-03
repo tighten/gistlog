@@ -52,7 +52,7 @@
 </div>
 @endsection
 
-@section('scripts')
+@push('scripts')
 <script>
     function copyToClipboard(element) {
         let snippet = document.getElementById('example-snippet');
@@ -66,4 +66,4 @@
         }
     }
 </script>
-@endsection
+@endpush

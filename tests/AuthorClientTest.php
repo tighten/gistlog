@@ -2,7 +2,7 @@
 
 use App\Authors\AuthorClient;
 
-class AuthorClientTest extends TestCase
+class AuthorClientTest extends BrowserKitTestCase
 {
     /**
      * @test

@@ -3,7 +3,7 @@
 use App\Gists\Comment;
 use App\Gists\Gistlog;
 
-class GistlogTest extends TestCase
+class GistlogTest extends BrowserKitTestCase
 {
     use GistFixtureHelpers;
 

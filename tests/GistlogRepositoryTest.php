@@ -4,7 +4,7 @@ use App\Gists\Gistlog;
 use App\Gists\GistClient;
 use App\Gists\GistlogRepository;
 
-class GistlogRepositoryTest extends TestCase
+class GistlogRepositoryTest extends BrowserKitTestCase
 {
     const FIXTURE_GIST_ID = '002ed429c7c21ab89300';
 

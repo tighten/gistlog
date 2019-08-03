@@ -3,7 +3,7 @@
 use App\ContentParser\Transformer;
 use App\ContentParser\ContentParser;
 
-class ContentParserTest extends TestCase
+class ContentParserTest extends BrowserKitTestCase
 {
     /** @test */
     public function it_runs_transformers_in_order()

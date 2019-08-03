@@ -10,8 +10,7 @@
     @endif
 @endif
 
-@section('scripts')
-    @parent
+@push('scripts')
     <script>
         (function () {
             const alerts = document.querySelectorAll('.js-auto_dismiss');
@@ -31,4 +30,4 @@
             })();
         }
     </script>
-@endsection
+@endpush

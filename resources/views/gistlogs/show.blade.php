@@ -92,11 +92,10 @@
 </div>
 @endsection
 
-@section('scripts')
-    @parent
+@push('scripts')
     <script>
         (function() {
             autosize(document.querySelectorAll('textarea'));
         })();
     </script>
-@endsection
+@endpush
