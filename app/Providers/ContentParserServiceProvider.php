@@ -2,7 +2,6 @@
 
 namespace Gistlog\Providers;
 
-use Github\Client as GitHubClient;
 use Gistlog\ContentParser\ContentParser;
 use Gistlog\ContentParser\GitHubUsernameTransformer;
 use Gistlog\ContentParser\GitHubMarkdownTransformer;

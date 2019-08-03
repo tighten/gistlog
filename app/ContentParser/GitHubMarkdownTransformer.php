@@ -13,6 +13,7 @@ class GitHubMarkdownTransformer implements Transformer
 
     public function transform($content)
     {
+        // @todo Can we cache this?
         return $this->github->api('markdown')->render($content, 'gfm');
     }
 }

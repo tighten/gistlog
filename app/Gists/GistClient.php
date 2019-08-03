@@ -1,13 +1,17 @@
 <?php  namespace Gistlog\Gists;
 
 use Exception;
+use Gistlog\CachesGitHubResponses;
 use Gistlog\Exceptions\GistNotFoundException;
 use Github\Client as GitHubClient;
 use Github\HttpClient\Message\ResponseMediator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 
 class GistClient
 {
+    use CachesGitHubResponses;
+
     /**
      * @var GitHubClient
      */
@@ -30,11 +34,13 @@ class GistClient
      */
     public function getGist($gistId)
     {
-        try {
-            return $this->github->api('gists')->show($gistId);
-        } catch (Exception $e) {
-            throw new GistNotFoundException($gistId, $e->getMessage());
-        }
+        return Cache::remember(self::cacheKey(__METHOD__, $gistId), $this->cacheLength, function () use ($gistId) {
+            try {
+                return $this->github->api('gists')->show($gistId);
+            } catch (Exception $e) {
+                throw new GistNotFoundException($gistId, $e->getMessage());
+            }
+        });
     }
 
     /**
@@ -43,8 +49,11 @@ class GistClient
      */
     public function getGistComments($gistId)
     {
-        $response = $this->github->getHttpClient()->get("gists/{$gistId}/comments");
-        return ResponseMediator::getContent($response);
+        return Cache::remember(self::cacheKey(__METHOD__, $gistId), $this->cacheLength, function () use ($gistId) {
+            return ResponseMediator::getContent(
+                $this->github->getHttpClient()->get("gists/{$gistId}/comments")
+            );
+        });
     }
 
     /**

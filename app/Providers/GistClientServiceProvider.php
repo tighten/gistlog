@@ -10,12 +10,7 @@ class GistClientServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(GistClient::class, function ($app) {
-
-            $githubClient = new GitHubClient(
-                new CachedGitHubClient([
-                    'cache_dir' => storage_path() . '/app/github-api-cache',
-                ])
-            );
+            $githubClient = new GitHubClient;
 
             // We're only making public API requests, so we don't *need* to
             // authenticate, but doing so significantly increases the rate
