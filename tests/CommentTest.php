@@ -2,7 +2,7 @@
 
 use App\Gists\Comment;
 
-class CommentTest extends TestCase
+class CommentTest extends BrowserKitTestCase
 {
     use GistFixtureHelpers;
 

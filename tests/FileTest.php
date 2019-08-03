@@ -3,7 +3,7 @@
 use App\Gists\File;
 use App\Gists\Gistlog;
 
-class FileTest extends TestCase
+class FileTest extends BrowserKitTestCase
 {
     use GistFixtureHelpers;
 

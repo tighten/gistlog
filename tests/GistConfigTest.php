@@ -2,7 +2,7 @@
 
 use App\Gists\GistConfig;
 
-class GistConfigTest extends TestCase
+class GistConfigTest extends BrowserKitTestCase
 {
     use GistFixtureHelpers;
 

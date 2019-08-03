@@ -18,7 +18,8 @@
     "require-dev": {
         "phpunit/phpunit": "~5.0",
         "symfony/dom-crawler": "3.1.*",
-        "symfony/css-selector": "3.1.*"
+        "symfony/css-selector": "3.1.*",
+        "laravel/browser-kit-testing": "^1.0"
     },
     "autoload": {
         "classmap": [
@@ -31,7 +32,8 @@
     "autoload-dev": {
         "classmap": [
             "tests/TestCase.php",
-            "tests/GistFixtureHelpers.php"
+            "tests/GistFixtureHelpers.php",
+            "tests/BrowserKitTestCase.php"
         ]
     },
     "scripts": {

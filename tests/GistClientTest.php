@@ -2,7 +2,7 @@
 
 use App\Gists\GistClient;
 
-class GistClientTest extends TestCase
+class GistClientTest extends BrowserKitTestCase
 {
     /**
      * @test

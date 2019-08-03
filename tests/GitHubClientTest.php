@@ -2,7 +2,7 @@
 
 use Github\Client as GitHubClient;
 
-class GitHubClientTest extends TestCase
+class GitHubClientTest extends BrowserKitTestCase
 {
     /**
      * @test
