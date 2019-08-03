@@ -13,10 +13,15 @@ class BrowserKitTestCase extends Laravel\BrowserKitTesting\TestCase
         return $app;
     }
 
-    protected function checkRequirements()
+    public function setUp()
     {
-        parent::checkRequirements();
+        $this->skipSomeOnCi();
 
+        parent::setUp();
+    }
+
+    protected function skipSomeOnCi()
+    {
         $annotations = $this->getAnnotations();
 
         collect($this->getAnnotations())->each(function ($location) {
@@ -24,7 +29,7 @@ class BrowserKitTestCase extends Laravel\BrowserKitTesting\TestCase
                 return;
             }
 
-            if (in_array('!Travis', $location['requires']) && getenv('TRAVIS') == true) {
+            if (in_array('!Travis', $location['requires']) && env('TRAVIS') == true) {
                 $this->markTestSkipped('This test does not run on Travis.');
             }
         });
