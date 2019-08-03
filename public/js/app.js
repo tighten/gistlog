@@ -12843,10 +12843,10 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./resources/assets/js/app.js":
-/*!************************************!*\
-  !*** ./resources/assets/js/app.js ***!
-  \************************************/
+/***/ "./resources/js/app.js":
+/*!*****************************!*\
+  !*** ./resources/js/app.js ***!
+  \*****************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -12875,10 +12875,10 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
 /***/ }),
 
-/***/ "./resources/assets/less/app.less":
-/*!****************************************!*\
-  !*** ./resources/assets/less/app.less ***!
-  \****************************************/
+/***/ "./resources/less/app.less":
+/*!*********************************!*\
+  !*** ./resources/less/app.less ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -12886,10 +12886,10 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
 /***/ }),
 
-/***/ "./resources/assets/less/landing.less":
-/*!********************************************!*\
-  !*** ./resources/assets/less/landing.less ***!
-  \********************************************/
+/***/ "./resources/less/landing.less":
+/*!*************************************!*\
+  !*** ./resources/less/landing.less ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -12898,15 +12898,15 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /***/ }),
 
 /***/ 0:
-/*!****************************************************************************************************************!*\
-  !*** multi ./resources/assets/js/app.js ./resources/assets/less/landing.less ./resources/assets/less/app.less ***!
-  \****************************************************************************************************************/
+/*!*******************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/less/landing.less ./resources/less/app.less ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/mattstauffer/Sites/gistlog/resources/assets/js/app.js */"./resources/assets/js/app.js");
-__webpack_require__(/*! /Users/mattstauffer/Sites/gistlog/resources/assets/less/landing.less */"./resources/assets/less/landing.less");
-module.exports = __webpack_require__(/*! /Users/mattstauffer/Sites/gistlog/resources/assets/less/app.less */"./resources/assets/less/app.less");
+__webpack_require__(/*! /Users/mattstauffer/Sites/gistlog/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/mattstauffer/Sites/gistlog/resources/less/landing.less */"./resources/less/landing.less");
+module.exports = __webpack_require__(/*! /Users/mattstauffer/Sites/gistlog/resources/less/app.less */"./resources/less/app.less");
 
 
 /***/ })
