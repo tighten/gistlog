@@ -1,6 +1,7 @@
 config.php
 routes.php
 compiled.php
+schedule-*
 services.json
 events.scanned.php
 routes.scanned.php
