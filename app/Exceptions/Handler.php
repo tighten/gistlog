@@ -46,8 +46,8 @@ class Handler extends ExceptionHandler
             return $this->renderHttpException($e);
         } elseif ($this->isGistNotFoundException($e)) {
             return response()->view('errors.404', [
-                'username' => request()->route()->getParameter('username'),
-                'gistId' => request()->route()->getParameter('gistId'),
+                'username' => request()->route()->parameter('username'),
+                'gistId' => request()->route()->parameter('gistId'),
             ], 404);
         } else {
             return parent::render($request, $e);

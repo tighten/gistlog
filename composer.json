@@ -9,7 +9,7 @@
     "type": "project",
     "require": {
         "laravel/framework": "5.4.*",
-        "laravel/socialite": "^2.0",
+        "laravel/socialite": "^3.0",
         "michelf/php-markdown": "~1.4",
         "knplabs/github-api": "~1.4",
         "symfony/yaml": "~2.6",
