@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\App;
 use Gistlog\Gists\GistlogRepository;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
 use Gistlog\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
@@ -26,7 +26,7 @@ class GistsController extends Controller
 
     public function storeAndRedirect()
     {
-        $gistUrl = Input::get('gistUrl');
+        $gistUrl = Request::get('gistUrl');
 
         try {
             $gistlog = $this->repository->findByUrl($gistUrl);
@@ -69,7 +69,7 @@ class GistsController extends Controller
     public function postComment(Request $request, GistClient $client, $gistId)
     {
         $this->validate($request, ['comment' => 'required']);
-        $client->postGistComment($gistId, Input::get('comment'));
+        $client->postGistComment($gistId, Request::get('comment'));
 
         return redirect()->back();
     }
