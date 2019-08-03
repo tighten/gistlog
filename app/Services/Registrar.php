@@ -3,8 +3,9 @@
 namespace App\Services;
 
 use App\User;
-use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
+use Illuminate\Support\Facades\Hash;
+use Validator;
 
 class Registrar implements RegistrarContract
 {
@@ -34,7 +35,7 @@ class Registrar implements RegistrarContract
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'password' => Hash::make($data['password']),
         ]);
     }
 }
