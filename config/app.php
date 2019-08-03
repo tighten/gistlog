@@ -4,7 +4,6 @@ return [
 
     'env' => env('APP_ENV', 'production'),
 
-
     'name' => env('APP_NAME', 'Gistlog.co'),
 
     /*
