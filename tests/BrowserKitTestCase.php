@@ -13,7 +13,7 @@ class BrowserKitTestCase extends Laravel\BrowserKitTesting\TestCase
         return $app;
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->skipSomeOnCi();
 
