@@ -4,6 +4,7 @@ namespace App\Gists;
 
 use ArrayAccess;
 use Carbon\Carbon;
+use Illuminate\Support\Arr;
 use Symfony\Component\Yaml\Yaml;
 
 class GistConfig implements ArrayAccess
@@ -48,7 +49,7 @@ class GistConfig implements ArrayAccess
         }
 
         foreach ($config->defaultSettings as $setting => $defaultValue) {
-            $config->settings[$setting] = array_get($userSettings, $setting, $defaultValue);
+            $config->settings[$setting] = Arr::get($userSettings, $setting, $defaultValue);
         }
 
         foreach ($config->dates as $setting) {
@@ -58,6 +59,11 @@ class GistConfig implements ArrayAccess
 
             try {
                 $config->settings[$setting] = Carbon::createFromTimestamp($config->settings[$setting]);
+
+                // @todo is there a cleaner way to do this?
+                if ($config->settings[$setting]->format('Y-m-d') === '1970-01-01') {
+                    $config->settings[$setting] = null;
+                }
             } catch (\ErrorException $e) {
                 $config->settings[$setting] = null;
             }
@@ -90,7 +96,7 @@ class GistConfig implements ArrayAccess
      */
     public function offsetSet($setting, $value)
     {
-        array_set($this->settings, $setting, $value);
+        Arr::set($this->settings, $setting, $value);
     }
 
     /**
@@ -98,6 +104,6 @@ class GistConfig implements ArrayAccess
      */
     public function offsetUnset($setting)
     {
-        array_set($this->settings, $setting, null);
+        Arr::set($this->settings, $setting, null);
     }
 }
