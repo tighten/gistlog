@@ -3,9 +3,9 @@
 namespace App\Services;
 
 use App\User;
-use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
-use Illuminate\Support\Facades\Hash;
 use Validator;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
 class Registrar implements RegistrarContract
 {
