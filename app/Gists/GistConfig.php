@@ -2,6 +2,7 @@
 
 namespace App\Gists;
 
+use Illuminate\Support\Arr;
 use ArrayAccess;
 use Carbon\Carbon;
 use Symfony\Component\Yaml\Yaml;
@@ -48,7 +49,7 @@ class GistConfig implements ArrayAccess
         }
 
         foreach ($config->defaultSettings as $setting => $defaultValue) {
-            $config->settings[$setting] = array_get($userSettings, $setting, $defaultValue);
+            $config->settings[$setting] = Arr::get($userSettings, $setting, $defaultValue);
         }
 
         foreach ($config->dates as $setting) {
@@ -90,7 +91,7 @@ class GistConfig implements ArrayAccess
      */
     public function offsetSet($setting, $value)
     {
-        array_set($this->settings, $setting, $value);
+        Arr::set($this->settings, $setting, $value);
     }
 
     /**
@@ -98,6 +99,6 @@ class GistConfig implements ArrayAccess
      */
     public function offsetUnset($setting)
     {
-        array_set($this->settings, $setting, null);
+        Arr::set($this->settings, $setting, null);
     }
 }

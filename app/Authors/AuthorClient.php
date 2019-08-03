@@ -2,6 +2,7 @@
 
 namespace App\Authors;
 
+use Illuminate\Support\Arr;
 use Exception;
 use App\Gists\GistClient;
 use App\CachesGitHubResponses;
@@ -98,7 +99,7 @@ class AuthorClient
     {
         $config = Yaml::parse($gist['files']['gistlog.yml']['content']);
 
-        return ! array_get($config, 'published', true);
+        return ! Arr::get($config, 'published', true);
     }
 
     /**

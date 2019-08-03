@@ -2,6 +2,7 @@
 
 namespace App\Authors;
 
+use Illuminate\Support\Arr;
 use App\Gists\Gistlog;
 
 class Author
@@ -37,7 +38,7 @@ class Author
         $author->id = $gitHubUser['id'];
         $author->avatarUrl = $gitHubUser['avatar_url'];
         $author->link = $gitHubUser['html_url'];
-        $author->name = array_get($gitHubUser, 'name');
+        $author->name = Arr::get($gitHubUser, 'name');
         $author->username = $gitHubUser['login'];
 
         $author->gists = collect($gitHubGists)->map(function ($gist) {
