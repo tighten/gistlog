@@ -59,6 +59,11 @@ class GistConfig implements ArrayAccess
 
             try {
                 $config->settings[$setting] = Carbon::createFromTimestamp($config->settings[$setting]);
+
+                // @todo is there a cleaner way to do this?
+                if ($config->settings[$setting]->format('Y-m-d') === '1970-01-01') {
+                    $config->settings[$setting] = null;
+                }
             } catch (\ErrorException $e) {
                 $config->settings[$setting] = null;
             }

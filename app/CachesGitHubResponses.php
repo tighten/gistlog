@@ -4,7 +4,7 @@ namespace App;
 
 trait CachesGitHubResponses
 {
-    protected $cacheLength = 10;
+    protected $cacheLength = 600;
 
     /**
      * @param string $method
