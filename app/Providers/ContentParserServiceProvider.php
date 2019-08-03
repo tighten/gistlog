@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use App\ContentParser\ContentParser;
+use Illuminate\Support\ServiceProvider;
 use App\ContentParser\GitHubMarkdownTransformer;
 use App\ContentParser\GitHubUsernameTransformer;
 

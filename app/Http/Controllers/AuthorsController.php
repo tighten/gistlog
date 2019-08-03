@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\View;
 use App\Authors\AuthorRepository;
+use Illuminate\Support\Facades\View;
 
 class AuthorsController extends Controller
 {

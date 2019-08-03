@@ -4,8 +4,8 @@ namespace App\Authors;
 
 use Exception;
 use App\Gists\GistClient;
-use Symfony\Component\Yaml\Yaml;
 use App\CachesGitHubResponses;
+use Symfony\Component\Yaml\Yaml;
 use Github\Client as GitHubClient;
 use Illuminate\Support\Facades\Cache;
 use Github\HttpClient\Message\ResponseMediator;
