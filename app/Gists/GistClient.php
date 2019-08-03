@@ -2,13 +2,14 @@
 
 namespace App\Gists;
 
-use Exception;
 use App\CachesGitHubResponses;
+use App\Exceptions\GistNotFoundException;
+use Exception;
 use Github\Client as GitHubClient;
+use Github\HttpClient\Message\ResponseMediator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
-use App\Exceptions\GistNotFoundException;
-use Github\HttpClient\Message\ResponseMediator;
+use Illuminate\Support\Facades\Log;
 
 class GistClient
 {
@@ -37,6 +38,8 @@ class GistClient
     public function getGist($gistId)
     {
         return Cache::remember(self::cacheKey(__METHOD__, $gistId), $this->cacheLength, function () use ($gistId) {
+            Log::debug('Calling ' . __METHOD__);
+
             try {
                 return $this->github->api('gists')->show($gistId);
             } catch (Exception $e) {
@@ -52,6 +55,8 @@ class GistClient
     public function getGistComments($gistId)
     {
         return Cache::remember(self::cacheKey(__METHOD__, $gistId), $this->cacheLength, function () use ($gistId) {
+            Log::debug('Calling ' . __METHOD__);
+
             return ResponseMediator::getContent(
                 $this->github->getHttpClient()->get("gists/{$gistId}/comments")
             );

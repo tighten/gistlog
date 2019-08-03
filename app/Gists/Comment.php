@@ -2,8 +2,9 @@
 
 namespace App\Gists;
 
-use Carbon\Carbon;
 use App\ContentParser\ContentParserFacade as ContentParser;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Cache;
 
 class Comment
 {
@@ -45,11 +46,18 @@ class Comment
      */
     public function renderHtml()
     {
-        return ContentParser::transform($this->body);
+        return Cache::remember($this->cacheKey(), 60, function () {
+            return ContentParser::transform($this->body);
+        });
     }
 
     public function link()
     {
         return "https://gist.github.com/{$this->gistId}#gistcomment-{$this->id}";
+    }
+
+    public function cacheKey()
+    {
+        return "CommentAsHtml::gist-{$this->gistId}::gist-comment-{$this->id}}";
     }
 }
