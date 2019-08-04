@@ -20,10 +20,9 @@ class GistlogRepository
      */
     public function findById($id)
     {
-        $gist = $this->gistClient->getGist($id);
-        $comments = $this->gistClient->getGistComments($id);
-
-        return Gistlog::fromGitHub($gist, $comments);
+        return Gistlog::fromGitHub(
+            $this->gistClient->getGist($id)
+        );
     }
 
     /**

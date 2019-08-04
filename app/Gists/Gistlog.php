@@ -40,16 +40,10 @@ class Gistlog
     public $updatedAt;
 
     /**
-     * @var Collection
-     */
-    public $comments;
-
-    /**
      * @param array|ArrayAccess $githubGist
-     * @param array|ArrayAccess $githubComments
      * @return Gistlog
      */
-    public static function fromGitHub($githubGist, $githubComments = [])
+    public static function fromGitHub($githubGist)
     {
         $gistlog = new self;
 
@@ -74,10 +68,6 @@ class Gistlog
             $gistlog->avatarUrl = Author::ANONYMOUS_AVATAR_URL;
         }
 
-        $gistlog->comments = collect($githubComments)->map(function ($comment) use ($githubGist) {
-            return Comment::fromGitHub($githubGist['id'], $comment);
-        });
-
         $gistlog->config = GistConfig::fromGitHub($githubGist);
         $gistlog->files = $gistlog->showFiles() ? $files->getAdditionalFiles() : new FileCollection([]);
 
@@ -94,14 +84,6 @@ class Gistlog
         }
 
         return '<pre><code>'.htmlspecialchars($this->content)."\n</code></pre>";
-    }
-
-    /**
-     * @return bool
-     */
-    public function hasComments()
-    {
-        return $this->comments->count() > 0;
     }
 
     /**

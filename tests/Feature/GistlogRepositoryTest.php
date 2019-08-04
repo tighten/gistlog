@@ -20,19 +20,6 @@ class GistlogRepositoryTest extends BrowserKitTestCase
     }
 
     /** @test */
-    public function it_embeds_gist_comments()
-    {
-        $gistClient = new FixtureGistClient;
-        $gistRepository = new GistlogRepository($gistClient);
-
-        $gist = $gistRepository->findById(self::FIXTURE_GIST_ID);
-
-        $this->assertCount(2, $gist->comments);
-        $this->assertEquals('Interesting post.', $gist->comments[0]->body);
-        $this->assertEquals("Here's another comment!", $gist->comments[1]->body);
-    }
-
-    /** @test */
     public function it_can_retrieve_gists_by_url()
     {
         $url = 'https://gist.github.com/adamwathan/'.self::FIXTURE_GIST_ID;

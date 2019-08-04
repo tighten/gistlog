@@ -26,10 +26,10 @@
             </a>
         </div>
     @endif
-    <div class="gistlog py-8 sm:px-8" v-pre>
+    <div class="gistlog py-8 sm:px-8">
         <article class="my-8 px-4 sm:px-8 my-8">
-            <h1 class="gistlog__title">{{ $gistlog->title }}</h1>
-            <span class="font-light mx-auto table">
+            <h1 class="gistlog__title" v-pre>{{ $gistlog->title }}</h1>
+            <span class="font-light mx-auto table" v-pre>
                 @if ($gistlog->isAnonymous())
                     by <span class="font-bold text-blue-dark no-underline">{{ $gistlog->author }}</span>
                 @else
@@ -38,53 +38,51 @@
             </span>
 
             <div class="gistlog__content">
-                {!! $gistlog->renderHtml() !!}
-                @if ($gistlog->showFiles())
-                    <hr/>
-                    <h3>
-                        Attached Files ({{ $gistlog->files->count() }})
-                    </h3>
-                    <div class="gistlog__files">
-                        @if ($gistlog->files->isEmpty())
-                            <p>
-                                <em>
-                                    No files to display.
-                                </em>
-                            </p>
-                        @else
-                            @foreach($gistlog->files as $file)
+                <div v-pre>
+                    {!! $gistlog->renderHtml() !!}
+                    @if ($gistlog->showFiles())
+                        <hr/>
+                        <h3>
+                            Attached Files ({{ $gistlog->files->count() }})
+                        </h3>
+                        <div class="gistlog__files">
+                            @if ($gistlog->files->isEmpty())
                                 <p>
-                                    <a href="{{ $file->url }}" target="_blank">{{ $file->name }}</a>
+                                    <em>
+                                        No files to display.
+                                    </em>
                                 </p>
-                            @endforeach
-                        @endif
+                            @else
+                                @foreach($gistlog->files as $file)
+                                    <p>
+                                        <a href="{{ $file->url }}" target="_blank">{{ $file->name }}</a>
+                                    </p>
+                                @endforeach
+                            @endif
+                        </div>
+                        <hr/>
+                    @endif
+
+                    <div class="text-xs text-grey-darker mb-2">
+                        Created {{ $gistlog->createdAt->diffForHumans() }} |
+                        Updated {{ $gistlog->updatedAt->diffForHumans() }}
                     </div>
-                    <hr/>
-                @endif
 
-                <div class="text-xs text-grey-darker mb-2">
-                    Created {{ $gistlog->createdAt->diffForHumans() }} |
-                    Updated {{ $gistlog->updatedAt->diffForHumans() }}
-                </div>
-
-                <div>
-                    <a
-                        class="text-xs text-blue no-underline"
-                        href="{{ $gistlog->link }}"
-                        target="_blank"
-                    >View on GitHub</a>
+                    <div>
+                        <a
+                            class="text-xs text-blue no-underline"
+                            href="{{ $gistlog->link }}"
+                            target="_blank"
+                        >View on GitHub</a>
+                    </div>
                 </div>
 
                 <div class="my-8 pt-4">
-                    <h2 class="text-2xl mb-2">Comments {{ (count($gistlog->comments) > 0) ? '(' . count($gistlog->comments) . ')' : '' }}</h2>
+                    <h2 class="text-2xl mb-2">Comments</h2>
 
                     @include('gistlogs.comment_form')
 
-                    @if ($gistlog->hasComments())
-                        @foreach ($gistlog->comments as $comment)
-                            @include('gistlogs.comment', ['gistlog' => $gistlog, 'comment' => $comment])
-                        @endforeach
-                    @endif
+                    <gist-comments gist-author="{{ $gistlog->author }}" gist-id="{{ $gistlog->id }}"></gist-comments>
                 </div>
             </div>
         </article>

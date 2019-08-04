@@ -11,5 +11,6 @@ Route::post('posts/create', ['uses' => 'GistsController@storeAndRedirect', 'as' 
 Route::post('comment/{gistId}', ['middleware' => ['auth', 'csrf'], 'uses' => 'GistsController@postComment', 'as' => 'comments.store']);
 
 Route::get('{username}/{gistId}', ['uses' => 'GistsController@show', 'as' => 'gists.show']);
+Route::get('{username}/{gistId}/comments.json', ['uses' => 'GistCommentsController@jsonIndex', 'as' => 'gists.comments.index']);
 
 Route::get('{username}', ['uses' => 'AuthorsController@show', 'as' => 'authors.show']);
