@@ -54,13 +54,14 @@ class GistClient
      */
     public function getGistComments($gistId)
     {
-        return Cache::remember(self::cacheKey(__METHOD__, $gistId), $this->cacheLength, function () use ($gistId) {
+        // No cache here so we can have just a single cache layer (post-transformation) to reset when needed
+        // return Cache::remember(self::cacheKey(__METHOD__, $gistId), $this->cacheLength, function () use ($gistId) {
             Log::debug('Calling '.__METHOD__);
 
             return ResponseMediator::getContent(
                 $this->github->getHttpClient()->get("gists/{$gistId}/comments")
             );
-        });
+        // });
     }
 
     /**

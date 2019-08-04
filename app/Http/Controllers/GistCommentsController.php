@@ -32,4 +32,14 @@ class GistCommentsController extends Controller
 
         return response()->json($comments);
     }
+
+    public function store(Request $request, GistClient $client, $gistId)
+    {
+        $this->validate($request, ['comment' => 'required']);
+        $client->postGistComment($gistId, $request->get('comment'));
+
+        Cache::forget("GistCommentsWithHtml::{$gistId}");
+
+        return redirect()->back();
+    }
 }
