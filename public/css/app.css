@@ -7183,6 +7183,7 @@ pre code {
 
 .gistlog__content li {
   margin-bottom: 1rem;
+  overflow-wrap: break-word;
 }
 
 .gistlog__content ol {
