@@ -34,4 +34,4 @@ If you have any questions, please reach out to [@mattstauffer](https://github.co
 
 Please see the [contributing.md](https://github.com/tightenco/gistlog/blob/master/contributing.md) for more explicit instructions on how to contribute to the project.
 
-If you have an idea for the project, please look at the [open issues](issues), and if your idea isn't there, open an issue for discussion.You can write a pull request without validating the idea first, but it will open up the possibility that you spend a lot of time writing a feature and it gets rejected.
+If you have an idea for the project, please look at the [open issues](https://github.com/tightenco/gistlog/issues), and if your idea isn't there, open an issue for discussion.You can write a pull request without validating the idea first, but it will open up the possibility that you spend a lot of time writing a feature and it gets rejected.
