@@ -1,3 +1,5 @@
+![Gistlog logo](https://raw.githubusercontent.com/tightenco/gistlog/master/gistlog-banner.png)
+
 # GistLog
 
 [![Build Status](https://travis-ci.org/tightenco/gistlog.png?branch=master)](http://travis-ci.org/tightenco/gistlog)
