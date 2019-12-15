@@ -16,14 +16,10 @@
                 <name>{{ $gistlog->author }}</name>
             </author>
             <summary type="html">
-                <![CDATA[
-                        {{ $gistlog->getPreview() }}...
-                    ]]>
+                <![CDATA[{!! $gistlog->getPreview() !!}...]]>
             </summary>
             <content type="html">
-                <![CDATA[
-                        {{ $gistlog->renderHtml() }}
-                    ]]>
+                <![CDATA[{!! $gistlog->renderHtml() !!}]]>
             </content>
         </entry>
     @endforeach
