@@ -1,6 +1,6 @@
 @extends('layouts.rss')
 
-@section('title', "Gistlogs for " . $author->name)
+@section('title', $author->name . " - Posts on GistLog")
 @section('url', Request::url())
 @section('authorName', $author->name)
 
