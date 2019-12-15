@@ -1,13 +1,18 @@
 @extends('layouts.app')
 
+@section('meta')
+<link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS Feed for {{ $author->username }} on GistLog"
+    href="{{ route('authors.rss.show', $author->username) }}" />
+@endsection
+
 @section('content')
 <div class="gistlog__container container">
     <div class="avatar">
         <a href="https://github.com/{{ $author->username }}" target="_blank">
-            <img
-                src="{{ $author->avatarUrl }}"
-                alt="{{ $author->username }} - {{ config('app.name') }}"
-            >
+            <img src="{{ $author->avatarUrl }}" alt="{{ $author->username }} - {{ config('app.name') }}">
         </a>
     </div>
 
@@ -23,18 +28,15 @@
 
             <section class="gistlog__content">
                 @foreach ($author->gists as $gist)
-                    <div class="mb-12">
-                        <a
-                            href="/{{ $author->username }}/{{ $gist->id }}"
-                            class="text-2xl font-medium"
-                        >{{ $gist->title }}</a>
+                <div class="mb-12">
+                    <a href="/{{ $author->username }}/{{ $gist->id }}" class="text-2xl font-medium">{{ $gist->title }}</a>
 
-                        <span class="block text-sm mb-3">
-                            Posted {{ $gist->createdAt->diffForHumans() }}
-                        </span>
+                    <span class="block text-sm mb-3">
+                        Posted {{ $gist->createdAt->diffForHumans() }}
+                    </span>
 
-                        <p>{{ $gist->getPreview() }}&hellip;</p>
-                    </div>
+                    <p>{{ $gist->getPreview() }}&hellip;</p>
+                </div>
                 @endforeach
             </section>
         </section>

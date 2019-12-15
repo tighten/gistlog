@@ -22,6 +22,6 @@ class AuthorsRssController extends Controller
 
         return response(
             view('authors.feed')->with('author', $author)
-            )->header('Content-Type', 'text/xml');
+        )->header('Content-Type', 'text/xml');
     }
 }

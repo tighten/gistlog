@@ -143,6 +143,14 @@ class Gistlog
         return $this->config['include_files'];
     }
 
+    public function localUrl()
+    {
+        return route('gists.show', [
+            'username' => $this->author,
+            'gistId' => $this->id,
+        ]);
+    }
+
     private function renderMarkdown()
     {
         if ($this->updatedAt == Cache::get('markdown.updated_at.'.$this->id)) {

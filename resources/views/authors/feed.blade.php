@@ -7,8 +7,8 @@
 @section('entries')
     @foreach ($author->gists as $gistlog)
         <entry>
-            <id>{{ $gistlog->link }}</id>
-            <link type="text/html" rel="alternate" href="{{ $gistlog->link }}" />
+            <id>{{ $gistlog->localUrl() }}</id>
+            <link type="text/html" rel="alternate" href="{{ $gistlog->localUrl() }}" />
             <title>{{ $gistlog->title }}</title>
             <published>{{ $gistlog->createdAt->format(DateTime::ATOM) }}</published>
             <updated>{{ $gistlog->updatedAt->format(DateTime::ATOM) }}</updated>
