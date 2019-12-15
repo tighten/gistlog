@@ -15,12 +15,8 @@
             <author>
                 <name>{{ $gistlog->author }}</name>
             </author>
-            <summary type="html">
-                <![CDATA[{!! $gistlog->getPreview() !!}...]]>
-            </summary>
-            <content type="html">
-                <![CDATA[{!! $gistlog->renderHtml() !!}]]>
-            </content>
+            <summary type="html"><![CDATA[{!! $gistlog->getPreview() !!}...]]></summary>
+            <content type="html"><![CDATA[{!! $gistlog->renderHtml() !!}]]></content>
         </entry>
     @endforeach
 @endsection

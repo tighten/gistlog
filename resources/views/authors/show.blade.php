@@ -3,7 +3,7 @@
 @section('meta')
 <link
     rel="alternate"
-    type="application/rss+xml"
+    type="application/atom+xml"
     title="RSS Feed for {{ $author->username }} on GistLog"
     href="{{ route('authors.rss.show', $author->username) }}" />
 @endsection
