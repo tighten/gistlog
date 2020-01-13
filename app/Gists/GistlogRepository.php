@@ -1,4 +1,6 @@
-<?php  namespace Gistlog\Gists;
+<?php
+
+namespace App\Gists;
 
 class GistlogRepository
 {
@@ -18,10 +20,9 @@ class GistlogRepository
      */
     public function findById($id)
     {
-        $gist = $this->gistClient->getGist($id);
-        $comments = $this->gistClient->getGistComments($id);
-
-        return Gistlog::fromGitHub($gist, $comments);
+        return Gistlog::fromGitHub(
+            $this->gistClient->getGist($id)
+        );
     }
 
     /**
@@ -40,6 +41,7 @@ class GistlogRepository
     private function extractIdFromUrl($url)
     {
         $url = rtrim($url, '/');
+
         return last(explode('/', $url));
     }
 }

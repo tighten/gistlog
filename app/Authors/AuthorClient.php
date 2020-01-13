@@ -1,17 +1,26 @@
-<?php  namespace Gistlog\Authors;
+<?php
+
+namespace App\Authors;
 
 use Exception;
-use Gistlog\Gists\GistClient;
-use Github\Client as GitHubClient;
-use Github\HttpClient\Message\ResponseMediator;
+use App\Gists\GistClient;
+use Illuminate\Support\Arr;
+use App\CachesGitHubResponses;
 use Symfony\Component\Yaml\Yaml;
+use Github\Client as GitHubClient;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Cache;
+use Github\HttpClient\Message\ResponseMediator;
 
 class AuthorClient
 {
+    use CachesGitHubResponses;
+
     /**
      * @var GitHubClient
      */
     private $github;
+
     /**
      * @var GistClient
      */
@@ -39,11 +48,15 @@ class AuthorClient
      */
     public function getAuthor($authorSlug)
     {
-        try {
-            return $this->github->api('users')->show($authorSlug);
-        } catch (Exception $e) {
-            throw new Exception($e->getMessage());
-        }
+        return Cache::remember(self::cacheKey(__METHOD__, $authorSlug), $this->cacheLength, function () use ($authorSlug) {
+            Log::debug('Calling '.__METHOD__);
+
+            try {
+                return $this->github->api('users')->show($authorSlug);
+            } catch (Exception $e) {
+                throw new Exception($e->getMessage());
+            }
+        });
     }
 
     /**
@@ -52,7 +65,11 @@ class AuthorClient
      */
     public function getAuthorGists($username)
     {
-        return $this->github->api('users')->gists($username);
+        return Cache::remember(self::cacheKey(__METHOD__, $username), $this->cacheLength, function () use ($username) {
+            Log::debug('Calling '.__METHOD__);
+
+            return $this->github->api('users')->gists($username);
+        });
     }
 
     /**
@@ -82,7 +99,7 @@ class AuthorClient
     {
         $config = Yaml::parse($gist['files']['gistlog.yml']['content']);
 
-        return ! array_get($config, 'published', true);
+        return ! Arr::get($config, 'published', true);
     }
 
     /**

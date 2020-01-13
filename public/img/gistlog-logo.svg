@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="258px" height="258px" viewBox="0 0 258 258" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 5 Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="126" cy="126" r="126"></circle>
+        <filter x="-2.0%" y="-1.6%" width="104.0%" height="104.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" stop-opacity="0.2" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.5" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-4" cx="126" cy="126" r="114"></circle>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="gistlog" transform="translate(-240.000000, -120.000000)">
+            <g id="Group-5-Copy-2" transform="translate(243.000000, 122.000000)">
+                <g id="Oval-11-Copy">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <g id="Oval-11">
+                    <use fill="#20446F" xlink:href="#path-4"></use>
+                    <use fill="url(#linearGradient-3)" style="mix-blend-mode: screen;" xlink:href="#path-4"></use>
+                </g>
+                <path d="M86.3076923,150 L93.6923077,102 L66,102 L66,84 L96.4615385,84 L102,48 L120,48 L114.461538,84 L150.461538,84 L156,48 L174,48 L168.461538,84 L198,84 L198,102 L165.692308,102 L158.307692,150 L186,150 L186,168 L155.538462,168 L150,204 L132,204 L137.538462,168 L101.538462,168 L96,204 L78,204 L83.5384615,168 L54,168 L54,150 L86.3076923,150 Z M104.307692,150 L140.307692,150 L147.692308,102 L111.692308,102 L104.307692,150 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

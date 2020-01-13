@@ -1,28 +1,26 @@
 <html>
 <head>
-    <link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
-
     <style>
         body {
+            color: #222;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-weight: 100;
+            display: table;
+            height: 100%;
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 100%;
-            color: #B0BEC5;
-            display: table;
-            font-weight: 100;
-            font-family: 'Lato';
         }
 
         .container {
-            text-align: center;
             display: table-cell;
+            text-align: center;
             vertical-align: middle;
         }
 
         .content {
-            text-align: center;
             display: inline-block;
+            text-align: center;
         }
 
         .title {
@@ -30,6 +28,7 @@
             margin-bottom: 40px;
         }
     </style>
+    <title>@yield('title', 'Error')</title>
 </head>
 <body>
 <div class="container">
@@ -37,6 +36,7 @@
         <div class="title">
             @yield('title', 'Error')
         </div>
+
         @yield('content')
     </div>
 </div>

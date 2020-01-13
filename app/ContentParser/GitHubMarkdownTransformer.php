@@ -1,6 +1,9 @@
-<?php namespace Gistlog\ContentParser;
+<?php
+
+namespace App\ContentParser;
 
 use Github\Client as GitHubClient;
+use Illuminate\Support\Facades\Log;
 
 class GitHubMarkdownTransformer implements Transformer
 {
@@ -13,6 +16,8 @@ class GitHubMarkdownTransformer implements Transformer
 
     public function transform($content)
     {
-        return $this->github->api('markdown')->render($content);
+        Log::debug('Calling '.__METHOD__);
+
+        return $this->github->api('markdown')->render($content, 'gfm');
     }
 }

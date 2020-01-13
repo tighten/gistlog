@@ -1,0 +1,55 @@
+@import './tailwind';
+
+.blue-overlay:before {
+    background-color: rgba(0, 59, 87, 0.8);
+    content: ' ';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.container {
+    @apply .px-5;
+
+    max-width: 990px;
+}
+
+.img-cover {
+    @apply .overflow-hidden .relative .h-px .bg-cover;
+
+    height: 120px;
+}
+
+.tab-label {
+    @apply .cursor-pointer .flex .my-4 .p-5;
+
+    span {
+        @apply .bg-black .flex .font-bold .h-8 .items-center .justify-center .rounded-full .text-sm .text-white .w-8;
+    }
+
+    h4 {
+        @apply .text-blue-darker .font-bold .text-base;
+    }
+
+    &--active {
+        @apply .bg-white .rounded-lg .shadow-md;
+
+        h4 {
+            @apply .text-blue-darker;
+        }
+
+        span {
+            @apply .bg-blue-darker;
+        }
+    }
+}
+
+@screen md {
+    .img-cover {
+        height: 320px;
+    }
+}

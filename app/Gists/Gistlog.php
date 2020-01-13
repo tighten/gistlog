@@ -1,21 +1,32 @@
-<?php namespace Gistlog\Gists;
+<?php
 
-use Carbon\Carbon;
+namespace App\Gists;
+
 use Cache;
-use Gistlog\Authors\Author;
-use Gistlog\ContentParser\ContentParserFacade as ContentParser;
+use Carbon\Carbon;
+use App\Authors\Author;
+use App\ContentParser\ContentParserFacade as ContentParser;
 
 class Gistlog
 {
     public $id;
+
     public $title;
+
     public $content;
+
     public $language;
+
     public $author;
+
     public $avatarUrl;
+
     public $link;
+
     public $config;
+
     public $files;
+
     private $public;
 
     /**
@@ -29,16 +40,10 @@ class Gistlog
     public $updatedAt;
 
     /**
-     * @var Collection
-     */
-    public $comments;
-
-    /**
      * @param array|ArrayAccess $githubGist
-     * @param array|ArrayAccess $githubComments
      * @return Gistlog
      */
-    public static function fromGitHub($githubGist, $githubComments = [])
+    public static function fromGitHub($githubGist)
     {
         $gistlog = new self;
 
@@ -63,10 +68,6 @@ class Gistlog
             $gistlog->avatarUrl = Author::ANONYMOUS_AVATAR_URL;
         }
 
-        $gistlog->comments = collect($githubComments)->map(function ($comment) use ($githubGist) {
-            return Comment::fromGitHub($githubGist['id'], $comment);
-        });
-
         $gistlog->config = GistConfig::fromGitHub($githubGist);
         $gistlog->files = $gistlog->showFiles() ? $files->getAdditionalFiles() : new FileCollection([]);
 
@@ -82,15 +83,15 @@ class Gistlog
             return $this->renderMarkdown();
         }
 
-        return "<pre><code>" . htmlspecialchars($this->content) . "\n</code></pre>";
+        return '<pre><code>'.htmlspecialchars($this->content)."\n</code></pre>";
     }
 
     /**
      * @return bool
      */
-    public function hasComments()
+    public function hasPublishedOnDate()
     {
-        return $this->comments->count() > 0;
+        return ! is_null($this->config['published_on']);
     }
 
     /**
@@ -117,6 +118,11 @@ class Gistlog
         return $this->author === Author::ANONYMOUS_USERNAME;
     }
 
+    public function formattedPublishedOnDate()
+    {
+        return $this->config['published_on']->diffForHumans();
+    }
+
     public function getPreview()
     {
         if (! is_null($this->config['preview'])) {
@@ -137,16 +143,24 @@ class Gistlog
         return $this->config['include_files'];
     }
 
+    public function localUrl()
+    {
+        return route('gists.show', [
+            'username' => $this->author,
+            'gistId' => $this->id,
+        ]);
+    }
+
     private function renderMarkdown()
     {
-        if ($this->updatedAt == Cache::get('markdown.updated_at.' . $this->id)) {
-            return Cache::get('markdown.' . $this->id);
+        if ($this->updatedAt == Cache::get('markdown.updated_at.'.$this->id)) {
+            return Cache::get('markdown.'.$this->id);
         }
 
         $markdown = ContentParser::transform($this->content);
 
-        Cache::forever('markdown.' . $this->id, $markdown);
-        Cache::forever('markdown.updated_at.' . $this->id, $this->updatedAt);
+        Cache::forever('markdown.'.$this->id, $markdown);
+        Cache::forever('markdown.updated_at.'.$this->id, $this->updatedAt);
 
         return $markdown;
     }

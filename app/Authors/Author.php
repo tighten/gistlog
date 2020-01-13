@@ -1,16 +1,24 @@
-<?php namespace Gistlog\Authors;
+<?php
 
-use Gistlog\Gists\Gistlog;
+namespace App\Authors;
+
+use App\Gists\Gistlog;
+use Illuminate\Support\Arr;
 
 class Author
 {
     const ANONYMOUS_USERNAME = 'anonymous';
+
     const ANONYMOUS_AVATAR_URL = 'https://avatars3.githubusercontent.com/u/148100?v=3&s=400';
 
     public $id;
+
     public $avatarUrl;
+
     public $link;
+
     public $name;
+
     public $username;
 
     /**
@@ -30,7 +38,7 @@ class Author
         $author->id = $gitHubUser['id'];
         $author->avatarUrl = $gitHubUser['avatar_url'];
         $author->link = $gitHubUser['html_url'];
-        $author->name = array_get($gitHubUser, 'name');
+        $author->name = Arr::get($gitHubUser, 'name');
         $author->username = $gitHubUser['login'];
 
         $author->gists = collect($gitHubGists)->map(function ($gist) {
@@ -46,7 +54,7 @@ class Author
 
         $author->id = 0;
         $author->avatarUrl = self::ANONYMOUS_AVATAR_URL;
-        $author->link = 'https://github.com/' . self::ANONYMOUS_USERNAME;
+        $author->link = 'https://github.com/'.self::ANONYMOUS_USERNAME;
         $author->name = 'anonymous';
         $author->username = self::ANONYMOUS_USERNAME;
         $author->gists = collect([]);

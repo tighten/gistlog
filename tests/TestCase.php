@@ -6,17 +6,15 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
 
     public function createApplication()
     {
-        $app = require __DIR__ . '/../bootstrap/app.php';
+        $app = require __DIR__.'/../bootstrap/app.php';
 
         $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
 
         return $app;
     }
 
-    protected function checkRequirements()
+    protected function skipSomeOnCi()
     {
-        parent::checkRequirements();
-
         $annotations = $this->getAnnotations();
 
         collect($this->getAnnotations())->each(function ($location) {
@@ -24,7 +22,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
                 return;
             }
 
-            if (in_array('!Travis', $location['requires']) && getenv('TRAVIS') == true) {
+            if (in_array('!Travis', $location['requires']) && env('TRAVIS') == true) {
                 $this->markTestSkipped('This test does not run on Travis.');
             }
         });

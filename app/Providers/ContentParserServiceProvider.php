@@ -1,12 +1,11 @@
 <?php
 
-namespace Gistlog\Providers;
+namespace App\Providers;
 
-use Github\Client as GitHubClient;
-use Gistlog\ContentParser\ContentParser;
-use Gistlog\ContentParser\GitHubUsernameTransformer;
-use Gistlog\ContentParser\GitHubMarkdownTransformer;
+use App\ContentParser\ContentParser;
 use Illuminate\Support\ServiceProvider;
+use App\ContentParser\GitHubMarkdownTransformer;
+use App\ContentParser\GitHubUsernameTransformer;
 
 class ContentParserServiceProvider extends ServiceProvider
 {
@@ -21,7 +20,6 @@ class ContentParserServiceProvider extends ServiceProvider
             $parser = new ContentParser;
 
             $parser->push($app[GitHubMarkdownTransformer::class]);
-            $parser->push($app[GitHubUsernameTransformer::class]);
 
             return $parser;
         });

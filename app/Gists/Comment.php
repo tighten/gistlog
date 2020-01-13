@@ -1,14 +1,21 @@
-<?php namespace Gistlog\Gists;
+<?php
+
+namespace App\Gists;
 
 use Carbon\Carbon;
-use Gistlog\ContentParser\ContentParserFacade as ContentParser;
+use Illuminate\Support\Facades\Cache;
+use App\ContentParser\ContentParserFacade as ContentParser;
 
 class Comment
 {
     public $gistId;
+
     public $body;
+
     public $author;
+
     public $avatarUrl;
+
     public $id;
 
     /**
@@ -39,11 +46,18 @@ class Comment
      */
     public function renderHtml()
     {
-        return ContentParser::transform($this->body);
+        return Cache::remember($this->cacheKey(), 3600, function () {
+            return ContentParser::transform($this->body);
+        });
     }
 
     public function link()
     {
         return "https://gist.github.com/{$this->gistId}#gistcomment-{$this->id}";
+    }
+
+    public function cacheKey()
+    {
+        return "CommentAsHtml::gist-{$this->gistId}::gist-comment-{$this->id}}";
     }
 }

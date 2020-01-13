@@ -1,0 +1,99 @@
+@import "./tailwind";
+
+@import "./github";
+
+.container {
+    @apply .px-5;
+
+    max-width: 990px;
+}
+
+.avatar {
+    @apply .rounded-full .overflow-hidden .relative .mx-auto;
+    height: 5.5rem;
+    width: 5.5rem;
+}
+
+.gistlog__content a.btn-github {
+    @apply .flex .bg-grey-darkest .text-sm .px-3 .pt-1 .rounded .my-4;
+    color: #fff;
+}
+
+.gistlog {
+    @apply .bg-white .shadow  .py-8;
+    margin-top: -2.6rem;
+}
+
+.gistlog__container {
+    @apply .mx-auto .my-8;
+    max-width: 935px;
+}
+
+.gistlog__content {
+    @apply .mx-auto .block .text-grey-darkest .w-full .mt-8 .pt-6;
+    max-width: 612px;
+
+    a {
+        @apply .break-all .no-underline;
+
+        color: #037cc2;
+    }
+
+    blockquote {
+        @apply .border-l-4 .py-2 .px-6 .ml-4 .mb-4 .text-grey;
+
+        p:last-child {
+            @apply .mb-0;
+        }
+    }
+
+    code {
+        @apply .px-1;
+    }
+
+    code, pre {
+        @apply .font-mono .bg-grey-lightest;
+    }
+
+    h2 {
+        @apply .mt-8 .mb-8 .pt-2 .font-normal;
+        font-size: 1.35rem
+    }
+
+    h3 {
+        @apply .text-lg .text-grey .font-normal;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply .text-black;
+    }
+
+    li {
+        @apply .mb-4;
+        @apply .break-words;
+    }
+
+    ol {
+        @apply pl-6;
+        list-style-type: decimal;
+    }
+
+    ul {
+        @apply pl-6;
+        list-style-type: disc;
+    }
+
+    p {
+        @apply .font-normal .mb-4;
+    }
+}
+
+.gistlog__title {
+    @apply .font-light .text-center .py-2 .text-4xl;
+}
+
+@screen sm {
+    .gistlog {
+        @apply .px-8;
+    }
+}

@@ -1,4 +1,6 @@
-<?php  namespace Gistlog\Exceptions;
+<?php
+
+namespace App\Exceptions;
 
 class GistNotFoundException extends \Exception
 {

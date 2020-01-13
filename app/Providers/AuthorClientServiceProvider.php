@@ -1,22 +1,19 @@
-<?php namespace Gistlog\Providers;
+<?php
 
-use Gistlog\Authors\AuthorClient;
-use Gistlog\Gists\GistClient;
+namespace App\Providers;
+
+use App\Gists\GistClient;
+use App\Authors\AuthorClient;
 use Github\Client as GitHubClient;
-use Github\HttpClient\CachedHttpClient as CachedGitHubClient;
 use Illuminate\Support\ServiceProvider;
+use Github\HttpClient\CachedHttpClient as CachedGitHubClient;
 
 class AuthorClientServiceProvider extends ServiceProvider
 {
     public function register()
     {
         $this->app->singleton(AuthorClient::class, function ($app) {
-
-            $githubClient = new GitHubClient(
-                new CachedGitHubClient([
-                    'cache_dir' => storage_path() . '/app/github-api-cache',
-                ])
-            );
+            $githubClient = new GitHubClient;
 
             // Again, we're only making public API requests, so we don't *need* to
             // authenticate, but doing so significantly increases the rate limit.
