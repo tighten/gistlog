@@ -50251,9 +50251,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/ant/Sites/tighten/gistlog/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/ant/Sites/tighten/gistlog/resources/less/landing.less */"./resources/less/landing.less");
-module.exports = __webpack_require__(/*! /Users/ant/Sites/tighten/gistlog/resources/less/app.less */"./resources/less/app.less");
+__webpack_require__(/*! /Users/jakebathman/Sites/tightenco/gistlog/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/jakebathman/Sites/tightenco/gistlog/resources/less/landing.less */"./resources/less/landing.less");
+module.exports = __webpack_require__(/*! /Users/jakebathman/Sites/tightenco/gistlog/resources/less/app.less */"./resources/less/app.less");
 
 
 /***/ })

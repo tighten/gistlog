@@ -7127,7 +7127,7 @@ pre code {
 }
 
 .gistlog__content a {
-  word-break: break-all;
+  overflow-wrap: break-word;
   text-decoration: none;
   color: #037cc2;
 }
