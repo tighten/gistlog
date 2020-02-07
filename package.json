@@ -11,19 +11,19 @@
   },
   "devDependencies": {
     "autosize": "^4.0.2",
-    "axios": "^0.19",
+    "axios": "^0.19.2",
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "^2.2.2",
-    "cross-env": "^5.2.0",
-    "laravel-mix": "^4.0.16",
-    "less": "^3.9.0",
+    "cross-env": "^5.2.1",
+    "laravel-mix": "^4.1.4",
+    "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "moment": "^2.24.0",
     "postcss-import": "^12.0.1",
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
-    "tailwindcss": "^1.0.4",
-    "vue": "^2.6.10",
-    "vue-template-compiler": "^2.6.10"
+    "tailwindcss": "^1.2.0",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11"
   }
 }
