@@ -18,7 +18,7 @@ class GistClientServiceProvider extends ServiceProvider
             // authenticate, but doing so significantly increases the rate
             // limit. So here we authenticate if credentials are provided,
             // but if they aren't, no big deal.
-            if (config('services.github.token')) {
+            if (config('services.github.client_id') && config('services.github.client_secret')) {
                 $githubClient->authenticate(
                     config('services.github.client_id'),
                     config('services.github.client_secret'),
