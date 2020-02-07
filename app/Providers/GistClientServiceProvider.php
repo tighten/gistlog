@@ -22,7 +22,7 @@ class GistClientServiceProvider extends ServiceProvider
                 $githubClient->authenticate(
                     config('services.github.client_id'),
                     config('services.github.client_secret'),
-                    GitHubClient::AUTH_URL_CLIENT_ID
+                    GitHubClient::AUTH_HTTP_PASSWORD
                 );
             }
 
