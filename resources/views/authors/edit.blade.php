@@ -11,7 +11,7 @@
 
                 <label class="flex items-center mb-2">
                     <span>Homepage URL:</span>
-                    <input class="py-px px-2 ml-2 text-grey text-base border border-grey-light" name="homepage" placeholder="https://mysite.com" value="{{ old('homepage', $user->homepage) }}"/>
+                    <input class="py-px px-2 ml-2 text-base border border-grey-light" name="homepage" placeholder="https://mysite.com" value="{{ old('homepage', $user->homepage) }}"/>
                 </label>
                 @error('homepage')
                     <div class="text-sm text-red mb-2">{{ $message }}</div>
@@ -19,7 +19,7 @@
 
                 <label class="flex items-center mb-2">
                     <span>Twitter Handle:</span>
-                    <input class="py-px px-2 ml-2 text-grey text-base border border-grey-light" name="twitter_username" placeholder="@myhandle" value="{{ old('twitter_username', $user->twitter_username) }}">
+                    <input class="py-px px-2 ml-2 text-base border border-grey-light" name="twitter_username" placeholder="myhandle" value="{{ old('twitter_username', $user->twitter_username) }}">
                 </label>
                 @error('twitter_username')
                     <div class="text-sm text-red mb-2">{{ $message }}</div>
@@ -27,7 +27,7 @@
 
                 <label class="flex items-center mb-2">
                     <span>Google Analytics ID:</span>
-                    <input class="py-px px-2 ml-2 text-grey text-base border border-grey-light" name="google_analytics_id" placeholder="UA-XXXXXXXX-X" value="{{ old('google_analytics_id', $user->google_analytics_id) }}">
+                    <input class="py-px px-2 ml-2 text-base border border-grey-light" name="google_analytics_id" placeholder="UA-XXXXXXXX-X" value="{{ old('google_analytics_id', $user->google_analytics_id) }}">
                 </label>
                 @error('google_analytics_id')
                     <div class="text-sm text-red mb-2">{{ $message }}</div>
