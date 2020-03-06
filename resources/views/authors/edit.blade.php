@@ -1,46 +1,43 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+<div class="gistlog__container container pt-12">
+    <div class="gistlog py-8 sm:px-8">
+        <article class="my-8 px-4 sm:px-8 my-8">
+            <h1 class="gistlog__title">Edit User Settings</h1>
 
-                <h1>Edit User Settings</h1>
+            <form method="POST" action="/user/settings" class="gistlog__content">
+                @csrf
 
-                <div class="bg-info" style="padding: 1em;">
-                    <form method="post" action="/user/settings">
-                        {{csrf_field()}}
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group {{ old('homepage') ? 'has-error' : '' }}">
-                                        <label for="homepage" class="form-label">Homepage URL:</label>
-                                        <input class="form-control" id="homepage" name="homepage" placeholder="http://mysite.com"
-                                               value="{{ old('homepage', $user->homepage) }}">
-                                    </div>
+                <label class="flex items-center mb-2">
+                    <span>Homepage URL:</span>
+                    <input class="py-px px-2 ml-2 text-grey text-base border border-grey-light" name="homepage" placeholder="https://mysite.com" value="{{ old('homepage', $user->homepage) }}"/>
+                </label>
+                @error('homepage')
+                    <div class="text-sm text-red mb-2">{{ $message }}</div>
+                @enderror
 
-                                    <div class="form-group">
-                                        <label for="twitter_username" class="form-label">Twitter Handle:</label>
-                                        <input class="form-control" id="twitter_username" name="twitter_username" placeholder="@myhandle"
-                                               value="{{ old('twitter_username', $user->twitter_username) }}">
-                                    </div>
+                <label class="flex items-center mb-2">
+                    <span>Twitter Handle:</span>
+                    <input class="py-px px-2 ml-2 text-grey text-base border border-grey-light" name="twitter_username" placeholder="@myhandle" value="{{ old('twitter_username', $user->twitter_username) }}">
+                </label>
+                @error('twitter_username')
+                    <div class="text-sm text-red mb-2">{{ $message }}</div>
+                @enderror
 
-                                    <div class="form-group">
-                                        <label for="google_analytics_id" class="form-label">Google Analytics ID:</label>
-                                        <input class="form-control" id="google_analytics_id" name="google_analytics_id" placeholder="UA-XXXXXXXX-X"
-                                               value="{{ old('google_analytics_id', $user->google_analytics_id) }}">
-                                    </div>
+                <label class="flex items-center mb-2">
+                    <span>Google Analytics ID:</span>
+                    <input class="py-px px-2 ml-2 text-grey text-base border border-grey-light" name="google_analytics_id" placeholder="UA-XXXXXXXX-X" value="{{ old('google_analytics_id', $user->google_analytics_id) }}">
+                </label>
+                @error('google_analytics_id')
+                    <div class="text-sm text-red mb-2">{{ $message }}</div>
+                @enderror
 
-                                    <hr style="border-color: #a7d5ec">
-                                    <button type="submit" class="btn btn-default">Update Settings</button>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+                <button type="submit" class="bg-blue text-sm text-white py-2 px-6 rounded my-4">
+                    Update Settings
+                </button>
+            </form>
+        </article>
     </div>
+</div>
 @endsection
