@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Authors\AuthorRepository;
+use App\User;
 use Illuminate\Support\Facades\View;
 
 class AuthorsController extends Controller
@@ -27,6 +28,7 @@ class AuthorsController extends Controller
 
         return View::make('authors.show')
             ->with('author', $author)
+            ->with('user', User::where('github_id', $author->id)->first())
             ->with('pageTitle', "{$author->name} (@{$author->username})");
     }
 }
