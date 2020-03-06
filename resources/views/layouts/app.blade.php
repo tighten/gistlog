@@ -43,7 +43,7 @@
 <body class="font-sans border-t-8 border-blue-darker bg-grey-lightest">
     <div class="flex flex-col h-screen">
         <div id="app" class="flex-auto">
-            <nav class="container mx-auto mt-4">
+            <nav class="container flex items-center justify-between mx-auto mt-4">
                 <a
                     href="/"
                     title="GistLog by Tighten"
@@ -57,6 +57,10 @@
                     >
                     <h1 class="text-2xl"><span class="font-bold">Gist</span>Log</h1>
                 </a>
+
+                @auth
+                    <a href="{{ route('users.edit') }}" class="flex-shrink-0 text-sm text-blue-dark mr-2">Settings</a>
+                @endauth
             </nav>
 
             @include('partials.flash-messages')
