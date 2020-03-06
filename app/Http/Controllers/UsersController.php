@@ -14,7 +14,7 @@ class UsersController extends Controller
     public function update(Request $request)
     {
         $this->validate($request, [
-            'homepage' => 'max:100|url',
+            'homepage' => 'nullable|max:100|url',
             'twitter_username' => 'max:15',
             'google_analytics_id' => 'max:20',
         ]);
