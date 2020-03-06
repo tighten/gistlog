@@ -8,15 +8,6 @@
     @if (Session::has('message'))
         @include('components.alert', ['color' => 'blue', 'message' => Session::get('message')])
     @endif
-    @if (count($errors) > 0)
-        <div>
-            <ul style="margin: 0; padding: 0;">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
 @endif
 
 @push('scripts')
