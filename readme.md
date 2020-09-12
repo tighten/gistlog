@@ -1,8 +1,8 @@
-![Gistlog logo](https://raw.githubusercontent.com/tightenco/gistlog/master/gistlog-banner.png)
+![Gistlog logo](https://raw.githubusercontent.com/tighten/gistlog/main/gistlog-banner.png)
 
 # GistLog
 
-[![Build Status](https://travis-ci.org/tightenco/gistlog.png?branch=master)](http://travis-ci.org/tightenco/gistlog)
+[![Build Status](https://travis-ci.org/tightenco/gistlog.png?branch=main)](http://travis-ci.org/tightenco/gistlog)
 
 Turn your gists into easy, beautiful, responsive blog posts--a "GistLog". Just paste a Gist URL into [GistLog.co](https://gistlog.co/) and you're up and running.
 
@@ -33,6 +33,6 @@ If you have any questions, please reach out to [@mattstauffer](https://github.co
 
 ## Contributing
 
-Please see the [contributing.md](https://github.com/tightenco/gistlog/blob/master/contributing.md) for more explicit instructions on how to contribute to the project.
+Please see the [contributing.md](https://github.com/tighten/gistlog/blob/main/contributing.md) for more explicit instructions on how to contribute to the project.
 
-If you have an idea for the project, please look at the [open issues](https://github.com/tightenco/gistlog/issues), and if your idea isn't there, open an issue for discussion.You can write a pull request without validating the idea first, but it will open up the possibility that you spend a lot of time writing a feature and it gets rejected.
+If you have an idea for the project, please look at the [open issues](https://github.com/tighten/gistlog/issues), and if your idea isn't there, open an issue for discussion.You can write a pull request without validating the idea first, but it will open up the possibility that you spend a lot of time writing a feature and it gets rejected.
