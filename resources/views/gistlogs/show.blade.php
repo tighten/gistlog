@@ -14,7 +14,7 @@
 @endsection
 
 @section('content')
-<div class="gistlog__container container">
+<div class="container gistlog__container">
     @if ($gistlog->isAnonymous())
         <div class="avatar">
             <img src="{{ $gistlog->avatarUrl }}" alt="{{ $gistlog->author }} - {{ config('app.name') }}">
@@ -26,14 +26,14 @@
             </a>
         </div>
     @endif
-    <div class="gistlog py-8 sm:px-8">
-        <article class="my-8 px-4 sm:px-8 my-8">
+    <div class="py-8 gistlog sm:px-8">
+        <article class="px-4 my-8 sm:px-8">
             <h1 class="gistlog__title" v-pre>{{ $gistlog->title }}</h1>
-            <span class="font-light mx-auto table" v-pre>
+            <span class="table mx-auto font-light" v-pre>
                 @if ($gistlog->isAnonymous())
-                    by <span class="font-bold text-blue-dark no-underline">{{ $gistlog->author }}</span>
+                    by <span class="font-bold no-underline text-blue-dark">{{ $gistlog->author }}</span>
                 @else
-                    by <a href="/{{ $gistlog->author }}" class="font-bold text-blue-dark no-underline">{{ $gistlog->author }}</a>
+                    by <a href="/{{ $gistlog->author }}" class="font-bold no-underline text-blue-dark">{{ $gistlog->author }}</a>
                 @endif
             </span>
 
@@ -63,22 +63,22 @@
                         <hr/>
                     @endif
 
-                    <div class="text-xs text-grey-darker mb-2">
+                    <div class="mt-8 mb-2 text-xs text-grey-darker">
                         Created {{ $gistlog->createdAt->diffForHumans() }} |
                         Updated {{ $gistlog->updatedAt->diffForHumans() }}
                     </div>
 
                     <div>
                         <a
-                            class="text-xs text-blue no-underline"
+                            class="text-xs no-underline text-blue"
                             href="{{ $gistlog->link }}"
                             target="_blank"
                         >View on GitHub</a>
                     </div>
                 </div>
 
-                <div class="my-8 pt-4">
-                    <h2 class="text-2xl mb-2">Comments</h2>
+                <div class="pt-4 mb-8">
+                    <h2 class="mb-2 text-2xl">Comments</h2>
 
                     @include('gistlogs.comment_form')
 
