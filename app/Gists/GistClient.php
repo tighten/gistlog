@@ -86,6 +86,6 @@ class GistClient
     public function unstarGist($gistId)
     {
         $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_HTTP_TOKEN);
-        $this->github->getHttpClient()->delete("https://api.github.com/gists/{$gistId}/star", json_encode(['body' => '']), ['Content-Length' => 0]);
+        $this->github->getHttpClient()->delete("https://api.github.com/gists/{$gistId}/star");
     }
 }

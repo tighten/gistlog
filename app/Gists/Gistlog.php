@@ -29,8 +29,6 @@ class Gistlog
 
     public $commentCount;
 
-    public $starred_url;
-
     private $public;
 
     /**
