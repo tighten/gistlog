@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Gists\GistClient;
+use Github\Client as GitHubClient;
+use Github\Exception\RuntimeException;
+use Github\HttpClient\Message\ResponseMediator;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use App\Gists\GistlogRepository;
 use Illuminate\Support\Facades\App;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
@@ -62,6 +67,32 @@ class GistsController extends Controller
 
         return View::make('gistlogs.show')
             ->with('gistlog', $gistlog)
-            ->with('pageTitle', $gistlog->title.' | '.$gistlog->author);
+            ->with('pageTitle', $gistlog->title.' | '.$gistlog->author)
+            ->with('isStarredForUser', $this->isStarredForUser($gistId));
+    }
+
+    public function star(GistClient $client, $gistId)
+    {
+        $client->starGist($gistId);
+    }
+
+    public function unstar(GistClient $client, $gistId)
+    {
+        $client->unstarGist($gistId);
+    }
+
+    public function isStarredForUser($gistId)
+    {
+        try {
+            Auth::check();
+            $gistClient = app(GistClient::class);
+            $gistClient->github->authenticate(Auth::user()->token, GitHubClient::AUTH_HTTP_TOKEN);
+            $gistClient->github->getHttpClient()->get("https://api.github.com/gists/{$gistId}/star");
+
+            return 1;
+        } catch (\Throwable $e) {
+            return 0;
+        }
     }
 }
+

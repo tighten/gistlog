@@ -18,7 +18,7 @@ class GistClient
     /**
      * @var GitHubClient
      */
-    private $github;
+    public $github;
 
     public function __construct(GitHubClient $github)
     {
@@ -75,5 +75,17 @@ class GistClient
         $response = $this->github->getHttpClient()->post("gists/{$gistId}/comments", json_encode(['body' => $comment]));
 
         return ResponseMediator::getContent($response);
+    }
+
+    public function starGist($gistId)
+    {
+        $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_HTTP_TOKEN);
+        $this->github->getHttpClient()->put("https://api.github.com/gists/{$gistId}/star", json_encode(['body' => '']), ['Content-Length' => 0]);
+    }
+
+    public function unstarGist($gistId)
+    {
+        $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_HTTP_TOKEN);
+        $this->github->getHttpClient()->delete("https://api.github.com/gists/{$gistId}/star", json_encode(['body' => '']), ['Content-Length' => 0]);
     }
 }

@@ -9,7 +9,7 @@
                 &bull; <a :href="`https://gist.github.com/${gistId}#gistcomment-${comment.id}`" class="no-underline"
                     >{{ friendlyFormattedTimestamp }}</a>
             </span>
-            <span class="font-normal text-sm leading-normal text-justify" v-html="comment.body_html">
+            <span class="comment-body font-normal text-sm leading-normal text-justify" v-html="comment.body_html">
             </span>
         </div>
     </div>

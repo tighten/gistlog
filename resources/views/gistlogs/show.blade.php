@@ -15,6 +15,21 @@
 
 @section('content')
 <div class="container gistlog__container">
+    <div class="flex flex-col justify-center sm:flex-row sm:justify-end mb-3 sm:mb-auto">
+        @if (Auth::check())
+            <gist-star
+                gist-id="{{ $gistlog->id }}"
+                :is-starred-for-user="{{ $isStarredForUser }}"
+                star-route="{{route('post.star', ['gistId' => $gistlog->id])}}"
+                unstar-route="{{route('post.unstar', ['gistId' => $gistlog->id])}}"
+            ></gist-star>
+        @endif
+            <div class="inline-flex sm:ml-4 shadow rounded w-100 justify-center">
+                <a href="#comments" class="text-sm text-grey-darker rounded-l px-2 py-3 sm:py-1 border-r border-grey-lighter">
+                    Comments</a>
+                <a href="#comments" class="text-sm text-grey-darker rounded-r px-2 py-3 sm:py-1">{{ $gistlog->commentCount }} </a>
+            </div>
+    </div>
     @if ($gistlog->isAnonymous())
         <div class="avatar">
             <img src="{{ $gistlog->avatarUrl }}" alt="{{ $gistlog->author }} - {{ config('app.name') }}">
@@ -78,7 +93,7 @@
                 </div>
 
                 <div class="pt-4 mb-8">
-                    <h2 class="mb-2 text-2xl">Comments</h2>
+                    <h2 class="mb-2 text-2xl" id="comments">Comments</h2>
 
                     @include('gistlogs.comment_form')
 
