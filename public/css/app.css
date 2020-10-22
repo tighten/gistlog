@@ -12609,7 +12609,7 @@ pre code {
 }
 
 .gistlog__content li {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   overflow-wrap: break-word;
 }
 
