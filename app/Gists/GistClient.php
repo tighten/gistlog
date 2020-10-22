@@ -2,14 +2,14 @@
 
 namespace App\Gists;
 
-use Exception;
 use App\CachesGitHubResponses;
+use App\Exceptions\GistNotFoundException;
+use Exception;
 use Github\Client as GitHubClient;
-use Illuminate\Support\Facades\Log;
+use Github\HttpClient\Message\ResponseMediator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
-use App\Exceptions\GistNotFoundException;
-use Github\HttpClient\Message\ResponseMediator;
+use Illuminate\Support\Facades\Log;
 
 class GistClient
 {

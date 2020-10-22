@@ -1,7 +1,6 @@
 <?php
 
 use App\Gists\File;
-use App\Gists\Gistlog;
 
 class FileTest extends BrowserKitTestCase
 {

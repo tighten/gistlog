@@ -4,11 +4,11 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-window.autosize = require('autosize');
+window.autosize = require("autosize");
 
-require('./bootstrap');
+require("./bootstrap");
 
-window.Vue = require('vue');
+window.Vue = require("vue");
 
 Vue.config.productionTip = false;
 
@@ -20,8 +20,12 @@ Vue.config.productionTip = false;
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-const files = require.context('./components', true, /\.vue$/i);
-files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+const files = require.context("./components", true, /\.vue$/i);
+files
+  .keys()
+  .map((key) =>
+    Vue.component(key.split("/").pop().split(".")[0], files(key).default)
+  );
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -30,5 +34,5 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
  */
 
 const app = new Vue({
-    el: '#app',
+  el: "#app",
 });

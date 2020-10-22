@@ -2,9 +2,9 @@
 
 namespace App\Gists;
 
+use App\ContentParser\ContentParserFacade as ContentParser;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
-use App\ContentParser\ContentParserFacade as ContentParser;
 
 class Comment
 {

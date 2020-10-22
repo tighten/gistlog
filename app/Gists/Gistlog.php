@@ -2,10 +2,10 @@
 
 namespace App\Gists;
 
-use Cache;
-use Carbon\Carbon;
 use App\Authors\Author;
 use App\ContentParser\ContentParserFacade as ContentParser;
+use Cache;
+use Carbon\Carbon;
 
 class Gistlog
 {
@@ -83,7 +83,7 @@ class Gistlog
             return $this->renderMarkdown();
         }
 
-        return '<pre><code>'.htmlspecialchars($this->content)."\n</code></pre>";
+        return '<pre><code>' . htmlspecialchars($this->content) . "\n</code></pre>";
     }
 
     /**
@@ -153,14 +153,14 @@ class Gistlog
 
     private function renderMarkdown()
     {
-        if ($this->updatedAt == Cache::get('markdown.updated_at.'.$this->id)) {
-            return Cache::get('markdown.'.$this->id);
+        if ($this->updatedAt == Cache::get('markdown.updated_at.' . $this->id)) {
+            return Cache::get('markdown.' . $this->id);
         }
 
         $markdown = ContentParser::transform($this->content);
 
-        Cache::forever('markdown.'.$this->id, $markdown);
-        Cache::forever('markdown.updated_at.'.$this->id, $this->updatedAt);
+        Cache::forever('markdown.' . $this->id, $markdown);
+        Cache::forever('markdown.updated_at.' . $this->id, $this->updatedAt);
 
         return $markdown;
     }

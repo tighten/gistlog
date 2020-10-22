@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\ContentParser\ContentParserFacade;
 use App\Gists\GistClient;
 use App\Http\Controllers\Controller;
-use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 

@@ -2,15 +2,14 @@
 
 namespace App\Authors;
 
-use Exception;
-use App\Gists\GistClient;
-use Illuminate\Support\Arr;
 use App\CachesGitHubResponses;
-use Symfony\Component\Yaml\Yaml;
+use App\Gists\GistClient;
+use Exception;
 use Github\Client as GitHubClient;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Cache;
-use Github\HttpClient\Message\ResponseMediator;
+use Illuminate\Support\Facades\Log;
+use Symfony\Component\Yaml\Yaml;
 
 class AuthorClient
 {
@@ -49,7 +48,7 @@ class AuthorClient
     public function getAuthor($authorSlug)
     {
         return Cache::remember(self::cacheKey(__METHOD__, $authorSlug), $this->cacheLength, function () use ($authorSlug) {
-            Log::debug('Calling '.__METHOD__);
+            Log::debug('Calling ' . __METHOD__);
 
             try {
                 return $this->github->api('users')->show($authorSlug);
@@ -66,7 +65,7 @@ class AuthorClient
     public function getAuthorGists($username)
     {
         return Cache::remember(self::cacheKey(__METHOD__, $username), $this->cacheLength, function () use ($username) {
-            Log::debug('Calling '.__METHOD__);
+            Log::debug('Calling ' . __METHOD__);
 
             return $this->github->api('users')->gists($username);
         });
