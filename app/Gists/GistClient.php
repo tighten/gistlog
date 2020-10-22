@@ -2,14 +2,15 @@
 
 namespace App\Gists;
 
-use Exception;
 use App\CachesGitHubResponses;
+use App\Exceptions\GistNotFoundException;
+use Exception;
 use Github\Client as GitHubClient;
-use Illuminate\Support\Facades\Log;
+use Github\HttpClient\Message\ResponseMediator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
-use App\Exceptions\GistNotFoundException;
-use Github\HttpClient\Message\ResponseMediator;
+use Illuminate\Support\Facades\Log;
+use Throwable;
 
 class GistClient
 {
@@ -18,7 +19,7 @@ class GistClient
     /**
      * @var GitHubClient
      */
-    public $github;
+    private $github;
 
     public function __construct(GitHubClient $github)
     {
@@ -87,5 +88,21 @@ class GistClient
     {
         $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_HTTP_TOKEN);
         $this->github->getHttpClient()->delete("https://api.github.com/gists/{$gistId}/star");
+    }
+
+    public function isStarredForUser($gistId)
+    {
+        if (Auth::check()) {
+            try {
+                $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_HTTP_TOKEN);
+                $this->github->getHttpClient()->get("https://api.github.com/gists/{$gistId}/star");
+
+                return true;
+            } catch (Throwable $e) {
+                return false;
+            }
+        }
+
+        return false;
     }
 }

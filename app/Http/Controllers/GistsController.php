@@ -2,22 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
-use App\Gists\GistClient;
-use Github\Client as GitHubClient;
-use Github\Exception\RuntimeException;
-use Github\HttpClient\Message\ResponseMediator;
-use GuzzleHttp\Client;
-use Illuminate\Http\Request;
-use App\Gists\GistlogRepository;
-use Illuminate\Support\Facades\App;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Redirect;
 use App\Exceptions\GistNotFoundException;
+use App\Gists\GistClient;
+use App\Gists\GistlogRepository;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\View;
+use Throwable;
 
 class GistsController extends Controller
 {
@@ -50,7 +43,7 @@ class GistsController extends Controller
         ]);
     }
 
-    public function show($username, $gistId)
+    public function show($username, $gistId, GistClient $gistClient)
     {
         try {
             $gistlog = $this->repository->findById($gistId);
@@ -67,31 +60,41 @@ class GistsController extends Controller
 
         return View::make('gistlogs.show')
             ->with('gistlog', $gistlog)
-            ->with('pageTitle', $gistlog->title.' | '.$gistlog->author)
-            ->with('isStarredForUser', $this->isStarredForUser($gistId));
+            ->with('pageTitle', $gistlog->title . ' | ' . $gistlog->author)
+            ->with('isStarredForUser', $gistClient->isStarredForUser($gistId));
     }
 
-    public function star(GistClient $client, $gistId)
-    {
-        $client->starGist($gistId);
-    }
-
-    public function unstar(GistClient $client, $gistId)
-    {
-        $client->unstarGist($gistId);
-    }
-
-    public function isStarredForUser($gistId)
+    protected function star(GistClient $client, $gistId)
     {
         try {
-            Auth::check();
-            $gistClient = app(GistClient::class);
-            $gistClient->github->authenticate(Auth::user()->token, GitHubClient::AUTH_HTTP_TOKEN);
-            $gistClient->github->getHttpClient()->get("https://api.github.com/gists/{$gistId}/star");
+            $client->starGist($gistId);
 
-            return 1;
-        } catch (\Throwable $e) {
-            return 0;
+            return response()->json([
+                'action' => 'star',
+                'success' => true,
+            ]);
+        } catch (Throwable $e) {
+            return response()->json([
+                'action' => 'star',
+                'success' => false,
+            ]);
+        }
+    }
+
+    protected function unstar(GistClient $client, $gistId)
+    {
+        try {
+            $client->unstarGist($gistId);
+
+            return response()->json([
+                'action' => 'unstar',
+                'success' => true,
+            ]);
+        } catch (Throwable $e) {
+            return response()->json([
+                'action' => 'unstar',
+                'success' => false,
+            ]);
         }
     }
 }

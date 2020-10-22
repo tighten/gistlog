@@ -2307,32 +2307,44 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    isStarredForUser: Number,
-    gistId: String,
-    starRoute: String,
-    unstarRoute: String
+    isStarredForUser: Boolean,
+    gistId: String
   },
   data: function data() {
     return {
-      isStarred: !!this.isStarredForUser
+      isStarred: !!this.isStarredForUser,
+      starRoute: route('post.star', {
+        'gistId': this.gistId
+      }),
+      unstarRoute: route('post.star', {
+        'gistId': this.gistId
+      })
     };
   },
   methods: {
     toggleStar: function toggleStar() {
       var _this = this;
 
-      axios.get(this.getToggleRoute()).then(function (response) {
+      axios.get(this.toggleRoute()).then(function (response) {
         return _this.isStarred ? _this.isStarred = false : _this.isStarred = true;
       });
     },
-    getToggleRoute: function getToggleRoute() {
-      if (this.isStarred) {
-        return this.unstarRoute;
-      } else {
-        return this.starRoute;
-      }
+    toggleRoute: function toggleRoute() {
+      return this.isStarred ? this.unstarRoute : this.starRoute;
     }
   }
 });
@@ -37769,11 +37781,7 @@ var render = function() {
       {
         staticClass:
           "shadow rounded px-2 py-3 sm:py-1 flex flex-row justify-center text-sm text-grey-darker w-100 mb-3 sm:mb-auto cursor-pointer",
-        on: {
-          click: function($event) {
-            return _vm.toggleStar()
-          }
-        }
+        on: { click: _vm.toggleStar }
       },
       [
         _c(
@@ -37796,9 +37804,9 @@ var render = function() {
           ]
         ),
         _vm._v(" "),
-        _vm.isStarred ? _c("span", [_vm._v("Unstar")]) : _vm._e(),
-        _vm._v(" "),
-        !_vm.isStarred ? _c("span", [_vm._v("Star")]) : _vm._e()
+        _vm.isStarred
+          ? _c("span", [_vm._v("Unstar")])
+          : _c("span", [_vm._v("Star")])
       ]
     )
   ])

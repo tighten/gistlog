@@ -16,15 +16,13 @@
 @section('content')
 <div class="container gistlog__container">
     <div class="flex flex-col justify-center sm:flex-row sm:justify-end mb-3 sm:mb-auto">
-        @if (Auth::check())
+        @auth
             <gist-star
                 gist-id="{{ $gistlog->id }}"
-                :is-starred-for-user="{{ $isStarredForUser }}"
-                star-route="{{route('post.star', ['gistId' => $gistlog->id])}}"
-                unstar-route="{{route('post.unstar', ['gistId' => $gistlog->id])}}"
+                :is-starred-for-user="{{ json_encode($isStarredForUser) }}"
             ></gist-star>
-        @endif
-            <div class="inline-flex sm:ml-4 shadow rounded w-100 justify-center">
+        @endauth
+            <div class="inline-flex sm:ml-4 shadow rounded w-100 justify-center sm:bg-white">
                 <a href="#comments" class="text-sm text-grey-darker rounded-l px-2 py-3 sm:py-1 border-r border-grey-lighter">
                     Comments</a>
                 <a href="#comments" class="text-sm text-grey-darker rounded-r px-2 py-3 sm:py-1">{{ $gistlog->commentCount }} </a>
