@@ -8,8 +8,8 @@ Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback')
 
 Route::get('posts/create', 'HomeController@createForm');
 Route::post('posts/create', ['uses' => 'GistsController@storeAndRedirect', 'as' => 'post.create']);
-Route::get('posts/{gistId}/star', ['middleware' => ['auth'], 'uses' => 'GistsController@star', 'as' => 'post.star']);
-Route::get('posts/{gistId}/unstar', ['middleware' => ['auth'], 'uses' => 'GistsController@unstar', 'as' => 'post.unstar']);
+Route::put('posts/{gistId}/star', ['middleware' => ['auth'], 'uses' => 'GistsController@star', 'as' => 'post.star']);
+Route::delete('posts/{gistId}/unstar', ['middleware' => ['auth'], 'uses' => 'GistsController@unstar', 'as' => 'post.unstar']);
 
 Route::post('comment/{gistId}', ['middleware' => ['auth'], 'uses' => 'GistCommentsController@store', 'as' => 'comments.store']);
 

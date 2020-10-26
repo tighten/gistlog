@@ -2221,6 +2221,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -2245,7 +2259,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -2319,6 +2332,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     isStarredForUser: Boolean,
@@ -2328,10 +2344,10 @@ __webpack_require__.r(__webpack_exports__);
     return {
       isStarred: !!this.isStarredForUser,
       starRoute: route('post.star', {
-        'gistId': this.gistId
+        gistId: this.gistId
       }),
-      unstarRoute: route('post.star', {
-        'gistId': this.gistId
+      unstarRoute: route('post.unstar', {
+        gistId: this.gistId
       })
     };
   },
@@ -2339,7 +2355,11 @@ __webpack_require__.r(__webpack_exports__);
     toggleStar: function toggleStar() {
       var _this = this;
 
-      axios.get(this.toggleRoute()).then(function (response) {
+      axios({
+        withCredentials: true,
+        method: this.isStarred ? 'delete' : 'put',
+        url: this.toggleRoute()
+      }).then(function (response) {
         return _this.isStarred ? _this.isStarred = false : _this.isStarred = true;
       });
     },
@@ -2360,6 +2380,45 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -37689,7 +37748,7 @@ var render = function() {
           },
           [_vm._v(_vm._s(_vm.comment.user.login))]
         ),
-        _vm._v("\n            • "),
+        _vm._v("\n            •\n            "),
         _c(
           "a",
           {
@@ -37746,9 +37805,7 @@ var render = function() {
         })
       }),
       _vm._v(" "),
-      _vm.loading
-        ? _c("div", [_vm._v("\n        Loading comments...\n    ")])
-        : _vm._e()
+      _vm.loading ? _c("div", [_vm._v("Loading comments...")]) : _vm._e()
     ],
     2
   )
@@ -37787,7 +37844,7 @@ var render = function() {
         _c(
           "svg",
           {
-            staticClass: "fill-current w-4 mr-1",
+            staticClass: "fill-current w-4 mr-1 sm:bg-white",
             class: {
               "text-blue-dark": _vm.isStarred,
               "text-grey-light": !_vm.isStarred
@@ -37926,11 +37983,13 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-left mx-5" }, [
       _c("h4", { staticClass: "text-blue font-bold text-sm" }, [
-        _vm._v("Create a Gist")
+        _vm._v("\n                        Create a Gist\n                    ")
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "text-grey-darker py-1 text-sm" }, [
-        _vm._v("Create a GitHub Gist with Markdown")
+        _vm._v(
+          "\n                        Create a GitHub Gist with Markdown\n                    "
+        )
       ])
     ])
   },
@@ -37940,11 +37999,13 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-left mx-5" }, [
       _c("h4", { staticClass: "text-blue font-bold text-sm" }, [
-        _vm._v("Paste the Link")
+        _vm._v("\n                        Paste the Link\n                    ")
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "text-grey-darker py-1 text-sm" }, [
-        _vm._v("Paste your Gist's URL into GistLog")
+        _vm._v(
+          "\n                        Paste your Gist's URL into GistLog\n                    "
+        )
       ])
     ])
   },
@@ -37954,11 +38015,15 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-left mx-5" }, [
       _c("h4", { staticClass: "text-blue font-bold text-sm" }, [
-        _vm._v("Share your Post")
+        _vm._v(
+          "\n                        Share your Post\n                    "
+        )
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "text-grey-darker py-1 text-sm" }, [
-        _vm._v("Share your GistLog link 🎉")
+        _vm._v(
+          "\n                        Share your GistLog link 🎉\n                    "
+        )
       ])
     ])
   }

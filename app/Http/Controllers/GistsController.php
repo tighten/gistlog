@@ -70,14 +70,12 @@ class GistsController extends Controller
             $client->starGist($gistId);
 
             return response()->json([
-                'action' => 'star',
                 'success' => true,
-            ]);
+            ], 200);
         } catch (Throwable $e) {
             return response()->json([
-                'action' => 'star',
                 'success' => false,
-            ]);
+            ], 500);
         }
     }
 
@@ -87,14 +85,12 @@ class GistsController extends Controller
             $client->unstarGist($gistId);
 
             return response()->json([
-                'action' => 'unstar',
                 'success' => true,
-            ]);
+            ], 200);
         } catch (Throwable $e) {
             return response()->json([
-                'action' => 'unstar',
                 'success' => false,
-            ]);
+            ], 500);
         }
     }
 }

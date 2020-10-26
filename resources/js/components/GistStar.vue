@@ -33,18 +33,20 @@ export default {
         return {
             isStarred: !!this.isStarredForUser,
             starRoute: route('post.star', { gistId: this.gistId }),
-            unstarRoute: route('post.star', { gistId: this.gistId }),
+            unstarRoute: route('post.unstar', { gistId: this.gistId }),
         };
     },
     methods: {
         toggleStar() {
-            axios
-                .get(this.toggleRoute())
-                .then((response) =>
-                    this.isStarred
-                        ? (this.isStarred = false)
-                        : (this.isStarred = true)
-                );
+            axios({
+                withCredentials: true,
+                method: this.isStarred ? 'delete' : 'put',
+                url: this.toggleRoute(),
+            }).then((response) =>
+                this.isStarred
+                    ? (this.isStarred = false)
+                    : (this.isStarred = true)
+            );
         },
         toggleRoute() {
             return this.isStarred ? this.unstarRoute : this.starRoute;
