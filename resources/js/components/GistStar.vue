@@ -2,14 +2,14 @@
     <div>
         <a
             @click="toggleStar"
-            class="shadow rounded px-2 py-3 sm:py-1 flex flex-row justify-center text-sm text-grey-darker w-100 mb-3 sm:mb-auto cursor-pointer"
+            class="flex flex-row justify-center px-2 py-3 mb-3 text-sm rounded shadow cursor-pointer sm:py-1 text-grey-darker w-100 sm:mb-auto sm:bg-white"
         >
             <svg
                 :class="{
                     'text-blue-dark': isStarred,
                     'text-grey-light': !isStarred,
                 }"
-                class="fill-current w-4 mr-1 sm:bg-white"
+                class="w-4 mr-1 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
             >

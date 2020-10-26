@@ -1,18 +1,17 @@
-var commentForm = (function(){
-
+var commentForm = (function () {
     var el = {
         $comment_input: $('#comment_input'),
         $comment_buttons_container: $('.comment-form__button-container'),
-        $github_signin: $('#github_signin')
+        $github_signin: $('#github_signin'),
     };
 
-    var bindUIElements = function() {
+    var bindUIElements = function () {
         el.$comment_input.on('focus', showCommentButton);
         el.$comment_input.on('blur', hideCommentButton);
         el.$github_signin.on('click', handleSignin);
     };
 
-    var init = function() {
+    var init = function () {
         bindUIElements();
         refillPreviousComment();
     };
@@ -27,7 +26,7 @@ var commentForm = (function(){
     };
 
     var hideCommentButton = function () {
-        if (el.$comment_input.val() === "") {
+        if (el.$comment_input.val() === '') {
             el.$comment_buttons_container.removeClass('active');
         }
     };
@@ -41,7 +40,6 @@ var commentForm = (function(){
     };
 
     return {
-        init: init
-    }
-
+        init: init,
+    };
 })();
