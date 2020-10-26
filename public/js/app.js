@@ -2418,45 +2418,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37983,13 +37944,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-left mx-5" }, [
       _c("h4", { staticClass: "text-blue font-bold text-sm" }, [
-        _vm._v("\n                        Create a Gist\n                    ")
+        _vm._v("Create a Gist")
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "text-grey-darker py-1 text-sm" }, [
-        _vm._v(
-          "\n                        Create a GitHub Gist with Markdown\n                    "
-        )
+        _vm._v("Create a GitHub Gist with Markdown")
       ])
     ])
   },
@@ -37999,13 +37958,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-left mx-5" }, [
       _c("h4", { staticClass: "text-blue font-bold text-sm" }, [
-        _vm._v("\n                        Paste the Link\n                    ")
+        _vm._v("Paste the Link")
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "text-grey-darker py-1 text-sm" }, [
-        _vm._v(
-          "\n                        Paste your Gist's URL into GistLog\n                    "
-        )
+        _vm._v("Paste your Gist's URL into GistLog")
       ])
     ])
   },
@@ -38015,15 +37972,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-left mx-5" }, [
       _c("h4", { staticClass: "text-blue font-bold text-sm" }, [
-        _vm._v(
-          "\n                        Share your Post\n                    "
-        )
+        _vm._v("Share your Post")
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "text-grey-darker py-1 text-sm" }, [
-        _vm._v(
-          "\n                        Share your GistLog link 🎉\n                    "
-        )
+        _vm._v("Share your GistLog link 🎉")
       ])
     ])
   }
