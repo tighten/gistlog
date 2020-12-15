@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout Code
+      uses: actions/checkout@v2
     - name: PHPCS check
       uses: chekalsky/phpcs-action@v1
 
@@ -21,9 +22,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
-    - uses: actions/checkout@v2
-
     - name: Install dependencies
       run: composer install --prefer-source --no-interaction
   
@@ -34,5 +32,5 @@ jobs:
 
     steps:
     - name: PHP Unit
-    - run: ./vendor/bin/phpunit
+      run: ./vendor/bin/phpunit
 
