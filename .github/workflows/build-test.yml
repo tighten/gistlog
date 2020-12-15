@@ -2,37 +2,36 @@ name: Build and Test
 
 on:
   push:
-    branches: [ main ]
+    branches: [ krc/add-github-actions ]
   pull_request:
 
 jobs:
-  phpcs:
-    name: PHPCS
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: PHPCS check
-    - uses: chekalsky/phpcs-action@v1
-
   build:
     name: Build
-    needs: phpcs
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v1
 
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+          php-version: 7.2
+          extensions: posix, dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
+          coverage: none
+    
     - name: Install dependencies
-    - run: composer install --prefer-source --no-interaction
-  
+      uses: php-actions/composer@v4
+      with:
+        composer_version: 1
+        args: --prefer-source --no-interaction
+      
   test:
     name: Test
-    needs: [phpcs, build]
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
     - name: PHP Unit
-    - run: ./vendor/bin/phpunit
-
+      run: ./vendor/bin/phpunit
