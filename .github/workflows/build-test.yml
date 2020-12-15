@@ -34,4 +34,4 @@ jobs:
 
     steps:
     - name: PHP Unit
-      run: ./vendor/bin/phpunit
+      run: vendor/bin/phpunit
