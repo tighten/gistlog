@@ -6,19 +6,8 @@ on:
   pull_request:
 
 jobs:
-  phpcs:
-    name: PHPCS
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout Code
-      uses: actions/checkout@v2
-    - name: PHPCS check
-      uses: chekalsky/phpcs-action@v1
-
   build:
     name: Build
-    needs: phpcs
     runs-on: ubuntu-latest
 
     steps:
@@ -27,10 +16,9 @@ jobs:
   
   test:
     name: Test
-    needs: [phpcs, build]
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
     - name: PHP Unit
       run: ./vendor/bin/phpunit
-
