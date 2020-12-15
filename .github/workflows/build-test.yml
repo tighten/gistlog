@@ -22,7 +22,10 @@ jobs:
           coverage: none
     
     - name: Install dependencies
-      run: composer install --prefer-source --no-interaction
+      uses: php-actions/composer@v4
+      with:
+        composer_version: 1
+        args: --prefer-source --no-interaction
       
   test:
     name: Test
