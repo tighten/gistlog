@@ -26,12 +26,6 @@ jobs:
       with:
         composer_version: 1
         args: --prefer-source --no-interaction
-      
-  test:
-    name: Test
-    needs: build
-    runs-on: ubuntu-latest
 
-    steps:
     - name: PHP Unit
       run: vendor/bin/phpunit
