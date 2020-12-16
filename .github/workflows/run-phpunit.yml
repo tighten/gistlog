@@ -1,4 +1,4 @@
-name: Build and Test
+name: Run PHPUnit
 
 on:
   push:
@@ -6,9 +6,13 @@ on:
   pull_request:
 
 jobs:
-  build:
-    name: Build
+  run_phpunit:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: your-github-token
+      GITHUB_CLIENT_ID: 7d0a9a35639c58ff1b5a
+      GITHUB_CLIENT_SECRET: b69992107e243c4929e2117af0305ca90e9027d9
+      GITHUB_URL: http://host/auth/github/callback
 
     steps:
     - name: Checkout code
