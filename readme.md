@@ -20,13 +20,16 @@ An exercise in iterative development by [Matt Stauffer](http://mattstauffer.co/)
 1. Clone the repository locally
 2. Install dependencies with `composer install`
 3. Copy `.env.example` to `.env` and modify its contents to reflect your local environment
-4. Configure a web server, such as the built-in PHP web server, to serve this site using the +public+ directory as its root
-5. Go to https://github.com/settings/developers and create a Oauth app 
-6. Create a token here https://github.com/settings/tokens that has access right to Gist
-
+4. Generate application key
+```bash
+php artisan key:generate
+```
+5. Configure a web server, such as the built-in PHP web server, to serve this site using the +public+ directory as its root
 ```bash
 php -S localhost:8080 -t public
 ```
+6. Go to https://github.com/settings/developers and create a Oauth app 
+7. Create a token here https://github.com/settings/tokens that has access right to Gist
 
 ## Questions
 If you have any questions, please reach out to [@mattstauffer](https://github.com/mattstauffer). Find him here or on twitter at [@stauffermatt](https://twitter.com/stauffermatt).
