@@ -1,6 +1,5 @@
 <?php
 
-use App\Gists\Comment;
 use App\Gists\Gistlog;
 
 class GistlogTest extends BrowserKitTestCase
@@ -75,7 +74,7 @@ class GistlogTest extends BrowserKitTestCase
 
         $gistlog = Gistlog::fromGitHub($githubGist);
 
-        $this->assertEquals('<pre><code>'.htmlspecialchars($gistlog->content)."\n</code></pre>", $gistlog->renderHtml());
+        $this->assertEquals('<pre><code>' . htmlspecialchars($gistlog->content) . "\n</code></pre>", $gistlog->renderHtml());
     }
 
     /** @test */

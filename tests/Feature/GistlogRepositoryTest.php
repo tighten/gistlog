@@ -1,6 +1,5 @@
 <?php
 
-use App\Gists\Gistlog;
 use App\Gists\GistClient;
 use App\Gists\GistlogRepository;
 
@@ -56,11 +55,11 @@ class FixtureGistClient extends GistClient
 
     public function getGist($gistId)
     {
-        return $this->loadFixture($gistId.'.json');
+        return $this->loadFixture($gistId . '.json');
     }
 
     public function getGistComments($gistId)
     {
-        return $this->loadFixture($gistId.'/comments.json');
+        return $this->loadFixture($gistId . '/comments.json');
     }
 }

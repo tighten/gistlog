@@ -2,7 +2,9 @@
 
 namespace App\Exceptions;
 
-class GistNotFoundException extends \Exception
+use Exception;
+
+class GistNotFoundException extends Exception
 {
     public $gistId;
 

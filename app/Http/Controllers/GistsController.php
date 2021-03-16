@@ -2,17 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
-use App\Gists\GistClient;
-use Illuminate\Http\Request;
-use App\Gists\GistlogRepository;
-use Illuminate\Support\Facades\App;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Redirect;
 use App\Exceptions\GistNotFoundException;
+use App\Gists\GistlogRepository;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\View;
 
 class GistsController extends Controller
 {
@@ -62,6 +58,6 @@ class GistsController extends Controller
 
         return View::make('gistlogs.show')
             ->with('gistlog', $gistlog)
-            ->with('pageTitle', $gistlog->title.' | '.$gistlog->author);
+            ->with('pageTitle', $gistlog->title . ' | ' . $gistlog->author);
     }
 }
