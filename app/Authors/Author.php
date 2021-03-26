@@ -54,7 +54,7 @@ class Author
 
         $author->id = 0;
         $author->avatarUrl = self::ANONYMOUS_AVATAR_URL;
-        $author->link = 'https://github.com/' . self::ANONYMOUS_USERNAME;
+        $author->link = 'https://github.com/'.self::ANONYMOUS_USERNAME;
         $author->name = 'anonymous';
         $author->username = self::ANONYMOUS_USERNAME;
         $author->gists = collect([]);
