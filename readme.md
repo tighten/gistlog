@@ -12,7 +12,7 @@ An exercise in iterative development by [Matt Stauffer](http://mattstauffer.co/)
 
 ## Requirements
 
- * PHP >= 7.1.3
+ * PHP >= 7.4
  * Composer
 
 ## Installation
