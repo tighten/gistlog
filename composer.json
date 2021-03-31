@@ -15,7 +15,8 @@
         "symfony/yaml": "~4.0",
         "php": "^7.4",
         "laravel/tinker": "^2.5",
-        "fideloper/proxy": "^4.4"
+        "fideloper/proxy": "^4.4",
+        "laravel/ui": "^2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.5.8",
