@@ -6,14 +6,14 @@ class BrowserKitTestCase extends Laravel\BrowserKitTesting\TestCase
 
     public function createApplication()
     {
-        $app = require __DIR__ . '/../bootstrap/app.php';
+        $app = require __DIR__.'/../bootstrap/app.php';
 
         $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
 
         return $app;
     }
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->skipSomeOnCi();
 

@@ -36,7 +36,7 @@ class GistsController extends Controller
         }
 
         return Redirect::route('gists.show', [
-            'userName' => $gistlog->author,
+            'username' => $gistlog->author,
             'gistId' => $gistlog->id,
         ]);
     }
@@ -58,6 +58,6 @@ class GistsController extends Controller
 
         return View::make('gistlogs.show')
             ->with('gistlog', $gistlog)
-            ->with('pageTitle', $gistlog->title . ' | ' . $gistlog->author);
+            ->with('pageTitle', $gistlog->title.' | '.$gistlog->author);
     }
 }

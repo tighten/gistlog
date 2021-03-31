@@ -48,7 +48,7 @@ class AuthorClient
     public function getAuthor($authorSlug)
     {
         return Cache::remember(self::cacheKey(__METHOD__, $authorSlug), $this->cacheLength, function () use ($authorSlug) {
-            Log::debug('Calling ' . __METHOD__);
+            Log::debug('Calling '.__METHOD__);
 
             try {
                 return $this->github->api('users')->show($authorSlug);
@@ -65,7 +65,7 @@ class AuthorClient
     public function getAuthorGists($username)
     {
         return Cache::remember(self::cacheKey(__METHOD__, $username), $this->cacheLength, function () use ($username) {
-            Log::debug('Calling ' . __METHOD__);
+            Log::debug('Calling '.__METHOD__);
 
             return $this->github->api('users')->gists($username);
         });

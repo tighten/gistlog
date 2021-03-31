@@ -25,6 +25,7 @@ class GistCommentsController extends Controller
         $comments = Cache::remember("GistCommentsWithHtml::{$gistId}", 1800, function () use ($gistId) {
             return collect($this->gistClient->getGistComments($gistId))->map(function ($comment) {
                 $comment['body_html'] = ContentParserFacade::transform($comment['body']);
+
                 return $comment;
             })->all();
         });

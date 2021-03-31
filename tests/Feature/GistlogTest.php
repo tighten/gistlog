@@ -74,7 +74,7 @@ class GistlogTest extends BrowserKitTestCase
 
         $gistlog = Gistlog::fromGitHub($githubGist);
 
-        $this->assertEquals('<pre><code>' . htmlspecialchars($gistlog->content) . "\n</code></pre>", $gistlog->renderHtml());
+        $this->assertEquals('<pre><code>'.htmlspecialchars($gistlog->content)."\n</code></pre>", $gistlog->renderHtml());
     }
 
     /** @test */
@@ -84,7 +84,7 @@ class GistlogTest extends BrowserKitTestCase
 
         $gistlog = Gistlog::fromGitHub($githubGist);
 
-        $this->assertContains('My First Post', $gistlog->content);
+        $this->assertStringContainsString('My First Post', $gistlog->content);
     }
 
     /** @test */
