@@ -84,7 +84,7 @@ class GistlogTest extends BrowserKitTestCase
 
         $gistlog = Gistlog::fromGitHub($githubGist);
 
-        $this->assertContains('My First Post', $gistlog->content);
+        $this->assertStringContainsString('My First Post', $gistlog->content);
     }
 
     /** @test */
