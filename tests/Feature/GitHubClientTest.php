@@ -12,7 +12,7 @@ class GitHubClientTest extends BrowserKitTestCase
     {
         $github = App::make(GitHubClient::class);
 
-        $response = $github->getHttpClient()->get('rate_limit')->json();
+        $response = json_decode( $github->getHttpClient()->get('rate_limit')->getBody(), true );
 
         $limit = $response['resources']['core']['limit'];
 
