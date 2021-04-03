@@ -12,11 +12,11 @@ class AuthorClientTest extends BrowserKitTestCase
     {
         $github = App::make(AuthorClient::class);
 
-        $response = $github->getGitHubClient()->getHttpClient()->get('rate_limit')->json();
+        $response = json_decode( $github->getGitHubClient()->getHttpClient()->get('rate_limit')->getBody(), true );
         $limit = $response['resources']['core']['limit'];
         $this->assertEquals('5000', $limit);
 
-        $response = $github->getGistClient()->getGitHubClient()->getHttpClient()->get('rate_limit')->json();
+        $response = json_decode( $github->getGistClient()->getGitHubClient()->getHttpClient()->get('rate_limit')->getBody(), true );
         $limit = $response['resources']['core']['limit'];
         $this->assertEquals('5000', $limit);
     }
