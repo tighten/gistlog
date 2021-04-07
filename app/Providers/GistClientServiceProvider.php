@@ -5,7 +5,6 @@ namespace App\Providers;
 use App\Gists\GistClient;
 use Github\Client as GitHubClient;
 use Illuminate\Support\ServiceProvider;
-use Github\HttpClient\CachedHttpClient as CachedGitHubClient;
 
 class GistClientServiceProvider extends ServiceProvider
 {
@@ -22,7 +21,7 @@ class GistClientServiceProvider extends ServiceProvider
                 $githubClient->authenticate(
                     config('services.github.client_id'),
                     config('services.github.client_secret'),
-                    GitHubClient::AUTH_HTTP_PASSWORD
+                    GitHubClient::AUTH_CLIENT_ID
                 );
             }
 

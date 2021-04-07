@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
-use Throwable;
 
 class GistsController extends Controller
 {
@@ -38,7 +37,7 @@ class GistsController extends Controller
         }
 
         return Redirect::route('gists.show', [
-            'userName' => $gistlog->author,
+            'username' => $gistlog->author,
             'gistId' => $gistlog->id,
         ]);
     }

@@ -12609,13 +12609,12 @@ pre code {
 }
 
 .gistlog__content li {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   overflow-wrap: break-word;
 }
 
 .gistlog__content ol,
 .gistlog__content ul {
-  line-height: 1;
   padding-left: 1.5rem;
 }
 

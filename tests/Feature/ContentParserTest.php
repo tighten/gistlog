@@ -1,7 +1,7 @@
 <?php
 
-use App\ContentParser\Transformer;
 use App\ContentParser\ContentParser;
+use App\ContentParser\Transformer;
 
 class ContentParserTest extends BrowserKitTestCase
 {

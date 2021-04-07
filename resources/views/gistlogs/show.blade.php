@@ -66,7 +66,7 @@
                                     </em>
                                 </p>
                             @else
-                                @foreach($gistlog->files as $file)
+                                @foreach ($gistlog->files as $file)
                                     <p>
                                         <a href="{{ $file->url }}" target="_blank">{{ $file->name }}</a>
                                     </p>

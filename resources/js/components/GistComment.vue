@@ -22,7 +22,7 @@
                 >
             </span>
             <span
-                class="comment-body font-normal text-sm leading-normal text-justify"
+                class="font-normal text-sm leading-normal text-justify"
                 v-html="comment.body_html"
             >
             </span>

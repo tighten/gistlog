@@ -3,9 +3,8 @@
 namespace App\Providers;
 
 use App\ContentParser\ContentParser;
-use Illuminate\Support\ServiceProvider;
 use App\ContentParser\GitHubMarkdownTransformer;
-use App\ContentParser\GitHubUsernameTransformer;
+use Illuminate\Support\ServiceProvider;
 
 class ContentParserServiceProvider extends ServiceProvider
 {

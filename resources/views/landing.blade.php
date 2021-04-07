@@ -23,61 +23,61 @@
 @endsection
 
 @section('content')
-<div class="container mx-auto py-6">
-    <h1 class="text-3xl md:text-5xl font-light md:font-hairline text-blue-darkest mb-2">Your Dev Blog Delivered</h1>
-    <h2 class="text-base md:text-2xl text-grey-darker tracking-normal mb-6 md:mb-8">Publish your first post in 55 seconds</h2>
+<div class="container py-6 mx-auto">
+    <h1 class="mb-2 text-3xl font-light md:text-5xl md:font-hairline text-blue-darkest">Your Dev Blog Delivered</h1>
+    <h2 class="mb-6 text-base tracking-normal md:text-2xl text-grey-darker md:mb-8">Publish your first post in 55 seconds</h2>
 
     <button
         onclick="window.location.href = '/posts/create'"
-        class="inline-block bg-blue-darker text-white md:text-lg rounded focus:outline-none my-2 py-2 px-6"
+        class="inline-block px-6 py-2 my-2 text-white rounded bg-blue-darker md:text-lg focus:outline-none"
     >Get Started</button>
 </div>
 
 <div class="img-cover blue-overlay" style="background-image: url('/img/main-bg.jpg')" title="Dev Blog - {{ config('app.name') }}"></div>
 
-<div class=" bg-grey-lightest w-full pt-8 pb-6">
-    <div class="container mx-auto text-center py-6">
-        <h3 class="text-3xl md:text-4xl font-light text-blue-darkest">How it works</h3>
-        <div class="w-10 border-solid border-b-2 border-blue-darkest mx-auto my-4"></div>
-        <p class="md:w-4/5 mx-auto text-grey-darker-darker leading-normal text-base md:px-8 my-6">In just a few steps&mdash;and just a few seconds&mdash;you can be blogging using nothing but simple GitHub Gists and Markdown.</p>
+<div class="w-full pt-8 pb-6  bg-grey-lightest">
+    <div class="container py-6 mx-auto text-center">
+        <h3 class="text-3xl font-light md:text-4xl text-blue-darkest">How it works</h3>
+        <div class="w-10 mx-auto my-4 border-b-2 border-solid border-blue-darkest"></div>
+        <p class="mx-auto my-6 text-base leading-normal md:w-4/5 text-grey-darker-darker md:px-8">In just a few steps&mdash;and just a few seconds&mdash;you can be blogging using nothing but simple GitHub Gists and Markdown.</p>
     </div>
 
-    <div class="md:hidden mx-auto mb-6 py-1">
-        <div class="tab-label mb-5">
+    <div class="py-1 mx-auto mb-6 md:hidden">
+        <div class="mb-5 tab-label">
             <span>1</span>
             <div class="w-full ml-3 text-sm">
-                <h4 class="text-blue font-bold">Create a Gist</h4>
-                <p class="text-grey-darker py-1">Create a GitHub Gist with Markdown</p>
+                <h4 class="font-bold text-blue">Create a Gist</h4>
+                <p class="py-1 text-grey-darker">Create a GitHub Gist with Markdown</p>
                 <img
                     src="{{ asset('img/step1.jpg') }}"
                     alt="Step 1 - create Gist"
-                    class="border border-grey-light rounded shadow-md mt-5"
+                    class="mt-5 border rounded shadow-md border-grey-light"
                 >
             </div>
         </div>
 
-        <div class="tab-label mb-5">
+        <div class="mb-5 tab-label">
             <span>2</span>
             <div class="w-full ml-3 text-sm">
-                <h4 class="text-blue font-bold">Paste the Link</h4>
-                <p class="text-grey-darker py-1">Paste your Gist's URL into GistLog</p>
+                <h4 class="font-bold text-blue">Paste the Link</h4>
+                <p class="py-1 text-grey-darker">Paste your Gist's URL into GistLog</p>
                 <img
                     src="{{ asset('img/step2.jpg') }}"
                     alt="Step 2 - paste Gist link"
-                    class="border border-grey-light rounded shadow-md mt-5"
+                    class="mt-5 border rounded shadow-md border-grey-light"
                 >
             </div>
         </div>
 
         <div class="tab-label">
             <span>3</span>
-            <div class="w-full text-sm ml-3">
-                <h4 class="text-blue font-bold">Share your Post</h4>
-                <p class="text-grey-darker py-1">Share your GistLog link 🎉</p>
+            <div class="w-full ml-3 text-sm">
+                <h4 class="font-bold text-blue">Share your Post</h4>
+                <p class="py-1 text-grey-darker">Share your GistLog link 🎉</p>
                 <img
                     src="{{ asset('img/step3.jpg') }}"
                     alt="Step 3 - share your post"
-                    class="border border-grey-light rounded shadow-md mt-5"
+                    class="mt-5 border rounded shadow-md border-grey-light"
                 >
             </div>
         </div>
@@ -86,41 +86,41 @@
     <home-page-tabs></home-page-tabs>
 </div>
 
-<div class="bg-white w-full py-6">
-    <div class="container mx-auto text-center pt-4 pb-2">
-        <h3 class="text-3xl md:text-4xl font-light text-blue-darkest">Everything you need</h3>
-        <div class="w-10 border-solid border-b-2 border-blue-darkest mx-auto my-4"></div>
-        <p class="md:w-4/5 mx-auto text-grey-darker-darker leading-normal text-base md:px-8 my-6">GistLog posts may be easy to create, but we didn't skimp on features. All the features you expect from a developer-focused blogging platform, with almost no setup.</p>
+<div class="w-full py-6 bg-white">
+    <div class="container pt-4 pb-2 mx-auto text-center">
+        <h3 class="text-3xl font-light md:text-4xl text-blue-darkest">Everything you need</h3>
+        <div class="w-10 mx-auto my-4 border-b-2 border-solid border-blue-darkest"></div>
+        <p class="mx-auto my-6 text-base leading-normal md:w-4/5 text-grey-darker-darker md:px-8">GistLog posts may be easy to create, but we didn't skimp on features. All the features you expect from a developer-focused blogging platform, with almost no setup.</p>
     </div>
 </div>
 
-<div class="flex flex-col sm:flex-row container mx-auto items-center leading-normal py-12">
-    <div class="flex-1 text-center mb-8 md:mb-0">
-        <figure class="lg:px-4 sm:mx-8  min-h-6 w-32 sm:w-auto mx-auto">
+<div class="container flex flex-col items-center py-12 mx-auto leading-normal sm:flex-row">
+    <div class="flex-1 mb-8 text-center md:mb-0">
+        <figure class="w-32 mx-auto lg:px-4 sm:mx-8 min-h-6 sm:w-auto">
             <img src="{{ asset('img/icon-responsive.svg') }}" alt="Responsive design - {{ config('app.name') }}">
         </figure>
-        <p class="text-sm text-blue-darkest text-lg sm:text-base">Responsive out of the box</p>
+        <p class="text-sm text-lg text-blue-darkest sm:text-base">Responsive out of the box</p>
     </div>
 
-    <div class="flex-1 text-center mb-8 md:mb-0">
-        <figure class="lg:px-4 sm:mx-8  min-h-6 w-32 sm:w-auto mx-auto">
+    <div class="flex-1 mb-8 text-center md:mb-0">
+        <figure class="w-32 mx-auto lg:px-4 sm:mx-8 min-h-6 sm:w-auto">
             <img src="{{ asset('img/icon-comments.svg') }}" alt="Built-in comments - {{ config('app.name') }}">
         </figure>
-        <p class="text-sm text-blue-darkest text-lg sm:text-base">Built-in comments &amp; notifications</p>
+        <p class="text-sm text-lg text-blue-darkest sm:text-base">Built-in comments &amp; notifications</p>
     </div>
 
-    <div class="flex-1 text-center mb-8 md:mb-0">
-        <figure class="lg:px-4 sm:mx-8  min-h-6 w-32 sm:w-auto mx-auto">
+    <div class="flex-1 mb-8 text-center md:mb-0">
+        <figure class="w-32 mx-auto lg:px-4 sm:mx-8 min-h-6 sm:w-auto">
             <img src="{{ asset('img/icon-easy.svg') }}" alt="Easy &amp; Fast - {{ config('app.name') }}">
         </figure>
-        <p class="text-sm text-blue-darkest text-lg sm:text-base">Easy &amp; Fast</p>
+        <p class="text-sm text-lg text-blue-darkest sm:text-base">Easy &amp; Fast</p>
     </div>
 
     <div class="flex-1 text-center">
-        <figure class="lg:px-4 sm:mx-8  min-h-6 w-32 sm:w-auto mx-auto">
+        <figure class="w-32 mx-auto lg:px-4 sm:mx-8 min-h-6 sm:w-auto">
             <img src="{{ asset('img/icon-markdown.svg') }}" alt="Write with Markdown - {{ config('app.name') }}">
         </figure>
-        <p class="text-sm text-blue-darkest text-lg sm:text-base">Write with Markdown</p>
+        <p class="text-sm text-lg text-blue-darkest sm:text-base">Write with Markdown</p>
     </div>
 </div>
 @endsection
