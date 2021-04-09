@@ -87,10 +87,8 @@ class GistClient
                 $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_ACCESS_TOKEN);
                 $this->github->getHttpClient()->put("https://api.github.com/gists/{$gistId}/star", [], json_encode(['body' => '']), ['Content-Length' => 0]);
                 return true;
-            } catch(Throwable $e) {
-            
+            } catch (Throwable $e) {
                 return false;
-
             }
 
             return false;
