@@ -2,9 +2,9 @@
 
 namespace App\Exceptions;
 
-use Exception;
+use Throwable;
 
-class GistNotFoundException extends Exception
+class GistNotFoundException extends Throwable
 {
     public $gistId;
 
