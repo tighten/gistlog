@@ -32,7 +32,7 @@ class AuthController extends Controller
         session()->flash('redirect_to', URL::previous());
 
         return Socialite::driver('github')
-            ->scopes(['user:email', 'gist'])
+            ->scopes(['user:email', 'gist', 'public_repo'])
             ->redirect();
     }
 
