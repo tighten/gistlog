@@ -11,7 +11,6 @@ use Github\HttpClient\Message\ResponseMediator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
-use Throwable;
 
 class GistClient
 {
@@ -63,7 +62,6 @@ class GistClient
         return ResponseMediator::getContent(
                 $this->github->getHttpClient()->get("gists/{$gistId}/comments")
             );
-        // });
     }
 
     /**
@@ -81,19 +79,12 @@ class GistClient
 
     public function starGist($gistId)
     {
-
         if (Auth::check()) {
-            try {
-                $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_ACCESS_TOKEN);
-                $this->github->getHttpClient()->put("https://api.github.com/gists/{$gistId}/star", [], json_encode(['body' => '']), ['Content-Length' => 0]);
-                return true;
-            } catch (Throwable $e) {
-                return false;
-            }
-
-            return false;
+            $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_ACCESS_TOKEN);
+            $this->github->getHttpClient()->put("https://api.github.com/gists/{$gistId}/star", [], json_encode(['body' => '']), ['Content-Length' => 0]);
+            return true;
         }
-
+        return false;
     }
 
     public function unstarGist($gistId)
@@ -105,16 +96,10 @@ class GistClient
     public function isStarredForUser($gistId)
     {
         if (Auth::check()) {
-            try {
-                $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_ACCESS_TOKEN);
-                $this->github->getHttpClient()->get("https://api.github.com/gists/{$gistId}/star");
-                return true;
-
-            } catch (Throwable $e) {
-                return false;
-            }
+            $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_ACCESS_TOKEN);
+            $this->github->getHttpClient()->get("https://api.github.com/gists/{$gistId}/star");
+            return true;
         }
-
         return false;
     }
 }
