@@ -4,8 +4,10 @@ namespace App\Gists;
 
 use ArrayAccess;
 use Carbon\Carbon;
+use ErrorException;
 use Illuminate\Support\Arr;
 use Symfony\Component\Yaml\Yaml;
+use Symfony\Component\Yaml\Exception\ParseException;
 
 class GistConfig implements ArrayAccess
 {
@@ -33,7 +35,7 @@ class GistConfig implements ArrayAccess
      * @param array|ArrayAccess $githubGist
      * @return GistConfig
      */
-    public static function fromGitHub($githubGist)
+    public static function fromGitHub($githubGist): GistConfig
     {
         $config = new self;
         $config->settings = $config->defaultSettings;
@@ -42,7 +44,11 @@ class GistConfig implements ArrayAccess
             return $config;
         }
 
-        $userSettings = Yaml::parse($githubGist['files']['gistlog.yml']['content']);
+        try {
+            $userSettings = Yaml::parse($githubGist['files']['gistlog.yml']['content']);
+        } catch (ParseException $exception) {
+            $userSettings = null;
+        }
 
         if (! is_array($userSettings)) {
             return $config;
@@ -64,7 +70,7 @@ class GistConfig implements ArrayAccess
                 if ($config->settings[$setting]->format('Y-m-d') === '1970-01-01') {
                     $config->settings[$setting] = null;
                 }
-            } catch (\ErrorException $e) {
+            } catch (ErrorException $e) {
                 $config->settings[$setting] = null;
             }
         }

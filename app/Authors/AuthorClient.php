@@ -8,8 +8,7 @@ use Exception;
 use Github\Client as GitHubClient;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Log;
-use Symfony\Component\CssSelector\Exception\ParseException;
+use Symfony\Component\Yaml\Exception\ParseException;
 use Symfony\Component\Yaml\Yaml;
 
 class AuthorClient
