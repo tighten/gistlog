@@ -1,6 +1,5 @@
 <?php
 
-use App\Gists\Comment;
 use App\Gists\Gistlog;
 
 class GistlogTest extends BrowserKitTestCase
@@ -85,7 +84,7 @@ class GistlogTest extends BrowserKitTestCase
 
         $gistlog = Gistlog::fromGitHub($githubGist);
 
-        $this->assertContains('My First Post', $gistlog->content);
+        $this->assertStringContainsString('My First Post', $gistlog->content);
     }
 
     /** @test */

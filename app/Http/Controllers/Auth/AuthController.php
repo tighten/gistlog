@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use App\User;
 use Exception;
-use Illuminate\Support\Facades\URL;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
 use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
@@ -32,7 +32,7 @@ class AuthController extends Controller
         session()->flash('redirect_to', URL::previous());
 
         return Socialite::driver('github')
-            ->scopes(['user:email', 'gist'])
+            ->scopes(['user:email', 'gist', 'public_repo'])
             ->redirect();
     }
 

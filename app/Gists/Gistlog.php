@@ -2,10 +2,10 @@
 
 namespace App\Gists;
 
-use Cache;
-use Carbon\Carbon;
 use App\Authors\Author;
 use App\ContentParser\ContentParserFacade as ContentParser;
+use Cache;
+use Carbon\Carbon;
 
 class Gistlog
 {
