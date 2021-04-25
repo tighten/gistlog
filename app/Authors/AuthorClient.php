@@ -8,7 +8,7 @@ use Exception;
 use Github\Client as GitHubClient;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Log;
+use Symfony\Component\Yaml\Exception\ParseException;
 use Symfony\Component\Yaml\Yaml;
 
 class AuthorClient
@@ -31,25 +31,19 @@ class AuthorClient
         $this->gistClient = $gistClient;
     }
 
-    public function getGitHubClient()
+    public function getGitHubClient(): GitHubClient
     {
         return $this->github;
     }
 
-    public function getGistClient()
+    public function getGistClient(): GistClient
     {
         return $this->gistClient;
     }
 
-    /**
-     * @param $authorSlug
-     * @return array
-     */
-    public function getAuthor($authorSlug)
+    public function getAuthor(string $authorSlug): array
     {
         return Cache::remember(self::cacheKey(__METHOD__, $authorSlug), $this->cacheLength, function () use ($authorSlug) {
-            Log::debug('Calling '.__METHOD__);
-
             try {
                 return $this->github->api('users')->show($authorSlug);
             } catch (Exception $e) {
@@ -58,24 +52,14 @@ class AuthorClient
         });
     }
 
-    /**
-     * @param $username
-     * @return array
-     */
-    public function getAuthorGists($username)
+    public function getAuthorGists(string $username): array
     {
         return Cache::remember(self::cacheKey(__METHOD__, $username), $this->cacheLength, function () use ($username) {
-            Log::debug('Calling '.__METHOD__);
-
             return $this->github->api('users')->gists($username);
         });
     }
 
-    /**
-     * @param $username
-     * @return array
-     */
-    public function getAuthorPublishableGists($username)
+    public function getAuthorPublishableGists(string $username): array
     {
         $gists = $this->getAuthorGists($username);
 
@@ -90,22 +74,18 @@ class AuthorClient
         }, $gists));
     }
 
-    /**
-     * @param array $gist
-     * @return bool
-     */
-    private function gistIsDraft($gist)
+    private function gistIsDraft(array $gist): bool
     {
-        $config = Yaml::parse($gist['files']['gistlog.yml']['content']);
+        try {
+            $config = Yaml::parse($gist['files']['gistlog.yml']['content']);
+        } catch (ParseException $exception) {
+            return false;
+        }
 
         return ! Arr::get($config, 'published', true);
     }
 
-    /**
-     * @param array $gist
-     * @return bool
-     */
-    private function gistIsGistlogPublished($gist)
+    private function gistIsGistlogPublished(array $gist): bool
     {
         return array_key_exists('gistlog.yml', $gist['files']);
     }

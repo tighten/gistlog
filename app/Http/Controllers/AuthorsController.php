@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Authors\AuthorRepository;
+use Exception;
 use Illuminate\Support\Facades\View;
 
 class AuthorsController extends Controller
@@ -19,7 +20,11 @@ class AuthorsController extends Controller
 
     public function show($username)
     {
-        $author = $this->repository->findByUsername($username);
+        try {
+            $author = $this->repository->findByUsername($username);
+        } catch (Exception $e) {
+            abort(404);
+        }
 
         if ($author->gists->isEmpty()) {
             return redirect("https://github.com/{$username}");
