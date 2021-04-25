@@ -18861,6 +18861,10 @@ pre code {
   font-size: 2.25rem;
 }
 
+.comment-body a {
+  word-break: break-all;
+}
+
 @media (min-width: 640px) {
   .gistlog {
     padding-left: 2rem;

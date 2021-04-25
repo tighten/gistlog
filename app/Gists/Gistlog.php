@@ -27,6 +27,8 @@ class Gistlog
 
     public $files;
 
+    public $commentCount;
+
     private $public;
 
     /**
@@ -59,6 +61,7 @@ class Gistlog
         $gistlog->public = $githubGist['public'];
         $gistlog->createdAt = Carbon::parse($githubGist['created_at']);
         $gistlog->updatedAt = Carbon::parse($githubGist['updated_at']);
+        $gistlog->commentCount = $githubGist['comments'];
 
         if (isset($githubGist['owner'])) {
             $gistlog->author = $githubGist['owner']['login'];

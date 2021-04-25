@@ -61,7 +61,7 @@ class Handler extends ExceptionHandler
         }
     }
 
-    private function isGistNotFoundException(Exception $e)
+    private function isGistNotFoundException(Throwable $e)
     {
         return $e instanceof GistNotFoundException;
     }

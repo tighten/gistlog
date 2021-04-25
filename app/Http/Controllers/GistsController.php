@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Exceptions\GistNotFoundException;
+use App\Gists\GistClient;
 use App\Gists\GistlogRepository;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
+use Throwable;
 
 class GistsController extends Controller
 {
@@ -41,7 +43,7 @@ class GistsController extends Controller
         ]);
     }
 
-    public function show($username, $gistId)
+    public function show($username, $gistId, GistClient $gistClient)
     {
         try {
             $gistlog = $this->repository->findById($gistId);
@@ -58,6 +60,38 @@ class GistsController extends Controller
 
         return View::make('gistlogs.show')
             ->with('gistlog', $gistlog)
-            ->with('pageTitle', $gistlog->title.' | '.$gistlog->author);
+            ->with('pageTitle', $gistlog->title . ' | ' . $gistlog->author)
+            ->with('isStarredForUser', $gistClient->isStarredForUser($gistId));
+    }
+
+    protected function star(GistClient $client, $gistId)
+    {
+        try {
+            $client->starGist($gistId);
+
+            return response()->json([
+                'success' => true,
+            ], 200);
+        } catch (Throwable $e) {
+            return response()->json([
+                'success' => false,
+            ], 500);
+        }
+    }
+
+    protected function unstar(GistClient $client, $gistId)
+    {
+        try {
+            $client->unstarGist($gistId);
+
+            return response()->json([
+                'success' => true,
+            ], 200);
+        } catch (Throwable $e) {
+            return response()->json([
+                'success' => false,
+            ], 500);
+        }
     }
 }
+
