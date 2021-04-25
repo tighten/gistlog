@@ -6,11 +6,11 @@ use App\CachesGitHubResponses;
 use App\Exceptions\GistNotFoundException;
 use Exception;
 use Github\Client as GitHubClient;
-use Github\Exception\RuntimeException;
 use Github\HttpClient\Message\ResponseMediator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
+use Throwable;
 
 class GistClient
 {
@@ -79,27 +79,41 @@ class GistClient
 
     public function starGist($gistId)
     {
+        if (Auth::guest()) {
+            return;
+        }
+
         if (Auth::check()) {
             $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_ACCESS_TOKEN);
             $this->github->getHttpClient()->put("https://api.github.com/gists/{$gistId}/star", [], json_encode(['body' => '']), ['Content-Length' => 0]);
-            return true;
         }
-        return false;
     }
 
     public function unstarGist($gistId)
     {
+        if (Auth::guest()) {
+            return;
+        }
+
         $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_ACCESS_TOKEN);
         $this->github->getHttpClient()->delete("https://api.github.com/gists/{$gistId}/star");
     }
 
     public function isStarredForUser($gistId)
     {
-        if (Auth::check()) {
+        if (Auth::guest()) {
+            return false;
+        }
+
+        // @todo: Consider reworking this to not catch *all* exceptions, but just
+        //        check whether the HTTP status code is 404 (false) or 204 (starred)
+        try {
             $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_ACCESS_TOKEN);
             $this->github->getHttpClient()->get("https://api.github.com/gists/{$gistId}/star");
+
             return true;
+        } catch (Throwable $e) {
+            return false;
         }
-        return false;
     }
 }
