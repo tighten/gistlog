@@ -6,8 +6,8 @@ use ArrayAccess;
 use Carbon\Carbon;
 use ErrorException;
 use Illuminate\Support\Arr;
-use Symfony\Component\Yaml\Yaml;
 use Symfony\Component\Yaml\Exception\ParseException;
+use Symfony\Component\Yaml\Yaml;
 
 class GistConfig implements ArrayAccess
 {
@@ -35,7 +35,7 @@ class GistConfig implements ArrayAccess
      * @param array|ArrayAccess $githubGist
      * @return GistConfig
      */
-    public static function fromGitHub($githubGist): GistConfig
+    public static function fromGitHub($githubGist): self
     {
         $config = new self;
         $config->settings = $config->defaultSettings;

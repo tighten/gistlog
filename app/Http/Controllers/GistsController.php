@@ -60,7 +60,7 @@ class GistsController extends Controller
 
         return View::make('gistlogs.show')
             ->with('gistlog', $gistlog)
-            ->with('pageTitle', $gistlog->title . ' | ' . $gistlog->author)
+            ->with('pageTitle', $gistlog->title.' | '.$gistlog->author)
             ->with('isStarredForUser', $gistClient->isStarredForUser($gistId));
     }
 
@@ -94,4 +94,3 @@ class GistsController extends Controller
         }
     }
 }
-
