@@ -2,7 +2,7 @@
 
 # GistLog
 
-[![Build Status](https://travis-ci.com/tightenco/gistlog.png?branch=main)](http://travis-ci.com/tightenco/gistlog)
+![Build Status](https://github.com/tighten/gistlog/workflows/Build%20and%20Test/badge.svg)
 
 Turn your gists into easy, beautiful, responsive blog posts--a "GistLog". Just paste a Gist URL into [GistLog.co](https://gistlog.co/) and you're up and running.
 
