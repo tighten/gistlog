@@ -24,7 +24,7 @@
         "bugsnag/bugsnag-laravel": "^2.22"
     },
     "require-dev": {
-        "phpunit/phpunit": ">=9.4 <9.5",
+        "phpunit/phpunit": ">=9.3.3 <9.5",
         "laravel/browser-kit-testing": "^6.2",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
