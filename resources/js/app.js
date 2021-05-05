@@ -8,7 +8,7 @@ window.autosize = require('autosize');
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+import Vue from 'vue';
 
 Vue.config.productionTip = false;
 
@@ -24,7 +24,7 @@ const files = require.context('./components', true, /\.vue$/i);
 files
     .keys()
     .map((key) =>
-        Vue.component(key.split('/').pop().split('.')[0], files(key).default)
+       Vue.component(key.split('/').pop().split('.')[0], files(key).default)
     );
 
 /**

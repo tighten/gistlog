@@ -16,7 +16,7 @@ let postCssImport = require('postcss-import');
 mix
     .less('resources/less/landing.less', './public/css')
     .less('resources/less/app.less', './public/css')
-    .js('resources/js/app.js', './public/js')
+    .js('resources/js/app.js', './public/js').vue()
     .options({
         postCss: [
             postCssImport(),
