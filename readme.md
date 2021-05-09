@@ -2,7 +2,7 @@
 
 # GistLog
 
-![Build Status](https://github.com/tighten/gistlog/workflows/Build%20and%20Test/badge.svg)
+![Build Status](https://github.com/tighten/gistlog/workflows/Run%20Tests/badge.svg)
 
 Turn your gists into easy, beautiful, responsive blog posts--each a "GistLog". Just paste a Gist URL into [GistLog.co](https://gistlog.co/) and you're up and running.
 
@@ -26,7 +26,7 @@ php artisan key:generate
 ```bash
 php -S localhost:8080 -t public
 ```
-6. Go to https://github.com/settings/developers and create a Oauth app 
+6. Go to https://github.com/settings/developers and create a Oauth app
 7. Create a token here https://github.com/settings/tokens that has access right to Gist
 
 ## Questions
