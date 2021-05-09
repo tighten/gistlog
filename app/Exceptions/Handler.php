@@ -29,41 +29,17 @@ class Handler extends ExceptionHandler
     ];
 
     /**
-     * Report or log an exception.
+     * Register the exception handling callbacks for the application.
      *
-     * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
-     *
-     * @param  \Throwable  $exception
      * @return void
      */
-    public function report(Throwable $exception)
+    public function register()
     {
-        parent::report($exception);
-    }
-
-    /**
-     * Render an exception into an HTTP response.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Throwable  $exception
-     * @return \Illuminate\Http\Response
-     */
-    public function render($request, Throwable $exception)
-    {
-        if ($this->isHttpException($exception)) {
-            return $this->renderHttpException($exception);
-        } elseif ($this->isGistNotFoundException($exception)) {
+        $this->renderable(function (GistNotFoundException $e, $request) {
             return response()->view('errors.404', [
                 'username' => request()->route()->parameter('username'),
                 'gistId' => request()->route()->parameter('gistId'),
             ], 404);
-        } else {
-            return parent::render($request, $exception);
-        }
-    }
-
-    private function isGistNotFoundException(Throwable $e)
-    {
-        return $e instanceof GistNotFoundException;
+        });
     }
 }
