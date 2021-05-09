@@ -4,7 +4,7 @@
 
 ![Build Status](https://github.com/tighten/gistlog/workflows/Build%20and%20Test/badge.svg)
 
-Turn your gists into easy, beautiful, responsive blog posts--a "GistLog". Just paste a Gist URL into [GistLog.co](https://gistlog.co/) and you're up and running.
+Turn your gists into easy, beautiful, responsive blog posts--each a "GistLog". Just paste a Gist URL into [GistLog.co](https://gistlog.co/) and you're up and running.
 
 You can also just replace `gist.github.com` in any URL with `gistlog.co`, and you instantly have a beautiful GistLog.
 
