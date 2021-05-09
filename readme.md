@@ -8,8 +8,6 @@ Turn your gists into easy, beautiful, responsive blog posts--each a "GistLog". J
 
 You can also just replace `gist.github.com` in any URL with `gistlog.co`, and you instantly have a beautiful GistLog.
 
-An exercise in iterative development by [Matt Stauffer](http://mattstauffer.co/) and [Adam Wathan](http://adamwathan.me/) of [Tighten Co.](http://tighten.co/).
-
 ## Requirements
 
  * PHP >= 7.4
