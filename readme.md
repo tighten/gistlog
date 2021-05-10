@@ -2,13 +2,11 @@
 
 # GistLog
 
-[![Build Status](https://travis-ci.org/tightenco/gistlog.png?branch=main)](http://travis-ci.org/tightenco/gistlog)
+![Build Status](https://github.com/tighten/gistlog/workflows/Run%20Tests/badge.svg)
 
-Turn your gists into easy, beautiful, responsive blog posts--a "GistLog". Just paste a Gist URL into [GistLog.co](https://gistlog.co/) and you're up and running.
+Turn your gists into easy, beautiful, responsive blog posts--each a "GistLog". Just paste a Gist URL into [GistLog.co](https://gistlog.co/) and you're up and running.
 
 You can also just replace `gist.github.com` in any URL with `gistlog.co`, and you instantly have a beautiful GistLog.
-
-An exercise in iterative development by [Matt Stauffer](http://mattstauffer.co/) and [Adam Wathan](http://adamwathan.me/) of [Tighten Co.](http://tighten.co/).
 
 ## Requirements
 
@@ -28,7 +26,7 @@ php artisan key:generate
 ```bash
 php -S localhost:8080 -t public
 ```
-6. Go to https://github.com/settings/developers and create a Oauth app 
+6. Go to https://github.com/settings/developers and create a Oauth app
 7. Create a token here https://github.com/settings/tokens that has access right to Gist
 
 ## Questions
