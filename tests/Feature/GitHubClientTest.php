@@ -6,7 +6,7 @@ class GitHubClientTest extends BrowserKitTestCase
 {
     /**
      * @test
-     * @group skip
+     * @group needsToken
      */
     public function it_authenticates_with_github_and_returns_5000_rate_limit_guzzle()
     {
