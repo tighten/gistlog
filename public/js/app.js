@@ -2382,10 +2382,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     isStarredForUser: Boolean,
-    gistId: String
+    gistId: String,
+    isLoggedIn: Boolean
   },
   data: function data() {
     return {
@@ -41898,6 +41903,10 @@ var render = function() {
       {
         staticClass:
           "flex flex-row justify-center px-2 py-3 mb-3 text-sm rounded shadow cursor-pointer sm:py-1 text-grey-darker w-100 sm:mb-auto sm:bg-white",
+        class: {
+          "opacity-100": _vm.isLoggedIn,
+          "opacity-50": !_vm.isLoggedIn
+        },
         on: { click: _vm.toggleStar }
       },
       [
@@ -54696,9 +54705,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/mattstauffer/Sites/gistlog/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/mattstauffer/Sites/gistlog/resources/less/landing.less */"./resources/less/landing.less");
-module.exports = __webpack_require__(/*! /Users/mattstauffer/Sites/gistlog/resources/less/app.less */"./resources/less/app.less");
+__webpack_require__(/*! /Users/siagiannaki/Code/gistlog/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/siagiannaki/Code/gistlog/resources/less/landing.less */"./resources/less/landing.less");
+module.exports = __webpack_require__(/*! /Users/siagiannaki/Code/gistlog/resources/less/app.less */"./resources/less/app.less");
 
 
 /***/ })
