@@ -1,8 +1,16 @@
 <template>
     <div>
+        <GistAuthModal
+            v-if="isLoginModalOpen"
+            @close-modal="isLoginModalOpen = false"
+        />
         <a
             @click="toggleStar"
             class="flex flex-row justify-center px-2 py-3 mb-3 text-sm rounded shadow cursor-pointer sm:py-1 text-grey-darker w-100 sm:mb-auto sm:bg-white"
+            :class="{
+                'opacity-100': isLoggedIn,
+                'opacity-50': !isLoggedIn,
+            }"
         >
             <svg
                 :class="{
@@ -28,16 +36,23 @@ export default {
     props: {
         isStarredForUser: Boolean,
         gistId: String,
+        isLoggedIn: Boolean,
     },
     data: function () {
         return {
             isStarred: !!this.isStarredForUser,
             starRoute: route('post.star', { gistId: this.gistId }),
             unstarRoute: route('post.unstar', { gistId: this.gistId }),
+            isLoginModalOpen: false,
         };
     },
     methods: {
         toggleStar() {
+            if (!this.isLoggedIn) {
+                this.isLoginModalOpen = true
+                return
+            }
+            
             axios({
                 withCredentials: true,
                 method: this.isStarred ? 'delete' : 'put',
