@@ -33,6 +33,24 @@
     </div>
 </template>
 
+<script>
+    export default {
+        created() {
+            const onEscape = (e) => {
+                if (e.keyCode === 27) {
+                    this.$emit('close-modal')
+                }
+            }
+
+            document.addEventListener('keydown', onEscape)
+
+            this.$once('hook:destroyed', () => {
+                document.removeEventListener('keydown', onEscape)
+            })
+        }
+    }
+</script>
+
 <style scoped>
     .bg-smoke {
         background-color: rgba(0, 0, 0, 0.5);
