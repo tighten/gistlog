@@ -10,7 +10,7 @@ class AuthorClientTest extends BrowserKitTestCase
      */
     public function it_authenticates_with_github_and_returns_5000_rate_limit()
     {
-        $github = App::make(AuthorClient::class);
+        $github = app(AuthorClient::class);
 
         $response = json_decode($github->getGitHubClient()->getHttpClient()->get('rate_limit')->getBody(), true);
         $limit = $response['resources']['core']['limit'];
