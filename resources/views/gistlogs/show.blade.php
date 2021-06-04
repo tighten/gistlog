@@ -90,7 +90,7 @@
                 </div>
 
                 <div class="pt-4 mb-8">
-                    <h2 class="mb-2 text-2xl" id="comments">Comments</h2>
+                    <h2 class="mb-2 text-2xl" id="comments">Comments ({{ $gistlog->commentCount }})</h2>
 
                     @include('gistlogs.comment_form')
 
