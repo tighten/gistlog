@@ -6,12 +6,13 @@
         />
         <a
             @click="toggleStar"
-            class="flex flex-row justify-center px-2 py-3 mb-3 text-sm rounded shadow cursor-pointer sm:py-1 text-grey-darker w-100 sm:mb-auto sm:bg-white"
+            class="flex flex-row justify-center mb-3 text-sm rounded shadow cursor-pointer text-grey-darker w-100 sm:mb-auto sm:bg-white"
             :class="{
                 'opacity-100': isLoggedIn,
                 'opacity-50': !isLoggedIn,
             }"
         >
+        <div class="inline-block flex flex-row justify-center px-2 py-3 sm:py-1">
             <svg
                 :class="{
                     'text-blue-dark': isStarred,
@@ -27,6 +28,8 @@
             </svg>
             <span v-if="isStarred">Unstar</span>
             <span v-else>Star</span>
+            </div>
+            <div v-if="isLoggedIn" class="inline-block px-2 py-3 sm:py-1 border-l border-grey-lighter">{{totalStars}}</div>
         </a>
     </div>
 </template>
@@ -44,7 +47,15 @@ export default {
             starRoute: route('post.star', { gistId: this.gistId }),
             unstarRoute: route('post.unstar', { gistId: this.gistId }),
             isLoginModalOpen: false,
+            stargazerRoute: route('post.starcount', { gistId: this.gistId }),
+            totalStars: ""
         };
+    },
+    mounted() {
+
+        if(this.isLoggedIn) {
+            this.starCount()
+        }
     },
     methods: {
         toggleStar() {
@@ -66,6 +77,11 @@ export default {
         toggleRoute() {
             return this.isStarred ? this.unstarRoute : this.starRoute;
         },
+        async starCount() {
+            const response = await fetch(this.stargazerRoute)
+            const res = await response.json()
+            this.totalStars = await res.data.viewer.gist.stargazerCount 
+        }
     },
 };
 </script>
