@@ -9,6 +9,7 @@ use Github\Client as GitHubClient;
 use Github\HttpClient\Message\ResponseMediator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Throwable;
 
@@ -60,8 +61,8 @@ class GistClient
         Log::debug('Calling '.__METHOD__);
 
         return ResponseMediator::getContent(
-                $this->github->getHttpClient()->get("gists/{$gistId}/comments")
-            );
+            $this->github->getHttpClient()->get("gists/{$gistId}/comments")
+        );
     }
 
     /**
@@ -115,5 +116,21 @@ class GistClient
         } catch (Throwable $e) {
             return false;
         }
+    }
+
+    public function starCount($gistId)
+    {
+        if (Auth::guest()) {
+            return false;
+        }
+
+        $query = 'query { viewer {login, gist(name: "'.$gistId.'") {stargazerCount}}}';
+
+        $response = Http::withHeaders([
+            'Authorization' => 'bearer ' . Auth::user()->token,
+            'Content-Type' => 'application/json'
+        ])->post('https://api.github.com/graphql', ["query" => $query]);
+
+        return $response->json();
     }
 }
