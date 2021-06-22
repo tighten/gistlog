@@ -24,7 +24,7 @@
 
 @section('content')
 <div class="container py-6 mx-auto">
-    <h1 class="mb-2 text-3xl font-light md:text-5xl md:font-hairline text-blue-darkest">Your Dev Blog Delivered</h1>
+    <h1 class="mb-2 text-3xl font-light md:text-5xl md:font-thin text-blue-darkest">Your Dev Blog Delivered</h1>
     <h2 class="mb-6 text-base tracking-normal md:text-2xl text-grey-darker md:mb-8">Publish your first post in 55 seconds</h2>
 
     <button
