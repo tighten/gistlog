@@ -3,15 +3,11 @@ module.exports = {
   important: false,
   separator: ':',
   theme: {
-    spacing: ['0'],
     backgroundColor: (theme) => theme('colors'),
     borderColor: (theme) => ({
       ...theme('colors'),
       default: theme('colors.gray.300', 'currentColor'),
     }),
-    borderRadius: { none: '0' },
-    borderWidth: ['0'],
-    boxShadow: { outline: '0 0 0 3px rgba(66, 153, 225, 0.5)' },
     fontFamily: {
       sans: [
         'Roboto',
@@ -62,7 +58,6 @@ module.exports = {
       '5xl': '3rem',
       '6xl': '4rem',
     },
-    fontWeight: { hairline: '100', thin: '200' },
     height: (theme) => ({
       auto: 'auto',
       ...theme('spacing'),
@@ -87,7 +82,6 @@ module.exports = {
     },
     minHeight: ['0'],
     minWidth: ['0'],
-    padding: (theme) => theme('spacing'),
     textColor: (theme) => theme('colors'),
     width: (theme) => ({
       auto: 'auto',
@@ -198,5 +192,9 @@ module.exports = {
       },
     },
   },
-  variants: { extend: { fontWeight: ['hover', 'focus'] } },
+  variants: {
+      extend: {
+          fontWeight: ['hover', 'focus'] 
+      } 
+  },
 }
