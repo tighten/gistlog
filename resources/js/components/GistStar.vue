@@ -17,7 +17,7 @@
                     'text-blue-dark': isStarred,
                     'text-grey-light': !isStarred,
                 }"
-                class="w-4 mr-1 fill-current"
+                class="w-4 h-5 mr-1 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
             >
@@ -52,7 +52,7 @@ export default {
                 this.isLoginModalOpen = true
                 return
             }
-            
+
             axios({
                 withCredentials: true,
                 method: this.isStarred ? 'delete' : 'put',
