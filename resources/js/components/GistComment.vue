@@ -6,7 +6,7 @@
                 :alt="`${comment.user.login} - GistLog`"
             />
         </div>
-        <div class="flex-1 flex flex-col px-2 sm:pl-4 sm:p-0">
+        <div class="flex-1 flex flex-col px-2 sm:pl-4 sm:p-0 max-w-full break-words">
             <span class="text-blue-darker text-sm font-normal">
                 <a
                     :href="comment.user.html_url"
