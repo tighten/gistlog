@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GistsController;
+use App\Http\Controllers\AuthorsController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\AuthorsRssController;
 use App\Http\Controllers\GistCommentsController;
