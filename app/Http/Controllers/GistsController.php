@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Exceptions\GistNotFoundException;
+use Throwable;
 use App\Gists\GistClient;
+use Illuminate\Http\Request;
 use App\Gists\GistlogRepository;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
-use Throwable;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
+use App\Exceptions\GistNotFoundException;
 
 class GistsController extends Controller
 {
@@ -92,5 +93,14 @@ class GistsController extends Controller
                 'success' => false,
             ], 500);
         }
+    }
+
+    public function starCount(GistClient $client, $gistId)
+    {
+        if (Auth::guest()) {
+            abort(403, 'Unauthorized');
+        }
+
+        return $client->starCount($gistId);
     }
 }
