@@ -125,10 +125,14 @@ class GistClient
 
         $query = 'query { viewer {login gist(name: "'.$gistId.'") {stargazerCount}}}';
 
-        $response = Http::withHeaders([
-            'Authorization' => 'bearer ' . Auth::user()->token,
-            'Content-Type' => 'application/json'
-        ])->post('https://api.github.com/graphql', ["query" => $query]);
+        $response = Cache::remember(self::cacheKey(__METHOD__, $gistId), $this->cacheLength, function () use ($query) {
+            Log::debug('Calling '.__METHOD__);
+
+            return Http::withHeaders([
+                'Authorization' => 'bearer ' . Auth::user()->token,
+                'Content-Type' => 'application/json'
+            ])->post('https://api.github.com/graphql', ["query" => $query]);
+        });
 
         return $response->json();
     }
