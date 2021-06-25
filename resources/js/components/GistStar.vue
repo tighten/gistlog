@@ -69,8 +69,8 @@ export default {
                 url: this.toggleRoute(),
             }).then((response) =>
                 this.isStarred
-                    ? (this.isStarred = false)
-                    : (this.isStarred = true)
+                    ? (this.isStarred = false, this.totalStars--)
+                    : (this.isStarred = true, this.totalStars++)
             );
         },
         toggleRoute() {
