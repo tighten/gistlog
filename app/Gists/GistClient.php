@@ -2,16 +2,16 @@
 
 namespace App\Gists;
 
-use Exception;
-use Throwable;
 use App\CachesGitHubResponses;
-use Github\Client as GitHubClient;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Cache;
 use App\Exceptions\GistNotFoundException;
+use Exception;
+use Github\Client as GitHubClient;
 use Github\HttpClient\Message\ResponseMediator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
+use Throwable;
 
 class GistClient
 {
@@ -85,7 +85,7 @@ class GistClient
         }
 
         if (Auth::check()) {
-            Cache::forget("App\Gists\GistClient::starCount::{$gistId}");
+            Cache::forget(self::class . "::starCount::{$gistId}");
 
             $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_ACCESS_TOKEN);
             $this->github->getHttpClient()->put("https://api.github.com/gists/{$gistId}/star", [], json_encode(['body' => '']), ['Content-Length' => 0]);
@@ -97,7 +97,8 @@ class GistClient
         if (Auth::guest()) {
             return;
         }
-        Cache::forget("App\Gists\GistClient::starCount::{$gistId}");
+        
+        Cache::forget(self::class . "::starCount::{$gistId}");
 
         $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_ACCESS_TOKEN);
         $this->github->getHttpClient()->delete("https://api.github.com/gists/{$gistId}/star");
