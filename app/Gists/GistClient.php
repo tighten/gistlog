@@ -85,6 +85,8 @@ class GistClient
         }
 
         if (Auth::check()) {
+            Cache::forget("App\Gists\GistClient::starCount::{$gistId}");
+
             $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_ACCESS_TOKEN);
             $this->github->getHttpClient()->put("https://api.github.com/gists/{$gistId}/star", [], json_encode(['body' => '']), ['Content-Length' => 0]);
         }
@@ -95,6 +97,7 @@ class GistClient
         if (Auth::guest()) {
             return;
         }
+        Cache::forget("App\Gists\GistClient::starCount::{$gistId}");
 
         $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_ACCESS_TOKEN);
         $this->github->getHttpClient()->delete("https://api.github.com/gists/{$gistId}/star");
@@ -136,6 +139,5 @@ class GistClient
 
             return $response->json();
         });
-
     }
 }
