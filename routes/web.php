@@ -21,6 +21,7 @@ Route::group(['middleware', 'auth' ], function () {
     Route::put('posts/{gistId}/star', [GistsController::class, 'star'])->name('post.star');
     Route::delete('posts/{gistId}/unstar', [GistsController::class, 'unstar'])->name('post.unstar');
     Route::post('comment/{gistId}', [GistCommentsController::class, 'store'])->name('comments.store');
+    Route::get('posts/{gistId}/starcount', [GistsController::class, 'starCount'])->name('post.starcount');
 });
 
 Route::get('{username}/feed.atom', [AuthorsRssController::class, 'show'])->name('authors.rss.show');
