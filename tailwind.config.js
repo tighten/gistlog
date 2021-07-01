@@ -2,6 +2,12 @@ module.exports = {
   prefix: '',
   important: false,
   separator: ':',
+  purge: [
+    './resources/**/*.blade.php',
+    './resources/**/*.less',
+    './resources/**/*.js',
+    './resources/**/*.vue'
+  ],
   theme: {
     backgroundColor: (theme) => theme('colors'),
     borderColor: (theme) => ({
