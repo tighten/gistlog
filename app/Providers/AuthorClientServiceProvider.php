@@ -12,7 +12,7 @@ class AuthorClientServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(AuthorClient::class, function ($app) {
-            $githubClient = new GitHubClient;
+            $githubClient = new GitHubClient();
 
             // Again, we're only making public API requests, so we don't *need* to
             // authenticate, but doing so significantly increases the rate limit.

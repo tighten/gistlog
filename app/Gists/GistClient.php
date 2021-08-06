@@ -40,7 +40,7 @@ class GistClient
     public function getGist($gistId)
     {
         return Cache::remember(self::cacheKey(__METHOD__, $gistId), $this->cacheLength, function () use ($gistId) {
-            Log::debug('Calling '.__METHOD__);
+            Log::debug('Calling ' . __METHOD__);
 
             try {
                 return $this->github->api('gists')->show($gistId);
@@ -58,7 +58,7 @@ class GistClient
     {
         // No cache here so we can have just a single cache layer (post-transformation) to reset when needed
         // return Cache::remember(self::cacheKey(__METHOD__, $gistId), $this->cacheLength, function () use ($gistId) {
-        Log::debug('Calling '.__METHOD__);
+        Log::debug('Calling ' . __METHOD__);
 
         return ResponseMediator::getContent(
             $this->github->getHttpClient()->get("gists/{$gistId}/comments")
@@ -97,7 +97,7 @@ class GistClient
         if (Auth::guest()) {
             return;
         }
-        
+
         Cache::forget(self::class . "::starCount::{$gistId}");
 
         $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_ACCESS_TOKEN);
@@ -128,15 +128,15 @@ class GistClient
             return false;
         }
 
-        $query = 'query { viewer {login gist(name: "'.$gistId.'") {stargazerCount}}}';
+        $query = 'query { viewer {login gist(name: "' . $gistId . '") {stargazerCount}}}';
 
         return Cache::remember(self::cacheKey(__METHOD__, $gistId), $this->cacheLength, function () use ($query) {
-            Log::debug('Calling '.__METHOD__);
+            Log::debug('Calling ' . __METHOD__);
 
             $response = Http::withHeaders([
                 'Authorization' => 'bearer ' . Auth::user()->token,
                 'Content-Type' => 'application/json'
-            ])->post('https://api.github.com/graphql', ["query" => $query]);
+            ])->post('https://api.github.com/graphql', ['query' => $query]);
 
             return $response->json();
         });

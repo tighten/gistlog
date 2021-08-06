@@ -29,7 +29,7 @@ class Comment
      */
     public static function fromGitHub($gistId, $githubComment)
     {
-        $comment = new self;
+        $comment = new self();
 
         $comment->gistId = $gistId;
         $comment->body = $githubComment['body'];

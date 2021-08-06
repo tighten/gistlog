@@ -37,7 +37,7 @@ class GistConfig implements ArrayAccess
      */
     public static function fromGitHub($githubGist): self
     {
-        $config = new self;
+        $config = new self();
         $config->settings = $config->defaultSettings;
 
         if (! array_key_exists('gistlog.yml', $githubGist['files'])) {

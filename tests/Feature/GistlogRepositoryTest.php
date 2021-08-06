@@ -10,7 +10,7 @@ class GistlogRepositoryTest extends BrowserKitTestCase
     /** @test */
     public function it_can_retrieve_a_gist_by_id()
     {
-        $gistClient = new FixtureGistClient;
+        $gistClient = new FixtureGistClient();
         $gistRepository = new GistlogRepository($gistClient);
 
         $gist = $gistRepository->findById(self::FIXTURE_GIST_ID);
@@ -21,9 +21,9 @@ class GistlogRepositoryTest extends BrowserKitTestCase
     /** @test */
     public function it_can_retrieve_gists_by_url()
     {
-        $url = 'https://gist.github.com/adamwathan/'.self::FIXTURE_GIST_ID;
+        $url = 'https://gist.github.com/adamwathan/' . self::FIXTURE_GIST_ID;
 
-        $gistClient = new FixtureGistClient;
+        $gistClient = new FixtureGistClient();
         $gistRepository = new GistlogRepository($gistClient);
 
         $gist = $gistRepository->findByUrl($url);
@@ -34,9 +34,9 @@ class GistlogRepositoryTest extends BrowserKitTestCase
     /** @test */
     public function it_can_retrieve_gists_by_url_with_a_trailing_slash()
     {
-        $url = 'https://gist.github.com/adamwathan/'.self::FIXTURE_GIST_ID.'/';
+        $url = 'https://gist.github.com/adamwathan/' . self::FIXTURE_GIST_ID . '/';
 
-        $gistClient = new FixtureGistClient;
+        $gistClient = new FixtureGistClient();
         $gistRepository = new GistlogRepository($gistClient);
 
         $gist = $gistRepository->findByUrl($url);
@@ -55,11 +55,11 @@ class FixtureGistClient extends GistClient
 
     public function getGist($gistId)
     {
-        return $this->loadFixture($gistId.'.json');
+        return $this->loadFixture($gistId . '.json');
     }
 
     public function getGistComments($gistId)
     {
-        return $this->loadFixture($gistId.'/comments.json');
+        return $this->loadFixture($gistId . '/comments.json');
     }
 }
