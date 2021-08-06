@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Throwable;
+use App\Exceptions\GistNotFoundException;
 use App\Gists\GistClient;
-use Illuminate\Http\Request;
 use App\Gists\GistlogRepository;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
-use App\Exceptions\GistNotFoundException;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\View;
+use Throwable;
 
 class GistsController extends Controller
 {
