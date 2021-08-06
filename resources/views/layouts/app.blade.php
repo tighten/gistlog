@@ -20,7 +20,7 @@
     <meta name="csrf-token" value="{{ csrf_token() }}">
     <title>{{ isset($pageTitle) ? $pageTitle . ' | ' : '' }} GistLog - Your dev blog delivered</title>
 
-    @yield ('meta')
+    @yield('meta')
 
     @if (isset($gistlog) && $gistlog->isSecret())
         <meta name="robots" content="noindex, nofollow">
@@ -34,13 +34,6 @@
     @yield('styles')
 
     @routes()
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body class="font-sans border-t-8 border-blue-darker bg-grey-lightest">
     <div class="flex flex-col h-screen">
@@ -49,7 +42,7 @@
                 <a
                     href="/"
                     title="GistLog by Tighten"
-                    class="w-full flex items-center text-blue-darker no-underline"
+                    class="flex items-center w-full no-underline text-blue-darker"
                 >
                     <img
                         width="50px"
@@ -66,16 +59,16 @@
             @yield('content')
         </div>
 
-        <div class="flex flex-col lg:flex-row bg-grey-darkest justify-center items-center text-xs md:text-sm text-white mt-4 py-4">
+        <div class="flex flex-col items-center justify-center py-4 mt-4 text-xs text-white lg:flex-row bg-grey-darkest md:text-sm">
             <div>
-                <a href="/" class="text-blue-lighter no-underline hover:text-white">GistLog</a>
+                <a href="/" class="no-underline text-blue-lighter hover:text-white">GistLog</a>
                 &copy; {{ Carbon\Carbon::now()->format('Y') }}
                 <span class="hidden lg:inline-block">|&nbsp;</span>
             </div>
 
             <div>
                 Brought to you by the lovely humans at
-                <a href="https://tighten.co" class="text-blue-lighter no-underline hover:text-white">Tighten</a>
+                <a href="https://tighten.co" class="no-underline text-blue-lighter hover:text-white">Tighten</a>
             </div>
         </div>
     </div>

@@ -1,6 +1,8 @@
 <?php
 
-class BrowserKitTestCase extends Laravel\BrowserKitTesting\TestCase
+use Laravel\BrowserKitTesting\TestCase as BaseTestCase;
+
+class BrowserKitTestCase extends BaseTestCase
 {
     protected $baseUrl = 'http://localhost';
 
@@ -11,10 +13,5 @@ class BrowserKitTestCase extends Laravel\BrowserKitTesting\TestCase
         $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
 
         return $app;
-    }
-
-    protected function setUp(): void
-    {
-        parent::setUp();
     }
 }

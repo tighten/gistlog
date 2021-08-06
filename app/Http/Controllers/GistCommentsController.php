@@ -35,7 +35,8 @@ class GistCommentsController extends Controller
 
     public function store(Request $request, GistClient $client, $gistId)
     {
-        $this->validate($request, ['comment' => 'required']);
+        $request->validate(['comment' => 'required']);
+
         $client->postGistComment($gistId, $request->get('comment'));
 
         Cache::forget("GistCommentsWithHtml::{$gistId}");

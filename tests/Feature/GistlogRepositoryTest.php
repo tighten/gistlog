@@ -53,12 +53,12 @@ class FixtureGistClient extends GistClient
     {
     }
 
-    public function getGist($gistId)
+    public function getGist($gistId): array
     {
         return $this->loadFixture($gistId . '.json');
     }
 
-    public function getGistComments($gistId)
+    public function getGistComments($gistId): array
     {
         return $this->loadFixture($gistId . '/comments.json');
     }

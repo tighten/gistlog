@@ -27,17 +27,15 @@ class GistClient
         $this->github = $github;
     }
 
-    public function getGitHubClient()
+    public function getGitHubClient(): GitHubClient
     {
         return $this->github;
     }
 
     /**
-     * @param $gistId
-     * @return array
      * @throws GistNotFoundException
      */
-    public function getGist($gistId)
+    public function getGist($gistId): array
     {
         return Cache::remember(self::cacheKey(__METHOD__, $gistId), $this->cacheLength, function () use ($gistId) {
             Log::debug('Calling ' . __METHOD__);
@@ -50,11 +48,7 @@ class GistClient
         });
     }
 
-    /**
-     * @param $gistId
-     * @return array
-     */
-    public function getGistComments($gistId)
+    public function getGistComments($gistId): array
     {
         // No cache here so we can have just a single cache layer (post-transformation) to reset when needed
         // return Cache::remember(self::cacheKey(__METHOD__, $gistId), $this->cacheLength, function () use ($gistId) {
@@ -65,12 +59,7 @@ class GistClient
         );
     }
 
-    /**
-     * @param $gistId
-     * @param $comment
-     * @return array
-     */
-    public function postGistComment($gistId, $comment)
+    public function postGistComment($gistId, string $comment): array
     {
         $this->github->authenticate(Auth::user()->token, GitHubClient::AUTH_ACCESS_TOKEN);
         $response = $this->github->getHttpClient()->post("gists/{$gistId}/comments", [], json_encode(['body' => $comment]));
@@ -104,7 +93,7 @@ class GistClient
         $this->github->getHttpClient()->delete("https://api.github.com/gists/{$gistId}/star");
     }
 
-    public function isStarredForUser($gistId)
+    public function isStarredForUser($gistId): bool
     {
         if (Auth::guest()) {
             return false;
@@ -135,7 +124,7 @@ class GistClient
 
             $response = Http::withHeaders([
                 'Authorization' => 'bearer ' . Auth::user()->token,
-                'Content-Type' => 'application/json'
+                'Content-Type' => 'application/json',
             ])->post('https://api.github.com/graphql', ['query' => $query]);
 
             return $response->json();

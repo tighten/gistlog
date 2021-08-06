@@ -14,6 +14,11 @@ class GistConfig implements ArrayAccess
     /**
      * @var array
      */
+    public $settings = [];
+
+    /**
+     * @var array
+     */
     private $defaultSettings = [
         'published' => false,
         'published_on' => null,
@@ -24,18 +29,9 @@ class GistConfig implements ArrayAccess
     /**
      * @var array
      */
-    public $settings = [];
-
-    /**
-     * @var array
-     */
     private $dates = ['published_on'];
 
-    /**
-     * @param array|ArrayAccess $githubGist
-     * @return GistConfig
-     */
-    public static function fromGitHub($githubGist): self
+    public static function fromGitHub(array|ArrayAccess $githubGist): self
     {
         $config = new self();
         $config->settings = $config->defaultSettings;
@@ -78,36 +74,21 @@ class GistConfig implements ArrayAccess
         return $config;
     }
 
-    /**
-     * @param mixed $setting
-     * @return bool
-     */
-    public function offsetExists($setting)
+    public function offsetExists($setting): bool
     {
         return isset($this->settings[$setting]);
     }
 
-    /**
-     * @param mixed $setting
-     * @return mixed
-     */
     public function offsetGet($setting)
     {
         return $this->settings[$setting];
     }
 
-    /**
-     * @param mixed $setting
-     * @param mixed $value
-     */
     public function offsetSet($setting, $value)
     {
         Arr::set($this->settings, $setting, $value);
     }
 
-    /**
-     * @param mixed $setting
-     */
     public function offsetUnset($setting)
     {
         Arr::set($this->settings, $setting, null);

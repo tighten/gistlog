@@ -4,29 +4,20 @@ namespace App\Gists;
 
 use App\Authors\Author;
 use App\ContentParser\ContentParserFacade as ContentParser;
-use Cache;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Cache;
 
 class Gistlog
 {
     public $id;
-
     public $title;
-
     public $content;
-
     public $language;
-
     public $author;
-
     public $avatarUrl;
-
     public $link;
-
     public $config;
-
     public $files;
-
     public $commentCount;
 
     private $public;
@@ -45,7 +36,7 @@ class Gistlog
      * @param array|ArrayAccess $githubGist
      * @return Gistlog
      */
-    public static function fromGitHub($githubGist)
+    public static function fromGitHub($githubGist): Gistlog
     {
         $gistlog = new self();
 
@@ -77,10 +68,7 @@ class Gistlog
         return $gistlog;
     }
 
-    /**
-     * @return string
-     */
-    public function renderHtml()
+    public function renderHtml(): string
     {
         if ($this->language === 'Markdown') {
             return $this->renderMarkdown();
@@ -89,18 +77,12 @@ class Gistlog
         return '<pre><code>' . htmlspecialchars($this->content) . "\n</code></pre>";
     }
 
-    /**
-     * @return bool
-     */
-    public function hasPublishedOnDate()
+    public function hasPublishedOnDate(): bool
     {
         return ! is_null($this->config['published_on']);
     }
 
-    /**
-     * @return bool
-     */
-    public function isPublic()
+    public function isPublic(): bool
     {
         return $this->public;
     }
