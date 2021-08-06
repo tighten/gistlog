@@ -31,7 +31,7 @@ class GistConfig implements ArrayAccess
      */
     private $dates = ['published_on'];
 
-    public static function fromGitHub(array|ArrayAccess $githubGist): self
+    public static function fromGitHub($githubGist): self
     {
         $config = new self();
         $config->settings = $config->defaultSettings;
