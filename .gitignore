@@ -2,3 +2,4 @@
 /vendor
 .env
 .phpunit.result.cache
+.php_cs.cache
