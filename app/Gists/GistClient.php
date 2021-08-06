@@ -55,7 +55,7 @@ class GistClient
         Log::debug('Calling ' . __METHOD__);
 
         return ResponseMediator::getContent(
-            $this->github->getHttpClient()->get("gists/{$gistId}/comments")
+            $this->github->getHttpClient()->get("/gists/{$gistId}/comments")
         );
     }
 
