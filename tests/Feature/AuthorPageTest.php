@@ -10,26 +10,27 @@ class AuthorPageTest extends TestCase
 {
 
     /** @test */
-    public function a_user_can_visit_the_author_page() {
+    public function a_user_can_visit_the_author_page()
+    {
         $this->withoutExceptionHandling();
         $gist1 = $this->createGist([
             'id' => '234234',
-            'title'=>'My title',
-            'body'=>'my body',
+            'title' => 'My title',
+            'body' => 'my body',
         ]);
         $gist2 = $this->createGist([
             'id' => '234234',
-            'title'=>'My Second title',
-            'body'=>'my second body',
+            'title' => 'My Second title',
+            'body' => 'my second body',
         ]);
 
         $author = $this->createAuthor([
-            'id'=>'234234',
-            'avatarUrl'=>'https://avatars.githubusercontent.com/u/151829?v=4',
-            'link'=>'https://github.com/mattstauffer',
-            'name'=>'Matt Stauffer',
-            'username'=>'@mattstauffer',
-            'gists'=>[$gist1, $gist2]
+            'id' => '234234',
+            'avatarUrl' => 'https://avatars.githubusercontent.com/u/151829?v=4',
+            'link' => 'https://github.com/mattstauffer',
+            'name' => 'Matt Stauffer',
+            'username' => '@mattstauffer',
+            'gists' => [$gist1, $gist2]
         ]);
 
         $this->instance(
@@ -46,7 +47,7 @@ class AuthorPageTest extends TestCase
 
     public function createAuthor($authorArray)
     {
-        $author = new Author;
+        $author = new Author();
         $author->id = $authorArray['id'];
         $author->avatarUrl = $authorArray['avatarUrl'];
         $author->name = $authorArray['name'];
@@ -57,12 +58,12 @@ class AuthorPageTest extends TestCase
 
     public function createGist($gistArray)
     {
-        $gist = new Gistlog;
+        $gist = new Gistlog();
         $gist->id = $gistArray['id'];
         $gist->title = $gistArray['title'];
         $gist->createdAt = Carbon::parse('-1 week');
         $gist->body = $gistArray['body'];
-        $gist->config = ['preview'=>null];
+        $gist->config = ['preview' => null];
         return $gist;
     }
 }
