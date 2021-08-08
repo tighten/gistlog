@@ -33,7 +33,7 @@ class Author
      */
     public static function fromGitHub($gitHubUser, $gitHubGists = [])
     {
-        $author = new self;
+        $author = new self();
 
         $author->id = $gitHubUser['id'];
         $author->avatarUrl = $gitHubUser['avatar_url'];
@@ -50,11 +50,11 @@ class Author
 
     public static function getAnonymous()
     {
-        $author = new self;
+        $author = new self();
 
         $author->id = 0;
         $author->avatarUrl = self::ANONYMOUS_AVATAR_URL;
-        $author->link = 'https://github.com/'.self::ANONYMOUS_USERNAME;
+        $author->link = 'https://github.com/' . self::ANONYMOUS_USERNAME;
         $author->name = 'anonymous';
         $author->username = self::ANONYMOUS_USERNAME;
         $author->gists = collect([]);

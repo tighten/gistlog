@@ -4,29 +4,20 @@ namespace App\Gists;
 
 use App\Authors\Author;
 use App\ContentParser\ContentParserFacade as ContentParser;
-use Cache;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Cache;
 
 class Gistlog
 {
     public $id;
-
     public $title;
-
     public $content;
-
     public $language;
-
     public $author;
-
     public $avatarUrl;
-
     public $link;
-
     public $config;
-
     public $files;
-
     public $commentCount;
 
     private $public;
@@ -45,9 +36,9 @@ class Gistlog
      * @param array|ArrayAccess $githubGist
      * @return Gistlog
      */
-    public static function fromGitHub($githubGist)
+    public static function fromGitHub($githubGist): Gistlog
     {
-        $gistlog = new self;
+        $gistlog = new self();
 
         $files = File::multipleFromGitHub($githubGist['files']);
         $postFile = $files->getPostFile();
@@ -77,30 +68,21 @@ class Gistlog
         return $gistlog;
     }
 
-    /**
-     * @return string
-     */
-    public function renderHtml()
+    public function renderHtml(): string
     {
         if ($this->language === 'Markdown') {
             return $this->renderMarkdown();
         }
 
-        return '<pre><code>'.htmlspecialchars($this->content)."\n</code></pre>";
+        return '<pre><code>' . htmlspecialchars($this->content) . "\n</code></pre>";
     }
 
-    /**
-     * @return bool
-     */
-    public function hasPublishedOnDate()
+    public function hasPublishedOnDate(): bool
     {
         return ! is_null($this->config['published_on']);
     }
 
-    /**
-     * @return bool
-     */
-    public function isPublic()
+    public function isPublic(): bool
     {
         return $this->public;
     }
@@ -156,14 +138,14 @@ class Gistlog
 
     private function renderMarkdown()
     {
-        if ($this->updatedAt == Cache::get('markdown.updated_at.'.$this->id)) {
-            return Cache::get('markdown.'.$this->id);
+        if ($this->updatedAt == Cache::get('markdown.updated_at.' . $this->id)) {
+            return Cache::get('markdown.' . $this->id);
         }
 
         $markdown = ContentParser::transform($this->content);
 
-        Cache::forever('markdown.'.$this->id, $markdown);
-        Cache::forever('markdown.updated_at.'.$this->id, $this->updatedAt);
+        Cache::forever('markdown.' . $this->id, $markdown);
+        Cache::forever('markdown.updated_at.' . $this->id, $this->updatedAt);
 
         return $markdown;
     }

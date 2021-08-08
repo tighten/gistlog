@@ -19,10 +19,7 @@ class FileCollection extends Collection
         }, $this->items);
     }
 
-    /**
-     * @return File
-     */
-    public function getPostFile()
+    public function getPostFile(): File
     {
         $post = $this->first(function ($file, $key) {
             return $file->language == 'Markdown';
@@ -35,10 +32,7 @@ class FileCollection extends Collection
         return $this->first();
     }
 
-    /**
-     * @return static
-     */
-    public function getAdditionalFiles()
+    public function getAdditionalFiles(): self
     {
         $ignoreFiles = ['gistlog.yml', $this->getPostFile()->name];
 

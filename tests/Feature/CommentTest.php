@@ -27,7 +27,7 @@ class CommentTest extends BrowserKitTestCase
         $comment = Comment::fromGitHub('002ed429c7c21ab89300', $githubComment);
 
         $this->assertEquals(
-            'https://gist.github.com/002ed429c7c21ab89300#gistcomment-'.$comment->id,
+            'https://gist.github.com/002ed429c7c21ab89300#gistcomment-' . $comment->id,
             $comment->link()
         );
     }

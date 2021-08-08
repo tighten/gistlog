@@ -16,7 +16,7 @@ class GitHubMarkdownTransformer implements Transformer
 
     public function transform($content)
     {
-        Log::debug('Calling '.__METHOD__);
+        Log::debug('Calling ' . __METHOD__);
 
         return $this->github->api('markdown')->render($content, 'gfm');
     }

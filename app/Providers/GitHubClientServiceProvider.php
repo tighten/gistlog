@@ -10,7 +10,7 @@ class GitHubClientServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(Client::class, function ($app) {
-            $githubClient = new Client;
+            $githubClient = new Client();
 
             // We're only making public API requests, so we don't *need* to
             // authenticate, but doing so significantly increases the rate

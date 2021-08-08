@@ -16,7 +16,7 @@ class ContentParserServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(ContentParser::class, function ($app) {
-            $parser = new ContentParser;
+            $parser = new ContentParser();
 
             $parser->push($app[GitHubMarkdownTransformer::class]);
 

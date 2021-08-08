@@ -8,7 +8,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "laravel/framework": "^8.50",
+        "laravel/framework": "^8.53",
         "laravel/socialite": "^5.2",
         "michelf/php-markdown": "~1.4",
         "knplabs/github-api": "^3.0",
@@ -29,7 +29,8 @@
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
         "fakerphp/faker": "^1.9.1",
-        "facade/ignition": "^2.5"
+        "facade/ignition": "^2.5",
+        "tightenco/duster": "^0.3.0"
     },
     "autoload": {
         "psr-4": {

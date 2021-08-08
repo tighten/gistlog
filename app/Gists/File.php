@@ -24,7 +24,7 @@ class File implements Arrayable
      */
     public static function fromGitHub($rawFile)
     {
-        $file = new self;
+        $file = new self();
 
         $file->name = $rawFile['filename'];
         $file->type = $rawFile['type'];
