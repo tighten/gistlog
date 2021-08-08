@@ -43,7 +43,10 @@
         "classmap": [
             "tests/TestCase.php",
             "tests/GistFixtureHelpers.php",
-            "tests/BrowserKitTestCase.php"
+            "tests/BrowserKitTestCase.php",
+            "tests/FixtureGistClient.php",
+            "tests/SpacePadTransformer.php",
+            "tests/TrimTransformer.php"
         ]
     },
     "scripts": {

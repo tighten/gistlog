@@ -7,9 +7,9 @@ use Illuminate\Support\Arr;
 
 class Author
 {
-    const ANONYMOUS_USERNAME = 'anonymous';
+    private const ANONYMOUS_USERNAME = 'anonymous';
 
-    const ANONYMOUS_AVATAR_URL = 'https://avatars3.githubusercontent.com/u/148100?v=3&s=400';
+    private const ANONYMOUS_AVATAR_URL = 'https://avatars3.githubusercontent.com/u/148100?v=3&s=400';
 
     public $id;
 

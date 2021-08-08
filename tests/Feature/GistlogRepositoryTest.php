@@ -1,11 +1,11 @@
 <?php
 
-use App\Gists\GistClient;
 use App\Gists\GistlogRepository;
+use FixtureGistClient;
 
 class GistlogRepositoryTest extends BrowserKitTestCase
 {
-    const FIXTURE_GIST_ID = '002ed429c7c21ab89300';
+    private const FIXTURE_GIST_ID = '002ed429c7c21ab89300';
 
     /** @test */
     public function it_can_retrieve_a_gist_by_id()
@@ -42,24 +42,5 @@ class GistlogRepositoryTest extends BrowserKitTestCase
         $gist = $gistRepository->findByUrl($url);
 
         $this->assertEquals(self::FIXTURE_GIST_ID, $gist->id);
-    }
-}
-
-class FixtureGistClient extends GistClient
-{
-    use GistFixtureHelpers;
-
-    public function __construct()
-    {
-    }
-
-    public function getGist($gistId): array
-    {
-        return $this->loadFixture($gistId . '.json');
-    }
-
-    public function getGistComments($gistId): array
-    {
-        return $this->loadFixture($gistId . '/comments.json');
     }
 }
