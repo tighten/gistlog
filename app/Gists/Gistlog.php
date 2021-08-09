@@ -4,6 +4,7 @@ namespace App\Gists;
 
 use App\Authors\Author;
 use App\ContentParser\ContentParserFacade as ContentParser;
+use App\Gists\File;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
 

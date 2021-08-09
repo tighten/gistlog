@@ -3,7 +3,6 @@
     <file>app</file>
     <file>config</file>
     <file>database</file>
-    <file>public</file>
     <file>resources</file>
     <file>routes</file>
     <file>tests</file>

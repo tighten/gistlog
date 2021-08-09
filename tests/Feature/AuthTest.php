@@ -10,7 +10,7 @@ class AuthTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    function guests_cannot_do_super_secret_stuff()
+    public function guests_cannot_do_super_secret_stuff()
     {
         $response = $this->get(route('post.starcount', ['12345']));
 

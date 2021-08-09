@@ -5,7 +5,7 @@ use App\Gists\GistlogRepository;
 
 class GistlogRepositoryTest extends BrowserKitTestCase
 {
-    const FIXTURE_GIST_ID = '002ed429c7c21ab89300';
+    private const FIXTURE_GIST_ID = '002ed429c7c21ab89300';
 
     /** @test */
     public function it_can_retrieve_a_gist_by_id()
