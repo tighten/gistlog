@@ -1,7 +1,6 @@
 <?php
 
 use App\Gists\GistlogRepository;
-use FixtureGistClient;
 
 class GistlogRepositoryTest extends BrowserKitTestCase
 {

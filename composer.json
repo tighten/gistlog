@@ -30,14 +30,14 @@
         "nunomaduro/collision": "^5.0",
         "facade/ignition": "^2.5",
         "tightenco/duster": "^0.3.0",
-        "fakerphp/faker": "^1.15"
+        "fakerphp/faker": "^1.9.1"
     },
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "Tests\\": "tests/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "Tests\\": "tests/"
         }
     },
     "autoload-dev": {

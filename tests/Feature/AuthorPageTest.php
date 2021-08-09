@@ -4,7 +4,9 @@ use App\Authors\Author;
 use App\Authors\AuthorRepository;
 use App\Gists\Gistlog;
 use Carbon\Carbon;
+use Faker\Factory as FakerFactory;
 use Mockery\MockInterface;
+use Tests\TestCase;
 
 class AuthorPageTest extends TestCase
 {
@@ -13,7 +15,8 @@ class AuthorPageTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        $this->faker = Faker\Factory::create();
+
+        $this->faker = FakerFactory::create();
     }
 
     /** @test */
@@ -47,22 +50,26 @@ class AuthorPageTest extends TestCase
     public function createAuthor($authorArray = [])
     {
         $author = new Author();
+
         $author->id = $authorArray['id'] ?? $this->faker->numberBetween(10000, 90000);
         $author->avatarUrl = $authorArray['avatarUrl'] ?? 'https://avatars.githubusercontent.com/u/151829?v=4';
         $author->name = $authorArray['name'] ?? $this->faker->name();
         $author->username = $authorArray['username'] ?? $this->faker->username();
         $author->gists = collect($authorArray['gists']) ?? collect([]);
+
         return $author;
     }
 
     public function createGist($gistArray = [])
     {
         $gist = new Gistlog();
+
         $gist->id = $gistArray['id'] ?? $this->faker->numberBetween(10000, 90000);
         $gist->title = $gistArray['title'] ?? $this->faker->sentence();
         $gist->createdAt = Carbon::parse('-1 week');
         $gist->body = $gistArray['body'] ?? $this->faker->paragraph();
         $gist->config = ['preview' => null];
+
         return $gist;
     }
 }

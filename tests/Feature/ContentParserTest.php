@@ -1,8 +1,6 @@
 <?php
 
 use App\ContentParser\ContentParser;
-use SpacePadTransformer;
-use TrimTransformer;
 
 class ContentParserTest extends BrowserKitTestCase
 {
