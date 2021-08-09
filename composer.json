@@ -28,9 +28,9 @@
         "laravel/browser-kit-testing": "^6.2",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
-        "fakerphp/faker": "^1.9.1",
         "facade/ignition": "^2.5",
-        "tightenco/duster": "^0.3.0"
+        "tightenco/duster": "^0.3.0",
+        "fakerphp/faker": "^1.15"
     },
     "autoload": {
         "psr-4": {

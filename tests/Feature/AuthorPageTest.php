@@ -8,28 +8,26 @@ use Mockery\MockInterface;
 
 class AuthorPageTest extends TestCase
 {
+    private $faker;
+
+    public function setUp(): void
+    {
+        parent::setUp();
+        $this->faker = Faker\Factory::create();
+    }
 
     /** @test */
     public function a_user_can_visit_the_author_page()
     {
-        $this->withoutExceptionHandling();
         $gist1 = $this->createGist([
-            'id' => '234234',
             'title' => 'My title',
-            'body' => 'my body',
         ]);
         $gist2 = $this->createGist([
-            'id' => '234234',
             'title' => 'My Second title',
-            'body' => 'my second body',
         ]);
 
         $author = $this->createAuthor([
-            'id' => '234234',
-            'avatarUrl' => 'https://avatars.githubusercontent.com/u/151829?v=4',
-            'link' => 'https://github.com/mattstauffer',
             'name' => 'Matt Stauffer',
-            'username' => '@mattstauffer',
             'gists' => [$gist1, $gist2]
         ]);
 
@@ -41,28 +39,29 @@ class AuthorPageTest extends TestCase
         );
         $response = $this->get('/mattstauffer');
         $response->assertOk();
+        $response->assertSee('Matt Stauffer');
         $response->assertSee('My title');
         $response->assertSee('My Second title');
     }
 
-    public function createAuthor($authorArray)
+    public function createAuthor($authorArray = [])
     {
         $author = new Author();
-        $author->id = $authorArray['id'];
-        $author->avatarUrl = $authorArray['avatarUrl'];
-        $author->name = $authorArray['name'];
-        $author->username = $authorArray['username'];
-        $author->gists = collect($authorArray['gists']);
+        $author->id = $authorArray['id'] ?? $this->faker->numberBetween(10000, 90000);
+        $author->avatarUrl = $authorArray['avatarUrl'] ?? 'https://avatars.githubusercontent.com/u/151829?v=4';
+        $author->name = $authorArray['name'] ?? $this->faker->name();
+        $author->username = $authorArray['username'] ?? $this->faker->username();
+        $author->gists = collect($authorArray['gists']) ?? collect([]);
         return $author;
     }
 
-    public function createGist($gistArray)
+    public function createGist($gistArray = [])
     {
         $gist = new Gistlog();
-        $gist->id = $gistArray['id'];
-        $gist->title = $gistArray['title'];
+        $gist->id = $gistArray['id'] ?? $this->faker->numberBetween(10000, 90000);
+        $gist->title = $gistArray['title'] ?? $this->faker->sentence();
         $gist->createdAt = Carbon::parse('-1 week');
-        $gist->body = $gistArray['body'];
+        $gist->body = $gistArray['body'] ?? $this->faker->paragraph();
         $gist->config = ['preview' => null];
         return $gist;
     }
