@@ -97,10 +97,6 @@ class GistsController extends Controller
 
     public function starCount(GistClient $client, $gistId)
     {
-        if (Auth::guest()) {
-            abort(403, 'Unauthorized');
-        }
-
         return $client->starCount($gistId);
     }
 }
