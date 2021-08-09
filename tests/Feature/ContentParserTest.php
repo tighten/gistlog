@@ -1,7 +1,8 @@
 <?php
 
 use App\ContentParser\ContentParser;
-use App\ContentParser\Transformer;
+use SpacePadTransformer;
+use TrimTransformer;
 
 class ContentParserTest extends BrowserKitTestCase
 {
@@ -21,21 +22,5 @@ class ContentParserTest extends BrowserKitTestCase
         $parser->push(new TrimTransformer());
 
         $this->assertEquals('trimmed', $parser->transform('trimmed'));
-    }
-}
-
-class TrimTransformer implements Transformer
-{
-    public function transform($content)
-    {
-        return trim($content);
-    }
-}
-
-class SpacePadTransformer implements Transformer
-{
-    public function transform($content)
-    {
-        return " {$content} ";
     }
 }

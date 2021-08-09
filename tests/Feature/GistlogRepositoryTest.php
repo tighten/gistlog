@@ -1,7 +1,7 @@
 <?php
 
-use App\Gists\GistClient;
 use App\Gists\GistlogRepository;
+use FixtureGistClient;
 
 class GistlogRepositoryTest extends BrowserKitTestCase
 {
@@ -42,24 +42,5 @@ class GistlogRepositoryTest extends BrowserKitTestCase
         $gist = $gistRepository->findByUrl($url);
 
         $this->assertEquals(self::FIXTURE_GIST_ID, $gist->id);
-    }
-}
-
-class FixtureGistClient extends GistClient
-{
-    use GistFixtureHelpers;
-
-    public function __construct()
-    {
-    }
-
-    public function getGist($gistId): array
-    {
-        return $this->loadFixture($gistId . '.json');
-    }
-
-    public function getGistComments($gistId): array
-    {
-        return $this->loadFixture($gistId . '/comments.json');
     }
 }
