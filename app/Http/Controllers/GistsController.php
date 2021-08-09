@@ -7,7 +7,6 @@ use App\Gists\GistClient;
 use App\Gists\GistlogRepository;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
@@ -97,10 +96,6 @@ class GistsController extends Controller
 
     public function starCount(GistClient $client, $gistId)
     {
-        if (Auth::guest()) {
-            abort(403, 'Unauthorized');
-        }
-
         return $client->starCount($gistId);
     }
 }

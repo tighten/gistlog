@@ -2,6 +2,7 @@
 
 namespace App\Gists;
 
+use App\Gists\File;
 use Illuminate\Support\Collection;
 
 class FileCollection extends Collection
