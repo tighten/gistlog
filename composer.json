@@ -8,7 +8,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "laravel/framework": "^8.54",
+        "laravel/framework": "^8.55",
         "laravel/socialite": "^5.2",
         "michelf/php-markdown": "~1.4",
         "knplabs/github-api": "^3.0",
