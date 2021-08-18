@@ -8,7 +8,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "laravel/framework": "^8.54",
+        "laravel/framework": "^8.55",
         "laravel/socialite": "^5.2",
         "michelf/php-markdown": "~1.4",
         "knplabs/github-api": "^3.0",
@@ -16,7 +16,7 @@
         "php": "^7.4|^8.0",
         "laravel/tinker": "^2.5",
         "fideloper/proxy": "^4.4",
-        "laravel/ui": "^3.2",
+        "laravel/ui": "^3.3",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "http-interop/http-factory-guzzle": "^1.0",
