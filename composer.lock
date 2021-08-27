@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66bd30192a2c3f40e919f16a820e3529",
+    "content-hash": "0f0985ac3dc98cddc2de4c8667d3b336",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1420,16 +1420,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.56.0",
+            "version": "v8.57.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "d700f336dc672dcbfe46db05d4e5fe9347b3a5b6"
+                "reference": "6de01746680d7bc7e239b20ec5cdfe70ce586235"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/d700f336dc672dcbfe46db05d4e5fe9347b3a5b6",
-                "reference": "d700f336dc672dcbfe46db05d4e5fe9347b3a5b6",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/6de01746680d7bc7e239b20ec5cdfe70ce586235",
+                "reference": "6de01746680d7bc7e239b20ec5cdfe70ce586235",
                 "shasum": ""
             },
             "require": {
@@ -1584,7 +1584,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-08-24T13:46:30+00:00"
+            "time": "2021-08-27T13:34:11+00:00"
         },
         {
             "name": "laravel/socialite",
@@ -6470,16 +6470,16 @@
         },
         {
             "name": "tightenco/ziggy",
-            "version": "v1.3.5",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tighten/ziggy.git",
-                "reference": "05411b50ffb9d1fa8a0f86cf71c72702c2baf5ab"
+                "reference": "9e709f5f9abbe3045d8034f6420e62efed1723ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tighten/ziggy/zipball/05411b50ffb9d1fa8a0f86cf71c72702c2baf5ab",
-                "reference": "05411b50ffb9d1fa8a0f86cf71c72702c2baf5ab",
+                "url": "https://api.github.com/repos/tighten/ziggy/zipball/9e709f5f9abbe3045d8034f6420e62efed1723ed",
+                "reference": "9e709f5f9abbe3045d8034f6420e62efed1723ed",
                 "shasum": ""
             },
             "require": {
@@ -6530,9 +6530,9 @@
             ],
             "support": {
                 "issues": "https://github.com/tighten/ziggy/issues",
-                "source": "https://github.com/tighten/ziggy/tree/v1.3.5"
+                "source": "https://github.com/tighten/ziggy/tree/v1.4.0"
             },
-            "time": "2021-07-20T15:07:27+00:00"
+            "time": "2021-08-25T20:24:20+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
@@ -7519,16 +7519,16 @@
         },
         {
             "name": "nunomaduro/collision",
-            "version": "v5.8.0",
+            "version": "v5.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/collision.git",
-                "reference": "0c3c393462eada1233513664e2d22bb9f69ca393"
+                "reference": "63456f5c3e8c4bc52bd573e5c85674d64d84fd43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/0c3c393462eada1233513664e2d22bb9f69ca393",
-                "reference": "0c3c393462eada1233513664e2d22bb9f69ca393",
+                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/63456f5c3e8c4bc52bd573e5c85674d64d84fd43",
+                "reference": "63456f5c3e8c4bc52bd573e5c85674d64d84fd43",
                 "shasum": ""
             },
             "require": {
@@ -7603,7 +7603,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-08-13T14:23:01+00:00"
+            "time": "2021-08-26T15:32:09+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -9509,20 +9509,20 @@
         },
         {
             "name": "tightenco/duster",
-            "version": "v0.3.1",
+            "version": "v0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tighten/duster.git",
-                "reference": "bfeb7ab913ffe79ffd4cc7db5a803ea6f7c7f589"
+                "reference": "f2459c92f9288a542033cc0b814f1f94b32b0fc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tighten/duster/zipball/bfeb7ab913ffe79ffd4cc7db5a803ea6f7c7f589",
-                "reference": "bfeb7ab913ffe79ffd4cc7db5a803ea6f7c7f589",
+                "url": "https://api.github.com/repos/tighten/duster/zipball/f2459c92f9288a542033cc0b814f1f94b32b0fc1",
+                "reference": "f2459c92f9288a542033cc0b814f1f94b32b0fc1",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.4|^8.0",
+                "php": "^7.3|^8.0",
                 "phpunit/phpunit": "^9.0",
                 "squizlabs/php_codesniffer": "^3.5",
                 "tightenco/tighten-coding-standard": "^1.0",
@@ -9556,9 +9556,9 @@
             ],
             "support": {
                 "issues": "https://github.com/tighten/duster/issues",
-                "source": "https://github.com/tighten/duster/tree/v0.3.1"
+                "source": "https://github.com/tighten/duster/tree/v0.3.2"
             },
-            "time": "2021-08-10T21:34:03+00:00"
+            "time": "2021-08-20T15:23:52+00:00"
         },
         {
             "name": "tightenco/tighten-coding-standard",
