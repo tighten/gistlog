@@ -21,6 +21,8 @@ class Author
 
     public $username;
 
+    public $bio;
+
     /**
      * @var Collection
      */
@@ -40,6 +42,7 @@ class Author
         $author->link = $gitHubUser['html_url'];
         $author->name = Arr::get($gitHubUser, 'name');
         $author->username = $gitHubUser['login'];
+        $author->bio = $gitHubUser['bio'];
 
         $author->gists = collect($gitHubGists)->map(function ($gist) {
             return Gistlog::fromGitHub($gist);
@@ -58,6 +61,7 @@ class Author
         $author->name = 'anonymous';
         $author->username = self::ANONYMOUS_USERNAME;
         $author->gists = collect([]);
+        $author->bio = null;
 
         return $author;
     }
