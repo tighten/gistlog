@@ -20,7 +20,7 @@ class AuthorPageTest extends TestCase
     }
 
     /** @test */
-    public function a_user_can_visit_the_author_page()
+    public function a_user_can_visit_the_author_page_and_also_see_a_bio()
     {
         $gist1 = $this->createGist([
             'title' => 'My title',
@@ -31,6 +31,7 @@ class AuthorPageTest extends TestCase
 
         $author = $this->createAuthor([
             'name' => 'Matt Stauffer',
+            'bio' => 'My Amazing Bio',
             'gists' => [$gist1, $gist2]
         ]);
 
@@ -45,6 +46,30 @@ class AuthorPageTest extends TestCase
         $response->assertSee('Matt Stauffer');
         $response->assertSee('My title');
         $response->assertSee('My Second title');
+        $response->assertSee('My Amazing Bio');
+    }
+
+    /** @test * */
+    function if_a_user_does_not_set_a_bio_it_hides_the_view()
+    {
+        $gist1 = $this->createGist();
+        $gist2 = $this->createGist();
+
+        $author = $this->createAuthor([
+            'name' => 'Matt Stauffer',
+            'bio' => null,
+            'gists' => [$gist1, $gist2]
+        ]);
+
+        $this->instance(
+            AuthorRepository::class,
+            Mockery::mock(AuthorRepository::class, function (MockInterface $mock) use ($author) {
+                $mock->shouldReceive('findByUsername')->once()->andReturn($author);
+            })
+        );
+        $response = $this->get('/mattstauffer');
+        $response->assertOk();
+        $response->assertDontSee('Author Bio');
     }
 
     public function createAuthor($authorArray = [])
@@ -56,6 +81,7 @@ class AuthorPageTest extends TestCase
         $author->name = $authorArray['name'] ?? $this->faker->name();
         $author->username = $authorArray['username'] ?? $this->faker->username();
         $author->gists = collect($authorArray['gists']) ?? collect([]);
+        $author->bio = $authorArray['bio'];
 
         return $author;
     }

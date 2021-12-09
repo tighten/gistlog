@@ -39,6 +39,12 @@
                 </div>
                 @endforeach
             </section>
+            @if ($author->bio)
+                <section class="my-8 border-t border-gray-400 text-gray-500">
+                    <h2 class="text-xl my-2">Author Bio</h2>
+                    <div>{{ $author->bio }}</div>
+                </section>
+            @endif
         </section>
     </div>
 </div>
