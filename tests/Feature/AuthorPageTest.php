@@ -12,7 +12,7 @@ class AuthorPageTest extends TestCase
 {
     private $faker;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
