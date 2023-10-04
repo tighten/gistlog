@@ -17,7 +17,6 @@
         "laravel/tinker": "^2.5",
         "fideloper/proxy": "^4.4",
         "laravel/ui": "^3.4",
-        "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "http-interop/http-factory-guzzle": "^1.2",
         "tightenco/ziggy": "^1.4",
