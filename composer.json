@@ -20,7 +20,8 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "http-interop/http-factory-guzzle": "^1.2",
         "tightenco/ziggy": "^1.4",
-        "bugsnag/bugsnag-laravel": "^2.24"
+        "bugsnag/bugsnag-laravel": "^2.24",
+        "league/flysystem-aws-s3-v3": "^3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5.10",
