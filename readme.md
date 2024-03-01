@@ -2,7 +2,10 @@
 
 # GistLog
 
-![Build Status](https://github.com/tighten/gistlog/workflows/Run%20Tests/badge.svg)
+> [!IMPORTANT]
+> Gistlog was an app that turned your GitHub Gists into shareable blog posts.  Due to waning interest we have decided to shut down Gistlog.
+
+---
 
 Turn your gists into easy, beautiful, responsive blog posts--each a "GistLog". Just paste a Gist URL into [GistLog.co](https://gistlog.co/) and you're up and running.
 
